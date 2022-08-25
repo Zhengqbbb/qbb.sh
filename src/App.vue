@@ -5,10 +5,7 @@ useHead({
   title: 'Q.Ben | Zhengqbbb',
   meta: [
     { name: 'description', content: 'Qbenben\'s personal website' },
-    {
-      name: 'theme-color',
-      content: computed(() => isDark.value ? '#00aba9' : '#ffffff'),
-    },
+    { name: 'theme-color', content: computed(() => isDark.value ? '#00aba9' : '#ffffff') },
   ],
   link: [
     {

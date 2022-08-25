@@ -8,8 +8,7 @@
   <br>
   <p>
     Hi! current website WIP ...
-    <br><br>Can view my old website:
-    <br><br>
+    <br><br>Can view my old website:<br>
     <a class="wip" href="https://blog.qbb.sh/">https://blog.qbb.sh/</a>
   </p>
 </template>
