@@ -31,9 +31,6 @@
     "*.css": "postcss",
     "_redirects": "properties"
   },
-  "yaml.schemas": {
-    "https://json.schemastore.org/github-workflow.json": "file:///Users/qbenben/project/me/.github/workflows/deploy.yml"
-  },
   "picgo.picBed.github.path": "blog/",
-  // "unocss.root": "build/plugins/unocss.ts",
+  "unocss.root": "build/plugins/unocss.ts"
 }

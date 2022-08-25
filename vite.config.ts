@@ -33,8 +33,10 @@ export default defineConfig({
 
     /** @see https://github.com/JohnCampionJr/vite-plugin-vue-layouts */
     Layouts(),
+
     /** @see https://github.com/antfu/vite-plugin-inspect || @see http://localhost:3333/__inspect/ */
     Inspect(),
+
     /** @see https://github.com/antfu/vite-plugin-vue-markdown */
     Markdown({
       wrapperClasses: markdownWrapperClasses,
@@ -47,6 +49,7 @@ export default defineConfig({
   ssgOptions: {
     script: 'async',
     formatting: 'minify',
+    format: 'cjs',
     onFinished() {
       generateSitemap({
         hostname: 'https://www.qbb.sh',

@@ -1,5 +1,6 @@
 {
   "private": true,
+  "packageManager": "pnpm@7.5.2",
   "scripts": {
     "build": "vite-ssg build && cp _redirects dist",
     "cz": "czg",
@@ -12,9 +13,6 @@
       "path": "node_modules/cz-git",
       "czConfig": "./scripts/commitizen.cjs"
     }
-  },
-  "eslintConfig": {
-    "extends": "@antfu"
   },
   "dependencies": {
     "@vueuse/core": "^8.9.4",
@@ -67,5 +65,7 @@
     "vite-ssg-sitemap": "^0.3.2",
     "vite-svg-loader": "^3.4.0"
   },
-  "packageManager": "pnpm@7.5.2"
+  "eslintConfig": {
+    "extends": "@antfu"
+  }
 }
