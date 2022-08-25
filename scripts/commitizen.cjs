@@ -2,9 +2,10 @@
 module.exports = {
   // @use termianl like: `czg :i`
   alias: {
-    'i': 'chore: initial commit',
-    's': 'style: update code format',
+    'a': 'feat(theme): update page theme',
     'b': 'build: bump dependencies',
+    's': 'style: update code format',
+    'i': 'chore: initial commit',
     'c': 'chore: update config',
     'f': 'docs: fix typos',
     'r': 'docs: update README',
