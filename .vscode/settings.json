@@ -29,6 +29,7 @@
   "editor.formatOnSave": false,
   "files.associations": {
     "*.css": "postcss",
+    ".czrc": "json",
     "_redirects": "properties"
   },
   "picgo.picBed.github.path": "blog/",
