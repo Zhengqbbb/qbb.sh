@@ -2,7 +2,7 @@
   "private": true,
   "packageManager": "pnpm@7.5.2",
   "scripts": {
-    "build": "vite-ssg build && cp _redirects dist",
+    "build": "vite-ssg build",
     "cz": "czg",
     "dev": "vite --host --port 3333",
     "lint": "eslint .",
