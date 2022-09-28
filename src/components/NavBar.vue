@@ -4,7 +4,7 @@ import { isDark } from '~/composables'
 
 <template>
   <header class="header z-40">
-    <router-link class="w-10 h-10 absolute lg:fixed m-6 select-none outline-none" to="/">
+    <router-link class="w-11 h-11 absolute lg:fixed m-6 select-none outline-none" to="/">
       <img v-show="isDark" src="/logo-dark.svg" alt="logo">
       <img v-show="!isDark" src="/logo-light.svg" alt="logo">
     </router-link>
@@ -26,6 +26,10 @@ import { isDark } from '~/composables'
 </template>
 
 <style scoped>
+logo{
+  box-shadow: 2px -1px 1px #4e4e4e, 1px 1px 6px #434343;
+    border-radius: 4px;
+}
 .nav {
   padding: 2rem;
   width: 100%;
