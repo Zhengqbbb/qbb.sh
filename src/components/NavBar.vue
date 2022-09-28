@@ -1,10 +1,46 @@
 <script setup lang="ts">
 import { isDark } from '~/composables'
+import { isClient } from '~/utils'
+
+const navbar = ref<HTMLElement | null>(null)
+const isFixed = ref(false)
+const isVisible = ref(false)
+
+if (isClient) {
+  const { y, directions } = useScroll(document)
+
+  watch(y, () => {
+    if (directions.top) {
+      // scrolling up
+      if (y.value > 0 && isFixed.value) { isVisible.value = true }
+      else {
+        isVisible.value = false
+        isFixed.value = false
+      }
+    }
+    else if (directions.bottom) {
+      // scrolling down
+      isVisible.value = false
+      if (navbar.value && y.value > navbar.value!.offsetHeight)
+        isFixed.value = true
+    }
+  })
+}
 </script>
 
 <template>
-  <header class="header z-40">
-    <router-link class="w-11 h-11 absolute m-6 select-none outline-none" to="/">
+  <header
+    ref="navbar"
+    class="fixed w-full left-0 h-20 z-40 bg-white bg-opacity-90 dark:bg-black dark:bg-opacity-90"
+    :class="[
+      isFixed && '-top-22 left-0 transition duration-300 border-b border-c',
+      isVisible && 'translate-y-full shadow-nav',
+      !isFixed && !isVisible && 'top-0',
+    ]"
+  >
+    <router-link
+      class="w-11 h-11 absolute m-6 select-none outline-none hover:opacity-70 transition-opacity" to="/"
+    >
       <img v-show="isDark" src="/logo-dark.svg" alt="logo">
       <img v-show="!isDark" src="/logo-light.svg" alt="logo">
     </router-link>
@@ -25,7 +61,7 @@ import { isDark } from '~/composables'
         <a href="https://twitter.com/zhengqbbb" target="_blank" title="Twitter">
           <div i-uil:twitter-alt />
         </a>
-        <a href="https://www.instagram.com/qbqiubin/" target="_blank" title="Twitter">
+        <a href="https://www.instagram.com/qbqiubin/" target="_blank" title="Instagram">
           <div i-uil:instagram />
         </a>
         <a rel="noreferrer" href="https://github.com/Zhengqbbb" target="_blank" title="GitHub">
