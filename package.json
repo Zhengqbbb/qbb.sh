@@ -8,12 +8,6 @@
     "lint": "eslint .",
     "serve": "vite preview --host"
   },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-git",
-      "czConfig": "./scripts/commitizen.cjs"
-    }
-  },
   "dependencies": {
     "@vueuse/core": "^9.1.1",
     "@vueuse/head": "^0.7.9",

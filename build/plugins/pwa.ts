@@ -33,7 +33,7 @@ export const pwaPlugin = VitePWA({
         type: 'image/png',
       },
       {
-        src: '/logo-dark.svg',
+        src: '/logo-light.svg',
         sizes: '165x165',
         type: 'image/svg',
         purpose: 'any maskable',

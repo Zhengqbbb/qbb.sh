@@ -26,8 +26,12 @@ export const unocssPlugin = Unocss({
     presetUno(),
     presetAttributify(),
     presetIcons({
-      scale: 1.2,
-      warn: true,
+      extraProperties: {
+        'display': 'inline-block',
+        'height': '1.2em',
+        'width': '1.2em',
+        'vertical-align': 'text-bottom',
+      },
     }),
     presetTypography(),
   ],
