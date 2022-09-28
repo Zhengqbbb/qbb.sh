@@ -4,20 +4,36 @@ import { isDark } from '~/composables'
 
 <template>
   <header class="header z-40">
-    <router-link class="w-11 h-11 absolute lg:fixed m-6 select-none outline-none" to="/">
+    <router-link class="w-11 h-11 absolute m-6 select-none outline-none" to="/">
       <img v-show="isDark" src="/logo-dark.svg" alt="logo">
       <img v-show="!isDark" src="/logo-light.svg" alt="logo">
     </router-link>
+
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
-        <a href="https://twitter.com/zhengqbbb" target="_blank" title="Twitter" class="lt-md:hidden">
+        <!-- <router-link to="/projects" title="Projects" class="nav-item">
+          <div i-ph:rocket-launch-duotone class="md:hidden" />
+          <span class="lt-md:hidden">Projects</span>
+        </router-link>
+        <router-link to="/posts" title="Blog" class="nav-item">
+          <div i-majesticons:paper-fold-text-line class="md:hidden" />
+          <span class="lt-md:hidden">Blog</span>
+        </router-link>
+        <span class="nav-divider" /> -->
+
+        <a href="https://twitter.com/zhengqbbb" target="_blank" title="Twitter">
           <div i-uil:twitter-alt />
         </a>
-        <a rel="noreferrer" href="https://github.com/Zhengqbbb" target="_blank" title="GitHub" class="lt-md:hidden">
+        <a href="https://www.instagram.com/qbqiubin/" target="_blank" title="Twitter">
+          <div i-uil:instagram />
+        </a>
+        <a rel="noreferrer" href="https://github.com/Zhengqbbb" target="_blank" title="GitHub">
           <div i-uil-github-alt />
         </a>
-        <a title="Toggle Color Scheme" class="lt-md:hidden" @click="toggleDark()">
+        <span class="nav-divider" />
+
+        <a title="Toggle Color Scheme" @click="toggleDark()">
           <div i="carbon-sun dark:carbon-moon" />
         </a>
       </div>
@@ -62,7 +78,7 @@ logo{
 
 .nav .right {
   display: grid;
-  grid-gap: 1.2rem;
+  grid-gap: 1rem;
   grid-auto-flow: column;
 }
 
