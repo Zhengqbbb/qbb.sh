@@ -1,9 +1,7 @@
 <template>
-  <main class="px-4 py-10 text-center text-gray-700 dark:text-gray-200">
+  <NavBar />
+  <main class="px-4 pb-10 pt-10 text-center" p="x-4 b-10 t-26">
     <RouterView />
-    <Footer />
-    <div class="mt-5 mx-auto text-center opacity-75 dark:opacity-50 text-sm">
-      [Default Layout]
-    </div>
   </main>
+  <Footer />
 </template>
