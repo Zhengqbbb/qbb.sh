@@ -16,7 +16,9 @@
     "vitest",
     "vueuse"
   ],
-  "cSpell.files": ["src"],
+  "cSpell.files": [
+    "src"
+  ],
   "i18n-ally.sourceLanguage": "zh-CN",
   "i18n-ally.keystyle": "nested",
   "i18n-ally.localesPaths": "locales",
@@ -30,8 +32,10 @@
   "files.associations": {
     "*.css": "postcss",
     ".czrc": "json",
-    "_redirects": "properties"
+    "_redirects": "properties",
+    "**/.x-cmd/*": "shellscript",
+    "**/.x-cmd/*.yml": "yaml",
   },
   "picgo.picBed.github.path": "blog/",
-  "unocss.root": "build/plugins/unocss.ts"
+  "unocss.root": "build/plugins/unocss.ts",
 }
