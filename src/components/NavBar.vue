@@ -45,18 +45,18 @@ if (isClient) {
       <img v-show="!isDark" src="/logo-light.svg" alt="logo">
     </router-link>
 
-    <nav class="nav">
+    <nav class="nav p-8">
       <div class="spacer" />
       <div class="right">
-        <!-- <router-link to="/projects" title="Projects" class="nav-item">
-          <div i-ph:rocket-launch-duotone class="md:hidden" />
-          <span class="lt-md:hidden">Projects</span>
-        </router-link>
         <router-link to="/posts" title="Blog" class="nav-item">
           <div i-majesticons:paper-fold-text-line class="md:hidden" />
           <span class="lt-md:hidden">Blog</span>
         </router-link>
-        <span class="nav-divider" /> -->
+        <router-link to="/projects" title="Projects" class="nav-item">
+          <div i-ph:rocket-launch-duotone class="md:hidden" />
+          <span class="lt-md:hidden">Projects</span>
+        </router-link>
+        <span class="nav-divider" />
 
         <a href="https://twitter.com/zhengqbbb" target="_blank" title="Twitter">
           <div i-uil:twitter-alt />
@@ -70,7 +70,7 @@ if (isClient) {
         <span class="nav-divider" />
 
         <a title="Toggle Color Scheme" @click="toggleDark()">
-          <div i="carbon-sun dark:carbon-moon" />
+          <div i="ri-sun-line dark:ri-moon-line" />
         </a>
       </div>
     </nav>
@@ -83,7 +83,6 @@ logo{
     border-radius: 4px;
 }
 .nav {
-  padding: 2rem;
   width: 100%;
   display: grid;
   grid-template-columns: auto max-content;

@@ -8,7 +8,7 @@ useHead({
     { name: 'keywords', content: 'Q.Ben, qbb, Zhengqbbb, Qbenben' },
     { name: 'author', content: 'Zhengqbbb' },
     { property: 'og:title', content: 'Q.Ben Zheng' },
-    { property: 'og:image', content: 'https://qbb.sh/avatar.jpeg' },
+    { property: 'og:image', content: 'https://qbb.sh/og-icon.png' },
     { name: 'twitter:card', content: 'summary' },
     { name: 'twitter:creator', content: '@zhengqbbb' },
     { name: 'application-name', content: 'Q.Ben' },
@@ -35,5 +35,9 @@ watch(
 </script>
 
 <template>
-  <RouterView />
+  <NavBar />
+  <main class="px-4 pb-10 pt-10 text-center" p="x-4 b-10 t-26">
+    <RouterView />
+  </main>
+  <Footer />
 </template>
