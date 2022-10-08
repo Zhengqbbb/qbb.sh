@@ -37,5 +37,4 @@
     "**/.x-cmd/*.yml": "yaml",
   },
   "picgo.picBed.github.path": "blog/",
-  "unocss.root": "build/plugins/unocss.ts",
 }

@@ -10,6 +10,7 @@
     "i": "chore: initial commit",
     "c": "chore: update config"
   },
-  "scopes": ["theme", "posts"],
+  "scopes": ["posts", "theme"],
+  "skipQuestions": ["body", "breaking", "footerPrefix", "footer"],
   "customScopesAlign": "top"
 }
