@@ -2,8 +2,10 @@ import { VitePWA } from 'vite-plugin-pwa'
 import fg from 'fast-glob'
 import { resolve } from 'pathe'
 
-// eslint-disable-next-line prefer-regex-literals
+/* eslint-disable prefer-regex-literals */
 const __GITHUB_SOURCE_CONTENT_REGEX = new RegExp('^https://(((raw|user-images|camo).githubusercontent.com))/.*', 'i')
+const __GSTATIC_FONTS_REGEX = new RegExp('^https://fonts.gstatic.com/.*', 'i')
+
 /**
  * Vite Plugin PWA uses Workbox  library to build the service worker
  * can find more information on Workbox section.
@@ -44,6 +46,20 @@ export const pwaPlugin = VitePWA({
     navigateFallbackDenylist: [/^\/new$/],
     globPatterns: ['**/*.{css,js,html,png,svg,gif,ico,woff2}'],
     runtimeCaching: [
+      {
+        urlPattern: __GSTATIC_FONTS_REGEX,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'google-fonts-cache',
+          expiration: {
+            maxEntries: 10,
+            maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
+          },
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
+        },
+      },
       {
         urlPattern: __GITHUB_SOURCE_CONTENT_REGEX,
         handler: 'CacheFirst',

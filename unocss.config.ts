@@ -1,9 +1,10 @@
-import Unocss from 'unocss/vite'
 import {
+  defineConfig,
   presetAttributify,
   presetIcons,
   presetTypography,
   presetUno,
+  presetWebFonts,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
@@ -12,7 +13,7 @@ import {
  * The instant on-demand Atomic CSS engine.
  * @see https://uno.antfu.me/
  */
-export const unocssPlugin = Unocss({
+export default defineConfig({
   shortcuts: [
     ['btn', 'px-4 py-1 rounded inline-block bg-teal-700 text-white cursor-pointer hover:bg-teal-800 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
     ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
@@ -25,8 +26,6 @@ export const unocssPlugin = Unocss({
     },
   },
   presets: [
-    presetUno(),
-    presetAttributify(),
     presetIcons({
       extraProperties: {
         'display': 'inline-block',
@@ -35,7 +34,15 @@ export const unocssPlugin = Unocss({
         'vertical-align': 'text-bottom',
       },
     }),
+    presetUno(),
+    presetAttributify(),
     presetTypography(),
+    presetWebFonts({
+      fonts: {
+        sans: 'Inter:400,600,800',
+        mono: 'DM Mono',
+      },
+    }),
   ],
   transformers: [
     transformerDirectives(),

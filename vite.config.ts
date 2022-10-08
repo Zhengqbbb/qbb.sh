@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import generateSitemap from 'vite-ssg-sitemap'
 import Layouts from 'vite-plugin-vue-layouts'
 import Markdown from 'vite-plugin-vue-markdown'
+import UnoCSS from 'unocss/vite'
 import Inspect from 'vite-plugin-inspect'
 import {
   autoImportPlugin,
@@ -10,7 +11,6 @@ import {
   pagesPlugin,
   pwaPlugin,
   registerMarkdownPlugins,
-  unocssPlugin,
   vuePlugin,
 } from './build'
 
@@ -18,17 +18,17 @@ const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
 export default defineConfig({
   resolve: {
-    alias: {
-      '~/': `${resolve(__dirname, 'src')}/`,
-    },
+    alias: [
+      { find: '~/', replacement: `${resolve(__dirname, 'src')}/` },
+    ],
   },
 
   plugins: [
+    UnoCSS(),
     vuePlugin,
     pagesPlugin,
     autoImportPlugin,
     componentsPlugin,
-    unocssPlugin,
     pwaPlugin,
 
     /** @see https://github.com/JohnCampionJr/vite-plugin-vue-layouts */
@@ -55,8 +55,5 @@ export default defineConfig({
         hostname: 'https://www.qbb.sh',
       })
     },
-  },
-  ssr: {
-    noExternal: ['workbox-window'],
   },
 })
