@@ -14,8 +14,6 @@ import {
   vuePlugin,
 } from './build'
 
-const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
-
 export default defineConfig({
   resolve: {
     alias: [
@@ -39,8 +37,11 @@ export default defineConfig({
 
     /** @see https://github.com/antfu/vite-plugin-vue-markdown */
     Markdown({
-      wrapperClasses: markdownWrapperClasses,
+      wrapperClasses: 'prose m-auto',
       headEnabled: true,
+      markdownItOptions: {
+        quotes: '""\'\'',
+      },
       markdownItSetup: md => registerMarkdownPlugins(md),
     }),
   ],

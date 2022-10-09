@@ -36,5 +36,24 @@
     "**/.x-cmd/*": "shellscript",
     "**/.x-cmd/*.yml": "yaml",
   },
+  "explicitFolding.rules": {
+    "postcss": [
+        {
+            "beginRegex": "^\\/\\*\\*\\sSection:?",
+            "endRegex": "^\\/\\*\\*\\sEndSection",
+            "autoFold": true
+        }
+    ],
+    "shellscript": [
+        {
+            "beginRegex": "^\\s*#\\s*Section:?",
+            "endRegex": "^\\s*#\\s*EndSection",
+            "autoFold": true
+        }
+    ]
+},
   "picgo.picBed.github.path": "blog/",
+  "cssvar.files": [
+    "src/styles/vars.css"
+  ],
 }
