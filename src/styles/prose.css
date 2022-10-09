@@ -183,19 +183,6 @@ html:not(.dark) .shiki-dark {
   margin-bottom: 0.5em;
   line-height: 1.5;
 }
-
-.prose hr + * {
-  margin-top: 0;
-}
-.prose h2 + * {
-  margin-top: 0;
-}
-.prose h3 + * {
-  margin-top: 0;
-}
-.prose h4 + * {
-  margin-top: 0;
-}
 .prose h6 {
   text-transform: uppercase;
   margin-top: 20px;

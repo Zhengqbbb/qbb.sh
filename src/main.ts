@@ -1,5 +1,8 @@
 import '@unocss/reset/tailwind.css'
+import './styles/vars.css'
 import './styles/main.css'
+import './styles/markdown.css'
+import './styles/prose.css'
 import 'uno.css'
 
 import { ViteSSG } from 'vite-ssg'
