@@ -3,7 +3,7 @@ import { isDark } from '~/composables'
 import { isClient } from '~/utils'
 
 const navbar = ref<HTMLElement | null>(null)
-const isFixed = ref(false)
+const isLeave = ref(false)
 const isVisible = ref(false)
 
 if (isClient) {
@@ -12,17 +12,19 @@ if (isClient) {
   watch(y, () => {
     if (directions.top) {
       // scrolling up
-      if (y.value > 0 && isFixed.value) { isVisible.value = true }
+      if (y.value > 0 && isLeave.value) {
+        isVisible.value = true
+      }
       else {
         isVisible.value = false
-        isFixed.value = false
+        isLeave.value = false
       }
     }
     else if (directions.bottom) {
       // scrolling down
       isVisible.value = false
-      if (navbar.value && y.value > navbar.value!.offsetHeight)
-        isFixed.value = true
+      if (navbar.value && y.value > 2)
+        isLeave.value = true
     }
   })
 }
@@ -31,11 +33,11 @@ if (isClient) {
 <template>
   <header
     ref="navbar"
-    class="c-select-none fixed w-full left-0 h-20 z-40 bg-white bg-opacity-90 dark:bg-black dark:bg-opacity-90"
+    class="c-select-none fixed -top-22 w-full left-0 h-20 z-40 bg-white bg-opacity-90 dark:bg-black dark:bg-opacity-90"
     :class="[
-      isFixed && '-top-22 left-0 transition duration-300 border-b border-c',
+      isLeave && 'transition duration-300 border-b border-c',
       isVisible && 'translate-y-full shadow-nav',
-      !isFixed && !isVisible && 'top-0',
+      !isLeave && !isVisible && 'top-0',
     ]"
   >
     <router-link
