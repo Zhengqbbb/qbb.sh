@@ -31,7 +31,7 @@ if (isClient) {
 <template>
   <header
     ref="navbar"
-    class="fixed w-full left-0 h-20 z-40 bg-white bg-opacity-90 dark:bg-black dark:bg-opacity-90"
+    class="c-select-none fixed w-full left-0 h-20 z-40 bg-white bg-opacity-90 dark:bg-black dark:bg-opacity-90"
     :class="[
       isFixed && '-top-22 left-0 transition duration-300 border-b border-c',
       isVisible && 'translate-y-full shadow-nav',
@@ -39,7 +39,7 @@ if (isClient) {
     ]"
   >
     <router-link
-      class="w-11 h-11 absolute m-6 select-none outline-none hover:opacity-70 transition-opacity" to="/"
+      class="w-11 h-11 absolute m-6 outline-none hover:opacity-70 transition-opacity" to="/"
     >
       <img v-show="isDark" src="/logo-dark.svg" alt="logo">
       <img v-show="!isDark" src="/logo-light.svg" alt="logo">
@@ -47,14 +47,14 @@ if (isClient) {
 
     <nav class="nav p-8">
       <div class="spacer" />
-      <div class="right">
+      <div class="right grid-gap-4 lt-sm:grid-gap-3.2">
         <router-link to="/posts" title="Blog" class="nav-item">
           <div i-majesticons:paper-fold-text-line class="md:hidden" />
-          <span class="lt-md:hidden">Blog</span>
+          <span class="lt-md:hidden select-text">Blog</span>
         </router-link>
         <router-link to="/projects" title="Projects" class="nav-item">
           <div i-ph:rocket-launch-duotone class="md:hidden" />
-          <span class="lt-md:hidden">Projects</span>
+          <span class="lt-md:hidden select-text">Projects</span>
         </router-link>
         <span class="nav-divider" />
 
@@ -78,10 +78,12 @@ if (isClient) {
 </template>
 
 <style scoped>
-logo{
-  box-shadow: 2px -1px 1px #4e4e4e, 1px 1px 6px #434343;
-    border-radius: 4px;
+.c-select-none{
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
+
 .nav {
   width: 100%;
   display: grid;
@@ -113,7 +115,6 @@ logo{
 
 .nav .right {
   display: grid;
-  grid-gap: 1rem;
   grid-auto-flow: column;
 }
 

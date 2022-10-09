@@ -2,13 +2,15 @@
 </script>
 
 <template>
-  <h1 text-xl>
-    Q.Ben Zheng
-  </h1>
-  <br>
-  <p>
-    Hi! current website WIP ...
-  </p>
+  <div text-center>
+    <h1 text-xl>
+      Q.Ben Zheng
+    </h1>
+    <br>
+    <p>
+      Hi! current website WIP ...
+    </p>
+  </div>
 </template>
 
 <route lang="yaml">

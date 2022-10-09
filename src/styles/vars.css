@@ -1,0 +1,26 @@
+:root {
+  --c-brand: #4a94c8;
+  --c-bg: #fff;
+  --c-fg: #555;
+  --c-fg-deep: #222;
+  --c-fg-deeper: #000;
+
+  --c-border: rgba(125, 125, 125, 0.3);
+  --c-code-bg: #f8f8f8;
+  --c-code-family: 'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+
+  --c-scrollbar: #eee;
+  --c-scrollbar-hover: #bbb;
+}
+
+.dark {
+  --c-bg: #050505;
+  --c-fg: #bbb;
+  --c-fg-deep: #ddd;
+  --c-fg-deeper: #fff;
+
+  --c-code-bg: #0e0e0e;
+
+  --c-scrollbar: #111;
+  --c-scrollbar-hover: #222;
+}

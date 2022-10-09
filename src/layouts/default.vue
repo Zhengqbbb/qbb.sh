@@ -1,3 +1,4 @@
 <template>
   <RouterView />
+  <Footer />
 </template>

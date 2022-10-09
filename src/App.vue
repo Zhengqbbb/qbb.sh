@@ -20,7 +20,6 @@ useHead({
     { rel: 'shortcut icon', href: '/favicon.ico' },
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     { rel: 'icon', type: 'image/svg+xml', href: '/logo-dark.svg' },
-    { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#aaaaaa' },
     { rel: 'apple-touch-icon', sizes: '120x120', href: '/icons/apple-touch-120x120.png' },
   ],
 })
@@ -36,8 +35,7 @@ watch(
 
 <template>
   <NavBar />
-  <main class="px-4 pb-10 pt-10 text-center" p="x-4 b-10 t-26">
+  <main p="x-4 t-26">
     <RouterView />
   </main>
-  <Footer />
 </template>
