@@ -69,53 +69,67 @@ html:not(.dark) .prose {
 
 /** Section: Code */
 
-.prose pre:not(.shiki) {
-  padding: 0;
-  margin: 0;
-  background: transparent;
-}
-
 .shiki-light {
   background: var(--c-code-bg) !important;
 }
 .shiki-dark {
   background: var(--c-code-bg) !important;
 }
-
 html.dark .shiki-light {
   display: none;
 }
-
 html:not(.dark) .shiki-dark {
   display: none;
 }
 
+.prose pre:not(.shiki) {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
 .prose code,
 .prose kbd,
 .prose pre,
 .prose samp{
   font-family: var(--c-code-family);
 }
+.prose :not(pre)>code {
+  border-radius: 4px;
+  padding: 3px 6px;
+  color: var(--c-brand-light);
+  background-color: #2d2d2d;
+  transition: color .5s,background-color .5s;
+}
 .prose code {
-  font-size: 14px;
-  line-height: 1.4;
-  margin: 0.5em 0;
-  letter-spacing: 2px;
+  font-size: var(--c-code-font-size);
   color: var(--fg-deep);
-  font-weight: 600;
 }
 .prose pre {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 16px 0;
   color: #e5e7eb;
+  font-size: 16px;
   overflow-x: auto;
-  font-size: 0.9em;
-  line-height: 1.7142857;
-  margin-top: 1.7142857em;
-  margin-bottom: 1.7142857em;
-  border-radius: 0.375rem;
-  padding-top: 0.8571429em;
-  padding-right: 1.1428571em;
-  padding-bottom: 0.8571429em;
-  padding-left: 1.1428571em;
+  background: transparent;
+  border-radius: 8px;
+}
+.prose [class*=language-] code {
+  display: block;
+  padding: 0 24px;
+  width: fit-content;
+  min-width: 100%;
+  line-height: 1.75;
+  font-size: var(--c-code-font-size);
+  color: var(--c-fg-deep);
+  transition: color .5s;
+}
+.prose pre code {
+  width: fit-content;
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -129,23 +143,19 @@ html:not(.dark) .shiki-dark {
   -ms-hyphens: none;
   hyphens: none;
 }
-.prose pre code {
-  font-size: 1em;
-  width: fit-content;
-  background-color: transparent;
-  border-width: 0;
-  border-radius: 0;
-  padding: 0;
-  font-weight: 500;
-  color: inherit;
-  line-height: inherit;
-}
 .prose pre code::before {
   content: none;
 }
 .prose pre code::after {
   content: none;
 }
+.prose code::before {
+  content: none;
+}
+.prose code::after {
+  content: none;
+}
+
 
 /** EndSection: */
 
@@ -246,10 +256,6 @@ html:not(.dark) .shiki-dark {
 .prose ol[type="1"] {
   --list-counter-style: decimal;
 }
-.prose ol > li {
-  position: relative;
-  padding-left: 1.75em;
-}
 .prose ol > li::before {
   content: counter(list-item, var(--list-counter-style, decimal)) ".";
   position: absolute;
@@ -257,10 +263,10 @@ html:not(.dark) .shiki-dark {
   color: #6b7280;
   left: 0;
 }
-
+.prose ol > li,
 .prose ul > li {
   position: relative;
-  padding-left: 1.75em;
+  padding-left: 1.2em;
 }
 .prose ul > li::before {
   content: "";
@@ -272,14 +278,10 @@ html:not(.dark) .shiki-dark {
   top: calc(0.875em - 0.1875em);
   left: 0.25em;
 }
-.prose ol {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-  list-style-type: none;
-}
+.prose ol,
 .prose ul {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
+  padding-left: 1.25rem;
+  margin: 16px 0;
   list-style-type: none;
 }
 .prose li {
@@ -320,15 +322,12 @@ html:not(.dark) .shiki-dark {
 .prose blockquote {
   font-weight: 500;
   color: inherit;
-  border-left-width: 0.25rem;
-  border-color: var(--c-border);
+  border-left: 3px solid var(--c-border);
   quotes: "\201C""\201D""\2018""\2019";
-  margin-top: 1.6em;
-  margin-bottom: 1.6em;
-  padding: 0.6em 1.2em;
-  line-height: 1.5em;
+  margin: 16px 0;
+  padding-left: 16px;
   font-style: normal;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 .prose blockquote p:first-of-type::before {
   content: open-quote;
@@ -363,12 +362,12 @@ html:not(.dark) .shiki-dark {
   line-height: 1.7142857;
 }
 .prose thead {
-  color: #111827;
-  font-weight: 600;
+  color: var(--c-brand-light);
   border-bottom-width: 1px;
   border-bottom-color: #d1d5db;
 }
 .prose thead th {
+  font-weight: 600;
   vertical-align: bottom;
   padding-right: 0.5714286em;
   padding-bottom: 0.5714286em;
