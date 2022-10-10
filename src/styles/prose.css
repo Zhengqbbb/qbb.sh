@@ -97,7 +97,7 @@ html:not(.dark) .shiki-dark {
   border-radius: 4px;
   padding: 3px 6px;
   color: var(--c-brand-light);
-  background-color: #2d2d2d;
+  background-color: var(--c-inline-code-bg);
   transition: color .5s,background-color .5s;
 }
 .prose code {
@@ -120,7 +120,7 @@ html:not(.dark) .shiki-dark {
   padding: 0 24px;
   width: fit-content;
   min-width: 100%;
-  line-height: 1.75;
+  line-height: 1.4;
   font-size: var(--c-code-font-size);
   color: var(--c-fg-deep);
   transition: color .5s;
@@ -178,13 +178,13 @@ html:not(.dark) .shiki-dark {
   line-height: 1.3333333;
 }
 .prose h3 {
-  color: inherit;
+  color: var(--c-fg-deep);
   font-weight: 600;
   font-size: 1.25em;
   margin-top: 1.6em;
   margin-bottom: 0.6em;
   line-height: 1.6;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 .prose h4 {
   color: inherit;
@@ -359,7 +359,7 @@ html:not(.dark) .shiki-dark {
   margin-top: 2em;
   margin-bottom: 2em;
   font-size: 0.875em;
-  line-height: 1.7142857;
+  line-height: 1.72;
 }
 .prose thead {
   color: var(--c-brand-light);

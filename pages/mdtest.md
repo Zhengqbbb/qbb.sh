@@ -12,6 +12,8 @@
 ## Link
 [cz-git](https://cz-git.qbb.sh)
 
+# H1 Heading
+
 ## H2 Heading
 
 ### H3 Heading
@@ -45,24 +47,18 @@ hello world `const a = 1` hello world
 
 ### Code Block
 
-```py
-import food
+```js
+import { createApp } from 'vue'
 
-class Dragon:
-  def __init__(self, happiness):
-    self.happiness = happiness
-  def code(self):
-    """ just code """
-    self.happiness -= 60
-  def eat(self, n)
-    # just eat
-    self.happiness += n * food.size
+const app = createApp({
+  data() {
+    return {
+      count: 0
+    }
+  }
+})
 
-me = Dragon(100)
-
-while True:
-  me.code()
-  me.eat(10)
+app.mount('#app')
 ```
 
 ### Code Group

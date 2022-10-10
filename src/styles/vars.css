@@ -1,13 +1,14 @@
 :root {
   --c-code-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --c-brand: #4a94c8;
-  --c-brand-light: #c9def1;
+  --c-brand-light: #7d9ebd;
   --c-bg: #fff;
   --c-fg: #555;
   --c-fg-deep: #222;
   --c-fg-deeper: #000;
   --c-border: rgba(125, 125, 125, 0.3);
   --c-code-bg: #f8f8f8;
+  --c-inline-code-bg: #f1f1f1;
   --c-code-font-size: 0.875em;
   --c-scrollbar: #eee;
   --c-scrollbar-hover: #bbb;
@@ -19,6 +20,7 @@
   --c-fg-deep: #ddd;
   --c-fg-deeper: #fff;
   --c-code-bg: rgba(52, 52, 52, 0.3);
+  --c-inline-code-bg: #2d2d2d;
   --c-scrollbar: #111;
   --c-scrollbar-hover: #222;
 }
