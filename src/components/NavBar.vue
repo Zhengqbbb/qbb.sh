@@ -40,42 +40,44 @@ if (isClient) {
       !isLeave && !isVisible && 'top-0',
     ]"
   >
-    <router-link
-      class="w-11 h-11 absolute m-6 outline-none hover:opacity-70 transition-opacity" to="/"
-    >
-      <img v-show="isDark" src="/logo-dark.svg" alt="logo">
-      <img v-show="!isDark" src="/logo-light.svg" alt="logo">
-    </router-link>
+    <div class="m-a max-w-120ch">
+      <router-link
+        class="w-11 h-11 absolute m-6 outline-none hover:opacity-70 transition-opacity" to="/"
+      >
+        <img v-show="isDark" src="/logo-dark.svg" alt="logo">
+        <img v-show="!isDark" src="/logo-light.svg" alt="logo">
+      </router-link>
 
-    <nav class="nav p-8">
-      <div class="spacer" />
-      <div class="right grid-gap-4 lt-sm:grid-gap-3.2">
-        <router-link to="/posts" title="Blog" class="nav-item">
-          <div i-majesticons:paper-fold-text-line class="md:hidden" />
-          <span class="lt-md:hidden select-text">Blog</span>
-        </router-link>
-        <router-link to="/projects" title="Projects" class="nav-item">
-          <div i-ph:rocket-launch-duotone class="md:hidden" />
-          <span class="lt-md:hidden select-text">Projects</span>
-        </router-link>
-        <span class="nav-divider" />
+      <nav class="nav p-8">
+        <div class="spacer" />
+        <div class="right grid-gap-4 lt-sm:grid-gap-3.2">
+          <router-link to="/posts" title="Blog" class="nav-item">
+            <div i-majesticons:paper-fold-text-line class="md:hidden" />
+            <span class="lt-md:hidden select-text">Blog</span>
+          </router-link>
+          <router-link to="/projects" title="Projects" class="nav-item">
+            <div i-ph:rocket-launch-duotone class="md:hidden" />
+            <span class="lt-md:hidden select-text">Projects</span>
+          </router-link>
+          <span class="nav-divider" />
 
-        <a href="https://twitter.com/zhengqbbb" target="_blank" title="Twitter">
-          <div i-uil:twitter-alt />
-        </a>
-        <a href="https://www.instagram.com/qbqiubin/" target="_blank" title="Instagram">
-          <div i-uil:instagram />
-        </a>
-        <a rel="noreferrer" href="https://github.com/Zhengqbbb" target="_blank" title="GitHub">
-          <div i-uil-github-alt />
-        </a>
-        <span class="nav-divider" />
+          <a href="https://twitter.com/zhengqbbb" target="_blank" title="Twitter">
+            <div i-uil:twitter-alt />
+          </a>
+          <a href="https://www.instagram.com/qbqiubin/" target="_blank" title="Instagram">
+            <div i-uil:instagram />
+          </a>
+          <a rel="noreferrer" href="https://github.com/Zhengqbbb" target="_blank" title="GitHub">
+            <div i-uil-github-alt />
+          </a>
+          <span class="nav-divider" />
 
-        <a title="Toggle Color Scheme" @click="toggleDark()">
-          <div i="ri-sun-line dark:ri-moon-line" />
-        </a>
-      </div>
-    </nav>
+          <a title="Toggle Color Scheme" @click="toggleDark()">
+            <div i="ri-sun-line dark:ri-moon-line" />
+          </a>
+        </div>
+      </nav>
+    </div>
   </header>
 </template>
 
