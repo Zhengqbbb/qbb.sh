@@ -1,4 +1,4 @@
 <template>
-  <RouterView />
+  <RouterView class="post" />
   <Footer />
 </template>

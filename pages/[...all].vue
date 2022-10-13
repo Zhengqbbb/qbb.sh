@@ -18,7 +18,7 @@ const getEmoji = (): string =>
 </script>
 
 <template>
-  <div class="font-bold absolute top-1/3 -mt-24 left-0 right-0 text-center">
+  <div class="font-bold m-auto text-center">
     <h1 text="5xl" class="mb-8 text-black dark:text-white">
       404
     </h1>
@@ -33,8 +33,3 @@ const getEmoji = (): string =>
     </RouterLink>
   </div>
 </template>
-
-<route lang="yaml">
-meta:
-  layout: 404
-</route>
