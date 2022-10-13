@@ -1,5 +1,0 @@
-export * from './vue'
-export * from './pages'
-export * from './pwa'
-export * from './autoImport'
-export * from './component'

@@ -1,4 +1,4 @@
-import { VitePWA } from 'vite-plugin-pwa'
+import type { VitePWAOptions } from 'vite-plugin-pwa'
 import fg from 'fast-glob'
 import { resolve } from 'pathe'
 
@@ -11,7 +11,7 @@ const __GSTATIC_FONTS_REGEX = new RegExp('^https://fonts.gstatic.com/.*', 'i')
  * can find more information on Workbox section.
  * @see https://vite-plugin-pwa.netlify.app/
  */
-export const pwaPlugin = VitePWA({
+export const vitePWAOptions: Partial<VitePWAOptions> = {
   registerType: 'autoUpdate',
   includeAssets: fg.sync('**/*.{png,svg,gif,ico,txt}', { cwd: resolve(__dirname, '../../public') }),
   manifest: {
@@ -76,4 +76,4 @@ export const pwaPlugin = VitePWA({
       },
     ],
   },
-})
+}

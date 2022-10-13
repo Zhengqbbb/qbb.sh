@@ -4,6 +4,8 @@ import Anchor from 'markdown-it-anchor'
 import LinkAttributes from 'markdown-it-link-attributes'
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
+// @ts-expect-error missing types
+import Mark from 'markdown-it-mark'
 import { slugify } from '../node'
 
 export const registerMarkdownPlugins = (md: MarkdownIt) => {
@@ -31,4 +33,5 @@ export const registerMarkdownPlugins = (md: MarkdownIt) => {
     includeLevel: [1, 2, 3],
     slugify,
   })
+  md.use(Mark)
 }
