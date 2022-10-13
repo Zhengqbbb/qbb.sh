@@ -4,6 +4,7 @@ specifiers:
   '@antfu/eslint-config': ^0.27.0
   '@iconify/json': ^2.1.119
   '@types/diacritics': ^1.3.1
+  '@types/fs-extra': ^9.0.13
   '@types/markdown-it': ^12.2.3
   '@types/markdown-it-link-attributes': ^3.0.1
   '@types/nprogress': ^0.2.0
@@ -25,8 +26,9 @@ specifiers:
   gray-matter: ^4.0.3
   markdown-it: ^13.0.1
   markdown-it-anchor: ^8.6.5
+  markdown-it-container: ^3.0.0
   markdown-it-link-attributes: ^4.0.1
-  markdown-it-prism: ^2.3.0
+  markdown-it-mark: ^3.0.1
   markdown-it-shiki: ^0.5.1
   markdown-it-table-of-contents: ^0.6.0
   nprogress: ^0.2.0
@@ -65,6 +67,7 @@ devDependencies:
   '@antfu/eslint-config': 0.27.0_z4bbprzjrhnsfa24uvmcbu7f5q
   '@iconify/json': 2.1.119
   '@types/diacritics': 1.3.1
+  '@types/fs-extra': 9.0.13
   '@types/markdown-it': 12.2.3
   '@types/markdown-it-link-attributes': 3.0.1
   '@types/nprogress': 0.2.0
@@ -83,8 +86,9 @@ devDependencies:
   gray-matter: 4.0.3
   markdown-it: 13.0.1
   markdown-it-anchor: 8.6.5_ea7kj7wzjkld5jo2noyjqxi764
+  markdown-it-container: 3.0.0
   markdown-it-link-attributes: 4.0.1
-  markdown-it-prism: 2.3.0
+  markdown-it-mark: 3.0.1
   markdown-it-shiki: 0.5.1
   markdown-it-table-of-contents: 0.6.0
   pathe: 0.3.9
@@ -1639,6 +1643,12 @@ packages:
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
     dev: true
 
+  /@types/fs-extra/9.0.13:
+    resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
+    dependencies:
+      '@types/node': 17.0.24
+    dev: true
+
   /@types/json-schema/7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: true
@@ -2458,7 +2468,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001332
+      caniuse-lite: 1.0.30001418
       electron-to-chromium: 1.4.111
       escalade: 3.1.1
       node-releases: 2.0.3
@@ -2511,8 +2521,8 @@ packages:
       upper-case: 1.1.3
     dev: true
 
-  /caniuse-lite/1.0.30001332:
-    resolution: {integrity: sha512-10T30NYOEQtN6C11YGg411yebhvpnC6Z102+B95eAsN0oB6KUs01ivE8u+G6FMIRtIrVlYXhL+LUwQ3/hXwDWw==}
+  /caniuse-lite/1.0.30001418:
+    resolution: {integrity: sha512-oIs7+JL3K9JRQ3jPZjlH6qyYDp+nBTCais7hjh0s+fuBwufc7uZ7hPYMXrDOJhV360KGMTcczMRObk0/iMqZRg==}
     dev: true
 
   /chalk/2.4.2:
@@ -4825,15 +4835,16 @@ packages:
       markdown-it: 13.0.1
     dev: true
 
+  /markdown-it-container/3.0.0:
+    resolution: {integrity: sha512-y6oKTq4BB9OQuY/KLfk/O3ysFhB3IMYoIWhGJEidXt1NQFocFK2sA2t0NYZAMyMShAGL6x5OPIbrmXPIqaN9rw==}
+    dev: true
+
   /markdown-it-link-attributes/4.0.1:
     resolution: {integrity: sha512-pg5OK0jPLg62H4k7M9mRJLT61gUp9nvG0XveKYHMOOluASo9OEF13WlXrpAp2aj35LbedAy3QOCgQCw0tkLKAQ==}
     dev: true
 
-  /markdown-it-prism/2.3.0:
-    resolution: {integrity: sha512-ePtHY80gZyeje4bn3R3SL0jpd1C9HFaYffJW2Ma0YD+tspqa2v9TuVwUyFwboFu4jnFNcO8oPQROgbcYJbmBvw==}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      prismjs: 1.29.0
+  /markdown-it-mark/3.0.1:
+    resolution: {integrity: sha512-HyxjAu6BRsdt6Xcv6TKVQnkz/E70TdGXEFHRYBGLncRE9lBFwDNLVtFojKxjJWgJ+5XxUwLaHXy+2sGBbDn+4A==}
     dev: true
 
   /markdown-it-shiki/0.5.1:
@@ -5361,11 +5372,6 @@ packages:
   /prism-theme-vars/0.2.4:
     resolution: {integrity: sha512-B3Pht+GCT87sZph7hMRLlCQXzCM0awW7Rhk08RavpqRW4LEQOeqN0uMG4QCWkul2tr8PB61YAOJGUrEW+1uuJA==}
     dev: false
-
-  /prismjs/1.29.0:
-    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
-    engines: {node: '>=6'}
-    dev: true
 
   /psl/1.8.0:
     resolution: {integrity: sha512-RIdOzyoavK+hA18OGGWDqUTsCLhtA7IcZ/6NCs4fFJaHBDab+pDDmDIByWFRQJq2Cd7r1OoQxBGKOaztq+hjIQ==}
