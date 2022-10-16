@@ -30,14 +30,14 @@
   },
   "editor.formatOnSave": false,
   "files.associations": {
-    "*.css": "postcss",
+    "*.css": "css",
     ".czrc": "json",
     "_redirects": "properties",
     "**/.x-cmd/*": "shellscript",
     "**/.x-cmd/*.yml": "yaml",
   },
   "explicitFolding.rules": {
-    "postcss": [
+    "css": [
         {
             "beginRegex": "^\\/\\*\\*\\sSection:?",
             "endRegex": "^\\/\\*\\*\\sEndSection",
@@ -56,4 +56,5 @@
   "cssvar.files": [
     "src/styles/vars.css"
   ],
+  "css.lint.unknownAtRules": "ignore"
 }
