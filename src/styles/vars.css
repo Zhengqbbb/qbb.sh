@@ -1,5 +1,5 @@
 :root {
-  --c-code-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --c-code-family: "Fira Code", "Fira Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --c-brand: #4a94c8;
   --c-brand-light: #7d9ebd;
   --c-bg: #fff;

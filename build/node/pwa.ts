@@ -5,6 +5,7 @@ import { resolve } from 'pathe'
 /* eslint-disable prefer-regex-literals */
 const __GITHUB_SOURCE_CONTENT_REGEX = new RegExp('^https://(((raw|user-images|camo).githubusercontent.com))/.*', 'i')
 const __GSTATIC_FONTS_REGEX = new RegExp('^https://fonts.gstatic.com/.*', 'i')
+const __JSDELIVR_CDN_REGEX = new RegExp('^https://cdn.jsdelivr.net/.*', 'i')
 
 /**
  * Vite Plugin PWA uses Workbox  library to build the service worker
@@ -13,7 +14,7 @@ const __GSTATIC_FONTS_REGEX = new RegExp('^https://fonts.gstatic.com/.*', 'i')
  */
 export const vitePWAOptions: Partial<VitePWAOptions> = {
   registerType: 'autoUpdate',
-  includeAssets: fg.sync('**/*.{png,svg,gif,ico,txt}', { cwd: resolve(__dirname, '../../public') }),
+  includeAssets: fg.sync('**/*.{png,jpeg,jpg,svg,gif,ico,txt}', { cwd: resolve(__dirname, '../../public') }),
   manifest: {
     name: 'Q.Ben',
     short_name: 'Q.Ben',
@@ -44,13 +45,27 @@ export const vitePWAOptions: Partial<VitePWAOptions> = {
   },
   workbox: {
     navigateFallbackDenylist: [/^\/new$/],
-    globPatterns: ['**/*.{css,js,html,png,svg,gif,ico,woff2}'],
+    globPatterns: ['**/*.{js,css,png,svg,gif,ico,woff2}'],
     runtimeCaching: [
       {
         urlPattern: __GSTATIC_FONTS_REGEX,
         handler: 'CacheFirst',
         options: {
           cacheName: 'google-fonts-cache',
+          expiration: {
+            maxEntries: 10,
+            maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
+          },
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
+        },
+      },
+      {
+        urlPattern: __JSDELIVR_CDN_REGEX,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'jsdelivr-cdn-cache',
           expiration: {
             maxEntries: 10,
             maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
