@@ -19,11 +19,9 @@ export function useCopyCode() {
         parent.classList.toString(),
       )
 
-      const { innerText, textContent } = sibling
-      let text = innerText || textContent || ''
-
+      let { innerText: text = '' } = sibling
       if (isShell)
-        text = text.replace(/^ *(\$|>) /gm, '')
+        text = text.replace(/^ *($|>) /gm, '').replace(/[\n\r]$/, '')
 
       copyToClipboard(text).then(() => {
         el.classList.add('copied')

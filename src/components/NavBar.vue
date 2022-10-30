@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { isDark } from '~/composables'
 import { isClient } from '~/utils'
 
 const navbar = ref<HTMLElement | null>(null)
