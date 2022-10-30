@@ -2,7 +2,7 @@
 
 .prose {
   color: var(--c-fg);
-  max-width: 65ch;
+  max-width: 70ch;
   font-size: 1rem;
   line-height: 1.75;
 }
@@ -13,8 +13,8 @@ html:not(.dark) .prose {
   color: #4b5563;
   font-size: 1.25em;
   line-height: 1.6;
-  margin-top: 1.2em;
-  margin-bottom: 1.2em;
+  margin-top: var(--c-block-space);
+  margin-bottom: var(--c-block-space);
 }
 .prose > :first-child {
   margin-top: 0;
@@ -26,10 +26,11 @@ html:not(.dark) .prose {
 /** EndSection: */
 
 /** Section: Origin element */
-
-.prose b {
-  color: var(--fg-deep);
+.prose p {
+  margin-top: var(--c-block-space);
+  margin-bottom: var(--c-block-space);
 }
+.prose b,
 .prose strong {
   color: var(--c-fg-deep);
   font-weight: 600;
@@ -37,22 +38,42 @@ html:not(.dark) .prose {
 .prose em {
   color: inherit;
 }
-.prose p {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
+.prose s{
+  color: inherit;
+  opacity: 0.6;
 }
+.prose mark{
+  color: var(--c-fg-deep);
+  background-color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--c-brand);
+}
+.prose sub,
+.prose sup {
+  font-size: 0.8em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  margin: 0 .1em;
+}
+.prose sup {
+  top: -0.5em;
+}
+
 .prose img {
-  width: 100%;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: var(--c-block-space);
+  margin-bottom: var(--c-block-space);
 }
 .prose video {
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: var(--c-block-space);
+  margin-bottom: var(--c-block-space);
 }
 .prose figure {
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: var(--c-block-space);
+  margin-bottom: var(--c-block-space);
 }
 .prose figure > * {
   margin-top: 0;
@@ -94,11 +115,12 @@ html:not(.dark) .shiki-dark {
   font-family: var(--c-code-family);
 }
 .prose :not(pre)>code {
-  border-radius: 4px;
-  padding: 3px 6px;
-  color: var(--c-brand-light);
+  overflow-wrap: break-word;
+  padding: 0.125em 0.25em;
   background-color: var(--c-inline-code-bg);
-  transition: color .5s,background-color .5s;
+  border: solid 1px var(--c-inline-code-bg);
+  border-radius: 0.375rem;
+  color: var(--c-fg-deep);
 }
 .prose code {
   font-size: var(--c-code-font-size);
@@ -114,16 +136,6 @@ html:not(.dark) .shiki-dark {
   overflow-x: auto;
   background: transparent;
   border-radius: 8px;
-}
-.prose [class*=language-] code {
-  display: block;
-  padding: 0 24px;
-  width: fit-content;
-  min-width: 100%;
-  line-height: 1.4;
-  font-size: var(--c-code-font-size);
-  color: var(--c-fg-deep);
-  transition: color .5s;
 }
 .prose pre code {
   width: fit-content;
@@ -143,19 +155,85 @@ html:not(.dark) .shiki-dark {
   -ms-hyphens: none;
   hyphens: none;
 }
-.prose pre code::before {
-  content: none;
+.prose .shiki-container code{
+  display: block;
+  padding: 0 24px;
+  width: fit-content;
+  min-width: 100%;
+  line-height: 1.4;
+  font-size: var(--c-code-font-size);
+  color: var(--c-fg-deep);
 }
-.prose pre code::after {
-  content: none;
-}
-.prose code::before {
-  content: none;
-}
-.prose code::after {
-  content: none;
+/** Powered by: vitepress */
+.prose div[class*=language-] {
+  position: relative;
+  margin: var(--c-block-space) 0;
+  overflow-x: auto;
 }
 
+.prose [class*=language-]>span.lang {
+  position: absolute;
+  top: 3px;
+  right: 12px;
+  z-index: 2;
+  font-size: 12px;
+  font-weight: 500;
+  transition: color .4s,opacity .4s;
+  color: inherit;
+  opacity: 0.6;
+}
+.prose [class*=language-]>button.copy {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 3;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--c-code-bg);
+  opacity: 0;
+  cursor: pointer;
+  background-image: var(--c-icon-copy);
+  background-position: 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  transition: opacity .4s;
+}
+.prose [class*='language-'] > button.copy.copied::before,
+.prose [class*='language-'] > button.copy:hover.copied::before {
+  content: 'Copied';
+  position: relative;
+  left: -65px;
+  display: block;
+  border-radius: 4px 0 0 4px;
+  padding-top: 8px;
+  width: 64px;
+  height: 40px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: inherit;
+  opacity: 0.6;
+  background-color: var(--c-code-bg);
+  white-space: nowrap;
+}
+.prose [class*=language-]:hover>button.copy+span.lang,
+.prose [class*=language-]>button.copy:focus+span.lang {
+  opacity: 0;
+}
+.prose [class*=language-]:hover>button.copy,
+.prose [class*=language-]>button.copy:focus {
+  opacity: 1;
+}
+.prose [class*='language-'] > button.copy.copied,
+.prose [class*='language-'] > button.copy:hover.copied {
+  border-radius: 0 4px 4px 0;
+  background-color: var(--c-code-bg);
+  background-image: var(--c-icon-copied);
+}
 
 /** EndSection: */
 
@@ -173,7 +251,7 @@ html:not(.dark) .shiki-dark {
   color: var(--c-fg-deep);
   font-weight: 700;
   font-size: 1.5em;
-  margin-top: 2em;
+  margin-top: 1.6em;
   margin-bottom: 1em;
   line-height: 1.3333333;
 }
@@ -182,22 +260,19 @@ html:not(.dark) .shiki-dark {
   font-weight: 600;
   font-size: 1.25em;
   margin-top: 1.6em;
-  margin-bottom: 0.6em;
+  margin-bottom: var(--c-block-space);
   line-height: 1.6;
   opacity: 0.9;
 }
 .prose h4 {
   color: inherit;
   font-weight: 600;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
+  margin-top: var(--c-block-space);
+  margin-bottom: var(--c-block-space);
   line-height: 1.5;
 }
 .prose h6 {
-  text-transform: uppercase;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  opacity: 0.5;
+  opacity: 0.7;
   font-weight: 500;
 }
 .prose h2 code {
@@ -260,13 +335,13 @@ html:not(.dark) .shiki-dark {
   content: counter(list-item, var(--list-counter-style, decimal)) ".";
   position: absolute;
   font-weight: 400;
-  color: #6b7280;
+  color: #878c97;
   left: 0;
 }
 .prose ol > li,
 .prose ul > li {
   position: relative;
-  padding-left: 1.2em;
+  padding-left: var(--c-block-space);
 }
 .prose ul > li::before {
   content: "";
@@ -280,27 +355,21 @@ html:not(.dark) .shiki-dark {
 }
 .prose ol,
 .prose ul {
-  padding-left: 1.25rem;
   margin: 16px 0;
   list-style-type: none;
 }
 .prose li {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
 }
 .prose > ul > li p {
   margin-top: 0.75em;
   margin-bottom: 0.75em;
 }
-.prose > ol > li > *:first-child {
-  margin-top: 1.25em;
-}
-.prose > ol > li > *:last-child {
-  margin-bottom: 1.25em;
-}
 .prose ul ul, .prose ul ol, .prose ol ul, .prose ol ol {
   margin-top: 0.75em;
   margin-bottom: 0.75em;
+  padding-left: 0rem;
 }
 
 /** EndSection: */
@@ -308,11 +377,9 @@ html:not(.dark) .shiki-dark {
 /** Section: Divide */
 
 .prose hr {
-  width: 50px;
-  margin: 2em auto;
-  border-color: var(--c-border);
-  margin-top: 3em;
-  margin-bottom: 3em;
+  margin: 16px 0;
+  border: none;
+  border-top: 1px solid var(--c-border);
 }
 
 /** EndSection: */
@@ -356,13 +423,13 @@ html:not(.dark) .shiki-dark {
   width: 100%;
   table-layout: auto;
   text-align: left;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: var(--c-block-space);
+  margin-bottom: var(--c-block-space);
   font-size: 0.875em;
   line-height: 1.72;
 }
 .prose thead {
-  color: var(--c-brand-light);
+  color: var(--c-brand);
   border-bottom-width: 1px;
   border-bottom-color: #d1d5db;
 }

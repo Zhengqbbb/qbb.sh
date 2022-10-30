@@ -6,9 +6,13 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import TOC from 'markdown-it-table-of-contents'
 // @ts-expect-error missing types
 import Mark from 'markdown-it-mark'
-import { slugify } from '../node'
+import { codePreWrapperPlugin } from './codePreWrap'
+import { containerPlugin } from './container'
+import { slugify } from './slugify'
 
 export const registerMarkdownPlugins = (md: MarkdownIt) => {
+  md.use(codePreWrapperPlugin)
+  md.use(containerPlugin)
   md.use(Shiki, {
     theme: {
       light: 'vitesse-light',

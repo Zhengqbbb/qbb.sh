@@ -61,6 +61,9 @@ const excludeTexBlock = (text: string): string => {
   return text.replace(/\$\$[\s\S]*?\$\$/g, '')
 }
 
+/**
+ *  Powered by: https://github.com/Renovamen/renovamen.github.io
+ */
 export const readingTime = (
   text: string,
   options?: ReadingTimeOptions,

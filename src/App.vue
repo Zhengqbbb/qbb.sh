@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// import { useCopyCode } from './composables'
 import { isClient } from '~/utils'
 
 useHead({
@@ -23,6 +24,7 @@ useHead({
     { rel: 'apple-touch-icon', sizes: '120x120', href: '/icons/apple-touch-120x120.png' },
   ],
 })
+// useCopyCode()
 
 // Scroll to top after route change
 const route = useRoute()

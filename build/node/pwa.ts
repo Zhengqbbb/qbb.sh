@@ -14,7 +14,7 @@ const __JSDELIVR_CDN_REGEX = new RegExp('^https://cdn.jsdelivr.net/.*', 'i')
  */
 export const vitePWAOptions: Partial<VitePWAOptions> = {
   registerType: 'autoUpdate',
-  includeAssets: fg.sync('**/*.{png,jpeg,jpg,svg,gif,ico,txt}', { cwd: resolve(__dirname, '../../public') }),
+  includeAssets: fg.sync('**/*.{png,jpeg,jpg,svg,gif,ico,txt,woff2}', { cwd: resolve(__dirname, '../../public') }),
   manifest: {
     name: 'Q.Ben',
     short_name: 'Q.Ben',
@@ -44,9 +44,32 @@ export const vitePWAOptions: Partial<VitePWAOptions> = {
     ],
   },
   workbox: {
-    navigateFallbackDenylist: [/^\/new$/],
-    globPatterns: ['**/*.{js,css,png,svg,gif,ico,woff2}'],
+    navigateFallbackDenylist: [/^\/new/],
+    globPatterns: ['**/*.{html,js,css,png,svg,gif,ico,woff2}'],
+    skipWaiting: true,
     runtimeCaching: [
+      {
+        urlPattern: /index\.html/,
+        handler: 'NetworkFirst',
+        options: {
+          cacheName: 'domain-page-cache',
+          networkTimeoutSeconds: 5,
+        },
+      },
+      {
+        urlPattern: __GSTATIC_FONTS_REGEX,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'google-fonts-cache',
+          expiration: {
+            maxEntries: 10,
+            maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
+          },
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
+        },
+      },
       {
         urlPattern: __GSTATIC_FONTS_REGEX,
         handler: 'CacheFirst',
