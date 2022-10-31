@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { App } from 'vue'
 import { isClient } from '~/utils'
 
 useHead({
