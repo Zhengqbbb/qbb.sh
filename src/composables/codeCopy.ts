@@ -21,7 +21,7 @@ export function useCopyCode() {
 
       let { innerText: text = '' } = sibling
       if (isShell)
-        text = text.replace(/^ *($|>) /gm, '').replace(/[\n\r]$/, '')
+        text = text.replace(/^ *($|>) /gm, '').trim()
 
       copyToClipboard(text).then(() => {
         el.classList.add('copied')
