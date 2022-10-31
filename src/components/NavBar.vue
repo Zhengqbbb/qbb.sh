@@ -32,10 +32,10 @@ if (isClient) {
 <template>
   <header
     ref="navbar"
-    class="c-select-none fixed -top-22 w-full left-0 h-20 z-40 bg-white bg-opacity-90 dark:bg-black dark:bg-opacity-90"
+    class="navbar fixed -top-22 w-full left-0 h-20 z-40 bg-white bg-opacity-90 dark:bg-cd-bg dark:bg-opacity-90"
     :class="[
-      isLeave && 'transition duration-300 border-b border-c',
-      isVisible && 'translate-y-full shadow-nav',
+      isLeave && 'transition-transform duration-300',
+      isVisible && 'translate-y-full',
       !isLeave && !isVisible && 'top-0',
     ]"
   >
@@ -81,7 +81,9 @@ if (isClient) {
 </template>
 
 <style scoped>
-.c-select-none{
+.navbar {
+  -webkit-backdrop-filter: saturate(50%) blur(2px);
+  backdrop-filter: saturate(50%) blur(2px);
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;

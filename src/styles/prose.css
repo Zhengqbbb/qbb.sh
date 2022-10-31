@@ -255,7 +255,7 @@
 /** Section: Divide */
 
 .prose hr {
-  margin: 16px 0;
+  margin: 16px var(--c-block-space);
   border: none;
   border-top: 1px solid var(--c-border);
 }

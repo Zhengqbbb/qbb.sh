@@ -20,7 +20,6 @@ Recent breakthroughs in physics, made possible in part by fantastic new technolo
 
 *Italic text*。**Bold text**。***Bold and nested italic text***。~~Strikethrough text~~。==highlight text==。
 
-
 ## 中文
 
 大部分人会觉得，把我们的宇宙喻为一个无限的乌龟塔相当荒谬，可是为什么我们自以为知道得更多一些呢？我们对宇宙了解了多少？而我们又是怎样才知道的呢？宇宙从何而来又将向何处去？宇宙有开端吗？如果有的话，在这开端之前发生了什么？时间的本质是什么？它会有一个终结吗？
@@ -31,7 +30,8 @@ Recent breakthroughs in physics, made possible in part by fantastic new technolo
 
 ## Link
 
-Github: https://github.com/Zhengqbbb<br>
+Github: https://github.com/Zhengqbbb
+
 Project: [cz-git](https://cz-git.qbb.sh)
 
 
@@ -40,6 +40,8 @@ Project: [cz-git](https://cz-git.qbb.sh)
 - cz-git
 - czg
 - cz-git-extension<sup>(Todo)</sup>
+
+---
 
 1. cz-git
 2. czg
