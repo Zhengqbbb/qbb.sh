@@ -3,9 +3,10 @@ import fg from 'fast-glob'
 import { resolve } from 'pathe'
 
 /* eslint-disable prefer-regex-literals */
-const __GITHUB_SOURCE_CONTENT_REGEX = new RegExp('^https://(((raw|user-images|camo).githubusercontent.com))/.*', 'i')
+const __GOOGLE_FONT_REGEX = new RegExp('^https://fonts.googleapis.com/.*', 'i')
 const __GSTATIC_FONTS_REGEX = new RegExp('^https://fonts.gstatic.com/.*', 'i')
 const __JSDELIVR_CDN_REGEX = new RegExp('^https://cdn.jsdelivr.net/.*', 'i')
+const __GITHUB_SOURCE_CONTENT_REGEX = new RegExp('^https://(((raw|user-images|camo).githubusercontent.com))/.*', 'i')
 
 /**
  * Vite Plugin PWA uses Workbox  library to build the service worker
@@ -45,22 +46,14 @@ export const vitePWAOptions: Partial<VitePWAOptions> = {
   },
   workbox: {
     navigateFallbackDenylist: [/^\/new/],
-    globPatterns: ['**/*.{html,js,css,png,svg,gif,ico,woff2}'],
-    skipWaiting: true,
+    globPatterns: ['**/*.{js,css,png,svg,gif,ico,woff2}'],
+    navigateFallback: null,
     runtimeCaching: [
       {
-        urlPattern: /index\.html/,
-        handler: 'NetworkFirst',
-        options: {
-          cacheName: 'domain-page-cache',
-          networkTimeoutSeconds: 5,
-        },
-      },
-      {
-        urlPattern: __GSTATIC_FONTS_REGEX,
+        urlPattern: __GOOGLE_FONT_REGEX,
         handler: 'CacheFirst',
         options: {
-          cacheName: 'google-fonts-cache',
+          cacheName: 'google-font-cache',
           expiration: {
             maxEntries: 10,
             maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
@@ -74,7 +67,7 @@ export const vitePWAOptions: Partial<VitePWAOptions> = {
         urlPattern: __GSTATIC_FONTS_REGEX,
         handler: 'CacheFirst',
         options: {
-          cacheName: 'google-fonts-cache',
+          cacheName: 'google-static-font-cache',
           expiration: {
             maxEntries: 10,
             maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days

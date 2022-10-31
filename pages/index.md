@@ -2,6 +2,6 @@
 ---
 <p text-center>
 
-Hi! current website [WIP](/mdtest) ...
+Hi! current website [WIP](/md) ...
 
 </p>

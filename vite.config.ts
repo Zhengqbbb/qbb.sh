@@ -90,7 +90,7 @@ export default defineConfig({
     onFinished() {
       generateSitemap({
         hostname: 'https://www.qbb.sh',
-        exclude: ['/mdtest'],
+        exclude: ['/md'],
       })
     },
   },
