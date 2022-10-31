@@ -4,12 +4,14 @@
 
 /** Section: Init Origin */
 html {
-  background: var(--c-bg);
-  overflow: scroll;
+  --at-apply: bg-c-bg dark:bg-cd-bg overflow-scroll;
+}
+html.dark {
+  --at-apply: bg-cd-bg;
 }
 
 * {
-  scrollbar-color: var(--c-scrollbar) var(--c-bg);
+  scrollbar-color: var(--c-scrollbar) var(--c-scrollbar-bg);
 }
 
 ::-webkit-scrollbar {
@@ -19,7 +21,7 @@ html {
   height: 6px;
 }
 ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
-  background: var(--c-bg);
+  background: var(--c-scrollbar-bg);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
@@ -33,17 +35,10 @@ html {
 
 /** Section: Plugin - NProgress */
 #nprogress {
-  pointer-events: none;
+  --at-apply: pointer-events-none;
 }
 
 #nprogress .bar {
-  background: var(--c-brand);
-  opacity: 0.75;
-  position: fixed;
-  z-index: 1031;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
+  --at-apply: bg-brand h-2px opacity-75 fixed top-0 left-0 w-full z-1001;
 }
 /** EndSection: */

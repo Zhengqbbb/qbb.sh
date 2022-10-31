@@ -6,4 +6,3 @@ dist
 dist-ssr
 node_modules
 *.log
-md.md

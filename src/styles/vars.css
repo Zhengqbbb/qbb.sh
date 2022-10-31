@@ -1,17 +1,19 @@
 :root {
-  --c-brand: #7d9ebd;
-  --c-bg: #fff;
-  --c-fg: #555;
-  --c-fg-deep: #222;
-  --c-fg-deeper: #000;
+  --c-brand: rgb(125, 158, 189);
+  --c-bg: rgb(255, 255, 255);
+  --c-fg: rgb(85, 85, 85);
+  --c-fg-deep: rgb(34, 34, 34);
+  --c-fg-deeper: rgb(0, 0, 0);
   --c-border: rgba(125, 125, 125, 0.3);
-  --c-code-bg: #f8f8f8;
-  --c-inline-code-bg: rgba(130,146,167,.1);
-  --c-scrollbar: #eee;
-  --c-scrollbar-hover: #bbb;
+  --c-code-bg: rgb(248, 248, 248);
+  --c-inline-code-bg: rgba(130, 146, 167, .1);
+
+
+  --c-scrollbar: rgb(238, 238, 238);
+  --c-scrollbar-bg: rgb(34, 34, 34);
+  --c-scrollbar-hover: rgb(187, 187, 187);
 
   --c-block-space: 1.2em;
-  --c-code-font-size: 0.875em;
   --c-code-font-size: 0.875em;
 
   --c-icon-copy: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2'/%3E%3C/svg%3E");
@@ -20,12 +22,13 @@
 }
 
 .dark {
-  --c-bg: #050505;
-  --c-fg: #bbb;
-  --c-fg-deep: #ddd;
-  --c-fg-deeper: #fff;
+  --c-bg: rgb(5, 5, 5);
+  --c-fg: rgb(187, 187, 187);
+  --c-fg-deep: rgb(221, 221, 221);
+  --c-fg-deeper: rgb(255, 255, 255);
   --c-code-bg: rgba(52, 52, 52, 0.3);
-  --c-inline-code-bg: hsla(0,0%,100%,.1);
-  --c-scrollbar: #111;
-  --c-scrollbar-hover: #222;
+  --c-inline-code-bg: rgba(255, 255, 255, 0.1);
+  --c-scrollbar: rgb(17, 17, 17);
+  --c-scrollbar-bg: rgb(5, 5, 5);
+  --c-scrollbar-hover: rgb(34, 34, 34);
 }

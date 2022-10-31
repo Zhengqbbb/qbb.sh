@@ -56,5 +56,4 @@
   "cssvar.files": [
     "src/styles/vars.css"
   ],
-  "css.lint.unknownAtRules": "ignore"
 }
