@@ -1,6 +1,7 @@
 import { resolve } from 'pathe'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
+import Jsx from '@vitejs/plugin-vue-jsx'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import Markdown from 'vite-plugin-vue-markdown'
@@ -31,7 +32,7 @@ export default defineConfig({
       include: [/\.vue$/, /\.md$/],
       reactivityTransform: true,
     }),
-
+    Jsx(),
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       pagesDir: 'pages',
@@ -39,7 +40,6 @@ export default defineConfig({
       extendRoute: route => resolvePostFile(route),
       onRoutesGenerated: routes => resolvePostList(routes),
     }),
-
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: [
@@ -54,7 +54,6 @@ export default defineConfig({
       ],
       dts: 'src/auto-imports.d.ts',
     }),
-
     // https://github.com/antfu/unplugin-vue-components#usage && https://github.com/johnsoncodehk/volar/discussions/471
     Components({
       extensions: ['vue', 'md'],
@@ -62,15 +61,11 @@ export default defineConfig({
       dirs: 'src/components',
       dts: 'src/components.d.ts',
     }),
-
     VitePWA(vitePWAOptions),
-
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
     Layouts(),
-
     // https://github.com/antfu/vite-plugin-inspect || http://localhost:3333/__inspect/
     Inspect(),
-
     // https://github.com/antfu/vite-plugin-vue-markdown
     Markdown({
       wrapperClasses: 'prose m-auto',

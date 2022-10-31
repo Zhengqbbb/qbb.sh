@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { App } from 'vue'
 import { isClient } from '~/utils'
 
 useHead({
@@ -26,7 +27,6 @@ useHead({
 
 // Scroll to top after route change
 const route = useRoute()
-
 watch(
   () => route.path,
   () => isClient && window.scrollTo({ top: 0 }),

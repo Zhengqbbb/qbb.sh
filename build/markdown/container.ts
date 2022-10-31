@@ -1,48 +1,75 @@
 import type MarkdownIt from 'markdown-it'
 import type { RenderRule } from 'markdown-it/lib/renderer'
-import type Token from 'markdown-it/lib/token'
 import container from 'markdown-it-container'
 
 export const containerPlugin = (md: MarkdownIt) => {
-  md.use(...createContainer('tip', 'TIP', md))
-    .use(...createContainer('info', 'INFO', md))
-    .use(...createContainer('warning', 'WARNING', md))
-    .use(...createContainer('danger', 'DANGER', md))
-    .use(...createContainer('details', 'Details', md))
-    // explicitly escape Vue syntax
-    .use(container, 'v-pre', {
-      render: (tokens: Token[], idx: number) =>
-        tokens[idx].nesting === 1 ? '<div v-pre>\n' : '</div>\n',
-    })
-    .use(container, 'raw', {
-      render: (tokens: Token[], idx: number) =>
-        tokens[idx].nesting === 1 ? '<div class="vp-raw">\n' : '</div>\n',
-    })
+  md.use(...createMdContainer('tip', 'TIP', md))
+    .use(...createMdContainer('info', 'INFO', md))
+    .use(...createMdContainer('warning', 'WARNING', md))
+    .use(...createMdContainer('danger', 'DANGER', md))
+    .use(...createMdContainer('details', 'Details', md))
+    .use(...createTagContainer(
+      'code-group',
+      () => '<CodeGroup>\n',
+      () => '</CodeGroup>\n'),
+    )
+    .use(...createTagContainer(
+      'code-group-item',
+      (info: string) => `<CodeGroupItem title="${info}">\n`,
+      () => '</CodeGroupItem>\n'),
+    )
 }
 
 type ContainerArgs = [typeof container, string, { render: RenderRule }]
+type RenderPlaceFunction = (info: string) => string
 
-function createContainer(
-  klass: string,
+function createTagContainer(
+  name: string,
+  before: RenderPlaceFunction,
+  after: RenderPlaceFunction,
+): ContainerArgs {
+  return [
+    container,
+    name,
+    {
+      render(tokens, idx) {
+        const infoStack: string[] = []
+        const token = tokens[idx]
+        if (token.nesting === 1) {
+          const info = token.info.trim().slice(name.length).trim()
+          infoStack.push(info)
+          return before(info)
+        }
+        else {
+          const info = infoStack.pop() || ''
+          return after(info)
+        }
+      },
+    },
+  ]
+}
+
+function createMdContainer(
+  name: string,
   defaultTitle: string,
   md: MarkdownIt,
 ): ContainerArgs {
   return [
     container,
-    klass,
+    name,
     {
       render(tokens, idx) {
         const token = tokens[idx]
-        const info = token.info.trim().slice(klass.length).trim()
+        const info = token.info.trim().slice(name.length).trim()
         if (token.nesting === 1) {
           const title = md.renderInline(info || defaultTitle)
-          if (klass === 'details')
-            return `<details class="${klass} custom-block"><summary>${title}</summary>\n`
+          if (name === 'details')
+            return `<details class="${name} custom-block"><summary>${title}</summary>\n`
 
-          return `<div class="${klass} custom-block"><p class="custom-block-title">${title}</p>\n`
+          return `<div class="${name} custom-block"><p class="custom-block-title">${title}</p>\n`
         }
         else {
-          return klass === 'details' ? '</details>\n' : '</div>\n'
+          return name === 'details' ? '</details>\n' : '</div>\n'
         }
       },
     },
