@@ -240,7 +240,7 @@
 
 /** Section: Code Group */
 .prose .code-group {
-  --at-apply: w-full overflow-hidden my-space;
+  --at-apply: w-full overflow-hidden mt-space;
 }
 
 .prose .code-header {
@@ -255,7 +255,7 @@
 }
 
 .prose .code-header-item.active {
-  --at-apply: text-c-fgDeep opacity-100 bg-gray bg-opacity-20 dark:bg-opacity-30;
+  --at-apply: text-c-fgDeeper opacity-100 bg-gray bg-opacity-20 ;
 }
 
 .prose .code-group div[class*=language-] {
