@@ -85,7 +85,7 @@ export default defineConfig({
     onFinished() {
       generateSitemap({
         hostname: 'https://www.qbb.sh',
-        exclude: ['/md'],
+        exclude: ['/posts/2022-08-24-helloworld'],
       })
     },
   },

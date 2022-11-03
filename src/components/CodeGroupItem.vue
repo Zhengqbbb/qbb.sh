@@ -21,10 +21,7 @@ defineProps({
 </script>
 
 <template>
-  <div
-    v-show="active"
-    class="code-group-item"
-  >
+  <div v-show="active" class="code-group-item">
     <slot />
   </div>
 </template>

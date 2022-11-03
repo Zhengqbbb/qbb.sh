@@ -4,44 +4,66 @@ import { defineConfig, presetAttributify, presetIcons, presetUno, presetWebFonts
  * The instant on-demand Atomic CSS engine.
  * @see https://uno.antfu.me/
  */
-export default defineConfig({
-  theme: {
-    colors: {
-      // custom color list
-      c: {
-        bg: 'rgb(255, 255, 255)',
-        fg: 'rgb(85, 85, 85)',
-        fgDeep: 'rgb(34, 34, 34)',
-        fgDeeper: 'rgb(0, 0, 0)',
-        border: 'rgba(125, 125, 125, 0.3)',
-        codeBG: 'rgb(248, 248, 248)',
-        innerCodeBG: 'rgba(130, 146, 167, 0.1)',
-      },
-      // custom color dark mode list
-      cd: {
-        bg: 'rgb(5, 5, 5)',
-        fg: 'rgb(187, 187, 187)',
-        fgDeep: 'rgb(221, 221, 221)',
-        fgDeeper: 'rgb(255, 255, 255)',
-        border: 'rgba(125, 125, 125, 0.3)',
-        codeBG: 'rgba(52, 52, 52, 0.3)',
-        innerCodeBG: 'rgba(255, 255, 255, 0.1)',
-      },
-      // TODO: cw parse width and margin rule
-      cw: {
-        space: '1.2em',
-      },
-      brand: 'rgb(125, 158, 189)',
+
+const _VARS = {
+  colors: {
+    l: {
+      bg: 'rgb(255, 255, 255)',
+      fg: 'rgb(85, 85, 85)',
+      fgDeep: 'rgb(34, 34, 34)',
+      fgDeeper: 'rgb(0, 0, 0)',
+      border: 'rgba(125, 125, 125, 0.3)',
+      codeBG: 'rgb(248, 248, 248)',
+      innerCodeBG: 'rgba(130, 146, 167, 0.1)',
     },
-    fontFamily: {
-      sans: '"Inter var experimental","Inter var",system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
+    d: {
+      bg: 'rgb(5, 5, 5)',
+      fg: 'rgb(187, 187, 187)',
+      fgDeep: 'rgb(221, 221, 221)',
+      fgDeeper: 'rgb(255, 255, 255)',
+      border: 'rgba(125, 125, 125, 0.5)',
+      codeBG: 'rgba(52, 52, 52, 0.5)',
+      innerCodeBG: 'rgba(255, 255, 255, 0.1)',
     },
+    brand: 'rgb(125, 158, 189)',
   },
+  spacing: {
+    space: '1.2em',
+  },
+  fontFamily: {
+    sans: '"Inter var experimental","Inter var",system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
+  },
+}
+
+/**
+ * @description: gen bg color text merge light and dark mode color shortcuts
+ * @example: ['bg-c-bg', 'bg-l-bg dark:bg-d-bg']
+ */
+const COLS = ['bg', 'text', 'border']
+const mergeVarCols = () => {
+  const res = Object.assign([])
+  const lightMP = _VARS.colors.l
+  for (const name in lightMP) {
+    COLS.forEach((key) => {
+      const item = [`${key}-c-${name}`]
+      const val = [`${key}-l-${name}`]
+      if (Object.prototype.hasOwnProperty.call(_VARS.colors.d, name))
+        val.push(`dark:${key}-d-${name}`)
+      item.push(val.join(' '))
+      res.push(item)
+    })
+  }
+  return res
+}
+
+export default defineConfig({
+  theme: _VARS,
+  rules: [],
   shortcuts: [
-    ['border-c', 'border-gray-200 dark:border-coolgray-700'],
     ['btn', 'px-4 py-1 rounded inline-block text-white cursor-pointer disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
     ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
     ['nav-divider', 'w-1px h-18px bg-gray-200 dark:bg-coolgray-700'],
+    ...mergeVarCols(),
   ],
   presets: [
     presetIcons({

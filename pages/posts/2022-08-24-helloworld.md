@@ -1,5 +1,3 @@
-# Paragraphs
-
 # H1 Heading
 
 ## H2 Heading
@@ -12,7 +10,9 @@
 
 ###### H6 Heading
 
-## English
+## Paragraphs
+
+### English
 
 Most people would find the picture of our universe as an infinite tower of tortoises rather ridiculous, but why do we think we know better? What do we know about the universe, and how do we know it? Where did the universe come from, and where is it going? Did the universe have a beginning, and if so, what happened before then? What is the nature of time? Will it ever come to an end? Can we go back in time?
 
@@ -20,7 +20,7 @@ Recent breakthroughs in physics, made possible in part by fantastic new technolo
 
 *Italic text*。**Bold text**。***Bold and nested italic text***。~~Strikethrough text~~。==highlight text==。
 
-## 中文
+### 中文
 
 大部分人会觉得，把我们的宇宙喻为一个无限的乌龟塔相当荒谬，可是为什么我们自以为知道得更多一些呢？我们对宇宙了解了多少？而我们又是怎样才知道的呢？宇宙从何而来又将向何处去？宇宙有开端吗？如果有的话，在这开端之前发生了什么？时间的本质是什么？它会有一个终结吗？
 
@@ -49,10 +49,18 @@ Project: [cz-git](https://cz-git.qbb.sh)
 
 ## Blockquote
 
-> Only time (whatever that may be) will tell.
+> **What is commitizen**: A Node.js-based `git commit` command-line tool that assists in generating standardized commit messages.
+>
+> **What is an adapter**: Replace the interactive plugin for the commitizen command line tool.
+
+## Table
+
+| Name | Description |
+|------|------|
+| [cz-git](https://cz-git.qbb.sh/) | 🔩 A more engineered, lightweight, customizable, standard output format **Commitizen Adapter** |
+| [czg](https://cz-git.qbb.sh/cli/) | 📤 Interactive **CLI** that generate standardized commit messages. **Commitizen CLI alternative** |
 
 ## Code
-
 
 ### Inline Code
 
@@ -78,7 +86,7 @@ module.exports = {
 ```json
 {
   "scripts": {
-
+    // ...
   },
   "config": {
     "commitizen": {
@@ -114,12 +122,6 @@ pnpm install -D cz-git
 :::
 ::::
 
-## Table
-
-| Name | Description |
-|------|------|
-| [cz-git](https://cz-git.qbb.sh/) | 🔩 A more engineered, lightweight, customizable, standard output format **Commitizen Adapter** |
-| [czg](https://cz-git.qbb.sh/cli/) | 📤 Interactive **CLI** that generate standardized commit messages. **Commitizen CLI alternative** |
 
 ## Images
 

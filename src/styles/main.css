@@ -4,10 +4,10 @@
 
 /** Section: Init Origin */
 html {
-  --at-apply: bg-c-bg  overflow-scroll;
+  --at-apply: bg-l-bg  overflow-scroll;
 }
 html.dark {
-  --at-apply: bg-cd-bg;
+  --at-apply: bg-d-bg;
 }
 
 * {

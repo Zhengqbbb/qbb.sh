@@ -32,7 +32,7 @@ if (isClient) {
 <template>
   <header
     ref="navbar"
-    class="navbar fixed -top-22 w-full left-0 h-20 z-40 bg-white bg-opacity-90 dark:bg-cd-bg dark:bg-opacity-90"
+    class="navbar fixed -top-22 w-full left-0 h-20 z-40 bg-c-bg bg-opacity-90 dark:bg-opacity-90"
     :class="[
       isLeave && 'transition-transform duration-300',
       isVisible && 'translate-y-full',
