@@ -99,21 +99,21 @@ module.exports = {
 ### Code Group
 
 :::: code-group
-::: code-group-item NPM
+::: code-group-item npm
 
 ```sh
 npm install -D cz-git
 ```
 
 :::
-::: code-group-item YARN
+::: code-group-item yarn
 
 ```sh
 yarn add -D cz-git
 ```
 
 :::
-::: code-group-item PNPM
+::: code-group-item pnpm
 
 ```sh
 pnpm install -D cz-git
