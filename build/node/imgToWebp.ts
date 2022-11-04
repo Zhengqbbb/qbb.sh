@@ -7,11 +7,12 @@ import imageminWebp from 'imagemin-webp'
 // @ts-expect-error missing types
 import rm from 'rimraf'
 
+const __ASSERT_DIR = resolve(__dirname, '../../public/img')
 /*
  * Resolve png jpeg jpg ... To webp srcipt
- * pnpm img:webp
+ * @Usage: pnpm img:webp
+ * @Usage: rmi=1 pnpm img:webp
  */
-const __ASSERT_DIR = resolve(__dirname, '../../public/img')
 const run = async () => {
   await imagemin([`${__ASSERT_DIR}/*.{jpg,png}`], {
     destination: __ASSERT_DIR,
@@ -31,7 +32,7 @@ const clear = async () => {
 /* eslint-disable no-console */
 run()
   .then(() => {
-    if (process.env.IS_CLEAR)
+    if (process.env.rmi)
       clear()
   })
   .then(() => {
