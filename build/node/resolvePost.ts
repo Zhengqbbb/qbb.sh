@@ -1,5 +1,5 @@
 /**
- *  Powered by: https://github.com/Renovamen/renovamen.github.io
+ *  @PoweredBy https://github.com/Renovamen/renovamen.github.io
  */
 import { resolve } from 'pathe'
 import fs from 'fs-extra'

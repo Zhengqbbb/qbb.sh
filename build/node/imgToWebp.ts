@@ -1,3 +1,13 @@
+/**
+ * Resolve png jpeg jpg ... To webp srcipt
+ *
+ * @usage pnpm img:webp
+ * @usage pnpm img:webp [--clear|-c]
+ *   : To clear origin assert
+ *
+ * @author Zhengqbbb
+ */
+
 import fg from 'fast-glob'
 import { resolve } from 'pathe'
 // @ts-expect-error missing types
@@ -8,14 +18,8 @@ import imageminWebp from 'imagemin-webp'
 import rm from 'rimraf'
 
 const __ASSERT_DIR = resolve(__dirname, '../../public/img')
-/*
- * Resolve png jpeg jpg ... To webp srcipt
- *
- * @Usage: pnpm img:webp
- * @Usage: rmi=1 pnpm img:webp
- */
 const run = async () => {
-  await imagemin([`${__ASSERT_DIR}/*.{jpg,png}`], {
+  await imagemin([`${__ASSERT_DIR}/*.{png,jpeg,jpg}`], {
     destination: __ASSERT_DIR,
     plugins: [
       imageminWebp({ quality: 80 }),
@@ -33,7 +37,7 @@ const clear = async () => {
 /* eslint-disable no-console */
 run()
   .then(() => {
-    if (process.env.rmi)
+    if (process.argv.includes('--clear') || process.argv.includes('-c'))
       clear()
   })
   .then(() => {

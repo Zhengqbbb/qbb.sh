@@ -1,8 +1,10 @@
 import fs from 'fs'
 import { resolve } from 'pathe'
 
-/*
+/**
  * Enhance shell script code syntax highlight for docs `shiki`
+ *
+ * @author Zhengqbbb
  */
 const __X_THEMES = [{
   name: 'vitesse-light',
