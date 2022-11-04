@@ -5,8 +5,8 @@
     "build:init": "tsx ./build/node/buildPre.ts",
     "cz": "czg",
     "dev": "vite --host --port 3333",
+    "img:webp": "tsx ./build/node/imgToWebp.ts",
     "lint": "eslint .",
-    "img:webp": "IS_CLEAR=1 tsx ./build/node/imgToWebp.ts",
     "serve": "vite preview --host"
   },
   "eslintConfig": {
