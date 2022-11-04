@@ -37,7 +37,7 @@ const clear = async () => {
 /* eslint-disable no-console */
 run()
   .then(() => {
-    if (process.argv.includes('--clear') || process.argv.includes('-c'))
+    if (process.argv.some(i => /^(--clear|-c)/.test(i)))
       clear()
   })
   .then(() => {
@@ -45,3 +45,4 @@ run()
       console.log('\x1B[32m✓\x1B[0m Resolve images assert to webp')
     })
   })
+
