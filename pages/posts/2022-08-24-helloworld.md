@@ -103,8 +103,6 @@ module.exports = {
 
 ```sh
 npm install -D cz-git
-x theme app
-x gt repo info <#1 "repo name">
 ```
 
 :::
