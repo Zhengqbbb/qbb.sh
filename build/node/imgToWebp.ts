@@ -10,6 +10,7 @@ import rm from 'rimraf'
 const __ASSERT_DIR = resolve(__dirname, '../../public/img')
 /*
  * Resolve png jpeg jpg ... To webp srcipt
+ *
  * @Usage: pnpm img:webp
  * @Usage: rmi=1 pnpm img:webp
  */
