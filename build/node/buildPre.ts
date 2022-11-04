@@ -18,7 +18,7 @@ const __X_THEMES = [{
 const __SHIKI_BASE_PATH = resolve(__dirname, '../../node_modules/shiki')
 const __SHIKI_SHELL_PATH = resolve(__SHIKI_BASE_PATH, './languages/shellscript.tmLanguage.json')
 
-const xcmd = async () => {
+const xcmd = () => {
   __X_THEMES.forEach((t) => {
     const themePath = resolve(__SHIKI_BASE_PATH, `./themes/${t.name}.json`)
     // eslint-disable-next-line @typescript-eslint/no-var-requires

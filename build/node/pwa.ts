@@ -22,7 +22,7 @@ export const vitePWAOptions: Partial<VitePWAOptions> = {
     theme_color: '#050505',
     icons: [
       {
-        src: '/icons/apple-touch-120x120.png',
+        src: '/icon/apple-touch-120x120.png',
         sizes: '120x120',
         type: 'image/png',
       },

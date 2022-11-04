@@ -125,7 +125,7 @@ pnpm install -D cz-git
 
 ## Images
 
-![Image Example](/pwa-512x512.png)
+![Image Example](/img/vitesse.webp)
 
 ## Containers
 
