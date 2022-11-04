@@ -29,7 +29,7 @@
 }
 
 .prose s {
-  --at-apply: c-inherit opacity-60;
+  --at-apply: c-inherit opacity-60 decoration--1;
 }
 
 .prose mark {
@@ -255,7 +255,7 @@
 }
 
 .prose .code-header-item.active {
-  --at-apply: text-c-fgDeeper opacity-100 bg-gray bg-opacity-20 ;
+  --at-apply: text-c-fgDeeper opacity-100 bg-c-innerCodeBG bg-opacity-12;
 }
 
 .prose .code-group div[class*=language-] {
@@ -270,7 +270,7 @@
 
 /** Section: Code */
 .prose code,
-.prose .code-group,
+/* .prose .code-group, */
 .prose kbd,
 .prose pre,
 .prose samp {

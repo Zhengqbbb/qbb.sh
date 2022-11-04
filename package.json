@@ -1,14 +1,18 @@
 {
   "private": true,
-  "packageManager": "pnpm@7.5.2",
   "scripts": {
-    "build": "vite-ssg build",
+    "build": "pnpm build:init && vite-ssg build",
+    "build:init": "tsx ./build/node/buildPre.ts",
     "cz": "czg",
     "dev": "vite --host --port 3333",
     "lint": "eslint .",
     "serve": "vite preview --host"
   },
+  "eslintConfig": {
+    "extends": "@antfu"
+  },
   "dependencies": {
+    "@unocss/reset": "^0.46.2",
     "@vueuse/core": "^9.4.0",
     "@vueuse/head": "^0.9.8",
     "dayjs": "^1.11.6",
@@ -17,15 +21,14 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.27.0",
-    "@iconify/json": "^2.1.130",
+    "@antfu/eslint-config": "^0.29.3",
+    "@iconify/json": "^2.1.132",
     "@types/diacritics": "^1.3.1",
     "@types/fs-extra": "^9.0.13",
     "@types/markdown-it": "^12.2.3",
     "@types/markdown-it-container": "^2.0.5",
     "@types/markdown-it-link-attributes": "^3.0.1",
     "@types/nprogress": "^0.2.0",
-    "@unocss/reset": "^0.46.1",
     "@vitejs/plugin-vue": "^3.2.0",
     "@vitejs/plugin-vue-jsx": "^2.1.0",
     "@vue/test-utils": "^2.2.1",
@@ -37,6 +40,7 @@
     "feed": "^4.2.2",
     "fs-extra": "^10.1.0",
     "gray-matter": "^4.0.3",
+    "imagemin-webp": "^7.0.0",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.5",
     "markdown-it-container": "^3.0.0",
@@ -45,25 +49,22 @@
     "markdown-it-shiki": "^0.5.1",
     "markdown-it-table-of-contents": "^0.6.0",
     "pathe": "^0.3.9",
-    "pnpm": "^7.14.0",
-    "shiki": "^0.11.1",
+    "pnpm": "^7.14.2",
     "tsx": "^3.11.0",
     "typescript": "^4.8.4",
-    "unocss": "^0.46.1",
+    "unocss": "^0.46.2",
     "unplugin-auto-import": "^0.11.4",
     "unplugin-icons": "^0.14.12",
     "unplugin-vue-components": "^0.22.9",
-    "vite": "^3.2.1",
+    "vite": "^3.2.2",
     "vite-plugin-inspect": "^0.7.5",
     "vite-plugin-pages": "^0.27.1",
     "vite-plugin-pwa": "^0.13.1",
     "vite-plugin-vue-layouts": "^0.7.0",
     "vite-plugin-vue-markdown": "^0.22.1",
-    "vite-ssg": "^0.21.1",
+    "vite-ssg": "^0.21.2",
     "vite-ssg-sitemap": "^0.4.3",
     "vite-svg-loader": "^3.6.0"
   },
-  "eslintConfig": {
-    "extends": "@antfu"
-  }
+  "packageManager": "pnpm@7.5.2"
 }

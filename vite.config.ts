@@ -26,6 +26,16 @@ export default defineConfig({
     ],
   },
 
+  optimizeDeps: {
+    include: [
+      'vue',
+      'vue-router',
+      '@vueuse/core',
+      'dayjs',
+      'dayjs/plugin/localizedFormat',
+    ],
+  },
+
   plugins: [
     UnoCSS(),
     Vue({
@@ -40,13 +50,21 @@ export default defineConfig({
       extendRoute: route => resolvePostFile(route),
       onRoutesGenerated: routes => resolvePostList(routes),
     }),
+    Markdown({
+      wrapperClasses: 'prose m-auto',
+      headEnabled: true,
+      markdownItOptions: {
+        quotes: '""\'\'',
+      },
+      markdownItSetup: md => registerMarkdownPlugins(md),
+    }),
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: [
         'vue',
         'vue-router',
-        '@vueuse/head',
         '@vueuse/core',
+        '@vueuse/head',
       ],
       vueTemplate: true,
       dirs: [
@@ -67,14 +85,6 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-inspect || http://localhost:3333/__inspect/
     Inspect(),
     // https://github.com/antfu/vite-plugin-vue-markdown
-    Markdown({
-      wrapperClasses: 'prose m-auto',
-      headEnabled: true,
-      markdownItOptions: {
-        quotes: '""\'\'',
-      },
-      markdownItSetup: md => registerMarkdownPlugins(md),
-    }),
   ],
 
   // https://github.com/antfu/vite-ssg
