@@ -125,9 +125,9 @@ pnpm install -D cz-git
 
 ## Images
 
-![Image Example](/img/vitesse.webp) <!-- size=200x245 -->
-![Image Example](/img/vitesse.webp) <!-- size=300x373 -->
-
+![Image Example](/img/vitesse.webp) <!-- size=200x200 -->
+![Image Example](/img/vitesse.webp) <!-- size=400 -->
+![Image Example](/img/vitesse.webp) <!--  -->
 
 ## Containers
 

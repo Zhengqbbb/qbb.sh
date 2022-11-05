@@ -1,5 +1,11 @@
 import type MarkdownIt from 'markdown-it'
 
+/**
+ * >md:   `![Image Example](/img/a.gif) <!-- size=1140x245 -->`
+ * >html: <img src="/img/a.gif" alt="Image Example" width="1140" height="245" loading="lazy" decoding="async">
+ *
+ * @author Zhengqbbb
+ */
 export const image = (md: MarkdownIt) => {
   const imageRender = md.renderer.rules.image!
   md.renderer.rules.image = (...args) => {
@@ -15,7 +21,7 @@ export const image = (md: MarkdownIt) => {
           ],
           [
             'height',
-            size?.[2]?.substring(1) || '',
+            size?.[2]?.substring(1) || size?.[1] || '',
           ],
         )
       }
