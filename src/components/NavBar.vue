@@ -34,7 +34,7 @@ if (isClient) {
     ref="navbar"
     class="navbar fixed -top-22 w-full left-0 h-20 z-40 bg-c-bg bg-opacity-90 dark:bg-opacity-90"
     :class="[
-      isLeave && 'transition-transform duration-300',
+      isLeave && 'transition-transform duration-200',
       isVisible && 'translate-y-full',
       !isLeave && !isVisible && 'top-0',
     ]"
