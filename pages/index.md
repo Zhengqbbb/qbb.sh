@@ -7,7 +7,7 @@ I'm currently focusing on development of CLI *(Command-Line Interface)*.<br>
 And the CLI guide website design and building.<br>
 ==X is everthing==. You can expect it like a POSIX SHELL magic show.
 
-<div class="w-50px mt-10 mb-12 mx-auto border-t border-c-border"/>
+<div class="w-50px my-8 mx-auto border-t border-c-border"/>
 
 - Find me: [Github](https://github.com/Zhengqbbb) | [Twitter](https://twitter.com/zhengqbbb). Track my daliy working.
 - I also like to share my life photos and my cat<sup>「Debi」</sup> growth moment. [Instagram](https://www.instagram.com/qbqiubin/)

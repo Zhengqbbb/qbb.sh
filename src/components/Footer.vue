@@ -1,5 +1,5 @@
 <template>
-  <footer class="text-center text-sm mt-12 mb-10 opacity-60">
+  <footer class="text-center text-sm mb-10 opacity-60">
     <hr
       class="border-none max-w-70ch my-6 m-auto h-10px"
       shadow="lg #8c8b8b opacity-50"
