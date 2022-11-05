@@ -50,7 +50,11 @@
 .prose img,
 .prose video,
 .prose figure {
-  --at-apply: my-space;
+  --at-apply: my-space ;
+}
+
+.prose img{
+  --at-apply: border border-c-border rd-4px;
 }
 
 .prose figure>* {
@@ -194,7 +198,7 @@
 /** Section: Blockquote */
 
 .prose blockquote {
-  --at-apply: text-inherit font-500 not-italic opacity-60;
+  --at-apply: text-c-fg text-inherit font-500 not-italic opacity-60;
   --at-apply: my-space mx-0 pl-3 border-l-3px border-c-border;
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
@@ -244,7 +248,7 @@
 }
 
 .prose .code-header {
-  --at-apply: w-full flex justify-start items-center h-13 box-border px-4 rd-lt-2 rd-rt-2;
+  --at-apply: w-full flex justify-start items-center h-13 box-border px-4 rd-lt rd-rt;
   --at-apply: text-c-fg font-500 text-sm leading-1.3em bg-c-codeBG overflow-x-auto flex-nowrap;
   --at-apply: border-b-1 border-coolGray border-opacity-10;
 }
@@ -270,7 +274,6 @@
 
 /** Section: Code */
 .prose code,
-/* .prose .code-group, */
 .prose kbd,
 .prose pre,
 .prose samp {
@@ -299,7 +302,7 @@ html:not(.dark) .shiki-dark {
 
 .prose :not(pre)>code {
   --at-apply: bg-c-innerCodeBG border border-c-innerCodeBG;
-  --at-apply: text-c-fgDeep break-words py-0.4 px-1.2 rd-1;
+  --at-apply: text-c-fgDeep break-words py-0.4 px-1.2 rd;
 }
 
 .prose code {
@@ -307,7 +310,7 @@ html:not(.dark) .shiki-dark {
 }
 
 .prose pre {
-  --at-apply: relative m-0 py-4 px-0 z--1 rd-2 overflow-x-auto;
+  --at-apply: relative m-0 py-4 px-0 rd overflow-x-auto;
   --at-apply: text-#e5e7eb text-4 bg-transparent;
 }
 
@@ -346,7 +349,7 @@ html:not(.dark) .shiki-dark {
 .prose [class*='language-']>button.copy.copied::before,
 .prose [class*='language-']>button.copy:hover.copied::before {
   content: 'Copied';
-  --at-apply: relative block left--17 w-16 h-10 bg-c-innerCodeBG rd-lt-1 rd-lb-1;
+  --at-apply: relative block left--17 w-16 h-10 bg-c-innerCodeBG rd;
   --at-apply: text-center text-inherit pt-2 text-sm font-500 opacity-60;
 }
 
@@ -362,7 +365,7 @@ html:not(.dark) .shiki-dark {
 
 .prose [class*='language-']>button.copy.copied,
 .prose [class*='language-']>button.copy:hover.copied {
-  --at-apply: rd-rt-1 rd-rb-1;
+  --at-apply: rd;
   background-image: var(--c-icon-copied);
 }
 

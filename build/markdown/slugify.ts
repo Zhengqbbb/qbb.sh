@@ -22,3 +22,5 @@ export const slugify = (str: string): string => {
       .toLowerCase()
   )
 }
+
+export default slugify

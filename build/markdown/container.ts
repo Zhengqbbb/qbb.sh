@@ -8,12 +8,12 @@ export const containerPlugin = (md: MarkdownIt) => {
     .use(...createMdContainer('warning', 'WARNING', md))
     .use(...createMdContainer('danger', 'DANGER', md))
     .use(...createMdContainer('details', 'Details', md))
-    .use(...createTagContainer(
+    .use(...createComptContainer(
       'code-group',
       () => '<CodeGroup>\n',
       () => '</CodeGroup>\n'),
     )
-    .use(...createTagContainer(
+    .use(...createComptContainer(
       'code-group-item',
       (info: string) => `<CodeGroupItem title="${info}">\n`,
       () => '</CodeGroupItem>\n'),
@@ -23,7 +23,7 @@ export const containerPlugin = (md: MarkdownIt) => {
 type ContainerArgs = [typeof container, string, { render: RenderRule }]
 type RenderPlaceFunction = (info: string) => string
 
-function createTagContainer(
+function createComptContainer(
   name: string,
   before: RenderPlaceFunction,
   after: RenderPlaceFunction,
@@ -75,3 +75,5 @@ function createMdContainer(
     },
   ]
 }
+
+export default containerPlugin

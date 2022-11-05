@@ -22,3 +22,5 @@ export const codePreWrapperPlugin = (md: MarkdownIt) => {
     </div>`
   }
 }
+
+export default codePreWrapperPlugin
