@@ -1,9 +1,13 @@
 <template>
-  <footer class="text-center m-y-10 mb-10 text-sm opacity-60">
-    <hr class="my-space border-c-border mx-42%">
-    2022 © <a
+  <footer class="text-center text-sm mt-12 mb-10 opacity-60">
+    <hr
+      class="border-none max-w-70ch my-6 m-auto h-10px"
+      shadow="lg #8c8b8b opacity-50"
+    >
+    2022 ©
+    <a
       href="mailto:zhengqbbb@gmail.com"
-      class="pb-0.3 border-b border-stone border-opacity-30  hover:border-c-fg transition-border-color-300"
+      class="pb-0.3 border-b border-transparent hover:border-c-fg transition-border-color-300"
     >Q.Ben Zheng</a>
   </footer>
 </template>

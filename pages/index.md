@@ -1,7 +1,22 @@
-# Q.Ben Zheng
+<h1>Q.Ben Zheng</h1>
 
-<p text-center>
+Hi, I am Q.Ben Zheng<sup>(or QB)</sup>, a vibrant script developer. Core Team member of **X**.
 
-Hi! current website [<i class="i-mdi:arrow-right-bold-outline opacity-60" /> WIP ...](/posts/2022-08-24-helloworld)
 
+I'm currently focusing on development of CLI *(Command-Line Interface)*.<br>
+And the CLI guide website design and building.<br>
+==X is everthing==. You can expect it like a POSIX SHELL magic show.
+
+<div class="w-50px mt-10 mb-12 mx-auto border-t border-c-border"/>
+
+- Find me: [Github](https://github.com/Zhengqbbb) | [Twitter](https://twitter.com/zhengqbbb). Track my daliy working.
+- I also like to share my life photos and my cat<sup>「Debi」</sup> growth moment. [Instagram](https://www.instagram.com/qbqiubin/)
+
+I'm live in [Luohu District, Shenzhen](https://www.google.com/maps/place/Luohu+District,+Shenzhen,+Guangdong+Province,+China/@22.5714604,114.1083405,13z/data=!4m13!1m7!3m6!1s0x3403f56281e978c3:0x3f81202fd3e54b98!2sLuohu+District,+Shenzhen,+Guangdong+Province,+China!3b1!8m2!3d22.5483599!4d114.13166!3m4!1s0x3403f56281e978c3:0x3f81202fd3e54b98!8m2!3d22.5483599!4d114.13166). If you're near the Luohu District, let's hang out.
+
+<p class="!text-center !mt-10">
+  And current website is
+  <router-link to="/posts/2022-08-24-helloworld" title="WIP page">
+    <i class="i-mdi:arrow-right-bold-outline opacity-60" /> WIP ...
+  </router-link>
 </p>
