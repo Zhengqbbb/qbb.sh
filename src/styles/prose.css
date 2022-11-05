@@ -190,7 +190,7 @@
 /** Section: Divide */
 
 .prose hr {
-  --at-apply: my-4 mx-space border-t border-c-border;
+  --at-apply: my-4 mx-space border-c-border;
 }
 
 /** EndSection: */

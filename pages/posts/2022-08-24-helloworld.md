@@ -30,9 +30,9 @@ Recent breakthroughs in physics, made possible in part by fantastic new technolo
 
 ## Link
 
-Github: https://github.com/Zhengqbbb
+<i class="i-carbon:logo-github"/> Github: https://github.com/Zhengqbbb
 
-Project: [cz-git](https://cz-git.qbb.sh)
+<i class="i-bxs:terminal"/> Project: [cz-git](https://cz-git.qbb.sh)
 
 
 ## List
@@ -125,9 +125,9 @@ pnpm install -D cz-git
 
 ## Images
 
-![Image Example](/img/vitesse.webp) <!-- size=200x200 -->
-![Image Example](/img/vitesse.webp) <!-- size=400 -->
-![Image Example](/img/vitesse.webp) <!--  -->
+![Image Example](/img/vitesse.webp) <!-- size=120x120 -->
+![Image Example](/img/vitesse.webp) <!-- size=240 -->
+![Image Example](/img/vitesse.webp) <!-- -->
 
 ## Containers
 
