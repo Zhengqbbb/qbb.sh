@@ -1,12 +1,16 @@
 import type MarkdownIt from 'markdown-it'
 
 /**
- * >md:   `![Image Example](/img/a.gif) <!-- size=1140x245 -->`
- * >html: <img src="/img/a.gif" alt="Image Example" width="1140" height="245" loading="lazy" decoding="async">
+ * >Markdown:   `![Image Example](/img/a.gif) <!-- size=1140x245 -->`
+ * >HTML:       <img src="/img/a.gif" alt="Image Example" width="1140" height="245" loading="lazy" decoding="async">
  *
+ * @usage
+ * `![Image Example](/img/a.png) <!-- -->`                    use lazy attrs
+ * `![Image Example](/img/a.png) <!-- size=200 -->`           use lazy attrs. width 200. height 200.
+ * `![Image Example](/img/a.gif) <!-- size=900x220 -->`       use lazy attrs. width 900. height 220.
  * @author Zhengqbbb
  */
-export const image = (md: MarkdownIt) => {
+export const ImagePlugin = (md: MarkdownIt) => {
   const imageRender = md.renderer.rules.image!
   md.renderer.rules.image = (...args) => {
     const [tokens, idx] = args
@@ -44,4 +48,4 @@ export const image = (md: MarkdownIt) => {
   }
 }
 
-export default image
+export default ImagePlugin
