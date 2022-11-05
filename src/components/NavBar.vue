@@ -71,9 +71,9 @@ if (isClient) {
           </a>
           <span class="nav-divider" />
 
-          <a title="Toggle Color Scheme" @click="toggleDark()">
+          <button title="Toggle Color Scheme" @click="toggleDark()">
             <div i="ri-sun-line dark:ri-moon-line" />
-          </a>
+          </button>
         </div>
       </nav>
     </div>
@@ -104,7 +104,8 @@ if (isClient) {
   margin-bottom: 0;
 }
 
-.nav a {
+.nav a,
+.nav button{
   cursor: pointer;
   text-decoration: none;
   color: inherit;
@@ -113,7 +114,8 @@ if (isClient) {
   outline: none;
 }
 
-.nav a:hover {
+.nav a:hover,
+.nav button:hover{
   opacity: 1;
   text-decoration-color: inherit;
 }
