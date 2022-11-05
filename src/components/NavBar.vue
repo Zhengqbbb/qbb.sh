@@ -43,8 +43,8 @@ if (isClient) {
       <router-link
         class="w-11 h-11 absolute m-6 outline-none hover:opacity-70 transition-opacity" to="/"
       >
-        <img v-show="isDark" src="/logo-dark.svg" alt="logo">
-        <img v-show="!isDark" src="/logo-light.svg" alt="logo">
+        <img v-show="isDark" width="44" height="44" src="/logo-dark.svg" alt="logo">
+        <img v-show="!isDark" width="44" height="44" src="/logo-light.svg" alt="logo">
       </router-link>
 
       <nav class="nav p-8">
