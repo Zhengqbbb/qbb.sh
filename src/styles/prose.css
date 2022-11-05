@@ -254,8 +254,8 @@
 }
 
 .prose .code-header-item {
-  --at-apply: px-2 py-1 rounded-6px box-border cursor-pointer transition-background-color-300 transition-opacity-300;
-  --at-apply: opacity-80 hover:text-c-fgDeeper hover:opacity-100;
+  --at-apply: px-2 py-1 rounded-6px box-border cursor-pointer transition-background-color-300 transition-opacity-200;
+  --at-apply: opacity-60 hover:text-c-fgDeeper hover:opacity-100;
 }
 
 .prose .code-header-item.active {
