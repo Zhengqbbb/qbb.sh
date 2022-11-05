@@ -22,7 +22,7 @@ if (isClient) {
     else if (directions.bottom) {
       // scrolling down
       isVisible.value = false
-      if (navbar.value && y.value > 2)
+      if (navbar.value && y.value > 10)
         isLeave.value = true
     }
   })
