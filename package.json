@@ -5,7 +5,7 @@
     "build:init": "tsx ./build/node/buildPre.ts",
     "cz": "czg",
     "dev": "vite --host --port 3333",
-    "img:webp": "tsx ./build/node/imgToWebp.ts",
+    "image": "tsx ./build/node/image.ts",
     "lint": "eslint .",
     "serve": "vite preview --host"
   },
@@ -42,6 +42,7 @@
     "fs-extra": "^10.1.0",
     "gray-matter": "^4.0.3",
     "imagemin": "^8.0.1",
+    "imagemin-optipng": "^8.0.0",
     "imagemin-webp": "^7.0.0",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.5",

@@ -1,8 +1,9 @@
 /**
  * Resolve png jpeg jpg ... To webp srcipt
+ * Gen og png image thin
  *
- * @usage pnpm img:webp
- * @usage pnpm img:webp [--clear|-c]
+ * @usage pnpm image
+ * @usage pnpm image [--clear|-c]
  *   : To clear origin assert
  *
  * @author Zhengqbbb
@@ -15,6 +16,8 @@ import imagemin from 'imagemin'
 // @ts-expect-error missing types
 import imageminWebp from 'imagemin-webp'
 // @ts-expect-error missing types
+import imageminOptipng from 'imagemin-optipng'
+// @ts-expect-error missing types
 import rm from 'rimraf'
 
 const __ASSERT_DIR = resolve(__dirname, '../../public/img')
@@ -23,6 +26,12 @@ const run = async () => {
     destination: __ASSERT_DIR,
     plugins: [
       imageminWebp({ quality: 80 }),
+    ],
+  })
+  await imagemin(['public/og/*.png'], {
+    destination: 'public/og',
+    plugins: [
+      imageminOptipng(),
     ],
   })
 }
