@@ -356,7 +356,7 @@ html:not(.dark) .shiki-dark {
 .prose [class*='language-']>button.copy:hover.copied::before {
   content: 'Copied';
   --at-apply: relative block left--17 w-16 h-10 bg-c-innerCodeBG rd;
-  --at-apply: text-center text-inherit pt-2 text-sm font-500 opacity-60;
+  --at-apply: text-center text-inherit pt-3 text-xs font-500 opacity-60;
 }
 
 .prose [class*=language-]:hover>button.copy+span.lang,

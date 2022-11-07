@@ -42,3 +42,12 @@ html.dark {
   --at-apply: bg-brand h-2px opacity-75 fixed top-0 left-0 w-full z-1001;
 }
 /** EndSection: */
+
+/** Section: Plugin - Medium Zoom */
+.medium-zoom-overlay {
+  @apply: z-100 bg-c-bg! bg-opacity-80! dark:bg-opacity-90!;
+}
+.medium-zoom-overlay ~ img {
+  --at-apply: z-101;
+}
+/** EndSection: */
