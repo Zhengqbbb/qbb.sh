@@ -41,8 +41,6 @@ run()
       clear()
   })
   .then(() => {
-    setTimeout(() => {
-      console.log('\x1B[32m✓\x1B[0m Resolve images assert to webp')
-    })
+    setTimeout(() => console.log('\x1B[32m✓\x1B[0m Resolve images assert to webp'))
   })
 

@@ -1,9 +1,7 @@
 <template>
-  <footer class="text-center text-sm mb-10 opacity-60">
-    <hr
-      class="border-none max-w-70ch my-6 m-auto h-10px"
-      shadow="lg #8c8b8b opacity-50"
-    >
+  <footer
+    class="max-w-70ch m-auto text-center text-sm my-10 opacity-60"
+  >
     2022 ©
     <a
       href="mailto:zhengqbbb@gmail.com"

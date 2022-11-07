@@ -50,10 +50,10 @@
 .prose img,
 .prose video,
 .prose figure {
-  --at-apply: my-space ;
+  --at-apply: my-space;
 }
 
-.prose img{
+.prose img {
   --at-apply: border border-c-border rd-4px;
 }
 
@@ -68,9 +68,16 @@
 /** EndSection: */
 
 /** Section: Title */
+.prose .text-linear {
+  --at-apply: font-700 text-4xl leading-1.2em;
+  background: var(--c-text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 .prose h1 {
-  --at-apply: text-c-fgDeeper font-800 text-4xl mt-0 mb-8 leading-1.1em;
+  --at-apply: text-c-fgDeeper font-800 text-4xl mt-0 mb-8 leading-1.2em;
 }
 
 .prose h2 {
