@@ -4,7 +4,7 @@ import { isClient } from '~/utils'
 useHead({
   title: 'Q.Ben Zheng | Zhengqbbb',
   meta: [
-    { property: 'og:image', content: 'https://qbb.sh/og-icon.webp' },
+    { property: 'og:image', content: 'https://qbb.sh/og/index.png' },
     { property: 'og:title', content: 'Q.Ben Zheng | Zhengqbbb' },
     { name: 'twitter:card', content: 'summary' },
     { name: 'twitter:creator', content: '@zhengqbbb' },
