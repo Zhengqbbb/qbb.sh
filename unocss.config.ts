@@ -21,7 +21,7 @@ const _VARS = {
       fg: 'rgb(187, 187, 187)',
       fgDeep: 'rgb(221, 221, 221)',
       fgDeeper: 'rgb(255, 255, 255)',
-      border: 'rgba(125, 125, 125, 0.5)',
+      border: 'rgba(125, 125, 125, 0.4)',
       codeBG: 'rgba(52, 52, 52, 0.5)',
       innerCodeBG: 'rgba(255, 255, 255, 0.1)',
     },
