@@ -69,11 +69,10 @@
 
 /** Section: Title */
 .prose .text-linear {
-  --at-apply: font-700 text-4xl leading-1.2em;
   background: var(--c-text-gradient);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .prose h1 {
