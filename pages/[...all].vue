@@ -28,7 +28,11 @@ const getEmoji = (): string =>
     <h2 text="2xl" m="t-5 b-8">
       How did we get here ?
     </h2>
-    <RouterLink to="/" class="text-2xl text-brand hover:underline">
+    <RouterLink
+      to="/"
+      class="text-2xl text-brand underline-none transition-border-color-300"
+      border="b brand opacity-0 hover:opacity-100"
+    >
       ❯ cd /home/
     </RouterLink>
   </div>

@@ -45,7 +45,9 @@ html.dark {
 
 /** Section: Plugin - Medium Zoom */
 .medium-zoom-overlay {
-  @apply: z-100 bg-c-bg! bg-opacity-80! dark:bg-opacity-90!;
+  @apply: z-100 bg-c-bg! bg-opacity-80! dark:bg-opacity-80!;
+  -webkit-backdrop-filter: saturate(50%) blur(4px);
+  backdrop-filter: saturate(50%) blur(4px);
 }
 .medium-zoom-overlay ~ img {
   --at-apply: z-101;
