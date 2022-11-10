@@ -1,6 +1,6 @@
 <h1 class="text-linear">Q.Ben Zheng</h1>
 
-Hi, I am Q.Ben<sup>(or QB)</sup>, a vibrant script developer. Core Team member of **X**.
+Hi, I am Q.Ben<sup>(or QB)</sup>, a vibrant script developer. Core team member of **X**.
 
 
 I'm currently focusing on development of CLI *(Command-Line Interface)*.<br>

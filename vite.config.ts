@@ -6,6 +6,7 @@ import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import Markdown from 'vite-plugin-vue-markdown'
 import Inspect from 'vite-plugin-inspect'
+import ViteRadar from 'vite-plugin-radar'
 import generateSitemap from 'vite-ssg-sitemap'
 import { VitePWA } from 'vite-plugin-pwa'
 import UnoCSS from 'unocss/vite'
@@ -50,6 +51,7 @@ export default defineConfig({
       extendRoute: route => resolvePostFile(route),
       onRoutesGenerated: routes => resolvePostList(routes),
     }),
+    // https://github.com/antfu/vite-plugin-vue-markdown
     Markdown({
       wrapperClasses: 'prose m-auto',
       headEnabled: true,
@@ -84,7 +86,14 @@ export default defineConfig({
     Layouts(),
     // https://github.com/antfu/vite-plugin-inspect || http://localhost:3333/__inspect/
     Inspect(),
-    // https://github.com/antfu/vite-plugin-vue-markdown
+    ViteRadar({
+      analytics: [
+        { id: 'G-W8GH3S45ZS' },
+      ],
+      tongji: [
+        { id: '65945f3e2cb7266e3081013ba91a778a' },
+      ],
+    }),
   ],
 
   // https://github.com/antfu/vite-ssg
