@@ -25,7 +25,7 @@ const _VARS = {
       codeBG: 'rgba(52, 52, 52, 0.5)',
       innerCodeBG: 'rgba(255, 255, 255, 0.1)',
     },
-    brand: 'rgb(125, 158, 189)',
+    brand: 'rgb(168, 191, 191)',
   },
   spacing: {
     space: '1.2em',

@@ -86,13 +86,10 @@ export default defineConfig({
     Layouts(),
     // https://github.com/antfu/vite-plugin-inspect || http://localhost:3333/__inspect/
     Inspect(),
+    // https://github.com/stafyniaksacha/vite-plugin-radar#vite-plugin-radar
     ViteRadar({
-      analytics: [
-        { id: 'G-W8GH3S45ZS' },
-      ],
-      tongji: [
-        { id: '65945f3e2cb7266e3081013ba91a778a' },
-      ],
+      analytics: [{ id: 'G-W8GH3S45ZS' }],
+      tongji: [{ id: '65945f3e2cb7266e3081013ba91a778a' }],
     }),
   ],
 
