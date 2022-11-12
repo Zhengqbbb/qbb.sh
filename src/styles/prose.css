@@ -215,12 +215,16 @@
   --at-apply: absolute top-0 left-0 i-fluent:checkbox-unchecked-24-filled;
 }
 
+.prose li.task-list-item label {
+  --at-apply: cursor-inherit;
+}
+
 .prose input[type="checkbox"][checked]::before {
   --at-apply: opacity-60 i-fluent:checkmark-12-filled;
 }
 
 .prose li.task-list-item input[type="checkbox"][checked] + label {
-  --at-apply: opacity-60  decoration-line-through decoration-1 dark:decoration--1 decoration-coolgray;
+  --at-apply: opacity-60 decoration-line-through decoration-1 dark:decoration--1 decoration-coolgray;
 }
 
 /** EndSection: */

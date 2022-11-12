@@ -18,7 +18,7 @@ Most people would find the picture of our universe as an infinite tower of torto
 
 Recent breakthroughs in physics, made possible in part by fantastic new technologies, suggest answers to some of these longstanding questions. Someday these answers may seem as obvious to us as the earth orbiting the sun – or perhaps as ridiculous as a tower of tortoises. Only time (whatever that may be) will tell.
 
-*Italic text*。**Bold text**。***Bold and nested italic text***。~~Strikethrough text~~。==highlight text==。
+*Italic text*。**Bold text**。***Bold and nested italic text***。~~Strike through text~~。==highlight text==。
 
 ### 中文
 
@@ -135,14 +135,6 @@ pnpm install -D cz-git
 
 ## Containers
 
-<!-- ::: link {fa-github-alt} [vuepress-theme-gungnir](https://github.com/Renovamen/vuepress-theme-gungnir)
-A blog theme for VuePress 2.
-:::
-
-::: link {/img/links/me.png} [My Blog](https://blog.zxh.io)
-My blog 🧐, powered by VuePress 2, themed by Gungnir.
-::: -->
-
 ::: info
 This is an info message.
 :::
@@ -160,8 +152,8 @@ This is a dangerous warning message.
 :::
 
 ::: details Show me the code.
-```cpp
-cout << "Hello World!" << "\n";
+```sh
+printf "%s\n" "Hello world"
 ```
 :::
 
@@ -174,7 +166,7 @@ cout << "Hello World!" << "\n";
 - [ ] markdown-container-link-card plugin
 - [ ] TOC sidebar
 - [ ] `header-anchor` auto jump after enter by link
-- [ ] ==Post page== `date parse` and `readtime parse`
+- [ ] ==Post page== `date parse` and `read time parse`
 - [ ] ==Post List page==
 - [ ] ==Project List page==
 - [ ] HTML OG image, title, description auto gen
@@ -182,5 +174,5 @@ cout << "Hello World!" << "\n";
 - [ ] Image figure markdown plugin
 - [ ] Step flow markdown plugin
 
-> WIP Roadmap <br>
+> WIP road map <br>
 > https://github.com/Zhengqbbb/qbb.sh

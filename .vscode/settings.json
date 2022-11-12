@@ -1,23 +1,24 @@
 {
   "cSpell.words": [
     "'s",
-    "antfu",
+    "Debi",
     "demi",
+    "helloworld",
     "iconify",
     "intlify",
-    "pinia",
-    "pnpm",
+    "Luohu",
+    "POSIX",
     "Qbenben",
-    "unocss",
-    "unplugin",
+    "Shenzhen",
     "Vite",
     "vitejs",
     "Vitesse",
     "vitest",
-    "vueuse"
+    "vueuse",
+    "Zheng"
   ],
   "cSpell.files": [
-    "src"
+    "pages/**/*"
   ],
   "i18n-ally.sourceLanguage": "zh-CN",
   "i18n-ally.keystyle": "nested",
