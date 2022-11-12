@@ -198,6 +198,10 @@
   --at-apply: pl-0;
 }
 
+.prose li.task-list-item mark {
+  --at-apply: px-1;
+}
+
 .prose li.task-list-item::before {
   --at-apply: hidden;
 }
