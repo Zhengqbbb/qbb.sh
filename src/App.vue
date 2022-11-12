@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import { isClient } from '~/utils'
+import { appName, author, description, keywords, name, ogImg, ogTitle, twitterCreator } from '~/meta'
 
 useHead({
-  title: 'Q.Ben Zheng | Zhengqbbb',
+  title: name,
   meta: [
-    { property: 'og:image', content: 'https://qbb.sh/og/index.png' },
-    { property: 'og:title', content: 'Q.Ben Zheng | Zhengqbbb' },
+    { property: 'og:image', content: ogImg },
+    { property: 'og:title', content: ogTitle },
     { name: 'twitter:card', content: 'summary' },
-    { name: 'twitter:creator', content: '@zhengqbbb' },
-    { name: 'description', content: 'Q.Ben Zheng\'s Personal Website' },
-    { name: 'keywords', content: 'Zhengqbbb, Q.Ben, qbb, Qbenben' },
-    { name: 'author', content: 'Zhengqbbb' },
-    { name: 'application-name', content: 'Q.Ben' },
-    { name: 'apple-mobile-web-app-title', content: 'Q.Ben | Zhengqbbb' },
+    { name: 'twitter:creator', content: twitterCreator },
+    { name: 'description', content: description },
+    { name: 'keywords', content: keywords },
+    { name: 'author', content: author },
+    { name: 'application-name', content: appName },
+    { name: 'apple-mobile-web-app-title', content: name },
     { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
     { name: 'theme-color', content: computed(() => isDark.value ? '#050505' : '#ffffff') },
   ],

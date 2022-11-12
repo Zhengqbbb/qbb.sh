@@ -1,8 +1,8 @@
 import type MarkdownIt from 'markdown-it'
 
 /**
- * >Markdown:   `![Image Example](/img/a.gif) <!-- size=1140x245 -->`
- * >HTML:       <img src="/img/a.gif" alt="Image Example" width="1140" height="245" loading="lazy" decoding="async">
+ * >>>Markdown:   `![Image Example](/img/a.gif) <!-- size=1140x245 -->`
+ * >>>HTML:       <img src="/img/a.gif" alt="Image Example" width="1140" height="245" loading="lazy" decoding="async">
  *
  * @usage
  * `![Image Example](/img/a.png) <!-- -->`                    use lazy attrs

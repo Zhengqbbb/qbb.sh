@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { isClient } from '~/utils'
+import { github, instagram, twitter } from '~/meta'
 
 const navbar = ref<HTMLElement | null>(null)
 const isLeave = ref(false)
@@ -60,13 +61,13 @@ if (isClient) {
           </router-link>
           <span class="nav-divider" />
 
-          <a href="https://twitter.com/zhengqbbb" target="_blank" title="Twitter">
+          <a :href="twitter" target="_blank" title="Twitter">
             <div i-uil:twitter-alt />
           </a>
-          <a href="https://www.instagram.com/qbqiubin/" target="_blank" title="Instagram">
+          <a :href="instagram" target="_blank" title="Instagram">
             <div i-uil:instagram />
           </a>
-          <a rel="noreferrer" href="https://github.com/Zhengqbbb" target="_blank" title="GitHub">
+          <a :href="github" target="_blank" title="GitHub" rel="noreferrer">
             <div i-uil-github-alt />
           </a>
           <span class="nav-divider" />

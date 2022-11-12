@@ -18,6 +18,7 @@ import {
   resolvePostList,
   vitePWAOptions,
 } from './build'
+import { site } from './src/meta'
 
 export default defineConfig({
   resolve: {
@@ -100,7 +101,7 @@ export default defineConfig({
     format: 'cjs',
     onFinished() {
       generateSitemap({
-        hostname: 'https://www.qbb.sh',
+        hostname: site,
         exclude: ['/posts/2022-08-24-helloworld'],
       })
     },

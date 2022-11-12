@@ -29,7 +29,7 @@
   --c-code-bg: rgba(52, 52, 52, 0.3);
   --c-inline-code-bg: rgba(255, 255, 255, 0.1);
 
-  --c-text-gradient: linear-gradient(135deg,#fff,hsla(0,0%,100%,.6));
+  --c-text-gradient: linear-gradient(145deg,#fff,hsla(0,0%,100%,.3));
   --c-scrollbar: rgb(17, 17, 17);
   --c-scrollbar-bg: rgb(5, 5, 5);
   --c-scrollbar-hover: rgb(34, 34, 34);
