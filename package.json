@@ -50,6 +50,7 @@
     "markdown-it-mark": "^3.0.1",
     "markdown-it-shiki": "^0.5.1",
     "markdown-it-table-of-contents": "^0.6.0",
+    "markdown-it-task-checkbox": "^1.0.6",
     "medium-zoom": "^1.0.6",
     "pathe": "^0.3.9",
     "pnpm": "^7.14.2",

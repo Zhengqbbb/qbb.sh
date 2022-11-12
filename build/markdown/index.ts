@@ -3,6 +3,8 @@ import Shiki from 'markdown-it-shiki'
 import Anchor from 'markdown-it-anchor'
 import LinkAttributes from 'markdown-it-link-attributes'
 // @ts-expect-error missing types
+import CheckBox from 'markdown-it-task-checkbox'
+// @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
 // @ts-expect-error missing types
 import Mark from 'markdown-it-mark'
@@ -40,4 +42,5 @@ export const registerMarkdownPlugins = (md: MarkdownIt) => {
     slugify,
   })
   md.use(Mark)
+  md.use(CheckBox)
 }

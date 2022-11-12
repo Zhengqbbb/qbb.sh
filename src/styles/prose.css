@@ -29,7 +29,7 @@
 }
 
 .prose s {
-  --at-apply: c-inherit opacity-60 decoration--1;
+  --at-apply: c-inherit opacity-60 decoration-1 dark:decoration--1;
 }
 
 .prose mark {
@@ -189,6 +189,34 @@
 .prose ol ul,
 .prose ol ol {
   --at-apply: my-0.75em pl-0;
+}
+
+/** EndSection: */
+
+/** Section: CheckBox */
+.prose li.task-list-item {
+  --at-apply: pl-0;
+}
+
+.prose li.task-list-item::before {
+  --at-apply: hidden;
+}
+
+.prose input[type="checkbox"] {
+  --at-apply: relative appearance-none w-4 h-4 mr-1;
+}
+
+.prose input[type="checkbox"]::before {
+  content: '';
+  --at-apply: absolute top-0 left-0 i-fluent:checkbox-unchecked-24-filled;
+}
+
+.prose input[type="checkbox"][checked]::before {
+  --at-apply: opacity-50 i-fluent:checkmark-12-filled;
+}
+
+.prose li.task-list-item input[type="checkbox"][checked] + label {
+  --at-apply: opacity-60  decoration-line-through decoration-1 dark:decoration--1 decoration-coolgray;
 }
 
 /** EndSection: */

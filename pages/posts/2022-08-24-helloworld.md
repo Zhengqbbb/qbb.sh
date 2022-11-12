@@ -30,7 +30,7 @@ Recent breakthroughs in physics, made possible in part by fantastic new technolo
 
 ## Link
 
-<i class="i-carbon:logo-github"/> Github: https://github.com/Zhengqbbb
+<i class="i-carbon:logo-github"/> Github: https://github.com/Zhengqbbb/qbb.sh
 
 <i class="i-bxs:terminal"/> Project: [cz-git](https://cz-git.qbb.sh)
 
@@ -164,3 +164,22 @@ This is a dangerous warning message.
 cout << "Hello World!" << "\n";
 ```
 :::
+
+## CheckBox
+
+WIP Roadmap :
+
+- [x] HomePage
+- [x] image medium-zoom
+- [ ] refactor navbar
+- [ ] markdown-container style
+- [ ] markdown-container-link-card plugin
+- [ ] TOC sidebar
+- [ ] `header-anchor` auto jump after enter by link
+- [ ] ==Post page== `date parse` and `readtime parse`
+- [ ] ==Post List page==
+- [ ] ==Project List page==
+- [ ] HTML OG image, title, description auto gen
+- [ ] RSS | feed
+- [ ] Image figure markdown plugin
+- [ ] Step flow markdown plugin
