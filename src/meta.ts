@@ -1,9 +1,9 @@
 /** basic site info */
-export const name = 'Q.Ben Zheng | Zhengqbbb'
-export const author = name
 export const site = 'https://www.qbb.sh'
+export const name = 'Q.Ben Zheng | Zhengqbbb'
 export const keywords = 'Zhengqbbb, Q.Ben, qbb, Qbenben'
 export const description = 'Q.Ben Zheng\'s Personal Website'
+export const author = name
 
 /** social links */
 export const ogTitle = name

@@ -70,17 +70,8 @@ You can use default alias `npx czg :fd` in any project
 
 ### Code Block
 
-```js
-// .commitlintrc.js
-const fs = require('fs')
-const path = require('path')
-const packages = fs.readdirSync(path.resolve(__dirname, 'packages'))
-
-module.exports = {
-  rules: {
-    'scope-enum': [2, 'always', [...packages]]
-  }
-}
+```sh
+x theme use vitesse
 ```
 
 ```json
@@ -92,6 +83,19 @@ module.exports = {
     "commitizen": {
       "path": "node_modules/cz-git"
     }
+  }
+}
+```
+
+```js
+// .commitlintrc.js
+const fs = require('fs')
+const path = require('path')
+const packages = fs.readdirSync(path.resolve(__dirname, 'packages'))
+
+module.exports = {
+  rules: {
+    'scope-enum': [2, 'always', [...packages]]
   }
 }
 ```
