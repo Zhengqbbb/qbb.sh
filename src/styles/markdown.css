@@ -1,57 +1,41 @@
 /** Section: MD-Plugin: TOC */
 @media (max-width: 1200px) {
   .table-of-contents {
-    display: none;
+    --at-apply: hidden;
   }
 }
 
 .table-of-contents {
-  position: fixed;
-  top: 80px;
-  padding-top: 70px;
-  font-size: 0.8em;
-  right: 10px;
-  width: 200px;
-  bottom: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  opacity: 0;
-  transition: all .4s ease-out;
+  --at-apply: fixed top-80px right-10px bottom-0 w-200px overflow-x-hidden overflow-y-hidden;
+  --at-apply: text-xs text-ellipsis opacity-0 transition-all-400;
 }
 
 .table-of-contents:hover {
-  opacity: 0.5;
+  --at-apply: opacity-50;
 }
 
 .table-of-contents ul > li::before {
-  display: none;
+  --at-apply: hidden;
 }
 
 .table-of-contents ul > li {
-  padding-left: 0.8rem;
+  --at-apply: pl-3;
 }
 /** EndSection: */
 
 /** Section: MD-Plugin: header-anchor */
 .prose:not(.post) a.header-anchor{
-  display: none;
+  --at-apply: hidden;
 }
 
-a.header-anchor {
-  float: left;
-  margin-top: 0.125em;
-  margin-left: -1.2em;
-  padding-right: 0.5em;
-  font-size: 0.85em;
-  opacity: 0;
-  text-decoration: none;
-  border: 0 !important;
+.prose a.header-anchor {
+  --at-apply: float-left mt-0.1 ml--1.2em pr-0.5em font-600 opacity-0 decoration-none;
+  @apply: !border-none;
 }
 
 a.header-anchor:hover,
 a.header-anchor:focus {
-  text-decoration: none;
+  --at-apply: decoration-none;
 }
 
 h2:hover .header-anchor,
@@ -64,6 +48,6 @@ h5:hover .header-anchor,
 h5:focus .header-anchor,
 h6:hover .header-anchor,
 h6:focus .header-anchor {
-  opacity: 0.5;
+  --at-apply: opacity-50;
 }
 /** EndSection: */
