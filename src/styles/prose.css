@@ -203,7 +203,7 @@
 }
 
 .prose input[type="checkbox"] {
-  --at-apply: relative appearance-none w-4 h-4 mr-1;
+  --at-apply: relative appearance-none w-4 h-4 mr-1.8;
 }
 
 .prose input[type="checkbox"]::before {
