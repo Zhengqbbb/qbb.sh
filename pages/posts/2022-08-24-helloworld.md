@@ -167,8 +167,6 @@ cout << "Hello World!" << "\n";
 
 ## CheckBox
 
-WIP Roadmap :
-
 - [x] HomePage
 - [x] image medium-zoom
 - [ ] refactor navbar
@@ -183,3 +181,6 @@ WIP Roadmap :
 - [ ] RSS | feed
 - [ ] Image figure markdown plugin
 - [ ] Step flow markdown plugin
+
+> WIP Roadmap <br>
+> https://github.com/Zhengqbbb/qbb.sh

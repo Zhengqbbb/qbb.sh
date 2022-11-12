@@ -212,7 +212,7 @@
 }
 
 .prose input[type="checkbox"][checked]::before {
-  --at-apply: opacity-50 i-fluent:checkmark-12-filled;
+  --at-apply: opacity-60 i-fluent:checkmark-12-filled;
 }
 
 .prose li.task-list-item input[type="checkbox"][checked] + label {
