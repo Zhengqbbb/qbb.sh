@@ -3,8 +3,8 @@
 Hi, I am Q.Ben<sup>(or QB)</sup>, a vibrant script developer. Core team member of **X**.
 
 
-I'm currently focusing development of CLI *(Command-Line Interface)*.<br>
-Designing and building the CLI website.<br>
+I'm currently focusing development of command line applications.<br>
+Designing and building the CLI<sup>(Command-Line Interface)</sup> guide website.<br>
 ==X is everything==. You can expect it like a POSIX SHELL magic.
 
 <div class="w-50px my-8 mx-auto border-t border-c-border"/>

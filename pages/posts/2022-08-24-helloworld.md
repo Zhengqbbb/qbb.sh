@@ -163,7 +163,6 @@ printf "%s\n" "Hello world"
 - [x] image medium-zoom
 - [ ] refactor navbar
 - [ ] markdown-container style
-- [ ] markdown-container-link-card plugin
 - [ ] TOC sidebar
 - [ ] `header-anchor` auto jump after enter by link
 - [ ] ==Post page== `date parse` and `read time parse`
@@ -173,6 +172,7 @@ printf "%s\n" "Hello world"
 - [ ] RSS | feed
 - [ ] Image figure markdown plugin
 - [ ] Step flow markdown plugin
+- [ ] markdown-container-link-card plugin
 
 > WIP road map <br>
 > https://github.com/Zhengqbbb/qbb.sh
