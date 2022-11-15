@@ -65,7 +65,7 @@ if (isClient) {
             <div i-uil:twitter-alt />
           </a>
           <a :href="instagram" target="_blank" title="Instagram">
-            <div i-uil:instagram />
+            <div i-lucide:instagram />
           </a>
           <a :href="github" target="_blank" title="GitHub" rel="noreferrer">
             <div i-uil-github-alt />

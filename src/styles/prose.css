@@ -236,11 +236,11 @@ img.error::after {
 }
 
 .prose input[type="checkbox"]:not([checked])::before {
-  --at-apply: i-fluent:checkbox-unchecked-24-filled;
+  --at-apply: i-uil:square-shape;
 }
 
 .prose input[type="checkbox"][checked="true"]::before {
-  --at-apply: opacity-60 i-fluent:checkmark-12-filled;
+  --at-apply: opacity-60 i-ph:check-bold;
 }
 
 .prose li.task-list-item label {
@@ -282,27 +282,25 @@ img.error::after {
 /** Section: Table */
 
 .prose table {
-  --at-apply: table-auto w-full my-space text-left text-sm leading-1.75em;
-}
-
-.prose thead {
-  --at-apply: text-c-fg font-600 border-b-1 border-c-border;
+  --at-apply: table-auto border-separate border-spacing-0;
+  --at-apply: w-full my-space text-left text-sm leading-1.75em;
 }
 
 .prose thead th {
-  --at-apply: align-bottom py-2 px-4 border-none;
+  --at-apply: text-c-fg font-normal align-bottom py-2 px-3;
+  --at-apply: border-c-border border-y;
 }
 
-.prose thead th:first-child {
-  --at-apply: min-w-30;
+.prose thead th:nth-child(1) {
+  --at-apply: border-l rd-lt rd-lb min-w-30;
 }
 
-.prose tbody tr {
-  --at-apply: border-b-1 border-c-border;
+.prose thead th:last-child {
+  --at-apply: border-r;
 }
 
 .prose tbody td {
-  --at-apply: align-inherit border-none py-2 px-4;
+  --at-apply: align-inherit py-3 px-3 border-b-1 border-c-border;
 }
 
 

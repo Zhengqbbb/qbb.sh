@@ -55,10 +55,12 @@ Recent breakthroughs in physics, made possible in part by fantastic new technolo
 
 ## Table
 
-| Name | Description |
-|------|------|
-| [cz-git](https://cz-git.qbb.sh/) | 🔩 A more engineered, lightweight, customizable, standard output format **Commitizen Adapter** |
-| [czg](https://cz-git.qbb.sh/cli/) | 📤 Interactive **CLI** that generate standardized commit messages. **Commitizen CLI alternative** |
+| SubCommand | Description |
+| ---------- | ----------- |
+| `break`    | Turn on appends a ! after the type/scope |
+| `emoji`    | Turn on output message with emoji mode   |
+| `checkbox` | Turn on scope checkbox mode              |
+| `gpg`      | Turn on use GPG sign commit message      |
 
 ## Code
 
