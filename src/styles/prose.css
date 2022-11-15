@@ -227,12 +227,12 @@ img.error::after {
 }
 
 .prose input[type="checkbox"] {
-  --at-apply: appearance-none relative w-4 h-4 mr-1.8;
+  --at-apply: appearance-none relative w-4 h-4 mr-1.8 bg-transparent;
 }
 
 .prose input[type="checkbox"]::before {
   content: '';
-  --at-apply: absolute top-0 left-0 bg-transparent;
+  --at-apply: absolute top-0 left-0;
 }
 
 .prose input[type="checkbox"]:not([checked])::before {
