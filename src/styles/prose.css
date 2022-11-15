@@ -232,18 +232,22 @@ img.error::after {
 
 .prose input[type="checkbox"]::before {
   content: '';
-  --at-apply: absolute top-0 left-0 i-fluent:checkbox-unchecked-24-filled;
+  --at-apply: absolute top-0 left-0;
+}
+
+.prose input[type="checkbox"]:not([checked])::before {
+  --at-apply: i-fluent:checkbox-unchecked-24-filled;
+}
+
+.prose input[type="checkbox"][checked="true"]::before {
+  --at-apply: i-fluent:checkmark-12-filled;
 }
 
 .prose li.task-list-item label {
   --at-apply: cursor-inherit;
 }
 
-.prose input[type="checkbox"][checked]::before {
-  --at-apply: opacity-60 i-fluent:checkmark-12-filled;
-}
-
-.prose li.task-list-item input[type="checkbox"][checked]+label {
+.prose li.task-list-item input[type="checkbox"][checked="true"]+label {
   --at-apply: opacity-60 decoration-line-through decoration-1 dark:decoration--1 decoration-coolgray;
 }
 
