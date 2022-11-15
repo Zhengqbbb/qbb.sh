@@ -240,7 +240,7 @@ img.error::after {
 }
 
 .prose input[type="checkbox"][checked="true"]::before {
-  --at-apply: opacity-60 i-uil:check-square;
+  --at-apply: opacity-60 i-ph:check-bold appearance-none;
 }
 
 .prose li.task-list-item label {
