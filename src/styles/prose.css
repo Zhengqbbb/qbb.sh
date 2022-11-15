@@ -240,7 +240,7 @@ img.error::after {
 }
 
 .prose input[type="checkbox"][checked="true"]::before {
-  --at-apply: opacity-60 i-ph:check-bold;
+  --at-apply: opacity-60 i-uil:check-square;
 }
 
 .prose li.task-list-item label {
@@ -296,7 +296,7 @@ img.error::after {
 }
 
 .prose thead th:last-child {
-  --at-apply: border-r;
+  --at-apply: border-r rd-rt rd-rb;
 }
 
 .prose tbody td {
