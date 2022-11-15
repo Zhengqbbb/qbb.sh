@@ -226,8 +226,12 @@ img.error::after {
   --at-apply: hidden;
 }
 
+.prose input[type="checkbox"][checked="true"] {
+  --at-apply: appearance-none;
+}
+
 .prose input[type="checkbox"] {
-  --at-apply: relative appearance-none w-4 h-4 mr-1.8;
+  --at-apply: appearance-none relative w-4 h-4 mr-1.8;
 }
 
 .prose input[type="checkbox"]::before {
@@ -240,7 +244,7 @@ img.error::after {
 }
 
 .prose input[type="checkbox"][checked="true"]::before {
-  --at-apply: opacity-60 i-ph:check-bold appearance-none;
+  --at-apply: opacity-60;
 }
 
 .prose li.task-list-item label {
