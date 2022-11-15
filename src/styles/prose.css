@@ -226,17 +226,13 @@ img.error::after {
   --at-apply: hidden;
 }
 
-.prose input[type="checkbox"][checked="true"] {
-  --at-apply: appearance-none;
-}
-
 .prose input[type="checkbox"] {
   --at-apply: appearance-none relative w-4 h-4 mr-1.8;
 }
 
 .prose input[type="checkbox"]::before {
   content: '';
-  --at-apply: absolute top-0 left-0;
+  --at-apply: absolute top-0 left-0 bg-transparent;
 }
 
 .prose input[type="checkbox"]:not([checked])::before {
@@ -244,7 +240,7 @@ img.error::after {
 }
 
 .prose input[type="checkbox"][checked="true"]::before {
-  --at-apply: opacity-60;
+  --at-apply: opacity-60 i-ph:check-bold;
 }
 
 .prose li.task-list-item label {
