@@ -39,6 +39,10 @@ export const ImagePlugin = (md: MarkdownIt) => {
           'decoding',
           'async',
         ],
+        [
+          'onerror',
+          'this.classList.add(\'error\');',
+        ],
       )
       tokens[idx + 2].content = ''
       return imageRender(...args)

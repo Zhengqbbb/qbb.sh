@@ -47,24 +47,6 @@
   --at-apply: top--0.5em;
 }
 
-.prose img,
-.prose video,
-.prose figure {
-  --at-apply: my-space;
-}
-
-.prose img {
-  --at-apply: border border-c-border rd-4px;
-}
-
-.prose figure>* {
-  --at-apply: my-0;
-}
-
-.prose figure figcaption {
-  --at-apply: text-#6b7280 text-sm mt-3 leading-1.4;
-}
-
 /** EndSection: */
 
 /** Section: Title */
@@ -105,11 +87,49 @@
 
 /** EndSection: */
 
+/** Section: Image */
+.prose img,
+.prose video,
+.prose figure {
+  --at-apply: my-space;
+}
+
+.prose img {
+  --at-apply: border border-c-border rd-4px;
+}
+
+.prose img.error {
+  transform: scale(1);
+  --at-apply: min-h-8rem;
+}
+
+img.error::before {
+  content: '';
+  background: var(--c-bg-mask) var(--c-icon-img-borken) no-repeat center / 50% 50%;
+  --at-apply: absolute top-0 left-0 w-full h-full text-transparent;
+}
+
+img.error::after {
+  content: attr(alt);
+  --at-apply: absolute bottom-0 left-0 w-full border-t border-c-border;
+  --at-apply: text-xs text-center text-c-fg truncate leading-2em;
+}
+
+.prose figure>* {
+  --at-apply: my-0;
+}
+
+.prose figure figcaption {
+  --at-apply: text-#6b7280 text-sm mt-3 leading-1.4;
+}
+
+/** EndSection: */
+
 /** Section: Link */
 
 .prose a {
-  --at-apply: text-c-fgDeeper font-500 decoration-none;
-  --at-apply: border-b pb-0.3 transition-border-color-300;
+  --at-apply: text-c-fgDeeper font-500 pb-0.3 decoration-none;
+  --at-apply: border-b transition-border-color-300;
   --at-apply: border-c-border hover:border-c-fg;
 }
 
@@ -223,7 +243,7 @@
   --at-apply: opacity-60 i-fluent:checkmark-12-filled;
 }
 
-.prose li.task-list-item input[type="checkbox"][checked] + label {
+.prose li.task-list-item input[type="checkbox"][checked]+label {
   --at-apply: opacity-60 decoration-line-through decoration-1 dark:decoration--1 decoration-coolgray;
 }
 
