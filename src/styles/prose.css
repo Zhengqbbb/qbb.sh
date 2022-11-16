@@ -94,26 +94,8 @@
   --at-apply: my-space;
 }
 
-.prose img {
-  --at-apply: border border-c-border rd-4px;
-  background-color: var(--c-bg-mask);
-}
-
-.prose img.error {
-  transform: scale(1);
-  --at-apply: min-h-8rem;
-}
-
-img.error::before {
-  content: '';
-  background: var(--c-bg-mask) var(--c-icon-img-borken) no-repeat center / 50% 50%;
-  --at-apply: absolute top-0 left-0 w-full h-full text-transparent;
-}
-
-img.error::after {
-  content: attr(alt);
-  --at-apply: absolute bottom-0 left-0 w-full border-t border-c-border;
-  --at-apply: text-xs text-center text-c-fg truncate leading-2em;
+.prose figure {
+  --at-apply: relative w-fit;
 }
 
 .prose figure>* {
@@ -122,6 +104,28 @@ img.error::after {
 
 .prose figure figcaption {
   --at-apply: text-#6b7280 text-sm mt-3 leading-1.4;
+}
+
+.prose figure.error {
+  --at-apply: border border-c-border rd;
+}
+
+.prose figure.error img {
+  transform: scale(1);
+  --at-apply: min-h-8rem;
+}
+
+.prose figure.error::before {
+  content: '';
+  background: var(--c-bg-mask) var(--c-icon-img-borken) no-repeat center / 50% 50%;
+  --at-apply: absolute top-0 left-0 w-full h-full text-transparent z-1;
+  --at-apply: ;
+}
+
+.prose figure.error::after {
+  content: attr(alt);
+  --at-apply: absolute bottom-0 left-0 w-full border-t border-c-border;
+  --at-apply: text-xs text-center text-c-fg truncate leading-2em z-2;
 }
 
 /** EndSection: */

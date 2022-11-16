@@ -2,10 +2,11 @@ import type MarkdownIt from 'markdown-it'
 
 /**
  * >>>Markdown:   `![Image Example](/img/a.gif) <!-- size=1140x245 -->`
- * >>>HTML:       <img src="/img/a.gif" alt="Image Example" width="1140" height="245" loading="lazy" decoding="async">
+ * >>>HTML:       <figure><img src="/img/a.gif" alt="Image Example" width="1140" height="245" loading="lazy" decoding="async"></figure>
  *
  * @usage
  * `![Image Example](/img/a.png) <!-- -->`                    use lazy attrs
+ * `![Image Example](/img/a.gif) <!-- ! -->`                  not zoom. use lazy attrs
  * `![Image Example](/img/a.png) <!-- size=200 -->`           use lazy attrs. width 200. height 200.
  * `![Image Example](/img/a.gif) <!-- size=900x220 -->`       use lazy attrs. width 900. height 220.
  * @author Zhengqbbb
@@ -16,6 +17,7 @@ export const ImagePlugin = (md: MarkdownIt) => {
     const [tokens, idx] = args
     if (tokens[idx + 2] && /^<!--.*-->/.test(tokens[idx + 2].content)) {
       const data = tokens[idx + 2].content
+
       if (/size=/.test(data)) {
         const size = data.match(/size=(\d+)(x\d+)?/)
         tokens[idx].attrs?.push(
@@ -30,6 +32,13 @@ export const ImagePlugin = (md: MarkdownIt) => {
         )
       }
 
+      if (/^<!-- \!/.test(data)) {
+        const classIdx = tokens[idx].attrs?.findIndex(i => i?.[0] === 'class')
+        classIdx === undefined || classIdx === -1
+          ? tokens[idx].attrs?.push(['class', 'not-zoom'])
+          : tokens[idx].attrs?.[classIdx][1].concat(' not-zoom')
+      }
+
       tokens[idx].attrs?.push(
         [
           'loading',
@@ -41,13 +50,22 @@ export const ImagePlugin = (md: MarkdownIt) => {
         ],
         [
           'onerror',
-          'this.classList.add(\'error\');',
+          'this.parentElement.classList.add(\'error\');',
+        ],
+        [
+          // For ios. Prevent medium-zoom from reloading
+          'onload',
+          'this.removeAttribute(\'loading\');',
         ],
       )
       tokens[idx + 2].content = ''
-      return imageRender(...args)
-    }
 
+      const alt = tokens[idx].content
+      const rawCode = imageRender(...args)
+      return `<figure alt="${alt}">
+      ${rawCode}
+      </figure>`
+    }
     return imageRender(...args)
   }
 }
