@@ -96,6 +96,7 @@
 
 .prose img {
   --at-apply: border border-c-border rd-4px;
+  background-color: var(--c-bg-mask);
 }
 
 .prose img.error {
@@ -366,11 +367,7 @@ html:not(.dark) .shiki-dark {
 
 .prose :not(pre)>code {
   --at-apply: bg-c-innerCodeBG border border-c-innerCodeBG;
-  --at-apply: text-c-fgDeep break-words py-0.4 px-1.2 rd;
-}
-
-.prose code {
-  --at-apply: text-sm text-c-fgDeep;
+  --at-apply: text-c-fgDeep text-sm break-words py-0.4 px-1.2 rd;
 }
 
 .prose pre {
