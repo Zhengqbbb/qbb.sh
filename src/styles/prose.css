@@ -286,18 +286,27 @@
 
 /** Section: Table */
 
+.prose .table-wrap {
+  --at-apply: my-space overflow-x-auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .prose table {
   --at-apply: table-auto border-separate border-spacing-0;
-  --at-apply: w-full my-space text-left text-sm leading-1.75em;
+  --at-apply: w-full text-left text-sm leading-1.75em;
 }
 
 .prose thead th {
-  --at-apply: text-c-fg font-normal align-bottom py-2 px-3;
+  --at-apply: text-c-fg font-normal align-middle py-2 px-3;
   --at-apply: border-c-border border-y;
 }
 
+.prose thead th {
+  --at-apply: min-w-32;
+}
+
 .prose thead th:nth-child(1) {
-  --at-apply: border-l rd-lt rd-lb min-w-30;
+  --at-apply: border-l rd-lt rd-lb;
 }
 
 .prose thead th:last-child {
@@ -399,16 +408,21 @@ html:not(.dark) .shiki-dark {
 }
 
 .prose [class*=language-]>span.lang {
-  --at-apply: absolute top-2 right-3 z-2 text-xs font-500 text-inherit opacity-60;
+  --at-apply: absolute top-2 right-3 z-2 text-xs font-500 text-inherit opacity-60 transition-400;
 }
 
 .prose [class*=language-]>button.copy {
   --at-apply: absolute block top-2 right-2 z-3 w-10 h-10 rd;
-  --at-apply: bg-c-codeBG opacity-0 cursor-pointer transition-opacity-400;
+  --at-apply: bg-c-codeBG bg-opacity-12 opacity-0 cursor-pointer transition-400;
   background-image: var(--c-icon-copy);
   background-position: 50%;
   background-size: 20px;
   background-repeat: no-repeat;
+}
+
+.prose [class*=language-]>button.copied,
+.prose [class*=language-]>button.copy:hover {
+  --at-apply: bg-c-innerCodeBG;
 }
 
 .prose [class*='language-']>button.copy.copied::before,

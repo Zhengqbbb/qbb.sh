@@ -9,14 +9,18 @@ import TOC from 'markdown-it-table-of-contents'
 // @ts-expect-error missing types
 import Mark from 'markdown-it-mark'
 import CodePreWrapperPlugin from './codePreWrap'
-import ContainerPlugin from './container'
 import ImagePlugin from './image'
+import TableWrapPlugin from './tableWrap'
+import ContainerPlugin from './container'
 import slugify from './slugify'
 
 export const registerMarkdownPlugins = (md: MarkdownIt) => {
-  md.use(CodePreWrapperPlugin)
-  md.use(ContainerPlugin)
+  md.use(Mark)
+  md.use(CheckBox)
   md.use(ImagePlugin)
+  md.use(TableWrapPlugin)
+  md.use(ContainerPlugin)
+  md.use(CodePreWrapperPlugin)
   md.use(Shiki, {
     theme: {
       light: 'vitesse-light',
@@ -41,6 +45,4 @@ export const registerMarkdownPlugins = (md: MarkdownIt) => {
     includeLevel: [1, 2, 3],
     slugify,
   })
-  md.use(Mark)
-  md.use(CheckBox)
 }
