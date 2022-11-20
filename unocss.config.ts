@@ -31,7 +31,8 @@ const _VARS = {
     space: '1.2em',
   },
   fontFamily: {
-    sans: '"Inter var experimental","Inter var",system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
+    sans: '"Inter var experimental","Inter var","Inter",system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
+    mono: 'Menlo,"Noto Sans Mono","Fira Code","Fira Mono",ui-monospace,SFMono-Regular,"SF Mono",Monaco,Consolas,"Liberation Mono","Courier New",monospace',
   },
 }
 
@@ -60,8 +61,6 @@ export default defineConfig({
   theme: _VARS,
   rules: [],
   shortcuts: [
-    ['btn', 'px-4 py-1 rounded inline-block text-white cursor-pointer disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
-    ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
     ['nav-divider', 'w-1px h-18px bg-gray-200 dark:bg-coolgray-700'],
     ...mergeVarCols(),
   ],
@@ -81,6 +80,7 @@ export default defineConfig({
         sans: 'Inter:400,600,800',
         mono: 'Noto Sans Mono:400,500,700',
       },
+      extendTheme: false,
     }),
   ],
   transformers: [

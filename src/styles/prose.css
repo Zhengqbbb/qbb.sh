@@ -52,9 +52,8 @@
 /** Section: Title */
 .prose .text-linear {
   background: var(--c-text-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  --at-apply: bg-clip-text;
 }
 
 .prose h1 {
@@ -119,7 +118,6 @@
   content: '';
   background: var(--c-bg-mask) var(--c-icon-img-borken) no-repeat center / 50% 50%;
   --at-apply: absolute top-0 left-0 w-full h-full text-transparent z-1;
-  --at-apply: ;
 }
 
 .prose figure.error::after {
@@ -355,7 +353,7 @@
 .prose kbd,
 .prose pre,
 .prose samp {
-  font-family: var(--c-code-family);
+  --at-apply: font-mono;
 }
 
 .shiki-light {
