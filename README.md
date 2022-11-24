@@ -1,4 +1,5 @@
 # Hi 🤗
-This is Q.Ben personal website, built on 🏕 [Vitesse](https://github.com/antfu/vitesse) 🏕 .
+This is Q.Ben personal website, built on 🏕 [Vitesse](https://github.com/antfu/vitesse) 🏕
 
-## WIP...
+
+<pre align="center">Working in Progress</pre>
