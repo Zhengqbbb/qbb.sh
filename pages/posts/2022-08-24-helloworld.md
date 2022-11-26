@@ -161,7 +161,7 @@ printf "%s\n" "Hello world"
 
 - [x] HomePage
 - [x] image medium-zoom
-- [ ] refactor navbar
+- [x] refactor navbar
 - [ ] markdown-container style
 - [ ] TOC sidebar
 - [ ] `header-anchor` auto jump after enter by link

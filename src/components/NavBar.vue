@@ -12,9 +12,7 @@ if (isClient) {
   watch(y, () => {
     if (directions.top) {
       // scrolling up
-      if (y.value > 0 && isLeave.value) {
-        isVisible.value = true
-      }
+      if (y.value > 0 && isLeave.value) { isVisible.value = true }
       else {
         isVisible.value = false
         isLeave.value = false
@@ -23,7 +21,7 @@ if (isClient) {
     else if (directions.bottom) {
       // scrolling down
       isVisible.value = false
-      if (navbar.value && y.value > 10)
+      if (navbar.value && y.value > navbar.value!.offsetHeight)
         isLeave.value = true
     }
   })
@@ -33,78 +31,53 @@ if (isClient) {
 <template>
   <header
     ref="navbar"
-    class="navbar fixed -top-22 w-full left-0 h-20 z-40 bg-c-bg bg-opacity-90 dark:bg-opacity-90"
+    class="z-40 w-full h-20 bg-c-bg bg-opacity-90 dark:bg-opacity-90 backdrop-blur-2 backdrop-saturate-50 select-none"
     :class="[
-      isLeave && 'transition-transform duration-200',
+      isLeave
+        && 'fixed -top-20 left-0 transition-transform duration-300',
       isVisible && 'translate-y-full',
-      !isLeave && !isVisible && 'top-0',
+      !isLeave && !isVisible && 'absolute top-0 left-0',
     ]"
   >
-    <div class="m-a max-w-120ch">
+    <div class="max-w-120ch m-auto flex justify-between items-center">
       <router-link
-        class="w-11 h-11 absolute m-6 outline-none hover:opacity-70 transition-opacity" to="/"
+        class="w-11 h-11 m-6 outline-none hover:opacity-70 transition-opacity" to="/"
       >
         <img v-show="isDark" width="44" height="44" src="/logo-dark.svg" alt="logo">
         <img v-show="!isDark" width="44" height="44" src="/logo-light.svg" alt="logo">
       </router-link>
 
-      <nav class="nav p-8">
-        <div class="spacer" />
-        <div class="right grid-gap-4 lt-sm:grid-gap-3.2">
-          <router-link to="/posts" title="Blog" class="nav-item">
-            <div i-majesticons:paper-fold-text-line class="md:hidden" />
-            <span class="lt-md:hidden select-text">Blog</span>
-          </router-link>
-          <router-link to="/projects" title="Projects" class="nav-item">
-            <div i-ph:rocket-launch-duotone class="md:hidden" />
-            <span class="lt-md:hidden select-text">Projects</span>
-          </router-link>
-          <span class="nav-divider" />
+      <nav class="nav box-border p-8 flex items-center space-x-3">
+        <router-link to="/posts" title="Blog" class="nav-item">
+          <div i-majesticons:paper-fold-text-line class="md:hidden" />
+          <span class="lt-md:hidden">Blog</span>
+        </router-link>
+        <router-link to="/projects" title="Projects" class="nav-item">
+          <div i-ph:rocket-launch-duotone class="md:hidden" />
+          <span class="lt-md:hidden">Projects</span>
+        </router-link>
+        <span class="nav-divider" />
 
-          <a :href="twitter" target="_blank" title="Twitter">
-            <div i-uil:twitter-alt />
-          </a>
-          <a :href="instagram" target="_blank" title="Instagram">
-            <div i-lucide:instagram />
-          </a>
-          <a :href="github" target="_blank" title="GitHub" rel="noreferrer">
-            <div i-uil-github-alt />
-          </a>
-          <span class="nav-divider" />
+        <a :href="twitter" target="_blank" title="Twitter">
+          <div i-uil:twitter-alt />
+        </a>
+        <a :href="instagram" target="_blank" title="Instagram">
+          <div i-lucide:instagram />
+        </a>
+        <a :href="github" target="_blank" title="GitHub" rel="noreferrer">
+          <div i-uil-github-alt />
+        </a>
+        <span class="nav-divider" />
 
-          <button title="Toggle Color Scheme" @click="toggleDark()">
-            <div i="ri-sun-line dark:ri-moon-line" />
-          </button>
-        </div>
+        <button title="Toggle Color Scheme" @click="toggleDark()">
+          <div i="ri-sun-line dark:ri-moon-line" />
+        </button>
       </nav>
     </div>
   </header>
 </template>
 
 <style scoped>
-.navbar {
-  -webkit-backdrop-filter: saturate(50%) blur(2px);
-  backdrop-filter: saturate(50%) blur(2px);
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.nav {
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto max-content;
-  box-sizing: border-box;
-}
-
-.nav > * {
-  margin: auto;
-}
-
-.nav img {
-  margin-bottom: 0;
-}
-
 .nav a,
 .nav button{
   cursor: pointer;
@@ -119,14 +92,5 @@ if (isClient) {
 .nav button:hover{
   opacity: 1;
   text-decoration-color: inherit;
-}
-
-.nav .right {
-  display: grid;
-  grid-auto-flow: column;
-}
-
-.nav .right > * {
-  margin: auto;
 }
 </style>

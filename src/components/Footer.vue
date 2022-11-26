@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
   <footer
     class="max-w-70ch m-auto text-center text-sm my-10 opacity-60"

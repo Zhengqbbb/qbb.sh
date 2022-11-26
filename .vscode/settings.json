@@ -33,6 +33,7 @@
   "files.associations": {
     "*.css": "css",
     ".czrc": "json",
+    "_headers": "properties",
     "_redirects": "properties",
     "**/.x-cmd/*": "shellscript",
     "**/.x-cmd/*.yml": "yaml",
