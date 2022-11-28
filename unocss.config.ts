@@ -1,11 +1,15 @@
-import { defineConfig, presetAttributify, presetIcons, presetUno, presetWebFonts, transformerDirectives, transformerVariantGroup } from 'unocss'
+import {
+  defineConfig,
+  presetAttributify, presetIcons, presetUno, presetWebFonts,
+  transformerDirectives, transformerVariantGroup,
+} from 'unocss'
+import type { Theme } from 'unocss/preset-mini'
 
 /**
  * The instant on-demand Atomic CSS engine.
  * @see https://uno.antfu.me/
  */
-
-const _VARS = {
+const _VARS: Theme = {
   colors: {
     l: {
       bg: 'rgb(255, 255, 255)',
@@ -27,6 +31,10 @@ const _VARS = {
     },
     brand: 'rgb(168, 191, 191)',
   },
+  borderRadius: {
+    DEFAULT: '0.325rem',
+    sm: '0.25rem',
+  },
   spacing: {
     space: '1.2em',
   },
@@ -43,12 +51,12 @@ const _VARS = {
 const COLS = ['bg', 'text', 'border']
 const mergeVarCols = () => {
   const res = Object.assign([])
-  const lightMP = _VARS.colors.l
+  const lightMP: any = _VARS?.colors?.l
   for (const name in lightMP) {
     COLS.forEach((key) => {
       const item = [`${key}-c-${name}`]
       const val = [`${key}-l-${name}`]
-      if (Object.prototype.hasOwnProperty.call(_VARS.colors.d, name))
+      if (Object.prototype.hasOwnProperty.call(_VARS?.colors?.d, name))
         val.push(`dark:${key}-d-${name}`)
       item.push(val.join(' '))
       res.push(item)

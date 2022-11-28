@@ -318,6 +318,52 @@
 
 /** EndSection: */
 
+/** Section: Container */
+.prose .custom-block {
+  --at-apply: text-sm my-space py-3 px-4 pb-1 border rd;
+}
+
+.prose .custom-block.details summary,
+.prose .custom-block-title {
+  font-weight: 600;
+}
+
+.prose .custom-block p {
+  --at-apply: my-2;
+}
+
+.prose .custom-block p:first-child {
+  --at-apply: my-0;
+}
+
+.prose .custom-block.info {
+  --at-apply: border-c-border bg-brand bg-opacity-5;
+  --at-apply: dark:bg-opacity-10;
+}
+
+.prose .custom-block.info .custom-block-title {
+  --at-apply: text-c-fgDeeper;
+}
+
+.prose .custom-block.tip {
+  --at-apply: border-green-2 bg-emerald-3 bg-opacity-5;
+  --at-apply: dark:border-emerald-7 dark:bg-teal-3 dark:bg-opacity-10;
+}
+
+.prose .custom-block.tip .custom-block-title {
+  --at-apply: text-emerald-6 dark:text-emerald-4;
+}
+
+.prose .custom-block.details {
+  --at-apply: cursor-pointer;
+}
+
+.prose .custom-block.details summary {
+  --at-apply: pb-2;
+}
+
+/** EndSection: */
+
 /** Section: Code Group */
 .prose .code-group {
   --at-apply: w-full overflow-hidden mt-space;
@@ -330,7 +376,7 @@
 }
 
 .prose .code-header-item {
-  --at-apply: px-2 py-1 rounded-6px box-border cursor-pointer transition-background-color-300 transition-opacity-200;
+  --at-apply: px-2 py-1 rd box-border cursor-pointer transition-background-color-300 transition-opacity-200;
   --at-apply: opacity-60 hover:text-c-fgDeeper hover:opacity-100;
 }
 
@@ -378,7 +424,7 @@ html:not(.dark) .shiki-dark {
 
 .prose :not(pre)>code {
   --at-apply: bg-c-innerCodeBG border border-c-innerCodeBG;
-  --at-apply: text-c-fgDeep text-sm break-words py-0.4 px-1.2 rd;
+  --at-apply: text-c-fgDeep text-sm break-words py-0.4 px-1.2 rd-sm;
 }
 
 .prose pre {

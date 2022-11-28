@@ -151,9 +151,9 @@ This is a warning message.
 This is a dangerous warning message.
 :::
 
-::: details Show me the code.
+::: details Clike me to expand more information
 ```sh
-printf "%s\n" "Hello world"
+printf "%s\n" "Hello world!"
 ```
 :::
 
@@ -162,7 +162,7 @@ printf "%s\n" "Hello world"
 - [x] HomePage
 - [x] image medium-zoom
 - [x] refactor navbar
-- [ ] markdown-container style
+- [x] markdown-container style
 - [ ] TOC sidebar
 - [ ] `header-anchor` auto jump after enter by link
 - [ ] ==Post page== `date parse` and `read time parse`
