@@ -151,10 +151,8 @@ This is a warning message.
 This is a dangerous warning message.
 :::
 
-::: details Clike me to expand more information
-```sh
-printf "%s\n" "Hello world!"
-```
+::: details Details
+This is a details block.
 :::
 
 ## CheckBox

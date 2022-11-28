@@ -259,7 +259,7 @@
 /** Section: Divide */
 
 .prose hr {
-  --at-apply: my-4 mx-space border-c-border;
+  --at-apply: my-8 mx-space border-c-border;
 }
 
 /** EndSection: */
@@ -336,6 +336,7 @@
   --at-apply: my-0;
 }
 
+.prose .custom-block.details,
 .prose .custom-block.info {
   --at-apply: border-c-border bg-brand bg-opacity-5;
   --at-apply: dark:bg-opacity-10;
@@ -346,12 +347,38 @@
 }
 
 .prose .custom-block.tip {
-  --at-apply: border-green-2 bg-emerald-3 bg-opacity-5;
+  --at-apply: border-green-5 bg-emerald-3 bg-opacity-5;
   --at-apply: dark:border-emerald-7 dark:bg-teal-3 dark:bg-opacity-10;
 }
 
 .prose .custom-block.tip .custom-block-title {
   --at-apply: text-emerald-6 dark:text-emerald-4;
+}
+
+.prose .custom-block.warning {
+  --at-apply: text-amber-6 border-amber-5 bg-yellow-4 bg-opacity-5;
+  --at-apply: dark:text-yellow-5 dark:border-yellow-6 dark:bg-yellow-3 dark:bg-opacity-10;
+}
+
+.prose .custom-block.warning strong,
+.prose .custom-block.warning em,
+.prose .custom-block.warning mark,
+.prose .custom-block.warning a,
+.prose .custom-block.warning .custom-block-title {
+  --at-apply: text-amber-6 dark:text-yellow-4;
+}
+
+.prose .custom-block.danger {
+  --at-apply: text-red-5 border-red-4 bg-red-6 bg-opacity-5;
+  --at-apply: dark:text-red-4 dark:border-red-9 dark:bg-red-5 dark:bg-opacity-10;
+}
+
+.prose .custom-block.danger strong,
+.prose .custom-block.danger em,
+.prose .custom-block.danger mark,
+.prose .custom-block.danger a,
+.prose .custom-block.danger .custom-block-title {
+  --at-apply: text-red-6 dark:text-red-4;
 }
 
 .prose .custom-block.details {
