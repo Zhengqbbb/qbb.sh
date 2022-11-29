@@ -361,9 +361,11 @@
 }
 
 .prose .custom-block.warning strong,
+.prose .custom-block.warning b,
 .prose .custom-block.warning em,
 .prose .custom-block.warning mark,
 .prose .custom-block.warning a,
+.prose .custom-block.warning code,
 .prose .custom-block.warning .custom-block-title {
   --at-apply: text-amber-6 dark:text-yellow-4;
 }
@@ -374,9 +376,11 @@
 }
 
 .prose .custom-block.danger strong,
+.prose .custom-block.danger b,
 .prose .custom-block.danger em,
 .prose .custom-block.danger mark,
 .prose .custom-block.danger a,
+.prose .custom-block.danger code,
 .prose .custom-block.danger .custom-block-title {
   --at-apply: text-red-6 dark:text-red-4;
 }
