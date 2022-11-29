@@ -1,3 +1,10 @@
+---
+title: Hello World | Vitesse ✘ QB Theme
+descrition: Vitesse ✘ QB Theme - preview page
+---
+
+[[toc]]
+
 # H1 Heading
 
 ## H2 Heading
@@ -129,11 +136,18 @@ pnpm install -D cz-git
 ::::
 
 ## Images
+
 ![Image Example](/img/vitesse.webp) <!-- size=120x120 -->
 ![Image Example](/img/vitesse.webp) <!-- size=240 -->
 ![Image Example](/img/vitesse.webp) <!-- -->
 
 ## Containers
+
+<!--
+::: tip <i class="i-uil:lightbulb-alt" /> Tip: custom title
+This is an info message and custom title.
+:::
+-->
 
 ::: info
 This is an info message.
@@ -161,7 +175,7 @@ This is a details block.
 - [x] image medium-zoom
 - [x] refactor navbar
 - [x] markdown-container style
-- [ ] TOC sidebar
+- [x] TOC sidebar
 - [ ] `header-anchor` auto jump after enter by link
 - [ ] ==Post page== `date parse` and `read time parse`
 - [ ] ==Post List page==

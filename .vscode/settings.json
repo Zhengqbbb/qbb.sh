@@ -20,10 +20,6 @@
   "cSpell.files": [
     "pages/**/*"
   ],
-  "i18n-ally.sourceLanguage": "zh-CN",
-  "i18n-ally.keystyle": "nested",
-  "i18n-ally.localesPaths": "locales",
-  "i18n-ally.sortKeys": true,
   // use eslint
   "prettier.enable": false,
   "editor.codeActionsOnSave": {
@@ -36,26 +32,25 @@
     "_headers": "properties",
     "_redirects": "properties",
     "**/.x-cmd/*": "shellscript",
-    "**/.x-cmd/*.yml": "yaml",
+    "**/.x-cmd/*.yml": "yaml"
   },
   "explicitFolding.rules": {
     "css": [
-        {
-            "beginRegex": "^\\/\\*\\*\\sSection:?",
-            "endRegex": "^\\/\\*\\*\\sEndSection",
-            "autoFold": true
-        }
+      {
+        "beginRegex": "^\\/\\*\\*\\sSection:?",
+        "endRegex": "^\\/\\*\\*\\sEndSection",
+        "autoFold": true
+      }
     ],
     "shellscript": [
-        {
-            "beginRegex": "^\\s*#\\s*Section:?",
-            "endRegex": "^\\s*#\\s*EndSection",
-            "autoFold": true
-        }
+      {
+        "beginRegex": "^\\s*#\\s*Section:?",
+        "endRegex": "^\\s*#\\s*EndSection",
+        "autoFold": true
+      }
     ]
-},
-  "picgo.picBed.github.path": "blog/",
+  },
   "cssvar.files": [
     "src/styles/vars.css"
-  ],
+  ]
 }

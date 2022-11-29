@@ -1,7 +1,7 @@
 /** Section: Init */
 
 .prose {
-  --at-apply: text-c-fg text-4 max-w-70ch leading-1.75em;
+  --at-apply: max-w-70ch text-c-fg text-4 leading-1.75em;
 }
 
 .prose> :first-child {
@@ -133,7 +133,7 @@
 .prose a {
   --at-apply: text-c-fgDeeper font-500 pb-0.3 decoration-none;
   --at-apply: border-b transition-border-color-300;
-  --at-apply: border-c-border hover:border-c-fg;
+  --at-apply: border-c-border hover:border-c-fg focus:border-c-fg;
 }
 
 /** EndSection: */
@@ -523,4 +523,71 @@ html:not(.dark) .shiki-dark {
   background-image: var(--c-icon-copied);
 }
 
+/** EndSection: */
+
+/** Section: MD-Plugin: TOC */
+@media (max-width: 1250px) {
+  .table-of-contents {
+    --at-apply: hidden;
+  }
+}
+
+.table-of-contents {
+  --at-apply: w-239px text-sm leading-1.6em fixed top-120px bottom-0 overflow-hidden opacity-0 transition-all-400;
+  right: calc((100% - 70ch) / 2 - 400px);
+}
+
+.table-of-contents:hover {
+  --at-apply: opacity-100;
+}
+
+.table-of-contents a {
+  --at-apply: block overflow-hidden border-none text-0.8rem text-c-fg whitespace-nowrap text-ellipsis transition-colors-200;
+  --at-apply: hover:text-c-fgDeeper focus:text-c-fgDeeper;
+}
+
+.table-of-contents ul > li::before {
+  --at-apply: hidden;
+}
+
+.table-of-contents ul > li {
+  --at-apply: pl-3;
+}
+.table-of-contents ul ul {
+  --at-apply: my-0;
+}
+
+.table-of-contents ul:first-child {
+  --at-apply: border-l border-c-border;
+}
+
+/** EndSection: */
+
+/** Section: MD-Plugin: header-anchor */
+.prose:not(.post) a.header-anchor{
+  --at-apply: hidden;
+}
+
+.prose a.header-anchor {
+  --at-apply: float-left mt-0.1 ml--1.2em pr-0.5em font-600 opacity-0 decoration-none;
+  @apply: !border-none;
+}
+
+a.header-anchor:hover,
+a.header-anchor:focus {
+  --at-apply: decoration-none;
+}
+
+h2:hover .header-anchor,
+h2:focus .header-anchor,
+h3:hover .header-anchor,
+h3:focus .header-anchor,
+h4:hover .header-anchor,
+h4:focus .header-anchor,
+h5:hover .header-anchor,
+h5:focus .header-anchor,
+h6:hover .header-anchor,
+h6:focus .header-anchor {
+  --at-apply: opacity-50;
+}
 /** EndSection: */

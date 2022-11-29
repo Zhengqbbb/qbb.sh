@@ -1,5 +1,6 @@
 {
   "private": true,
+  "packageManager": "pnpm@7.5.2",
   "scripts": {
     "build": "pnpm build:init && vite-ssg build",
     "build:init": "tsx ./build/node/buildPre.ts",
@@ -8,9 +9,6 @@
     "image": "tsx ./build/node/image.ts",
     "lint": "eslint .",
     "serve": "vite preview --host"
-  },
-  "eslintConfig": {
-    "extends": "@antfu"
   },
   "dependencies": {
     "@unocss/reset": "^0.46.5",
@@ -72,5 +70,7 @@
     "vite-ssg-sitemap": "^0.4.3",
     "vite-svg-loader": "^3.6.0"
   },
-  "packageManager": "pnpm@7.5.2"
+  "eslintConfig": {
+    "extends": "@antfu"
+  }
 }

@@ -42,7 +42,7 @@ export const registerMarkdownPlugins = (md: MarkdownIt) => {
     },
   })
   md.use(TOC, {
-    includeLevel: [1, 2, 3],
+    includeLevel: [2, 3],
     slugify,
   })
 }
