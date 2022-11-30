@@ -542,7 +542,8 @@ html:not(.dark) .shiki-dark {
 }
 
 .table-of-contents a {
-  --at-apply: block overflow-hidden border-none text-0.8rem text-c-fg text-opacity-70 whitespace-nowrap text-ellipsis transition-colors-200;
+  --at-apply: block overflow-hidden border-none whitespace-nowrap text-ellipsis transition-colors-200;
+  --at-apply: text-0.8rem text-gray-700 text-opacity-60 dark:text-gray-200 dark:text-opacity-60;
   --at-apply: hover:text-c-fgDeeper focus:text-c-fgDeeper;
 }
 
@@ -569,7 +570,7 @@ html:not(.dark) .shiki-dark {
 }
 
 .prose a.header-anchor {
-  --at-apply: float-left mt-0.1 ml--1.2em pr-0.5em font-600 opacity-0 decoration-none;
+  --at-apply: float-left mt-0.1 ml--1.2em pr-0.5em font-600 decoration-none opacity-0 transition-opacity;
   @apply: !border-none;
 }
 

@@ -8,6 +8,7 @@ import { resolve } from 'pathe'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
 import dayjs from 'dayjs'
+import type { RouteMeta } from 'vue-router'
 import { type ReadingTime, readingTime } from './readingTime'
 
 export interface PostFrontmatter {
@@ -27,7 +28,7 @@ export interface PostFrontmatter {
   headerImage?: string
 }
 
-export interface pageExternalLink {
+export interface PostPager {
   path: string
   title: string
   description: string
@@ -37,7 +38,7 @@ export interface pageExternalLink {
   lang: 'zh' | 'en'
 }
 
-export interface PostMeta {
+export interface PostMeta extends RouteMeta {
   frontmatter: PostFrontmatter
   layout: 'post'
   /**
@@ -46,8 +47,8 @@ export interface PostMeta {
   date: string | null
   readingTime: ReadingTime
   lang: 'zh' | 'en'
-  prev: pageExternalLink | null
-  next: pageExternalLink | null
+  prev: PostPager | null
+  next: PostPager | null
 }
 
 export const resolvePostFile = (route: any) => {
@@ -86,7 +87,7 @@ export const resolvePostList = (routes: any[]) => {
       readingTime: item.meta.readingTime,
       lang: item.meta.lang,
     }))
-    .sort((a: any, b: any) => dayjs(b.date).unix() - dayjs(a.date).unix())
+    .sort((a: any, b: any) => dayjs(a.date).unix() - dayjs(b.date).unix())
 
   return routes.map((item) => {
     const i = blogs.findIndex(blog => blog.path === item.path)
