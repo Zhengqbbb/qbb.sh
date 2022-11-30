@@ -177,7 +177,7 @@ This is a details block.
 - [x] markdown-container style
 - [x] TOC sidebar
 - [ ] `header-anchor` auto jump after enter by link
-- [ ] ==Post page== `date parse` and `read time parse`
+- [x] ==Post page== `date parse` and `read time parse`
 - [ ] ==Post List page==
 - [ ] ==Project List page==
 - [ ] HTML OG image, title, description auto gen

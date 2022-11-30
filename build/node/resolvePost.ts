@@ -1,52 +1,103 @@
 /**
- *  @PoweredBy https://github.com/Renovamen/renovamen.github.io
+ * @PoweredBy https://github.com/Renovamen/renovamen.github.io
+ * @description: generate post page meta data for `useRoute().meta`
+ * @return { meta: RouterMeta }
  */
+
 import { resolve } from 'pathe'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
 import dayjs from 'dayjs'
-import { readingTime } from '.'
+import { type ReadingTime, readingTime } from './readingTime'
+
+export interface PostFrontmatter {
+  /**
+   * using page title and og:title
+   */
+  title?: string
+  /**
+   * using page description and og:description
+   * `desc` is alias for `description`
+   */
+  description?: string
+  desc?: string
+  /**
+   * not use auto gen og:img. Use custom header image
+   */
+  headerImage?: string
+}
+
+export interface pageExternalLink {
+  path: string
+  title: string
+  description: string
+  headerImage: string
+  date: string
+  readingTime: ReadingTime
+  lang: 'zh' | 'en'
+}
+
+export interface PostMeta {
+  frontmatter: PostFrontmatter
+  layout: 'post'
+  /**
+   * @example: 2022-08-24-helloworld.md => '2022-08-24'
+   */
+  date: string | null
+  readingTime: ReadingTime
+  lang: 'zh' | 'en'
+  prev: pageExternalLink | null
+  next: pageExternalLink | null
+}
 
 export const resolvePostFile = (route: any) => {
-  const rPath: string = route.path
-  if (
-    (!rPath.startsWith('/posts') || rPath === '/posts')
-    && !rPath.endsWith('mdtest')
-  )
+  const routePath: string = route.path
+  if (!routePath.startsWith('/posts') || routePath === '/posts')
     return
 
   const path = resolve(__dirname, '../..', route.component.slice(1))
-  const md = fs.readFileSync(path, 'utf-8')
-  const { content, data } = matter(md)
+  const mdData = fs.readFileSync(path, 'utf-8')
+  const { content, data } = matter(mdData)
 
   route.meta = Object.assign(route.meta || {}, {
     frontmatter: data,
     layout: 'post',
-    date: rPath.substring(7, 17) || null,
+    date: routePath.substring(7, 17) || null,
     readingTime: readingTime(content),
-  })
+    lang: routePath.endsWith('zh') ? 'zh' : 'en',
+  } as PostMeta)
 
   return route
 }
 
+/**
+ * @description: generated Posts List for page use
+ * @return {*}
+ */
 export const resolvePostList = (routes: any[]) => {
   const blogs = routes
     .filter((item: any) => item.meta?.layout === 'post')
     .map((item: any) => ({
       path: item.path,
       title: item.meta.frontmatter.title,
+      description: item.meta.frontmatter.description ?? item.meta.frontmatter.desc ?? '',
+      headerImage: item.meta.frontmatter.headerImage ?? `/og/${item.name}.png`,
       date: item.meta.date,
+      readingTime: item.meta.readingTime,
+      lang: item.meta.lang,
     }))
     .sort((a: any, b: any) => dayjs(b.date).unix() - dayjs(a.date).unix())
 
   return routes.map((item) => {
     const i = blogs.findIndex(blog => blog.path === item.path)
+    if (i === -1)
+      return item
 
     item.meta = {
       ...item.meta,
-      prev: i < blogs.length ? blogs[i + 1] : null,
-      next: i > 0 ? blogs[i - 1] : null,
-    }
+      prev: i < blogs.length ? blogs[i + 1] ?? null : null,
+      next: i > 0 ? blogs[i - 1] ?? null : null,
+    } as PostMeta
 
     return item
   })

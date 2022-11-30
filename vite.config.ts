@@ -55,7 +55,7 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-vue-markdown
     Markdown({
       wrapperClasses: 'prose m-auto',
-      headEnabled: true,
+      headEnabled: false,
       markdownItOptions: {
         quotes: '""\'\'',
       },

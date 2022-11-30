@@ -57,7 +57,7 @@
 }
 
 .prose h1 {
-  --at-apply: text-c-fgDeeper font-800 text-4xl mt-0 mb-8 leading-1.2em;
+  --at-apply: text-c-fgDeeper font-800 text-4xl mt-0 mb-4 leading-1.2em;
 }
 
 .prose h2 {
@@ -131,7 +131,7 @@
 /** Section: Link */
 
 .prose a {
-  --at-apply: text-c-fgDeeper font-500 pb-0.3 decoration-none;
+  --at-apply: text-c-fgDeeper font-500 decoration-none;
   --at-apply: border-b transition-border-color-300;
   --at-apply: border-c-border hover:border-c-fg focus:border-c-fg;
 }
@@ -542,7 +542,7 @@ html:not(.dark) .shiki-dark {
 }
 
 .table-of-contents a {
-  --at-apply: block overflow-hidden border-none text-0.8rem text-c-fg whitespace-nowrap text-ellipsis transition-colors-200;
+  --at-apply: block overflow-hidden border-none text-0.8rem text-c-fg text-opacity-70 whitespace-nowrap text-ellipsis transition-colors-200;
   --at-apply: hover:text-c-fgDeeper focus:text-c-fgDeeper;
 }
 
