@@ -15,8 +15,8 @@ const nextPost = computed(() => router.currentRoute.value.meta.next) as Computed
   >
     <div
       v-if="prevPost"
-      class="w-48% lt-sm:w-100% border border-c-border rd opacity-70 transition-colors"
-      hover="opacity-100 border-brand"
+      class="w-48% lt-sm:w-100% border border-c-border rd op-70 transition-colors"
+      hover="op-100 border-brand"
     >
       <router-link :to="prevPost.path" class="!border-none block p-4">
         <div class="text-xs text-c-fg">
@@ -29,8 +29,8 @@ const nextPost = computed(() => router.currentRoute.value.meta.next) as Computed
     </div>
     <div
       v-if="nextPost"
-      class="w-48% lt-sm:w-100% border border-c-border rd opacity-70 transition-colors"
-      hover="opacity-100 border-brand"
+      class="w-48% lt-sm:w-100% border border-c-border rd op-70 transition-colors"
+      hover="op-100 border-brand"
     >
       <router-link :to="nextPost.path" class="!border-none block p-4">
         <div class="text-end text-xs text-c-fg">

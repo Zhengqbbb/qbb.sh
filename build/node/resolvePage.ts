@@ -1,17 +1,17 @@
 /**
  * @PoweredBy https://github.com/Renovamen/renovamen.github.io
  * @description: generate post page meta data for `useRoute().meta`
- * @return { meta: RouterMeta }
+ * @return { meta: PageMeta }
  */
 
 import { resolve } from 'pathe'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
 import dayjs from 'dayjs'
-import type { RouteMeta } from 'vue-router'
+import type { RouteMeta, RouteRecordNormalized } from 'vue-router'
 import { type ReadingTime, readingTime } from './readingTime'
 
-export interface PostFrontmatter {
+export interface PageFrontmatter {
   /**
    * using page title and og:title
    */
@@ -38,8 +38,8 @@ export interface PostPager {
   lang: 'zh' | 'en'
 }
 
-export interface PostMeta extends RouteMeta {
-  frontmatter: PostFrontmatter
+export interface PageMeta extends RouteMeta {
+  frontmatter: PageFrontmatter
   layout: 'post'
   /**
    * @example: 2022-08-24-helloworld.md => '2022-08-24'
@@ -51,10 +51,16 @@ export interface PostMeta extends RouteMeta {
   next: PostPager | null
 }
 
-export const resolvePostFile = (route: any) => {
+export interface PostRouterRecord extends RouteRecordNormalized {
+  title: string
+  dateText: string
+  readingTimeText: number
+  meta: PageMeta
+}
+
+export const resolvePageFile = (route: any) => {
   const routePath: string = route.path
-  if (!routePath.startsWith('/posts') || routePath === '/posts')
-    return
+  const isPost = routePath.startsWith('/posts') && routePath !== '/posts'
 
   const path = resolve(__dirname, '../..', route.component.slice(1))
   const mdData = fs.readFileSync(path, 'utf-8')
@@ -62,11 +68,11 @@ export const resolvePostFile = (route: any) => {
 
   route.meta = Object.assign(route.meta || {}, {
     frontmatter: data,
-    layout: 'post',
+    layout: isPost ? 'post' : 'default',
     date: routePath.substring(7, 17) || null,
     readingTime: readingTime(content),
     lang: routePath.endsWith('zh') ? 'zh' : 'en',
-  } as PostMeta)
+  } as PageMeta)
 
   return route
 }
@@ -98,7 +104,7 @@ export const resolvePostList = (routes: any[]) => {
       ...item.meta,
       prev: i < blogs.length ? blogs[i + 1] ?? null : null,
       next: i > 0 ? blogs[i - 1] ?? null : null,
-    } as PostMeta
+    } as PageMeta
 
     return item
   })

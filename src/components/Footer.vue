@@ -2,7 +2,7 @@
 
 <template>
   <footer
-    class="m-auto text-center text-sm my-10 opacity-60"
+    class="m-auto text-center text-sm my-10 op-60"
   >
     2022 ©
     <a

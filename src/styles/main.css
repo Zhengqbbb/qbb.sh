@@ -38,13 +38,13 @@ html.dark {
 }
 
 #nprogress .bar {
-  --at-apply: bg-brand h-2px opacity-75 fixed top-0 left-0 w-full z-1001;
+  --at-apply: bg-brand h-2px op-75 fixed top-0 left-0 w-full z-1001;
 }
 /** EndSection: */
 
 /** Section: Plugin - Medium Zoom */
 .medium-zoom-overlay {
-  @apply: z-100 bg-c-bg! bg-opacity-80! dark:bg-opacity-80!;
+  @apply: z-100 bg-c-bg! bg-op-80! dark:bg-op-80!;
   -webkit-backdrop-filter: saturate(50%) blur(4px);
   backdrop-filter: saturate(50%) blur(4px);
 }

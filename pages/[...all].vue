@@ -31,7 +31,7 @@ const getEmoji = (): string =>
     <RouterLink
       to="/"
       class="text-2xl text-brand underline-none transition-border-color-300"
-      border="b brand opacity-0 hover:opacity-100"
+      border="b brand op-0 hover:op-100"
     >
       ❯ cd /home/
     </RouterLink>

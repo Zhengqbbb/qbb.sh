@@ -29,7 +29,7 @@
 }
 
 .prose s {
-  --at-apply: c-inherit opacity-60 decoration-1 dark:decoration--1;
+  --at-apply: c-inherit op-60 decoration-1 dark:decoration--1;
 }
 
 .prose mark {
@@ -65,7 +65,7 @@
 }
 
 .prose h3 {
-  --at-apply: text-c-fgDeep font-600 text-xl mt-1.6em mb-space leading-1.6em opacity-90;
+  --at-apply: text-c-fgDeep font-600 text-xl mt-1.6em mb-space leading-1.6em op-90;
 }
 
 .prose h4 {
@@ -73,7 +73,7 @@
 }
 
 .prose h6 {
-  --at-apply: font-500 opacity-70;
+  --at-apply: font-500 op-70;
 }
 
 .prose h2 code {
@@ -243,7 +243,7 @@
 }
 
 .prose input[type="checkbox"][checked="true"]::before {
-  --at-apply: opacity-60 i-ph:check-bold;
+  --at-apply: op-60 i-ph:check-bold;
 }
 
 .prose li.task-list-item label {
@@ -251,7 +251,7 @@
 }
 
 .prose li.task-list-item input[type="checkbox"][checked="true"]+label {
-  --at-apply: opacity-60 decoration-line-through decoration-1 dark:decoration--1 decoration-coolgray;
+  --at-apply: op-60 decoration-line-through decoration-1 dark:decoration--1 decoration-coolgray;
 }
 
 /** EndSection: */
@@ -267,7 +267,7 @@
 /** Section: Blockquote */
 
 .prose blockquote {
-  --at-apply: text-c-fg text-inherit font-500 not-italic opacity-60;
+  --at-apply: text-c-fg text-inherit font-500 not-italic op-60;
   --at-apply: my-space mx-0 pl-3 border-l-3px border-c-border;
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
@@ -338,8 +338,8 @@
 
 .prose .custom-block.details,
 .prose .custom-block.info {
-  --at-apply: border-c-border bg-brand bg-opacity-5;
-  --at-apply: dark:bg-opacity-10;
+  --at-apply: border-c-border bg-brand bg-op-5;
+  --at-apply: dark:bg-op-10;
 }
 
 .prose .custom-block.info .custom-block-title {
@@ -347,8 +347,8 @@
 }
 
 .prose .custom-block.tip {
-  --at-apply: border-green-5 bg-emerald-3 bg-opacity-5;
-  --at-apply: dark:border-emerald-7 dark:bg-teal-3 dark:bg-opacity-10;
+  --at-apply: border-green-5 bg-emerald-3 bg-op-5;
+  --at-apply: dark:border-emerald-7 dark:bg-teal-3 dark:bg-op-10;
 }
 
 .prose .custom-block.tip .custom-block-title {
@@ -356,8 +356,8 @@
 }
 
 .prose .custom-block.warning {
-  --at-apply: text-amber-6 border-amber-5 bg-yellow-4 bg-opacity-5;
-  --at-apply: dark:text-yellow-5 dark:border-yellow-6 dark:bg-yellow-3 dark:bg-opacity-10;
+  --at-apply: text-amber-6 border-amber-5 bg-yellow-4 bg-op-5;
+  --at-apply: dark:text-yellow-5 dark:border-yellow-6 dark:bg-yellow-3 dark:bg-op-10;
 }
 
 .prose .custom-block.warning strong,
@@ -371,8 +371,8 @@
 }
 
 .prose .custom-block.danger {
-  --at-apply: text-red-5 border-red-4 bg-red-6 bg-opacity-5;
-  --at-apply: dark:text-red-4 dark:border-red-9 dark:bg-red-5 dark:bg-opacity-10;
+  --at-apply: text-red-5 border-red-4 bg-red-6 bg-op-5;
+  --at-apply: dark:text-red-4 dark:border-red-9 dark:bg-red-5 dark:bg-op-10;
 }
 
 .prose .custom-block.danger strong,
@@ -403,16 +403,16 @@
 .prose .code-header {
   --at-apply: w-full flex justify-start items-center h-13 box-border px-4 rd-lt rd-rt;
   --at-apply: text-c-fg font-500 text-sm leading-1.3em bg-c-codeBG overflow-x-auto flex-nowrap;
-  --at-apply: border-b-1 border-coolGray border-opacity-10;
+  --at-apply: border-b-1 border-coolGray border-op-10;
 }
 
 .prose .code-header-item {
-  --at-apply: px-2 py-1 rd box-border cursor-pointer transition-background-color-300 transition-opacity-200;
-  --at-apply: opacity-60 hover:text-c-fgDeeper hover:opacity-100;
+  --at-apply: px-2 py-1 rd box-border cursor-pointer transition-background-color-300 transition-op-200;
+  --at-apply: op-60 hover:text-c-fgDeeper hover:op-100;
 }
 
 .prose .code-header-item.active {
-  --at-apply: text-c-fgDeeper opacity-100 bg-c-innerCodeBG bg-opacity-12;
+  --at-apply: text-c-fgDeeper op-100 bg-c-innerCodeBG bg-op-12;
 }
 
 .prose .code-group div[class*=language-] {
@@ -483,12 +483,12 @@ html:not(.dark) .shiki-dark {
 }
 
 .prose [class*=language-]>span.lang {
-  --at-apply: absolute top-2 right-3 z-2 text-xs font-500 text-inherit opacity-60 transition-400;
+  --at-apply: absolute top-2 right-3 z-2 text-xs font-500 text-inherit op-60 transition-400;
 }
 
 .prose [class*=language-]>button.copy {
   --at-apply: absolute block top-2 right-2 z-3 w-10 h-10 rd;
-  --at-apply: bg-c-codeBG bg-opacity-12 opacity-0 cursor-pointer transition-400;
+  --at-apply: bg-c-codeBG bg-op-12 op-0 cursor-pointer transition-400;
   background-image: var(--c-icon-copy);
   background-position: 50%;
   background-size: 20px;
@@ -504,17 +504,17 @@ html:not(.dark) .shiki-dark {
 .prose [class*='language-']>button.copy:hover.copied::before {
   content: 'Copied';
   --at-apply: relative block left--17 w-16 h-10 bg-c-innerCodeBG rd;
-  --at-apply: text-center text-inherit pt-3 text-xs font-500 opacity-60;
+  --at-apply: text-center text-inherit pt-3 text-xs font-500 op-60;
 }
 
 .prose [class*=language-]:hover>button.copy+span.lang,
 .prose [class*=language-]>button.copy:focus+span.lang {
-  --at-apply: opacity-0;
+  --at-apply: op-0;
 }
 
 .prose [class*=language-]:hover>button.copy,
 .prose [class*=language-]>button.copy:focus {
-  --at-apply: opacity-100;
+  --at-apply: op-100;
 }
 
 .prose [class*='language-']>button.copy.copied,
@@ -533,17 +533,17 @@ html:not(.dark) .shiki-dark {
 }
 
 .table-of-contents {
-  --at-apply: w-239px text-sm leading-1.6em fixed top-120px bottom-0 overflow-hidden opacity-0 transition-all-400;
+  --at-apply: w-239px text-sm leading-1.6em fixed top-120px bottom-0 overflow-hidden op-0 transition-all-400;
   right: calc((100% - 70ch) / 2 - 400px);
 }
 
 .table-of-contents:hover {
-  --at-apply: opacity-100;
+  --at-apply: op-100;
 }
 
 .table-of-contents a {
   --at-apply: block overflow-hidden border-none whitespace-nowrap text-ellipsis transition-colors-200;
-  --at-apply: text-0.8rem text-gray-700 text-opacity-60 dark:text-gray-200 dark:text-opacity-60;
+  --at-apply: text-0.8rem text-gray-700 text-op-60 dark:text-gray-200 dark:text-op-60;
   --at-apply: hover:text-c-fgDeeper focus:text-c-fgDeeper;
 }
 
@@ -570,7 +570,7 @@ html:not(.dark) .shiki-dark {
 }
 
 .prose a.header-anchor {
-  --at-apply: float-left mt-0.1 ml--1.2em pr-0.5em font-600 decoration-none opacity-0 transition-opacity;
+  --at-apply: float-left mt-0.1 ml--1.2em pr-0.5em font-600 decoration-none op-0 transition-opacity;
   @apply: !border-none;
 }
 
@@ -589,6 +589,6 @@ h5:hover .header-anchor,
 h5:focus .header-anchor,
 h6:hover .header-anchor,
 h6:focus .header-anchor {
-  --at-apply: opacity-50;
+  --at-apply: op-50;
 }
 /** EndSection: */

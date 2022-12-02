@@ -31,7 +31,7 @@ if (isClient) {
 <template>
   <header
     ref="navbar"
-    class="z-40 w-full h-20 bg-c-bg bg-opacity-90 dark:bg-opacity-90 backdrop-blur-2 backdrop-saturate-50 select-none"
+    class="z-40 w-full h-20 bg-c-bg bg-op-90 dark:bg-op-90 backdrop-blur-2 backdrop-saturate-50 select-none"
     :class="[
       isLeave
         && 'fixed -top-20 left-0 transition-transform duration-300',
@@ -41,7 +41,7 @@ if (isClient) {
   >
     <div class="max-w-120ch m-auto flex justify-between items-center">
       <router-link
-        class="w-11 h-11 m-6 outline-none hover:opacity-70 transition-opacity" to="/"
+        class="w-11 h-11 m-6 outline-none hover:op-70 transition-opacity" to="/"
       >
         <img v-show="isDark" width="44" height="44" src="/logo-dark.svg" alt="logo">
         <img v-show="!isDark" width="44" height="44" src="/logo-light.svg" alt="logo">

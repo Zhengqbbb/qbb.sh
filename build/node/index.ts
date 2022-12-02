@@ -1,3 +1,3 @@
 export * from './pwa'
 export * from './readingTime'
-export * from './resolvePost'
+export * from './resolvePage'

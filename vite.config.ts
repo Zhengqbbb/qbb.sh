@@ -14,7 +14,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import {
   registerMarkdownPlugins,
-  resolvePostFile,
+  resolvePageFile,
   resolvePostList,
   vitePWAOptions,
 } from './build'
@@ -49,7 +49,7 @@ export default defineConfig({
     Pages({
       pagesDir: 'pages',
       extensions: ['vue', 'md'],
-      extendRoute: route => resolvePostFile(route),
+      extendRoute: route => resolvePageFile(route),
       onRoutesGenerated: routes => resolvePostList(routes),
     }),
     // https://github.com/antfu/vite-plugin-vue-markdown

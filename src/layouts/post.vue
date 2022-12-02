@@ -1,42 +1,20 @@
 <script lang="ts" setup>
 import type { ComputedRef } from 'vue'
-import type { PostMeta } from '~build/node'
+import type { PageMeta } from '~build/node'
 import { formatDate } from '~/utils'
-import { description, ogImg, site, name as siteName } from '~/meta'
+import { name as siteName } from '~/meta'
+
+useHeadByFrontmatter()
 
 const router = useRouter()
-const meta = computed(() => router.currentRoute.value.meta) as ComputedRef<PostMeta>
-const fullPath = computed(() => router.currentRoute.value.fullPath)
-// TODO: auto gen
-// const name = computed(() => router.currentRoute.value.name)
-// const headerImage = computed(() => meta.value.frontmatter.headerImage || `${site}/og/${String(name.value)}.png`)
+const meta = computed(() => router.currentRoute.value.meta) as ComputedRef<PageMeta>
 
 const title = computed(() => meta.value.frontmatter.title || siteName)
-const desc = computed(() => meta.value.frontmatter.description || meta.value.frontmatter.desc || description)
-const headerImage = ogImg
 const date = computed(() => meta.value.date)
 const lang = computed(() => meta.value.lang)
 const readingTime = computed(() => meta.value.readingTime)
 
-useHead({
-  title,
-  htmlAttrs: {
-    lang,
-  },
-  meta: [
-    { name: 'description', content: desc },
-    { property: 'og:title', content: title },
-    { property: 'og:description', content: desc },
-    { property: 'og:image', content: headerImage },
-    { property: 'og:url', content: computed(() => site + fullPath.value) },
-    { name: 'twitter:title', content: title },
-    { name: 'twitter:description', content: desc },
-    { name: 'twitter:image', content: headerImage },
-  ],
-})
-
 const content = ref<HTMLDivElement>()
-
 onMounted(() => {
   const navigate = () => {
     if (location.hash) {
@@ -101,7 +79,7 @@ onMounted(() => {
 <template>
   <div class="prose m-auto mb-space">
     <h1>{{ title }}</h1>
-    <p class="opacity-50">
+    <p class="op-50">
       {{ formatDate(date, lang) }} · {{ readingTime.minutes }}{{ lang === 'zh' ? '分钟' : 'min' }}
     </p>
   </div>

@@ -17,6 +17,6 @@ I'm live in [Luohu District, Shenzhen](https://www.google.com/maps/place/Luohu+D
 <p class="!text-center !mt-4">
   And current website is
   <router-link to="/posts/2022-08-24-helloworld" title="WIP page">
-    <i class="i-mdi:arrow-right-bold-outline opacity-60" /> WIP ...
+    <i class="i-mdi:arrow-right-bold-outline op-60" /> WIP ...
   </router-link>
 </p>
