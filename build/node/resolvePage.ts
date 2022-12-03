@@ -11,11 +11,21 @@ import dayjs from 'dayjs'
 import type { RouteMeta, RouteRecordNormalized } from 'vue-router'
 import { type ReadingTime, readingTime } from './readingTime'
 
+export interface PostPager {
+  path: string
+  title: string
+  description: string
+  headerImage: string
+  date: string
+  readingTime: ReadingTime
+  lang: 'zh' | 'en'
+}
+
 export interface PageFrontmatter {
   /**
    * using page title and og:title
    */
-  title?: string
+  title: string
   /**
    * using page description and og:description
    * `desc` is alias for `description`
@@ -28,16 +38,6 @@ export interface PageFrontmatter {
   headerImage?: string
 }
 
-export interface PostPager {
-  path: string
-  title: string
-  description: string
-  headerImage: string
-  date: string
-  readingTime: ReadingTime
-  lang: 'zh' | 'en'
-}
-
 export interface PageMeta extends RouteMeta {
   frontmatter: PageFrontmatter
   layout: 'post'
@@ -46,6 +46,9 @@ export interface PageMeta extends RouteMeta {
    */
   date: string | null
   readingTime: ReadingTime
+  /**
+   * @example: 2022-08-24-helloworld-zh.md => 'zh'
+   */
   lang: 'zh' | 'en'
   prev: PostPager | null
   next: PostPager | null

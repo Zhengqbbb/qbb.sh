@@ -1,22 +1,25 @@
 <script setup lang="ts">
 import dayjs from 'dayjs'
 import { formatDate } from '~/utils'
-import type { PostRouterRecord } from '~build/node'
+import type { PageMeta, PostRouterRecord } from '~build/node'
 
 const router = useRouter()
 const posts = router.getRoutes()
   .filter(page => page.meta.layout === 'post')
   .map(
-    (page: any): PostRouterRecord => ({
-      ...page,
-      title: page.meta.frontmatter.title,
-      readingTimeText: `${String(page.meta.readingTime.minutes)} ${
-        page.meta.lang === 'zh'
-        ? '分钟'
-        : 'min'
-      }`,
-      dateText: formatDate(page.meta.date, page.meta.lang),
-    }),
+    (page: any): PostRouterRecord => {
+      const meta: PageMeta = page.meta
+      return {
+        ...page,
+        title: meta.frontmatter.title,
+        readingTimeText: `${String(meta.readingTime.minutes)} ${
+          meta.lang === 'zh'
+          ? '分钟'
+          : 'min'
+        }`,
+        dateText: formatDate(meta.date, meta.lang),
+      }
+    },
   )
   .sort((a, b) => dayjs(b.meta.date).unix() - dayjs(a.meta.date).unix())
 
@@ -35,7 +38,7 @@ for (const post of posts) {
       </div>
     </template>
     <template v-for="year in Object.keys(blogMap).reverse()" :key="year">
-      <div class="my-4 text-2em op-20 top--2rem font-bold">
+      <div class="my-4 text-2em op-40 top--2rem font-bold">
         {{ year }}
       </div>
       <router-link v-for="post in blogMap[year]" :key="post.path" :to="post.path" class="item">
