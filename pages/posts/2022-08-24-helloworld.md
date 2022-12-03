@@ -137,9 +137,9 @@ pnpm install -D cz-git
 
 ## Images
 
-![Image Example](/img/vitesse.webp) <!-- size=120x120 -->
-![Image Example](/img/vitesse.webp) <!-- size=240 -->
-![Image Example](/img/vitesse.webp) <!-- -->
+![Image Example](/image/vitesse.webp) <!-- size=120x120 -->
+![Image Example](/image/vitesse.webp) <!-- size=240 -->
+![Image Example](/image/vitesse.webp) <!-- -->
 
 ## Containers
 
@@ -179,7 +179,7 @@ This is a details block.
 - [x] `header-anchor` auto jump after enter by link
 - [x] ==Post page== `date parse` and `read time parse`
 - [x] ==Post List page==
-- [ ] ==Project List page==
+- [x] ==Project List page==
 - [ ] HTML OG image, title, description auto gen
 - [ ] RSS | feed
 - [ ] Image figure markdown plugin

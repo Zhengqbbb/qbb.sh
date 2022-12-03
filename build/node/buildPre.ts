@@ -93,7 +93,7 @@ const node = () => {
   const data = require(__SHIKI_SHELL_PATH)
   data.repository.support.patterns.push(
     {
-      match: '(?<=^|;|&|\\s)(?:npm|npx|yarn|pnpm|brew|git)',
+      match: '(?<=^|;|&|\\s)(?:npm|npx|yarn|pnpm|bun|brew|git)',
       name: 'keyword',
     },
     {

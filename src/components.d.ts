@@ -16,5 +16,6 @@ declare module '@vue/runtime-core' {
     PostPager: typeof import('./components/PostPager.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    XCmd: typeof import('./components/icons/XCmd.vue')['default']
   }
 }

@@ -20,7 +20,8 @@ import imageminOptipng from 'imagemin-optipng'
 // @ts-expect-error missing types
 import rm from 'rimraf'
 
-const __ASSERT_DIR = resolve(__dirname, '../../public/img')
+const __ASSERT_DIR = resolve(__dirname, '../../public/image')
+
 const run = async () => {
   await imagemin([`${__ASSERT_DIR}/*.{png,jpeg,jpg}`], {
     destination: __ASSERT_DIR,

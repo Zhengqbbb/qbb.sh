@@ -52,5 +52,6 @@
   },
   "cssvar.files": [
     "src/styles/vars.css"
-  ]
+  ],
+  "commentTranslate.multiLineMerge": true
 }

@@ -1,6 +1,6 @@
-/** Powered by: vitepress */
 import { isClient } from '~/utils'
 
+/** Powered by: vitepress */
 export function useCopyCode() {
   if (!isClient)
     return

@@ -61,7 +61,7 @@ for (const post of posts) {
 
 <style scoped>
 .prose a.item{
-  --at-apply: block border-b-none py-1 md:pl-8 pl-0 md:border-l-4 border-c-border transition;
-  --at-apply: op-60 hover:(op-100 bg-gray bg-op-10 rd-rt rd-rb) focus:op-100;
+  --at-apply: block border-b-none rd-rt rd-rb py-1 md:pl-8 pl-0 md:border-l-4 border-c-border transition;
+  --at-apply: text-c-dim hover:(text-c-fgDeeper bg-gray bg-op-10);
 }
 </style>

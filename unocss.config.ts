@@ -16,6 +16,7 @@ const _VARS: Theme = {
       fg: 'rgb(85, 85, 85)',
       fgDeep: 'rgb(34, 34, 34)',
       fgDeeper: 'rgb(0, 0, 0)',
+      dim: 'rgb(75, 85, 99)',
       border: 'rgba(125, 125, 125, 0.3)',
       codeBG: 'rgb(248, 248, 248)',
       innerCodeBG: 'rgba(130, 146, 167, 0.1)',
@@ -25,6 +26,7 @@ const _VARS: Theme = {
       fg: 'rgb(187, 187, 187)',
       fgDeep: 'rgb(221, 221, 221)',
       fgDeeper: 'rgb(255, 255, 255)',
+      dim: 'rgb(161, 161, 170)',
       border: 'rgba(125, 125, 125, 0.4)',
       codeBG: 'rgba(52, 52, 52, 0.5)',
       innerCodeBG: 'rgba(255, 255, 255, 0.1)',
@@ -70,6 +72,7 @@ export default defineConfig({
   rules: [],
   shortcuts: [
     ['nav-divider', 'w-1px h-18px bg-gray-200 dark:bg-coolgray-700'],
+    ['text-c-nowrap', 'overflow-hidden whitespace-nowrap text-ellipsis'],
     ...mergeVarCols(),
   ],
   presets: [

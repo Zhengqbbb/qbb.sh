@@ -542,8 +542,8 @@ html:not(.dark) .shiki-dark {
 }
 
 .table-of-contents a {
-  --at-apply: block overflow-hidden border-none whitespace-nowrap text-ellipsis transition-colors-200;
-  --at-apply: text-0.8rem text-gray-700 text-op-60 dark:text-gray-200 dark:text-op-60;
+  --at-apply: block border-none transition-colors-200 text-0.8rem text-c-nowrap;
+  --at-apply: text-gray-700 text-op-60 dark:text-gray-200 dark:text-op-60;
   --at-apply: hover:text-c-fgDeeper focus:text-c-fgDeeper;
 }
 

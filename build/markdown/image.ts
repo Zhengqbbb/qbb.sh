@@ -1,14 +1,14 @@
 import type MarkdownIt from 'markdown-it'
 
 /**
- * >>>Markdown:   `![Image Example](/img/a.gif) <!-- size=1140x245 -->`
- * >>>HTML:       <figure><img src="/img/a.gif" alt="Image Example" width="1140" height="245" loading="lazy" decoding="async"></figure>
+ * >>>Markdown:   `![Image Example](/image/a.gif) <!-- size=1140x245 -->`
+ * >>>HTML:       <figure><img src="/image/a.gif" alt="Image Example" width="1140" height="245" loading="lazy" decoding="async"></figure>
  *
  * @usage
- * `![Image Example](/img/a.png) <!-- -->`                    use lazy attrs
- * `![Image Example](/img/a.gif) <!-- ! -->`                  not zoom. use lazy attrs
- * `![Image Example](/img/a.png) <!-- size=200 -->`           use lazy attrs. width 200. height 200.
- * `![Image Example](/img/a.gif) <!-- size=900x220 -->`       use lazy attrs. width 900. height 220.
+ * `![Image Example](/image/a.png) <!-- -->`                    use lazy attrs
+ * `![Image Example](/image/a.gif) <!-- ! -->`                  not zoom. use lazy attrs
+ * `![Image Example](/image/a.png) <!-- size=200 -->`           use lazy attrs. width 200. height 200.
+ * `![Image Example](/image/a.gif) <!-- size=900x220 -->`       use lazy attrs. width 900. height 220.
  * @author Zhengqbbb
  */
 export const ImagePlugin = (md: MarkdownIt) => {
