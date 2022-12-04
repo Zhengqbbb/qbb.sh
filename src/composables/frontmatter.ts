@@ -1,6 +1,6 @@
 import type { ComputedRef } from 'vue'
 import type { PageMeta } from '~build/node'
-import { description, ogImg, site, name as siteName } from '~/meta'
+import { appName, author, description, keywords, name, ogImg, site, name as siteName, twitterCreator } from '~/meta'
 
 /**
  * data generate base (/build/node/resolvePost.ts)
@@ -25,14 +25,22 @@ export const useHeadByFrontmatter = (): void => {
       lang,
     },
     meta: [
+      { name: 'author', content: author },
+      { name: 'keywords', content: keywords },
       { name: 'description', content: desc },
       { property: 'og:title', content: title },
       { property: 'og:description', content: desc },
       { property: 'og:image', content: headerImage },
       { property: 'og:url', content: computed(() => site + fullPath.value) },
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:creator', content: twitterCreator },
       { name: 'twitter:title', content: title },
       { name: 'twitter:description', content: desc },
       { name: 'twitter:image', content: headerImage },
+      { name: 'application-name', content: appName },
+      { name: 'apple-mobile-web-app-title', content: name },
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
+      { name: 'theme-color', content: computed(() => isDark.value ? '#050505' : '#ffffff') },
     ],
   })
 }

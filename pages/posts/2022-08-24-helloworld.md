@@ -1,6 +1,6 @@
 ---
 title: Hello World | Vitesse ✘ QB Theme
-descrition: Vitesse ✘ QB Theme - preview page
+description: Vitesse ✘ QB Theme - preview page
 ---
 
 [[toc]]

@@ -6,7 +6,6 @@ export const description = 'Q.Ben Zheng\'s Personal Website'
 export const author = name
 
 /** social links */
-export const ogTitle = name
 export const ogImg = 'https://qbb.sh/og/index.png'
 export const github = 'https://github.com/Zhengqbbb'
 export const twitter = 'https://twitter.com/zhengqbbb'

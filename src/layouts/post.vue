@@ -4,8 +4,6 @@ import type { PageMeta } from '~build/node'
 import { formatDate } from '~/utils'
 import { name as siteName } from '~/meta'
 
-useHeadByFrontmatter()
-
 const router = useRouter()
 const meta = computed(() => router.currentRoute.value.meta) as ComputedRef<PageMeta>
 

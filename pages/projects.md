@@ -41,11 +41,6 @@ projects:
       link: 'https://github.com/Zhengqbbb/qb-coin'
 ---
 
-<script setup>
-import { useHeadByFrontmatter } from '~/composables/frontmatter.ts'
-useHeadByFrontmatter()
-</script>
-
 # Projects
 
 <ListProjects :projects="frontmatter.projects" />
