@@ -41,7 +41,7 @@ const _VARS: Theme = {
     space: '1.2em',
   },
   fontFamily: {
-    sans: '"Inter var experimental","Inter var","Inter",system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
+    sans: '"Inter var experimental","Inter var","Inter","Noto Sans SC",system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
     mono: 'Menlo,"Noto Sans Mono","Fira Code","Fira Mono",ui-monospace,SFMono-Regular,"SF Mono",Monaco,Consolas,"Liberation Mono","Courier New",monospace',
   },
 }
@@ -88,7 +88,7 @@ export default defineConfig({
     presetUno(),
     presetWebFonts({
       fonts: {
-        sans: 'Inter:400,600,800',
+        sans: ['Inter:400,600,800', 'Noto Sans SC:400,700'],
         mono: 'Noto Sans Mono:500,700',
       },
       extendTheme: false,
