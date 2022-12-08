@@ -1,5 +1,5 @@
 ---
-headerImage: '/og/index.og'
+headerImage: '/og/index.png'
 ---
 
 <h1 class="text-linear">Q.Ben Zheng</h1>
