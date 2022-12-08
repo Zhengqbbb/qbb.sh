@@ -35,7 +35,7 @@ export const useHeadByFrontmatter = (): void => {
       { property: 'og:title', content: title },
       { property: 'og:description', content: desc },
       { property: 'og:image', content: headerImage },
-      { property: 'og:type', content: 'article' },
+      { property: 'og:type', content: 'website' },
       { property: 'og:url', content: computed(() => site + fullPath.value) },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:creator', content: twitterCreator },
