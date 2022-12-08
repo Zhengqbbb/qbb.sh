@@ -12,7 +12,9 @@ if (isClient) {
   watch(y, () => {
     if (directions.top) {
       // scrolling up
-      if (y.value > 0 && isLeave.value) { isVisible.value = true }
+      if (y.value > 0 && isLeave.value) {
+        isVisible.value = true
+      }
       else {
         isVisible.value = false
         isLeave.value = false
