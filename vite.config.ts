@@ -102,7 +102,7 @@ export default defineConfig({
     onFinished() {
       generateSitemap({
         hostname: site,
-        exclude: ['/posts/2022-08-24-helloworld'],
+        exclude: [''],
       })
     },
   },

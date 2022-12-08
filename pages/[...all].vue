@@ -1,3 +1,9 @@
+---
+title: '404 - Page Not Found'
+desc: 404 - Page Not Found
+headerImage: '/og/index.png'
+---
+
 <script setup lang="ts">
 /** Powered by: https://github.com/Renovamen/renovamen.github.io  */
 const emojiArray = [
