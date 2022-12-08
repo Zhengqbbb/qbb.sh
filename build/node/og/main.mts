@@ -30,8 +30,8 @@ const __targetDir = resolve(__dirname, `../../../${__target}`)
 export async function genOG() {
   await initEnv()
   const files = fg.sync('**/*.{md,vue}', { cwd: __sourceDir, absolute: true })
-
-  return await genPNG(await genSVG(siteName, siteDesc, siteShort), resolve(__dirname, './a.png'))
+  // DEBUG
+  // return await genPNG(await genSVG(siteName, siteDesc, siteShort), resolve(__dirname, './a.png'))
   return Promise.all(files.map(async (p) => {
     const flatPath = p
       .replace(__sourceDir, '')
@@ -136,9 +136,10 @@ function getTheme(): TemplateTheme {
   const bgBInner = `rgb(${random(0, 100)}, ${random(0, 100)}, ${random(0, 100)})`
   const holdBG = `background-image: linear-gradient(${angle}deg, ${bgTWrap}, ${bgTInner} 30%, ${bgBInner} 70%, ${bgBWrap});`
   const holdFG = 'color: #ffffff;'
-  // return {
-  //   wholeDivStyle: holdBG + holdFG,
-  // }
+  return {
+    wholeDivStyle: holdBG + holdFG,
+  }
+  // DEBUG
   return {
     wholeDivStyle: 'background-image: linear-gradient(120deg, rgb(8, 5, 3), rgb(19, 19, 18) 30%, rgb(65, 65, 65) 70%, rgb(19, 20, 20));color: #ffffff;',
   }
