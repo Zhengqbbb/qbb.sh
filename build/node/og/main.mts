@@ -30,7 +30,7 @@ const __targetDir = resolve(__dirname, `../../../${__target}`)
 export async function genOG() {
   await initEnv()
   const files = fg.sync('**/*.{md,vue}', { cwd: __sourceDir, absolute: true })
-  // DEBUG
+
   // return await genPNG(await genSVG(siteName, siteDesc, siteShort), resolve(__dirname, './a.png'))
   return Promise.all(files.map(async (p) => {
     const flatPath = p
@@ -38,6 +38,7 @@ export async function genOG() {
       .replace(/(\.md|\.vue)$/, '.png')
       .replaceAll('/', '-')
       .substring(1)
+      .replace(/(-index\.png)$/, '.png')
     const targetFile = resolve(__targetDir, flatPath)
     if (fs.existsSync(targetFile))
       return true
