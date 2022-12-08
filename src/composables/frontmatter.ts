@@ -1,6 +1,7 @@
 import type { ComputedRef } from 'vue'
 import type { PageMeta } from '~build/node'
-import { appName, author, description, keywords, name, ogImg, site, name as siteName, twitterCreator } from '~/meta'
+import { appName, author, description, keywords, site, title as siteName, twitterCreator } from '~/meta'
+import { isExternal } from '~/utils'
 
 /**
  * data generate base (/build/node/resolvePost.ts)
@@ -13,14 +14,17 @@ export const useHeadByFrontmatter = (): void => {
 
   const title = computed(() => meta.value.frontmatter.title || siteName)
   const desc = computed(() => meta.value.frontmatter.description || meta.value.frontmatter.desc || description)
-  const headerImage = ogImg
-  // TODO: auto gen
-  // const routerName = computed(() => router.currentRoute.value.name)
-  // const headerImage = computed(() => meta.value.frontmatter.headerImage || `${site}/og/${String(routerName.value)}.png`)
+  const routerName = computed(() => router.currentRoute.value.name)
+  const headerImage = computed(() => {
+    const headerImage = meta.value.frontmatter.headerImage
+    if (headerImage)
+      return isExternal(headerImage) ? headerImage : site + headerImage
+    return `${site}/og/${String(routerName.value)}.png`
+  })
   const lang = computed(() => meta.value.lang)
 
   useHead({
-    title: computed(() => meta.value.frontmatter.title || siteName),
+    title,
     htmlAttrs: {
       lang,
     },
@@ -31,14 +35,15 @@ export const useHeadByFrontmatter = (): void => {
       { property: 'og:title', content: title },
       { property: 'og:description', content: desc },
       { property: 'og:image', content: headerImage },
+      { property: 'og:type', content: 'article' },
       { property: 'og:url', content: computed(() => site + fullPath.value) },
-      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:creator', content: twitterCreator },
       { name: 'twitter:title', content: title },
       { name: 'twitter:description', content: desc },
       { name: 'twitter:image', content: headerImage },
       { name: 'application-name', content: appName },
-      { name: 'apple-mobile-web-app-title', content: name },
+      { name: 'apple-mobile-web-app-title', content: siteName },
       { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
       { name: 'theme-color', content: computed(() => isDark.value ? '#050505' : '#ffffff') },
     ],

@@ -1,3 +1,7 @@
+---
+headerImage: '/og/index.og'
+---
+
 <h1 class="text-linear">Q.Ben Zheng</h1>
 
 Hi, I am Q.Ben<sup>(or QB)</sup>, a vibrant script developer. Core team member of **X**.

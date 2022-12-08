@@ -2,7 +2,7 @@
 import type { ComputedRef } from 'vue'
 import type { PageMeta } from '~build/node'
 import { formatDate } from '~/utils'
-import { name as siteName } from '~/meta'
+import { title as siteName } from '~/meta'
 
 const router = useRouter()
 const meta = computed(() => router.currentRoute.value.meta) as ComputedRef<PageMeta>

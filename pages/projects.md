@@ -1,5 +1,5 @@
 ---
-title: Project - Q.Ben Zheng
+title: Projects - Q.Ben Zheng
 desc: Q.Ben's Project List | Zhengqbbb
 projects:
   Upcoming:

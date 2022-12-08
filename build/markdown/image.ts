@@ -9,7 +9,7 @@ import type MarkdownIt from 'markdown-it'
  * `![Image Example](/image/a.gif) <!-- ! -->`                  not zoom. use lazy attrs
  * `![Image Example](/image/a.png) <!-- size=200 -->`           use lazy attrs. width 200. height 200.
  * `![Image Example](/image/a.gif) <!-- size=900x220 -->`       use lazy attrs. width 900. height 220.
- * @author Zhengqbbb
+ * @author Zhengqbbb <https://github.com/Zhengqbbb>
  */
 export const ImagePlugin = (md: MarkdownIt) => {
   const imageRender = md.renderer.rules.image!
