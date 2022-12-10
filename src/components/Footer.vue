@@ -19,10 +19,9 @@ import { email, site } from '~/meta'
       >Q.Ben Zheng</a>
     </div>
     <div class="op-70 text-sm">
-      <a
-        class="item"
-        href="/posts"
-      >Blog</a>
+      <router-link class="item" to="/posts">
+        Blog
+      </router-link>
       <span> · </span>
       <a
         class="item"
@@ -36,6 +35,5 @@ import { email, site } from '~/meta'
 <style scoped>
 footer a.item{
   --at-apply: pb-0.3 border-b border-transparent hover:border-c-fg transition-border-color-300;
-;
 }
 </style>
