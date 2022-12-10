@@ -82,7 +82,6 @@ export const resolvePageFile = (route: any) => {
 
 /**
  * @description: generated Posts List for page use
- * @return {*}
  */
 export const resolvePostList = (routes: any[]) => {
   const blogs = routes

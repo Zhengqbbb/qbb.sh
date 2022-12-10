@@ -3,14 +3,16 @@
   "packageManager": "pnpm@7.5.2",
   "scripts": {
     "dev": "vite --host --port 3333",
-    "build": "pnpm build:prev && vite-ssg build",
+    "build": "pnpm build:prev && vite-ssg build && pnpm build:post",
     "build:prev": "run-p -c gen:sh gen:og",
+    "build:post": "run-p -c gen:rss",
     "serve": "vite preview --host",
     "lint": "eslint .",
     "cz": "czg",
     "z:image": "tsx ./build/node/zImage.ts",
-    "gen:sh": "tsx ./build/node/syntaxHightlight.ts",
-    "gen:og": "tsx ./build/node/og/main.mts"
+    "gen:sh": "tsx  ./build/node/syntaxHightlight.ts",
+    "gen:og": "tsx  ./build/node/og/main.mts",
+    "gen:rss": "tsx ./build/node/rss.ts"
   },
   "dependencies": {
     "@unocss/reset": "^0.47.5",

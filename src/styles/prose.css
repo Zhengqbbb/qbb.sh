@@ -1,7 +1,7 @@
 /** Section: Init */
 
 .prose {
-  --at-apply: max-w-70ch text-c-fg text-4 leading-1.75em;
+  --at-apply: max-w-content text-c-fg text-4 leading-1.75em;
 }
 
 .prose> :first-child {

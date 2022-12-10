@@ -37,6 +37,9 @@ const _VARS: Theme = {
     DEFAULT: '0.325rem',
     sm: '0.25rem',
   },
+  maxWidth: {
+    content: '70ch',
+  },
   spacing: {
     space: '1.2em',
   },

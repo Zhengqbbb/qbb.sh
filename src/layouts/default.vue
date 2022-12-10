@@ -1,4 +1,4 @@
 <template>
   <RouterView />
-  <Footer />
+  <Footer class="max-w-content m-auto" />
 </template>

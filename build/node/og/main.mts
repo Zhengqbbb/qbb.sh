@@ -1,7 +1,7 @@
 import { readFile, writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'url'
-import fs from 'fs-extra'
 import { dirname, resolve } from 'pathe'
+import fs from 'fs-extra'
 import fg from 'fast-glob'
 import matter from 'gray-matter'
 import { type PropType, createSSRApp } from 'vue'
@@ -19,8 +19,8 @@ import type { TemplateTheme } from './type'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const __sourceDir = resolve(__dirname, '../../../pages')
-const __target = 'public/og'
-const __targetDir = resolve(__dirname, `../../../${__target}`)
+const __output = 'public/og'
+const __outputDir = resolve(__dirname, `../../../${__output}`)
 
 /**
  * @description: auto generate og image for Build Pre
@@ -32,29 +32,31 @@ export async function genOG() {
   const files = fg.sync('**/*.{md,vue}', { cwd: __sourceDir, absolute: true })
 
   // return await genPNG(await genSVG(siteName, siteDesc, siteShort), resolve(__dirname, './a.png'))
-  return Promise.all(files.map(async (p) => {
-    const flatPath = p
-      .replace(__sourceDir, '')
-      .replace(/(\.md|\.vue)$/, '.png')
-      .replaceAll('/', '-')
-      .substring(1)
-      .replace(/(-index\.png)$/, '.png')
-    const targetFile = resolve(__targetDir, flatPath)
-    if (fs.existsSync(targetFile))
-      return true
+  return await Promise.all(
+    files.map(async (p) => {
+      const flatPath = p
+        .replace(__sourceDir, '')
+        .replace(/(\.md|\.vue)$/, '.png')
+        .replaceAll('/', '-')
+        .substring(1)
+        .replace(/(-index\.png)$/, '.png')
+      const targetFile = resolve(__outputDir, flatPath)
+      if (fs.existsSync(targetFile))
+        return false
 
-    const pageData = await readFile(p, 'utf-8')
-    const { data } = matter(pageData)
-    const { description, title: pageTitle, desc: descAlias, headerImage } = data as PageFrontmatter
-    if (typeof headerImage === 'string')
-      return true
+      const raw = await readFile(p, 'utf-8')
+      const { data } = matter(raw)
+      const { description, title: pageTitle, desc: descriptionAlias, headerImage } = data as PageFrontmatter
+      if (typeof headerImage === 'string')
+        return false
 
-    const desc = description || descAlias || siteDesc
-    const title = pageTitle || siteName
+      const desc = description || descriptionAlias || siteDesc
+      const title = pageTitle || siteName
 
-    await genPNG(await genSVG(title, desc, siteShort), targetFile)
-    return flatPath
-  }))
+      await genPNG(await genSVG(title, desc, siteShort), targetFile)
+      return flatPath
+    }),
+  )
 }
 
 async function initEnv() {
@@ -164,9 +166,8 @@ async function genPNG(svg: string, output: string) {
   const images = await genOG()
 
   console.log('\x1B[32m✓\x1B[0m Generat Open Gragh Image')
-  images.forEach((i) => {
-    if (typeof i === 'string')
-      console.log(`\x1B[90m${__target}/\x1B[36m${i}\x1B[0m`)
+  images.filter(Boolean).forEach((i) => {
+    console.log(`\x1B[90m${__output}/\x1B[36m${i}\x1B[0m`)
   })
   console.log(`  \x1B[90mGenerate Open Gragh Image in ${((Date.now() - start) / 1000).toFixed(2)}s\x1B[0m`)
 }()).catch((err) => {
