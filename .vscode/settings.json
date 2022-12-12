@@ -26,13 +26,6 @@
     "source.fixAll.eslint": true
   },
   "editor.formatOnSave": false,
-  "[markdown]": {
-    "editor.quickSuggestions": {
-      "comments": "on",
-      "strings": "on",
-      "other": "on"
-    }
-  },
   "files.associations": {
     "*.css": "css",
     ".czrc": "json",
