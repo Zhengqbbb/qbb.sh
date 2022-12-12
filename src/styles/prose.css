@@ -102,7 +102,7 @@
 }
 
 .prose figure figcaption {
-  --at-apply: text-#6b7280 text-sm mt-3 leading-1.4;
+  --at-apply: text-c-dim text-.8rem leading-4 mt-3;
 }
 
 .prose figure.error {

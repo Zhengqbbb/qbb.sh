@@ -10,8 +10,8 @@
     "lint": "eslint .",
     "cz": "czg",
     "z:image": "tsx ./build/node/zImage.ts",
-    "gen:sh": "tsx  ./build/node/syntaxHightlight.ts",
-    "gen:og": "tsx  ./build/node/og/main.mts",
+    "gen:sh": " tsx ./build/node/syntaxHightlight.ts",
+    "gen:og": " tsx ./build/node/og/main.mts",
     "gen:rss": "tsx ./build/node/rss.ts"
   },
   "dependencies": {

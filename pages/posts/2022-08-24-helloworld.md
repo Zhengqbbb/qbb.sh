@@ -139,7 +139,7 @@ pnpm install -D cz-git
 
 ![Image Example](/image/vitesse.webp) <!-- size=120x120 -->
 ![Image Example](/image/vitesse.webp) <!-- size=240 -->
-![Image Example](/image/vitesse.webp) <!-- -->
+![Image Example](/image/vitesse.webp) <!-- text=Campground by [@Finca Los Vientos](https://reurl.cc/28aQr4) • Aug 2021 -->
 
 ## Containers
 
@@ -182,7 +182,7 @@ This is a details block.
 - [x] ==Project List page==
 - [x] HTML OG image, title, description auto gen
 - [x] RSS | feed
-- [ ] Image figure markdown plugin
+- [x] Image figure markdown plugin
 - [ ] Step flow markdown plugin
 - [ ] markdown-container-link-card plugin
 

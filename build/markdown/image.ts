@@ -9,35 +9,44 @@ import type MarkdownIt from 'markdown-it'
  * `![Image Example](/image/a.gif) <!-- ! -->`                  not zoom. use lazy attrs
  * `![Image Example](/image/a.png) <!-- size=200 -->`           use lazy attrs. width 200. height 200.
  * `![Image Example](/image/a.gif) <!-- size=900x220 -->`       use lazy attrs. width 900. height 220.
+ * `![Image Example](/image/a.gif) <!-- size=900x220 text=hello world. by[@hello](http:...) -->`.
+ *  use lazy attrs. width 900. height 220. figcaption<image description>: hello world.<a href="http:...">@hello</a>
  * @author Zhengqbbb <https://github.com/Zhengqbbb>
  */
 export const ImagePlugin = (md: MarkdownIt) => {
+  const imageRE = /^<!-- (?<size>size=(\d+)(x\d+)?)? ?(?<notZoom>!)? ?(?<text>text=.+)? ?-->/i
+  const sizeRE = /size=(?<width>\d+)(?<height>x\d+)?/i
+
   const imageRender = md.renderer.rules.image!
+
   md.renderer.rules.image = (...args) => {
     const [tokens, idx] = args
-    if (tokens[idx + 2] && /^<!--.*-->/.test(tokens[idx + 2].content)) {
-      const data = tokens[idx + 2].content
-
-      if (/size=/.test(data)) {
-        const size = data.match(/size=(\d+)(x\d+)?/)
+    const match = tokens[idx + 2] ? tokens[idx + 2].content.match(imageRE) : null
+    if (match) {
+      if (match.groups?.size) {
+        const sizeMatch = match.groups.size.match(sizeRE)
         tokens[idx].attrs?.push(
           [
             'width',
-            size?.[1] || '',
+            sizeMatch?.groups?.width || '',
           ],
           [
             'height',
-            size?.[2]?.substring(1) || size?.[1] || '',
+            sizeMatch?.groups?.height?.substring(1) || sizeMatch?.groups?.width || '',
           ],
         )
       }
 
-      if (/^<!-- \!/.test(data)) {
-        const classIdx = tokens[idx].attrs?.findIndex(i => i?.[0] === 'class')
-        classIdx === undefined || classIdx === -1
+      if (match.groups?.notZoom) {
+        const imageClass = tokens[idx].attrs?.findIndex(i => i?.[0] === 'class')
+        imageClass === undefined || imageClass === -1
           ? tokens[idx].attrs?.push(['class', 'not-zoom'])
-          : tokens[idx].attrs?.[classIdx][1].concat(' not-zoom')
+          : tokens[idx].attrs?.[imageClass][1].concat(' not-zoom')
       }
+
+      let appendRaw = ''
+      if (match.groups?.text)
+        appendRaw = `\n<figcaption>${md.renderInline(match.groups.text.substring(5))}</figcaption>`
 
       tokens[idx].attrs?.push(
         [
@@ -63,7 +72,7 @@ export const ImagePlugin = (md: MarkdownIt) => {
       const alt = tokens[idx].content
       const rawCode = imageRender(...args)
       return `<figure alt="${alt}">
-      ${rawCode}
+        ${rawCode}${appendRaw}
       </figure>`
     }
     return imageRender(...args)

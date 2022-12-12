@@ -26,6 +26,13 @@
     "source.fixAll.eslint": true
   },
   "editor.formatOnSave": false,
+  "[markdown]": {
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    }
+  },
   "files.associations": {
     "*.css": "css",
     ".czrc": "json",
@@ -53,5 +60,4 @@
   "cssvar.files": [
     "src/styles/vars.css"
   ],
-  "commentTranslate.multiLineMerge": true
 }

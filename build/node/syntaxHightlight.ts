@@ -97,12 +97,12 @@ const node = () => {
       name: 'keyword',
     },
     {
-      match: '(?<=^|;|&|\\s)(?:install -g|install -D|add -D|install)',
-      name: 'string',
-    },
-    {
       match: '(?<=^)(cz-git|czg)',
       name: 'keyword',
+    },
+    {
+      match: '(?<=^|;|&|\\s)(?:install -g|install -D|add -D|install)',
+      name: 'string',
     },
     {
       match: '(?<=^|;|&|\\s)(?:cz-git|czg|commitizen)',
