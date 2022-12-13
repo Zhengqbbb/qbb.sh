@@ -101,6 +101,7 @@ onMounted(() => {
         :lang="lang === 'en' ? 'en' : 'zh-CN'"
         loading="lazy"
         mapping="pathname"
+        input-position="top"
       />
     </div>
   </div>
