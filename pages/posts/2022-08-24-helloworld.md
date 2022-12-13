@@ -216,7 +216,7 @@ This is a details block.
 - [x] RSS | feed
 - [x] Image figure markdown plugin
 - [x] Step flow markdown plugin
-- [ ] giscus post footer
+- [x] giscus post footer
 
 > WIP road map <br>
 > https://github.com/Zhengqbbb/qbb.sh
