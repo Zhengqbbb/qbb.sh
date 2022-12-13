@@ -17,6 +17,5 @@ export const email = 'zhengqbbb@gmail.com'
 /** application info */
 export const appName = 'Q.Ben'
 
-/** site search console  */
-export const googleVerify = 'j6cNWewUj3QcJBpdv48t67XoDxdlKPQ6dwKgXg9Nigo'
-export const baiduVerify = 'code-GZMUSi21Xe'
+/** site key  */
+export const giscusKey = ''

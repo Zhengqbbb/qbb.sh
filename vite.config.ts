@@ -89,8 +89,8 @@ export default defineConfig({
     Inspect(),
     // https://github.com/stafyniaksacha/vite-plugin-radar#vite-plugin-radar
     ViteRadar({
-      analytics: [{ id: 'G-W8GH3S45ZS' }],
-      tongji: [{ id: '65945f3e2cb7266e3081013ba91a778a' }],
+      analytics: [{ id: process.env.GOOGLE_ANALYTICS_ID || '' }],
+      tongji: [{ id: process.env.BAIDU_TONGJI_ID || '' }],
     }),
   ],
 

@@ -9,7 +9,6 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     CodeGroup: typeof import('./components/CodeGroup.vue')['default']
     CodeGroupItem: typeof import('./components/CodeGroupItem.vue')['default']
-    copy: typeof import('./components/StepFlow.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     ListPosts: typeof import('./components/ListPosts.vue')['default']
     ListProjects: typeof import('./components/ListProjects.vue')['default']
