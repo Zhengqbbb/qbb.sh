@@ -168,9 +168,10 @@ pnpm install -D cz-git
 
 ## Images
 
-![Image Example](/image/vitesse.webp) <!-- size=120x120 -->
-![Image Example](/image/vitesse.webp) <!-- size=240 -->
-![Image Example](/image/vitesse.webp) <!-- text=Campground by [@Finca Los Vientos](https://reurl.cc/28aQr4) • Aug 2021 -->
+![Image Example](/image/vitesse.webp) <!-- <size="240"> -->
+![Image Example](/image/vitesse.webp) <!-- <size="400x400"> <class="m-auto"> <desc="Campground by [@Finca Los Vientos](https://reurl.cc/28aQr4) • Aug 2021"> -->
+![Image Example](/image/vitesse.webp) <!-- <desc="Campground by [@Finca Los Vientos](https://reurl.cc/28aQr4) • Aug 2021"> -->
+
 
 ## Containers
 
@@ -215,7 +216,7 @@ This is a details block.
 - [x] RSS | feed
 - [x] Image figure markdown plugin
 - [x] Step flow markdown plugin
-- [ ] markdown-container-link-card plugin
+- [ ] giscus post footer
 
 > WIP road map <br>
 > https://github.com/Zhengqbbb/qbb.sh

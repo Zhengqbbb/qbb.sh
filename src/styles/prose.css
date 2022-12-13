@@ -126,6 +126,23 @@
   --at-apply: text-xs text-center text-c-fg truncate leading-2em z-2;
 }
 
+/* NOTE: link-card */
+.prose figure[link] a {
+  --at-apply: border bg-gray bg-op-5 border-c-border rd overflow-hidden block hover:op-80 transition-all;
+}
+
+.prose figure[link] a img {
+  --at-apply: m-0 aspect-ratio-video object-cover border-b border-c-border;
+}
+
+.prose figure[link] a figcaption {
+  --at-apply: my-4 px-2;
+}
+
+.prose figure[link] a figcaption.title {
+  --at-apply: text-c-fgDeeper text-4;
+}
+
 /** EndSection: */
 
 /** Section: Link */
