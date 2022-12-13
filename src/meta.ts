@@ -18,7 +18,7 @@ export const email = 'zhengqbbb@gmail.com'
 export const appName = 'Q.Ben'
 
 /** site key  */
-/** @see https://giscus.app |  */
+/** @see https://giscus.app | https://github.com/Zhengqbbb/qbb.sh/pull/7 */
 export const giscusConfig = {
   repo: 'Zhengqbbb/qbb.sh' as `${string}/${string}`,
   repoId: 'R_kgDOH3qttQ',
