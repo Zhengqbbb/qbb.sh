@@ -1,8 +1,9 @@
 <script lang="ts" setup>
+import Giscus from '@giscus/vue'
 import type { ComputedRef } from 'vue'
 import type { PageMeta } from '~build/node'
 import { formatDate } from '~/utils'
-import { title as siteName } from '~/meta'
+import { giscusConfig, title as siteName } from '~/meta'
 
 const router = useRouter()
 const meta = computed(() => router.currentRoute.value.meta) as ComputedRef<PageMeta>
@@ -90,5 +91,17 @@ onMounted(() => {
     <hr>
     <PostPager />
     <Footer />
+    <div class="min-h-22rem">
+      <Giscus
+        :repo="giscusConfig.repo"
+        :repo-id="giscusConfig.repoId"
+        :category="giscusConfig.category"
+        :category-id="giscusConfig.categoryId"
+        :theme="isDark ? 'dark_tritanopia' : 'light'"
+        :lang="lang === 'en' ? 'en' : 'zh-CN'"
+        loading="lazy"
+        mapping="pathname"
+      />
+    </div>
   </div>
 </template>
