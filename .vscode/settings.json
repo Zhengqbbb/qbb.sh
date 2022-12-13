@@ -53,4 +53,10 @@
   "cssvar.files": [
     "src/styles/vars.css"
   ],
+  "vscode-color-picker.languages": [
+    "yaml",
+    "javascript",
+    "typescript",
+    "vue"
+  ],
 }
