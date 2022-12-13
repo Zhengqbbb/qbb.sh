@@ -14,7 +14,7 @@ import type MarkdownIt from 'markdown-it'
  * @author Zhengqbbb <https://github.com/Zhengqbbb>
  */
 export const ImagePlugin = (md: MarkdownIt) => {
-  const imageRE = /^<!-- (?<size>size=(\d+)(x\d+)?)? ?(?<notZoom>!)? ?(?<text>text=.+)? ?-->/i
+  const imageRE = /^<!-- (?<size>size=(\d+)(x\d+)?)? ?(?<notZoom>!)? ?(?<class>class=".*")? ?(?<text>text=.+)? ?-->/i
   const sizeRE = /size=(?<width>\d+)(?<height>x\d+)?/i
 
   const imageRender = md.renderer.rules.image!
@@ -71,7 +71,7 @@ export const ImagePlugin = (md: MarkdownIt) => {
 
       const alt = tokens[idx].content
       const rawCode = imageRender(...args)
-      return `<figure alt="${alt}">
+      return `<figure ${match.groups?.class || ''} alt="${alt}">
         ${rawCode}${appendRaw}
       </figure>`
     }

@@ -177,7 +177,7 @@
 }
 
 .prose ol>li::before {
-  --at-apply: absolute left-0 text-#878c97 font-400;
+  --at-apply: absolute left-0 text-c-dim op-80 font-400;
   content: counter(list-item, var(--list-counter-style, decimal)) ".";
 }
 
@@ -187,7 +187,7 @@
 }
 
 .prose ul>li::before {
-  --at-apply: bg-#d1d5db b-rd-50% w-0.375em h-0.375em;
+  --at-apply: bg-c-dim op-80 b-rd-full w-0.375em h-0.375em;
   content: "";
   position: absolute;
   top: calc(0.875em - 0.1875em);
@@ -212,6 +212,46 @@
 .prose ol ul,
 .prose ol ol {
   --at-apply: my-0.75em pl-0;
+}
+
+/** EndSection: */
+
+/** Section: Step Flow */
+
+.prose .step-flow.ul,
+.prose .step-flow.ol {
+  --at-apply: my-space;
+}
+
+.prose .step-flow .step-flow-title {
+  --at-apply: text-1.1rem font-600 leading-1.6em op-90 text-c-fgDeeper;
+}
+
+.prose .step-flow .step-flow-item {
+  --at-apply: relative flex gap-4;
+}
+
+.prose .step-flow.ul .step-flow-item::before {
+  content: "";
+  --at-apply: flex justify-center items-center z-2 text-c-dim op-80 w-4 h-1.7rem i-ph:circle-bold;
+}
+
+.prose .step-flow.ul .step-flow-item::after {
+  content: "";
+  --at-apply: absolute left-0 top-6 bottom--1 z-1 w-1px bg-c-border;
+  transform: translateX(0.45rem);
+}
+
+.prose .step-flow.ol .step-flow-item::before {
+  content: attr(data-step);
+  --at-apply: flex justify-center items-center z-2;
+  --at-apply: text-c-dim w-6 h-6 mt-1 rd-full border border-full op-80 border-c-dim;
+}
+
+.prose .step-flow.ol .step-flow-item::after {
+  content: "";
+  --at-apply: absolute left-0 top-8 bottom-0 z-1 w-1px bg-c-border;
+  transform: translateX(0.7rem);
 }
 
 /** EndSection: */
@@ -336,10 +376,13 @@
   --at-apply: my-0;
 }
 
-.prose .custom-block.details,
-.prose .custom-block.info {
-  --at-apply: border-c-border bg-brand bg-op-5;
+.prose .custom-block.details {
+  --at-apply: border-c-border bg-slate bg-op-5;
   --at-apply: dark:bg-op-10;
+}
+
+.prose .custom-block.info {
+  --at-apply: border-c-border;
 }
 
 .prose .custom-block.info .custom-block-title {
@@ -547,13 +590,14 @@ html:not(.dark) .shiki-dark {
   --at-apply: hover:text-c-fgDeeper focus:text-c-fgDeeper;
 }
 
-.table-of-contents ul > li::before {
+.table-of-contents ul>li::before {
   --at-apply: hidden;
 }
 
-.table-of-contents ul > li {
+.table-of-contents ul>li {
   --at-apply: pl-3;
 }
+
 .table-of-contents ul ul {
   --at-apply: my-0;
 }
@@ -565,7 +609,7 @@ html:not(.dark) .shiki-dark {
 /** EndSection: */
 
 /** Section: MD-Plugin: header-anchor */
-.prose:not(.post) a.header-anchor{
+.prose:not(.post) a.header-anchor {
   --at-apply: hidden;
 }
 
@@ -591,4 +635,5 @@ h6:hover .header-anchor,
 h6:focus .header-anchor {
   --at-apply: op-50;
 }
+
 /** EndSection: */

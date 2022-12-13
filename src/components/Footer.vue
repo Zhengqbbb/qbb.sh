@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { email, site } from '~/meta'
+import { author, email, site } from '~/meta'
 </script>
 
 <template>
@@ -16,7 +16,7 @@ import { email, site } from '~/meta'
       <a
         :href="`mailto:${email}`"
         class="item"
-      >Q.Ben Zheng</a>
+      >{{ author }}</a>
     </div>
     <div class="op-70 text-sm">
       <router-link class="item" to="/posts">

@@ -48,11 +48,42 @@ Recent breakthroughs in physics, made possible in part by fantastic new technolo
 - czg
 - cz-git-extension<sup>(Todo)</sup>
 
+:::: ul
+
+::: li 2022-08-24
+create repo
+:::
+
+::: li 2022-08-24
+create repo
+:::
+
+::::
+
+
 ---
 
 1. cz-git
 2. czg
 3. cz-git-extension<sup>(Todo)</sup>
+
+:::: ol
+::: li Install dependencies
+
+```sh
+npm install -D cz-git
+```
+
+:::
+
+::: li Modify package.json
+nice
+:::
+
+::: li Add configure
+hello
+:::
+::::
 
 ## Blockquote
 
@@ -183,7 +214,7 @@ This is a details block.
 - [x] HTML OG image, title, description auto gen
 - [x] RSS | feed
 - [x] Image figure markdown plugin
-- [ ] Step flow markdown plugin
+- [x] Step flow markdown plugin
 - [ ] markdown-container-link-card plugin
 
 > WIP road map <br>

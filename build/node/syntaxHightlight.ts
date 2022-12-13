@@ -11,20 +11,26 @@ const __X_THEMES = [{
   main: '#1c6b48',
   subcmd: '#b56959',
   synopsis: '#929292',
+  string: '#339135',
+  functionName: '#296aa3',
 }, {
   name: 'vitesse-dark',
   main: '#4d9375',
   subcmd: '#c98a7d',
   synopsis: '#818181',
+  string: '#80a665',
+  functionName: '#7395DD',
 }]
 const __SHIKI_BASE_PATH = resolve(__dirname, '../../node_modules/shiki')
 const __SHIKI_SHELL_PATH = resolve(__SHIKI_BASE_PATH, './languages/shellscript.tmLanguage.json')
 
-const xcmd = () => {
+const theme = () => {
   __X_THEMES.forEach((t) => {
     const themePath = resolve(__SHIKI_BASE_PATH, `./themes/${t.name}.json`)
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const theme = require(themePath)
+    theme.tokenColors[1].scope
+      = theme.tokenColors[1].scope.filter((i: string) => i !== 'punctuation')
     theme.tokenColors.push(
       {
         scope: 'support.function.x-cmd.main',
@@ -42,6 +48,29 @@ const xcmd = () => {
         scope: 'support.function.x-cmd.synopsis',
         settings: {
           foreground: t.synopsis,
+        },
+      },
+      {
+        scope: 'support.function.x-cmd.synopsis',
+        settings: {
+          foreground: t.synopsis,
+        },
+      },
+      {
+        scope: [
+          'string',
+          'string punctuation.section.embedded source',
+          'punctuation.definition.string',
+          'attribute.value',
+        ],
+        settings: {
+          foreground: t.string,
+        },
+      },
+      {
+        scope: 'entity.name.function',
+        settings: {
+          foreground: t.functionName,
         },
       },
     )
@@ -88,7 +117,7 @@ const xcmd = () => {
   fs.writeFileSync(resolve(__SHIKI_SHELL_PATH), JSON.stringify(data), 'utf-8')
 }
 
-const node = () => {
+const shell = () => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const data = require(__SHIKI_SHELL_PATH)
   data.repository.support.patterns.push(
@@ -102,7 +131,7 @@ const node = () => {
     },
     {
       match: '(?<=^|;|&|\\s)(?:install -g|install -D|add -D|install)',
-      name: 'string',
+      name: 'variable',
     },
     {
       match: '(?<=^|;|&|\\s)(?:cz-git|czg|commitizen)',
@@ -116,8 +145,8 @@ const node = () => {
   /* eslint-disable no-console */
   const start = new Date().getTime()
   console.log('\x1B[90m[build-prepare] \x1B[33mEnhanceSyntax Highlight ...\x1B[0m')
-  node()
-  xcmd()
+  theme()
+  shell()
   console.log('\x1B[32m✓\x1B[0m Enhance Syntax Highlight')
   console.log(`  \x1B[90mEnhance Syntax Highlight in ${((Date.now() - start) / 1000).toFixed(2)}s\x1B[0m\n`)
 }()).catch((err: Error) => {

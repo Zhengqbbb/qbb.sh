@@ -18,6 +18,21 @@ export const containerPlugin = (md: MarkdownIt) => {
       (info: string) => `<CodeGroupItem title="${info}">\n`,
       () => '</CodeGroupItem>\n'),
     )
+    .use(...createComptContainer(
+      'ul',
+      () => '<StepFlow type="ul">\n',
+      () => '</StepFlow>\n'),
+    )
+    .use(...createComptContainer(
+      'ol',
+      () => '<StepFlow type="ol">\n',
+      () => '</StepFlow>\n'),
+    )
+    .use(...createComptContainer(
+      'li',
+      (info: string) => `<StepFlowItem title="${md.renderInline(info)}">\n`,
+      () => '</StepFlowItem>\n'),
+    )
 }
 
 type ContainerArgs = [typeof container, string, { render: RenderRule }]
