@@ -5,9 +5,7 @@ import Jsx from '@vitejs/plugin-vue-jsx'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import Markdown from 'vite-plugin-vue-markdown'
-import Inspect from 'vite-plugin-inspect'
 import ViteRadar from 'vite-plugin-radar'
-import generateSitemap from 'vite-ssg-sitemap'
 import { VitePWA } from 'vite-plugin-pwa'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -18,7 +16,6 @@ import {
   resolvePostList,
   vitePWAOptions,
 } from './build'
-import { site } from './src/meta'
 
 export default defineConfig({
   resolve: {
@@ -85,8 +82,6 @@ export default defineConfig({
     VitePWA(vitePWAOptions),
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
     Layouts(),
-    // https://github.com/antfu/vite-plugin-inspect || http://localhost:3333/__inspect/
-    Inspect(),
     // https://github.com/stafyniaksacha/vite-plugin-radar#vite-plugin-radar
     ViteRadar({
       analytics: [{ id: process.env.GOOGLE_ANALYTICS_ID || '' }],
@@ -99,11 +94,5 @@ export default defineConfig({
     script: 'async',
     formatting: 'minify',
     format: 'cjs',
-    onFinished() {
-      generateSitemap({
-        hostname: site,
-        exclude: [''],
-      })
-    },
   },
 })

@@ -9,7 +9,8 @@ import { author, email, ogImg, site, description as siteDesc, title as siteTitle
 import { isExternal } from '~/utils'
 
 const __sourceDir = resolve(__dirname, '../../pages/posts')
-const __outputDir = resolve(__dirname, '../../dist')
+const __output = 'dist/'
+const __outputDir = resolve(__dirname, '../../', __output)
 
 /**
  * @description: generate RSS of build post
@@ -77,7 +78,7 @@ export async function generateRSS() {
 
   const files = await generateRSS()
   files?.filter(Boolean).forEach((i) => {
-    console.log(`\x1B[90mdist/\x1B[36m${i}\x1B[0m`)
+    console.log(`\x1B[90m${__output}\x1B[36m${i}\x1B[0m`)
   })
 
   console.log('\x1B[32m✓\x1B[0m Generate Posts RSS')
