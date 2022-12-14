@@ -20,7 +20,7 @@ export const appName = 'Q.Ben'
 /** site key  */
 /** @see https://giscus.app | https://github.com/Zhengqbbb/qbb.sh/pull/7 */
 export const giscusConfig = {
-  repo: 'Zhengqbbb/qbb.sh' as `${string}/${string}`,
+  repo: 'Zhengqbbb/qbb.sh',
   repoId: 'R_kgDOH3qttQ',
   category: 'Announcements',
   categoryId: 'DIC_kwDOH3qttc4CRiZK',

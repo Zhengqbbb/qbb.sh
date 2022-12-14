@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     CodeGroup: typeof import('./components/CodeGroup.vue')['default']
     CodeGroupItem: typeof import('./components/CodeGroupItem.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
+    Giscus: typeof import('./components/Giscus.vue')['default']
     GiscusWrap: typeof import('./components/GiscusWrap.vue')['default']
     ListPosts: typeof import('./components/ListPosts.vue')['default']
     ListProjects: typeof import('./components/ListProjects.vue')['default']
