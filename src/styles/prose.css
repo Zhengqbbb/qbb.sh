@@ -255,20 +255,22 @@
 
 .prose .step-flow.ul .step-flow-item::after {
   content: "";
-  --at-apply: absolute left-0 top-6 bottom--1 z-1 w-1px bg-c-border;
-  transform: translateX(0.45rem);
+  --at-apply: absolute left-0 top-6 bottom--1 z-1 w-2px bg-c-border;
+  transform: translateX(0.42rem);
 }
 
 .prose .step-flow.ol .step-flow-item::before {
   content: attr(data-step);
   --at-apply: flex justify-center items-center z-2;
-  --at-apply: text-c-dim w-6 h-6 mt-1 rd-full border border-full op-80 border-c-dim;
+  --at-apply: text-c-dim rd-full border op-80 border-c-dim;
+  flex: 0 0 clamp(1.8rem,5vw,1.8rem);
+  height: clamp(1.8rem,5vw,1.8rem);
 }
 
 .prose .step-flow.ol .step-flow-item::after {
   content: "";
-  --at-apply: absolute left-0 top-8 bottom-0 z-1 w-1px bg-c-border;
-  transform: translateX(0.7rem);
+  --at-apply: absolute left-0 top-9 bottom-1 z-1 w-2px bg-c-border;
+  transform: translateX(0.86rem);
 }
 
 /** EndSection: */
