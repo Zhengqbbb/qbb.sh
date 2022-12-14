@@ -19,8 +19,8 @@ defineProps<{ title: string; desc: string; site: string; theme: TemplateTheme }>
       </svg>
     </div>
     <div tw="w-full flex relative mt--20 px-30 flex-col justify-center items-center">
-      <div tw="text-2.8rem font-bold" v-html="title" />
-      <div tw="text-1.6rem text-neutral-400" v-html="desc" />
+      <div tw="text-2.8rem font-bold" style="white-space: pre-wrap;" v-html="title" />
+      <div tw="text-1.6rem text-neutral-400" style="white-space: pre-wrap;" v-html="desc" />
     </div>
     <div tw="w-full flex items-center justify-end">
       <div tw="flex items-center text-zinc-500 text-0.9rem">

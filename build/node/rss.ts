@@ -54,6 +54,7 @@ export async function generateRSS() {
         title: pageTitle,
         date: new Date(date),
         description: description || descriptionAlias || siteDesc,
+        id: `${site}/posts/${p.replace(/\.md?/, '')}`,
         link: `${site}/posts/${p.replace(/\.md?/, '')}`,
       })
     }),
