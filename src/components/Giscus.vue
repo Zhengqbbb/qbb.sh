@@ -23,10 +23,9 @@ const getScriptElement = () => {
   element.setAttribute('data-theme', theme.value)
   element.setAttribute('data-lang', lang.value)
   element.setAttribute('data-mapping', 'pathname')
-  element.setAttribute('data-mapping', 'pathname')
+  element.setAttribute('data-input-position', 'top')
   element.setAttribute('data-reactions-enabled', '1')
   element.setAttribute('data-emit-metadata', '0')
-  element.setAttribute('data-input-position', 'top')
   return element
 }
 
