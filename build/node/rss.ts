@@ -16,6 +16,7 @@ const __outputDir = resolve(__dirname, '../../', __output)
  * @description: generate RSS of build post
  * @author Zhengqbbb <https://github.com/Zhengqbbb>
  * @usage pnpm gen:rss
+ * @see https://www.qbb.sh/feed.xml
  */
 export async function generateRSS() {
   const posts = await fg('**/*.md', { cwd: __sourceDir, ignore: ['index.md'] })

@@ -9,6 +9,12 @@ const __sourceDir = resolve(__dirname, '../../pages/')
 const __output = 'dist/'
 const __outputDir = resolve(__dirname, '../../', __output)
 
+/**
+ * @description: generate sitemap of build post
+ * @author Zhengqbbb <https://github.com/Zhengqbbb>
+ * @usage pnpm gen:sitemap
+ * @see https://www.qbb.sh/sitemap.xml
+ */
 async function generateSitemap() {
   const pages = await fg('**/*.{vue,md}', { cwd: __sourceDir, ignore: ['*...all*.vue'] })
   const pageData = await Promise.all(
