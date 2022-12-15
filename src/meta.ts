@@ -1,7 +1,7 @@
 /** basic default site info */
-export const site = 'https://https://vitesse-qb.netlify.app/'
+export const site = 'https://vitesse-qb.netlify.app'
 export const title = 'Vitesse ✘ QB Template'
-export const description = 'Your Personal Website'
+export const description = 'Building a static personal website template by Vite-SSG'
 export const author = 'Q.Ben Zheng'
 export const lang = 'en'
 
