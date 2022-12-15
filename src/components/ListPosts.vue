@@ -12,12 +12,8 @@ const posts = router.getRoutes()
       return {
         ...page,
         title: meta.frontmatter.title,
-        readingTimeText: `${String(meta.readingTime.minutes)} ${
-          meta.lang === 'zh'
-          ? '分钟'
-          : 'min'
-        }`,
-        dateText: formatDate(meta.date, meta.lang),
+        readingTimeText: `${String(meta.readingTime.minutes)} min`,
+        dateText: formatDate(meta.date),
       }
     },
   )
@@ -50,7 +46,6 @@ for (const post of posts) {
             :datetime="dayjs(post.meta.date).toISOString()"
             class="text-sm op-50 tracking-wid"
           >
-            <i v-if="post.meta.lang === 'zh'" class="md:absolute left--6 top-1 i-icon-park-outline:chinese" />
             {{ post.dateText }} · {{ post.readingTimeText }}
           </time>
         </li>

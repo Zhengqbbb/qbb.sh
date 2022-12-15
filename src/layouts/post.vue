@@ -9,7 +9,6 @@ const meta = computed(() => router.currentRoute.value.meta) as ComputedRef<PageM
 
 const title = computed(() => meta.value.frontmatter.title || siteName)
 const date = computed(() => meta.value.date)
-const lang = computed(() => meta.value.lang)
 const readingTime = computed(() => meta.value.readingTime)
 
 const content = ref<HTMLDivElement>()
@@ -78,7 +77,7 @@ onMounted(() => {
   <div class="prose m-auto mb-space">
     <h1>{{ title }}</h1>
     <p class="op-50">
-      {{ formatDate(date, lang) }} · {{ readingTime.minutes }}{{ lang === 'zh' ? '分钟' : 'min' }}
+      {{ formatDate(date) }} · {{ readingTime.minutes }}min
     </p>
   </div>
 
@@ -90,6 +89,5 @@ onMounted(() => {
     <hr>
     <PostPager />
     <Footer />
-    <Giscus :key="router.currentRoute.value.fullPath" />
   </div>
 </template>

@@ -5,7 +5,6 @@ import Jsx from '@vitejs/plugin-vue-jsx'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import Markdown from 'vite-plugin-vue-markdown'
-import ViteRadar from 'vite-plugin-radar'
 import { VitePWA } from 'vite-plugin-pwa'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -82,11 +81,6 @@ export default defineConfig({
     VitePWA(vitePWAOptions),
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
     Layouts(),
-    // https://github.com/stafyniaksacha/vite-plugin-radar#vite-plugin-radar
-    ViteRadar({
-      analytics: [{ id: process.env.GOOGLE_ANALYTICS_ID || '' }],
-      tongji: [{ id: process.env.BAIDU_TONGJI_ID || '' }],
-    }),
   ],
 
   // https://github.com/antfu/vite-ssg

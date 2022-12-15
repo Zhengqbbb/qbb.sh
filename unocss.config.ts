@@ -9,7 +9,7 @@ import type { Theme } from 'unocss/preset-mini'
  * The instant on-demand Atomic CSS engine.
  * @see https://uno.antfu.me/
  */
-const _VARS: Theme = {
+export const _VARS: Theme = {
   colors: {
     l: {
       bg: 'rgb(255, 255, 255)',

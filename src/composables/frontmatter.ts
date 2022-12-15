@@ -1,6 +1,6 @@
 import type { ComputedRef } from 'vue'
 import type { PageMeta } from '~build/node'
-import { appName, author, description, keywords, site, title as siteName, twitterCreator } from '~/meta'
+import { appName, author, description, lang, ogImg, site, title as siteName } from '~/meta'
 import { isExternal } from '~/utils'
 
 /**
@@ -14,14 +14,12 @@ export const useHeadByFrontmatter = (): void => {
 
   const title = computed(() => meta.value.frontmatter.title || siteName)
   const desc = computed(() => meta.value.frontmatter.description || meta.value.frontmatter.desc || description)
-  const routerName = computed(() => router.currentRoute.value.name)
   const headerImage = computed(() => {
     const headerImage = meta.value.frontmatter.headerImage
     if (headerImage)
       return isExternal(headerImage) ? headerImage : site + headerImage
-    return `${site}/og/${String(routerName.value)}.png`
+    return ogImg
   })
-  const lang = computed(() => meta.value.lang)
 
   useHead({
     title,
@@ -30,18 +28,12 @@ export const useHeadByFrontmatter = (): void => {
     },
     meta: [
       { name: 'author', content: author },
-      { name: 'keywords', content: keywords },
       { name: 'description', content: desc },
       { property: 'og:title', content: title },
       { property: 'og:description', content: desc },
       { property: 'og:image', content: headerImage },
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: computed(() => site + fullPath.value) },
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:creator', content: twitterCreator },
-      { name: 'twitter:title', content: title },
-      { name: 'twitter:description', content: desc },
-      { name: 'twitter:image', content: headerImage },
       { name: 'application-name', content: appName },
       { name: 'apple-mobile-web-app-title', content: siteName },
       { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },

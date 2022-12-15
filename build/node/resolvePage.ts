@@ -18,7 +18,6 @@ export interface PostPager {
   headerImage: string
   date: string
   readingTime: ReadingTime
-  lang: 'zh' | 'en'
 }
 
 export interface PageFrontmatter {
@@ -46,10 +45,6 @@ export interface PageMeta extends RouteMeta {
    */
   date: string | null
   readingTime: ReadingTime
-  /**
-   * @example: 2022-08-24-helloworld-zh.md => 'zh'
-   */
-  lang: 'zh' | 'en'
   prev: PostPager | null
   next: PostPager | null
 }
@@ -74,7 +69,6 @@ export const resolvePageFile = (route: any) => {
     layout: isPost ? 'post' : 'default',
     date: routePath.substring(7, 17) || null,
     readingTime: readingTime(content),
-    lang: routePath.endsWith('zh') ? 'zh' : 'en',
   } as PageMeta)
 
   return route
@@ -93,7 +87,6 @@ export const resolvePostList = (routes: any[]) => {
       headerImage: item.meta.frontmatter.headerImage ?? `/og/${item.name}.png`,
       date: item.meta.date,
       readingTime: item.meta.readingTime,
-      lang: item.meta.lang,
     }))
     .sort((a: any, b: any) => dayjs(a.date).unix() - dayjs(b.date).unix())
 

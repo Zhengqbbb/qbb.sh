@@ -25,5 +25,5 @@
       "~build/*": ["build/*"]
     }
   },
-  "exclude": ["dist", "node_modules", "**/*.cjs"]
+  "exclude": ["dist", "node_modules"]
 }

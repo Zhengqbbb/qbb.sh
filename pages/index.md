@@ -1,26 +1,37 @@
----
-headerImage: '/og/index.png'
----
+<h1 class="text-linear">Vitesse ✘ QB Template</h1>
 
-<h1 class="text-linear">Q.Ben Zheng</h1>
+Building a static personal website template by [Vite-SSG](https://github.com/antfu/vite-ssg)<br>
+Feeling the freedom and more control on the build process and tooling
 
-Hi, I am Q.Ben<sup>(or QB)</sup>, a vibrant script developer. Core team member of **X**.
+[Preview](/posts/2022-08-24-preview) | [Guide](/posts)
 
+## Get Started
 
-I'm currently focusing development of command line applications.<br>
-Designing and building the CLI<sup>(Command-Line Interface)</sup> guide website.<br>
-==X is everything==. You can expect it like a POSIX SHELL magic.
+::::ol
+:::li Get a clean template for the current site
 
-<div class="w-50px my-8 mx-auto border-t border-c-border"/>
+```sh
+npx degit Zhengqbbb/qbb.sh#latest my-site
+```
 
-- Find me: [Github](https://github.com/Zhengqbbb) | [Twitter](https://twitter.com/zhengqbbb) | [Mastodon](https://mas.to/@qbb). Tracking my daily working.
-- I also like to share life photos and my cat<sup> Debi</sup> growth moment on [Instagram](https://www.instagram.com/qbqiubin/).
+:::
+:::li Download dependent startup project
 
-I'm live in [Luohu District, Shenzhen](https://www.google.com/maps/place/Luohu+District,+Shenzhen,+Guangdong+Province,+China/@22.5714604,114.1083405,13z/data=!4m13!1m7!3m6!1s0x3403f56281e978c3:0x3f81202fd3e54b98!2sLuohu+District,+Shenzhen,+Guangdong+Province,+China!3b1!8m2!3d22.5483599!4d114.13166!3m4!1s0x3403f56281e978c3:0x3f81202fd3e54b98!8m2!3d22.5483599!4d114.13166). If you're near me, let's hang out.
+```sh
+cd my-site
+# pnpm command not found? try `npm install -g pnpm`
+pnpm i
+pnpm dev
+```
 
-<p class="!text-center !mt-4">
-  And current website is
-  <router-link to="/posts/2022-08-24-helloworld" title="WIP page">
-    <i class="i-mdi:arrow-right-bold-outline op-60" /> WIP ...
-  </router-link>
-</p>
+:::
+:::li Try follow the checklist to update your info properly
+
+- [ ] Change the author name in `LICENSE`
+- [ ] Change the website info in `src/meta.ts`
+- [ ] Change the favicon and logo in `public/`
+
+Follow the guide pages. And, enjoy :)
+
+:::
+::::

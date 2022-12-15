@@ -1,25 +1,4 @@
 {
-  "cSpell.words": [
-    "'s",
-    "Debi",
-    "demi",
-    "helloworld",
-    "iconify",
-    "intlify",
-    "Luohu",
-    "POSIX",
-    "Qbenben",
-    "Shenzhen",
-    "Vite",
-    "vitejs",
-    "Vitesse",
-    "vitest",
-    "vueuse",
-    "Zheng"
-  ],
-  "cSpell.files": [
-    "pages/**/*"
-  ],
   // use eslint
   "prettier.enable": false,
   "editor.codeActionsOnSave": {
@@ -29,10 +8,6 @@
   "files.associations": {
     "*.css": "css",
     ".czrc": "json",
-    "_headers": "properties",
-    "_redirects": "properties",
-    "**/.x-cmd/*": "shellscript",
-    "**/.x-cmd/*.yml": "yaml"
   },
   "explicitFolding.rules": {
     "css": [
@@ -58,5 +33,26 @@
     "javascript",
     "typescript",
     "vue"
+  ],
+  "cSpell.words": [
+    "'s",
+    "Debi",
+    "demi",
+    "helloworld",
+    "iconify",
+    "intlify",
+    "Luohu",
+    "POSIX",
+    "Qbenben",
+    "Shenzhen",
+    "Vite",
+    "vitejs",
+    "Vitesse",
+    "vitest",
+    "vueuse",
+    "Zheng"
+  ],
+  "cSpell.files": [
+    "pages/**/*"
   ],
 }

@@ -1,6 +1,6 @@
 ---
-title: Blog - Q.Ben Zheng
-desc: Q.Ben's Post List | Zhengqbbb
+title: Blog
+desc: Blog List
 ---
 
 # Blog

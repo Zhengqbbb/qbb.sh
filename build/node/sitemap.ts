@@ -3,7 +3,7 @@ import fs from 'fs-extra'
 import { resolve } from 'pathe'
 import { SitemapStream } from 'sitemap'
 import fg from 'fast-glob'
-import { site } from '~/meta'
+import { lang, site } from '~/meta'
 
 const __sourceDir = resolve(__dirname, '../../pages/')
 const __output = 'dist/'
@@ -27,13 +27,13 @@ async function generateSitemap() {
             : p
         }`,
         lastmod: getGitTimestamp(resolve(__sourceDir, page)),
-        lang: p.endsWith('-zh') ? 'zh-CN' : 'en-US',
         priority: p === 'index'
           ? 1
           : p.startsWith('posts/')
             ? 0.8
             : 0.6,
         changefreq: 'daily',
+        lang,
       }
     }),
   )
