@@ -2,6 +2,7 @@ import { resolve } from 'pathe'
 import fs from 'fs-extra'
 import fg from 'fast-glob'
 import matter from 'gray-matter'
+import chalk from 'chalk'
 import type { Author, FeedOptions } from 'feed'
 import { Feed } from 'feed'
 import type { PageFrontmatter } from './resolvePage'
@@ -75,15 +76,15 @@ export async function generateRSS() {
 (async function () {
   /* eslint-disable no-console */
   const start = new Date().getTime()
-  console.log('\x1B[90m[build-post] \x1B[33mGenerate Posts RSS ...\x1B[0m')
+  console.log(`${chalk.gray('[build-post]')} ${chalk.yellow('Generate posts RSS ...')}`)
 
   const files = await generateRSS()
   files?.filter(Boolean).forEach((i) => {
-    console.log(`\x1B[90m${__output}\x1B[36m${i}\x1B[0m`)
+    console.log(`${chalk.gray(__output)}${chalk.cyan(i)}`)
   })
 
-  console.log('\x1B[32m✓\x1B[0m Generate Posts RSS')
-  console.log(`  \x1B[90mGenerate Posts RSS in ${((Date.now() - start) / 1000).toFixed(2)}s\x1B[0m\n`)
+  console.log(`${chalk.green('✓')} Generate posts RSS`)
+  console.log(`  ${chalk.gray(`Generate posts RSS in ${((Date.now() - start) / 1000).toFixed(2)}s`)}`)
 }()).catch((err: Error) => {
   console.error(err)
   process.exit(1)

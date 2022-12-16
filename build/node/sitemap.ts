@@ -1,6 +1,7 @@
 import { execSync } from 'child_process'
 import fs from 'fs-extra'
 import { resolve } from 'pathe'
+import chalk from 'chalk'
 import { SitemapStream } from 'sitemap'
 import fg from 'fast-glob'
 import { lang, site } from '~/meta'
@@ -70,15 +71,15 @@ function getGitTimestamp(file: string) {
 (async function () {
   /* eslint-disable no-console */
   const start = new Date().getTime()
-  console.log('\x1B[90m[build-post] \x1B[33mGenerate website sitemap ...\x1B[0m')
+  console.log(`${chalk.gray('[build-post]')} ${chalk.yellow('Generate website sitemap ...')}`)
 
   const files = await generateSitemap()
   files?.filter(Boolean).forEach((i) => {
-    console.log(`\x1B[90m${__output}\x1B[36m${i}\x1B[0m`)
+    console.log(`${chalk.gray(__output)}${chalk.cyan(i)}`)
   })
 
-  console.log('\x1B[32m✓\x1B[0m Generate website sitemap')
-  console.log(`  \x1B[90mGenerate website sitemap ${((Date.now() - start) / 1000).toFixed(2)}s.\x1B[0m\n`)
+  console.log(`${chalk.green('✓')} Generate website sitemap`)
+  console.log(`  ${chalk.gray(`Generate website sitemap in ${((Date.now() - start) / 1000).toFixed(2)}s`)}`)
 }()).catch((err: Error) => {
   console.error(err)
   process.exit(1)

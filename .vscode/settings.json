@@ -55,4 +55,5 @@
   "cSpell.files": [
     "pages/**/*"
   ],
+  "commentTranslate.multiLineMerge": true,
 }

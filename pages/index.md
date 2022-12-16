@@ -1,9 +1,8 @@
 # Vitesse ✘ QB Template
 
 Building a static personal website template by [Vite-SSG](https://github.com/antfu/vite-ssg)<br>
-Feeling more control on the build process and tooling
 
-[Preview](/posts/2022-12-16-preview) | [Guide](/posts)
+[Preview](/posts/2022-12-16-preview) | [Guide](/posts/2022-12-15-guide)
 
 ## Get Started
 
