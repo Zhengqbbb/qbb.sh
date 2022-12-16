@@ -1,14 +1,14 @@
-<h1 class="text-linear">Vitesse ✘ QB Template</h1>
+# Vitesse ✘ QB Template
 
 Building a static personal website template by [Vite-SSG](https://github.com/antfu/vite-ssg)<br>
-Feeling the freedom and more control on the build process and tooling
+Feeling more control on the build process and tooling
 
-[Preview](/posts/2022-08-24-preview) | [Guide](/posts)
+[Preview](/posts/2022-12-16-preview) | [Guide](/posts)
 
 ## Get Started
 
 ::::ol
-:::li Get a clean template for the current site
+:::li Get a clean template base the current site
 
 ```sh
 npx degit Zhengqbbb/qbb.sh#latest my-site
@@ -31,7 +31,8 @@ pnpm dev
 - [ ] Change the website info in `src/meta.ts`
 - [ ] Change the favicon and logo in `public/`
 
-Follow the guide pages. And, enjoy :)
-
 :::
 ::::
+
+Follow the guide pages. And, enjoy :)
+>

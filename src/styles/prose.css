@@ -205,7 +205,7 @@
 .prose ul ol,
 .prose ol ul,
 .prose ol ol {
-  --at-apply: my-0.75em pl-0;
+  --at-apply: my-0 pl-0;
 }
 
 /** EndSection: */

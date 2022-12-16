@@ -7,7 +7,7 @@ export const lang = 'en'
 
 /** social links */
 export const ogImg = `${site}/logo.png`
-export const github = 'https://github.com/Zhengqbbb/qbb.sh'
+export const github = 'https://github.com/Zhengqbbb/qbb.sh/tree/latest'
 export const email = 'zhengqbbb@gmail.com'
 
 /** application info */
