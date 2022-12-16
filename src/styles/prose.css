@@ -451,7 +451,7 @@
 }
 
 .prose .code-header-item.active {
-  --at-apply: text-c-fgDeeper op-100 bg-c-innerCodeBG bg-op-18;
+  --at-apply: text-c-fgDeeper op-100 bg-c-innerCodeBG bg-op-14;
 }
 
 .prose .code-group div[class*=language-] {

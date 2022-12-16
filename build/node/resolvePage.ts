@@ -32,7 +32,7 @@ export interface PageFrontmatter {
   description?: string
   desc?: string
   /**
-   * not use auto gen og:img. Use custom header image
+   * Use custom header image for og:image
    */
   headerImage?: string
 }
