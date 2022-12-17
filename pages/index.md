@@ -18,9 +18,4 @@ Designing and building the CLI<sup>(Command-Line Interface)</sup> guide website.
 
 I'm live in [Luohu District, Shenzhen](https://www.google.com/maps/place/Luohu+District,+Shenzhen,+Guangdong+Province,+China/@22.5714604,114.1083405,13z/data=!4m13!1m7!3m6!1s0x3403f56281e978c3:0x3f81202fd3e54b98!2sLuohu+District,+Shenzhen,+Guangdong+Province,+China!3b1!8m2!3d22.5483599!4d114.13166!3m4!1s0x3403f56281e978c3:0x3f81202fd3e54b98!8m2!3d22.5483599!4d114.13166). If you're near me, let's hang out.
 
-<p class="!text-center !mt-4">
-  And current website is
-  <router-link to="/posts/2022-08-24-helloworld" title="WIP page">
-    <i class="i-mdi:arrow-right-bold-outline op-60" /> WIP ...
-  </router-link>
-</p>
+<XBar />

@@ -6,10 +6,16 @@ This is Q.Ben personal website, built on 🏕 [Vitesse](https://github.com/antfu
 
 Blog posts content are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
 
-<br>
-<br>
-
-<h1 align="center">Vitesse ✘ QB Theme</h1>
-<pre align="center">Working in Progress</pre>
-
 Theme code is licensed under [MIT](https://github.com/Zhengqbbb/qbb.sh/blob/main/LICENSE)
+
+<br>
+<br>
+
+<h1 align="center">Vitesse ✘ QB Template</h1>
+
+> I prepared a clean personal website template if you like my website style
+
+Preview | Guide: [https://vitesse-qb.netlify.app/](https://vitesse-qb.netlify.app/)
+
+
+Chinese Version. 中文版本: [https://vitesse-qb-cn.netlify.app/](https://vitesse-qb-cn.netlify.app/)
