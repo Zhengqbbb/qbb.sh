@@ -3,10 +3,6 @@
 <!-- Created with Vectornator (http://vectornator.io/) -->
 <svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 32 32" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
-<linearGradient gradientTransform="matrix(1 0 0 1 0 0)" gradientUnits="userSpaceOnUse" id="LinearGradient" x1="23.7502" x2="2.06321" y1="9.59323" y2="30.8054">
-<stop offset="0" stop-color="#292929"/>
-<stop offset="1" stop-color="#000000"/>
-</linearGradient>
 <linearGradient gradientTransform="matrix(1 0 0 1 0 0)" gradientUnits="userSpaceOnUse" id="LinearGradient_2" x1="28.813" x2="6.77348" y1="11.0041" y2="27.3202">
 <stop offset="0.0151573" stop-color="#d9d9d9"/>
 <stop offset="0.985449" stop-color="#ababab"/>
