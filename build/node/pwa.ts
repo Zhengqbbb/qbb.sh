@@ -1,7 +1,7 @@
 import type { VitePWAOptions } from 'vite-plugin-pwa'
 import fg from 'fast-glob'
 import { resolve } from 'pathe'
-import { appName } from '~/meta'
+import { appName } from '../../src/meta'
 
 /* eslint-disable prefer-regex-literals */
 const __GOOGLE_FONT_REGEX = new RegExp('^https://fonts.googleapis.com/.*', 'i')

@@ -2,6 +2,8 @@
 
 Building a static personal website template by [Vite-SSG](https://github.com/antfu/vite-ssg)<br>
 
+> [Chinese Version. 中文版本](https://vitesse-qb-cn.netlify.app/)
+
 [Preview](/posts/2022-12-16-preview) | [Guide](/posts/2022-12-15-guide)
 
 ## Get Started
