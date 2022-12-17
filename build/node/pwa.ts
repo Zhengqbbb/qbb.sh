@@ -1,6 +1,7 @@
 import type { VitePWAOptions } from 'vite-plugin-pwa'
 import fg from 'fast-glob'
 import { resolve } from 'pathe'
+import { appName } from '~/meta'
 
 /* eslint-disable prefer-regex-literals */
 const __GOOGLE_FONT_REGEX = new RegExp('^https://fonts.googleapis.com/.*', 'i')
@@ -17,8 +18,8 @@ export const vitePWAOptions: Partial<VitePWAOptions> = {
   registerType: 'autoUpdate',
   includeAssets: fg.sync('**/*.{webp,png,jpg,svg,gif,ico,txt,woff2}', { cwd: resolve(__dirname, '../../public') }),
   manifest: {
-    name: 'Q.Ben',
-    short_name: 'Q.Ben',
+    name: appName,
+    short_name: appName,
     theme_color: '#050505',
     icons: [
       {
