@@ -21,6 +21,5 @@ declare module '@vue/runtime-core' {
     StepFlowItem: typeof import('./components/StepFlowItem.vue')['default']
     XBar: typeof import('./components/XBar.vue')['default']
     XCmd: typeof import('./components/icons/XCmd.vue')['default']
-    XWord: typeof import('./components/HomeFooter.vue')['default']
   }
 }
