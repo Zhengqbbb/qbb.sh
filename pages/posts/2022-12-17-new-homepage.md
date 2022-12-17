@@ -7,7 +7,7 @@ description: Building a static personal website by Vite-SSG
 
 ![vitesse-qb](/image/vitesse-qb.svg) <!-- <size="180"> <class="m-auto"> <!> -->
 
-Static site generation(SSG). Seems to have been around since i started programming.
+Static site generation(SSG). Seems to have been around since I started programming.
 
 At the end of 2021, I was ready to build official website of X-CMD. I came into contact with [Vuepress-next](https://github.com/vuepress/vuepress-next), at that time I notice [vuepress-theme-gungnir](https://github.com/Renovamen/vuepress-theme-gungnir)
 and got my first personal website, but I didn't seem to be satisfied.
@@ -16,7 +16,7 @@ Then I submitted my first PR and started contributing to open source, adding fea
 
 Yeah, it took me so much time to develop "theme" that I almost forgot about writing article lol.
 
-## What i really would like
+## What I really would like
 
 In fact, everyone's needs for personal sites are different. Some people like out-of-the-box declarative configuration to build pages, some like visual custom build pages, and some like pages full of professional design elements... So choose what you like.
 
