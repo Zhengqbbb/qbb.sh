@@ -77,7 +77,7 @@ onMounted(() => {
   <div class="prose m-auto mb-space">
     <h1>{{ title }}</h1>
     <p class="op-50">
-      {{ formatDate(date) }} · {{ readingTime.minutes }}min
+      {{ formatDate(date) }} · {{ readingTime.minutes }}分钟
     </p>
   </div>
 

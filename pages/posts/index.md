@@ -1,8 +1,8 @@
 ---
-title: Blog
-desc: Blog List
+title: 博客
+desc: 博客列表
 ---
 
-# Blog
+# 博客
 
 <ListPosts />

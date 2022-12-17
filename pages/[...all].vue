@@ -25,7 +25,7 @@ const getEmoji = (): string =>
       {{ getEmoji() }}
     </p>
     <h2 text="2xl" m="t-5 b-8">
-      How did we get here ?
+      怎么会来到这里 ?
     </h2>
     <RouterLink
       to="/"

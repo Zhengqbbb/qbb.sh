@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-// import 'dayjs/locale/zh-cn'
+import 'dayjs/locale/zh-cn'
 
 export const isExternal = (path: string) => {
   const outboundRE = /^(https?:|mailto:|tel:)/
@@ -12,8 +12,8 @@ export function formatDate(d?: string | Date | null) {
   if (!d)
     return
   return isSameYear(d, new Date())
-    ? dayjs(d).format('MMM D')
-    : dayjs(d).format('MMM D, YYYY')
+    ? dayjs(d).locale('zh-CN').format('MMMDD日')
+    : dayjs(d).locale('zh-CN').format('YYYY年 MMMDD日')
 }
 
 export const isClient = typeof window !== 'undefined'

@@ -1,8 +1,8 @@
 ---
-title: Projects
-desc: Project List
+title: 项目
+desc: 项目列表
 projects:
-  Title:
+  标题分类:
     - name: 'Vitesse-QB'
       desc: 'Personal site template'
       icon: 'vitesst-qb'
@@ -11,12 +11,12 @@ projects:
       desc: 'Vite + Vue Starter Template'
       icon: 'i-carbon-campsite'
       link: 'https://github.com/antfu/vitesse'
-    - name: 'Project Name'
-      desc: 'Project Desc'
+    - name: '项目标题'
+      desc: '项目描述'
       icon: ''
       link: 'https://github.com/Zhengqbbb/qbb.sh'
 ---
 
-# Projects
+# 项目
 
 <ListProjects :projects="frontmatter.projects" />

@@ -52,11 +52,11 @@ if (isClient) {
       <nav class="nav box-border p-8 flex items-center space-x-3">
         <router-link to="/posts" title="Blog" class="nav-item">
           <div i-majesticons:paper-fold-text-line class="md:hidden" />
-          <span class="lt-md:hidden">Blog</span>
+          <span class="lt-md:hidden">博客</span>
         </router-link>
         <router-link to="/projects" title="Projects" class="nav-item">
           <div i-ph:rocket-launch-duotone class="md:hidden" />
-          <span class="lt-md:hidden">Projects</span>
+          <span class="lt-md:hidden">项目</span>
         </router-link>
         <span class="nav-divider" />
 

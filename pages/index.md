@@ -1,37 +1,36 @@
-# Vitesse ✘ QB Template
+# Vitesse ✘ QB 模版
 
-Building a static personal website template by [Vite-SSG](https://github.com/antfu/vite-ssg)<br>
+[Vite-SSG](https://github.com/antfu/vite-ssg) 搭建静态个人网站模板
 
-[Preview](/posts/2022-12-16-preview) | [Guide](/posts/2022-12-15-guide)
+[预览页面](/posts/2022-12-16-preview) | [教程介绍](/posts/2022-12-15-guide)
 
-## Get Started
+## 快速开始
 
 ::::ol
-:::li Get a clean template base the current site
+:::li 基于本站点, 获得干净模版
 
 ```sh
-npx degit Zhengqbbb/qbb.sh#latest my-site
+npx degit Zhengqbbb/qbb.sh#cn-latest my-site
 ```
 
 :::
-:::li Download dependent startup project
+:::li 下载依赖，启动项目
 
 ```sh
 cd my-site
-# pnpm command not found? try `npm install -g pnpm`
+# 没有 pnpm 命令，运行 `npm install -g pnpm`
 pnpm i
 pnpm dev
 ```
 
 :::
-:::li Try follow the checklist to update your info properly
+:::li 尝试更新你个人的信息
 
-- [ ] Change the author name in `LICENSE`
-- [ ] Change the website info in `src/meta.ts`
-- [ ] Change the favicon and logo in `public/`
+- [ ] 修改作者名 `LICENSE`
+- [ ] 修改站点信息 `src/meta.ts`
+- [ ] 更换你的图标 `public/`
 
 :::
 ::::
 
-Follow the guide pages. And, enjoy :)
->
+跟随教程. 并开始创作吧 :)

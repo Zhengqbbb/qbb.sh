@@ -20,7 +20,7 @@ const nextPost = computed(() => router.currentRoute.value.meta.next) as Computed
     >
       <router-link :to="prevPost.path" class="!border-none block p-4">
         <div class="text-xs text-c-fg">
-          Previous page
+          上一篇
         </div>
         <div class="text-c-fgDeep text-sm leading-none mt-2">
           {{ prevPost.title }}
@@ -34,7 +34,7 @@ const nextPost = computed(() => router.currentRoute.value.meta.next) as Computed
     >
       <router-link :to="nextPost.path" class="!border-none block p-4">
         <div class="text-end text-xs text-c-fg">
-          Next page
+          下一篇
         </div>
         <div class="text-end text-c-fgDeep text-sm leading-none mt-2">
           {{ nextPost.title }}
