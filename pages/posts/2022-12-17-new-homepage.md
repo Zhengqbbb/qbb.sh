@@ -40,7 +40,7 @@ Everything is created and maintained by myself, I can remember and parse whateve
 Don’t need to rely on any upstream depend, or cater to others people usage.<br>
 ==Just do it==
 
-## Thanks and inspired by:
+## Thanks and inspired by
 
 > I prepared a clean personal website template if you like my website style
 >
