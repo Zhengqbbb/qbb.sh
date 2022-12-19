@@ -1,5 +1,9 @@
 {
   "private": true,
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=7"
+  },
   "scripts": {
     "dev": "vite --host --port 3333",
     "build": "pnpm build:prev && vite-ssg build && pnpm build:post",
@@ -75,10 +79,6 @@
     "vite-plugin-vue-markdown": "^0.22.1",
     "vite-ssg": "^0.22.1",
     "yoga-wasm-web": "^0.2.0"
-  },
-  "engines": {
-    "node": ">=16",
-    "pnpm": ">=7"
   },
   "eslintConfig": {
     "extends": "@antfu"
