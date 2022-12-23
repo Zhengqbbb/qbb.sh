@@ -64,8 +64,7 @@ export const useHeadByFrontmatter = (): void => {
     defineWebSite({
       url: site,
       name: siteName,
-      description: 'Q.Ben Zheng Personal Website. Zhengqbbb a vibrant script developer. Core team member of X-CMD',
-      logo: '/logo.png',
+      description: 'Q.Ben Zheng Personal Website. Zhengqbbb, a vibrant script developer. Core team member of X-CMD',
       inLanguage: ['en', 'zh'],
     }),
     definePerson({
