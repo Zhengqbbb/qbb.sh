@@ -10,7 +10,7 @@ const avatar = ref<HTMLImageElement | null>(null)
       </h1>
     </div>
     <div
-      class="w-24 h-24 border border-c rounded-full overflow-hidden"
+      class="w-24 h-24 border rounded-full overflow-hidden z-1"
       shadow="slate-200 dark:slate-800"
     >
       <img
