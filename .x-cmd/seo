@@ -1,0 +1,64 @@
+# shellcheck shell=sh disable=SC1091,SC2034,SC3043 #xsh
+
+# Section: Arg
+WORK_DIR="$(x wsroot)"
+WEB_SITE="www.qbb.sh"
+
+# Section: Main
+log() {
+    printf "\n\033[1;32m%s \033[1;33m%s \033[1;32m%s\033[0m\n" \
+    "»»»" \
+    "$1" \
+    "«««"
+}
+
+search_google() {
+    log "google search console collecting"
+	curl -X GET "https://www.google.com/ping?sitemap=https://$WEB_SITE/sitemap.xml"
+}
+
+search_baidu() {
+    log "baidu search console collecting"
+	local BAIDU_TOKEN
+	BAIDU_TOKEN="$(grep 'BAIDU_TOKEN' < "$WORK_DIR/.env")"
+	local TOKEN="${BAIDU_TOKEN#*=}"
+	[ -z "$TOKEN" ] && return 0
+	curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=$WEB_SITE&token=$TOKEN"
+}
+
+gen_txt_to_json() {
+    local length
+    printf "%s%s%s" "{" \
+        "\"siteUrl\": \"https://$WEB_SITE$TOKEN\"," \
+        "\"urlList\": ["
+    length="$(awk 'END{print NR}' <"$WORK_DIR/urls.txt")"
+    awk -v col_length="$length" '{
+        if (col_length == NR) {
+            printf("\""$0"\"")
+        } else {
+            printf("\""$0"\""",")
+        }
+    }' <"$WORK_DIR/urls.txt"
+
+    printf "%s" "]}"
+}
+
+search_bing() {
+    log "bing search console collecting"
+	curl -X GET "http://www.bing.com/webmaster/ping.aspx?siteMap=https://$WEB_SITE/sitemap.xml"
+    local BING_TOKEN
+    local URL_JSON
+    URL_JSON="$(gen_txt_to_json)"
+	BING_TOKEN="$(grep 'BING_TOKEN' <"$WORK_DIR/.env")"
+	local TOKEN="${BING_TOKEN#*=}"
+    echo "$URL_JSON"
+	[ -z "$TOKEN" ] && [ ! -f "$WORK_DIR/urls.txt" ] && return 0
+    curl "https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch?apikey=$TOKEN" \
+        -X POST \
+        -H 'Content-Type: application/json;charset=UTF-8' \
+        -d "$URL_JSON"
+}
+
+search_google
+search_baidu
+search_bing

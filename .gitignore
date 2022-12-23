@@ -6,3 +6,5 @@ dist
 dist-ssr
 node_modules
 *.log
+urls.txt
+.env
