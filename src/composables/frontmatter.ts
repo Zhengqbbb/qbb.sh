@@ -69,7 +69,7 @@ export const useHeadByFrontmatter = (): void => {
     }),
     definePerson({
       name: author,
-      image: '/me.png',
+      image: '/me.webp',
       url: site,
       sameAs: [
         github,
