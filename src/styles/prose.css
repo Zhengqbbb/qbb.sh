@@ -50,12 +50,6 @@
 /** EndSection: */
 
 /** Section: Title */
-.prose .text-linear {
-  background: var(--c-text-gradient);
-  -webkit-text-fill-color: transparent;
-  --at-apply: bg-clip-text;
-}
-
 .prose h1 {
   --at-apply: text-c-fgDeeper font-800 text-4xl mt-0 mb-4 leading-1.2em;
 }

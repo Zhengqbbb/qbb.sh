@@ -33,11 +33,11 @@ if (isClient) {
 <template>
   <header
     ref="navbar"
-    class="z-40 w-full h-20 bg-c-bg bg-op-90 dark:bg-op-90 backdrop-blur-2 backdrop-saturate-50 select-none"
+    class="z-40 w-full h-20 bg-c-bg bg-op-0 dark:bg-op-0 backdrop-blur-2 backdrop-saturate-50 select-none"
     :class="[
       isLeave
         && 'fixed -top-20 left-0 transition-transform duration-300',
-      isVisible && 'translate-y-full',
+      isVisible && 'translate-y-full bg-op-80 dark:bg-op-80',
       !isLeave && !isVisible && 'absolute top-0 left-0',
     ]"
   >

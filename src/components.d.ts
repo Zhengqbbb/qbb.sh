@@ -15,14 +15,12 @@ declare module '@vue/runtime-core' {
     HomeXBar: typeof import('./components/HomeXBar.vue')['default']
     ListPosts: typeof import('./components/ListPosts.vue')['default']
     ListProjects: typeof import('./components/ListProjects.vue')['default']
-    Name: typeof import('./components/HomeTitle.vue')['default']
     NavBar: typeof import('./components/NavBar.vue')['default']
     PostPager: typeof import('./components/PostPager.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     StepFlow: typeof import('./components/StepFlow.vue')['default']
     StepFlowItem: typeof import('./components/StepFlowItem.vue')['default']
-    XBar: typeof import('./components/HomeXBar.vue')['default']
     XCmd: typeof import('./components/icons/XCmd.vue')['default']
   }
 }
