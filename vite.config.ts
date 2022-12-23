@@ -7,6 +7,7 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Markdown from 'vite-plugin-vue-markdown'
 import ViteRadar from 'vite-plugin-radar'
 import { VitePWA } from 'vite-plugin-pwa'
+import { SchemaOrgResolver, schemaAutoImports } from '@vueuse/schema-org'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -65,6 +66,9 @@ export default defineConfig({
         'vue-router',
         '@vueuse/core',
         '@vueuse/head',
+        {
+          '@vueuse/schema-org': schemaAutoImports,
+        },
       ],
       vueTemplate: true,
       dirs: [
@@ -78,6 +82,9 @@ export default defineConfig({
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dirs: 'src/components',
       dts: 'src/components.d.ts',
+      resolvers: [
+        SchemaOrgResolver(),
+      ],
     }),
     VitePWA(vitePWAOptions),
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts

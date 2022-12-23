@@ -22,8 +22,40 @@ declare global {
   const customRef: typeof import('vue')['customRef']
   const debouncedRef: typeof import('@vueuse/core')['debouncedRef']
   const debouncedWatch: typeof import('@vueuse/core')['debouncedWatch']
+  const defineAddress: typeof import('@vueuse/schema-org')['defineAddress']
+  const defineAggregateOffer: typeof import('@vueuse/schema-org')['defineAggregateOffer']
+  const defineAggregateRating: typeof import('@vueuse/schema-org')['defineAggregateRating']
+  const defineArticle: typeof import('@vueuse/schema-org')['defineArticle']
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
+  const defineBook: typeof import('@vueuse/schema-org')['defineBook']
+  const defineBookEdition: typeof import('@vueuse/schema-org')['defineBookEdition']
+  const defineBreadcrumb: typeof import('@vueuse/schema-org')['defineBreadcrumb']
+  const defineComment: typeof import('@vueuse/schema-org')['defineComment']
   const defineComponent: typeof import('vue')['defineComponent']
+  const defineCourse: typeof import('@vueuse/schema-org')['defineCourse']
+  const defineEvent: typeof import('@vueuse/schema-org')['defineEvent']
+  const defineHowTo: typeof import('@vueuse/schema-org')['defineHowTo']
+  const defineHowToStep: typeof import('@vueuse/schema-org')['defineHowToStep']
+  const defineImage: typeof import('@vueuse/schema-org')['defineImage']
+  const defineItemList: typeof import('@vueuse/schema-org')['defineItemList']
+  const defineLocalBusiness: typeof import('@vueuse/schema-org')['defineLocalBusiness']
+  const defineMovie: typeof import('@vueuse/schema-org')['defineMovie']
+  const defineOffer: typeof import('@vueuse/schema-org')['defineOffer']
+  const defineOpeningHours: typeof import('@vueuse/schema-org')['defineOpeningHours']
+  const defineOrganization: typeof import('@vueuse/schema-org')['defineOrganization']
+  const definePerson: typeof import('@vueuse/schema-org')['definePerson']
+  const definePlace: typeof import('@vueuse/schema-org')['definePlace']
+  const defineProduct: typeof import('@vueuse/schema-org')['defineProduct']
+  const defineQuestion: typeof import('@vueuse/schema-org')['defineQuestion']
+  const defineReadAction: typeof import('@vueuse/schema-org')['defineReadAction']
+  const defineRecipe: typeof import('@vueuse/schema-org')['defineRecipe']
+  const defineReview: typeof import('@vueuse/schema-org')['defineReview']
+  const defineSearchAction: typeof import('@vueuse/schema-org')['defineSearchAction']
+  const defineSoftwareApp: typeof import('@vueuse/schema-org')['defineSoftwareApp']
+  const defineVideo: typeof import('@vueuse/schema-org')['defineVideo']
+  const defineVirtualLocation: typeof import('@vueuse/schema-org')['defineVirtualLocation']
+  const defineWebPage: typeof import('@vueuse/schema-org')['defineWebPage']
+  const defineWebSite: typeof import('@vueuse/schema-org')['defineWebSite']
   const eagerComputed: typeof import('@vueuse/core')['eagerComputed']
   const effectScope: typeof import('vue')['effectScope']
   const extendRef: typeof import('@vueuse/core')['extendRef']
@@ -210,6 +242,7 @@ declare global {
   const useResizeObserver: typeof import('@vueuse/core')['useResizeObserver']
   const useRoute: typeof import('vue-router')['useRoute']
   const useRouter: typeof import('vue-router')['useRouter']
+  const useSchemaOrg: typeof import('@vueuse/schema-org')['useSchemaOrg']
   const useScreenOrientation: typeof import('@vueuse/core')['useScreenOrientation']
   const useScreenSafeArea: typeof import('@vueuse/core')['useScreenSafeArea']
   const useScriptTag: typeof import('@vueuse/core')['useScriptTag']
@@ -298,8 +331,40 @@ declare module 'vue' {
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
     readonly debouncedRef: UnwrapRef<typeof import('@vueuse/core')['debouncedRef']>
     readonly debouncedWatch: UnwrapRef<typeof import('@vueuse/core')['debouncedWatch']>
+    readonly defineAddress: UnwrapRef<typeof import('@vueuse/schema-org')['defineAddress']>
+    readonly defineAggregateOffer: UnwrapRef<typeof import('@vueuse/schema-org')['defineAggregateOffer']>
+    readonly defineAggregateRating: UnwrapRef<typeof import('@vueuse/schema-org')['defineAggregateRating']>
+    readonly defineArticle: UnwrapRef<typeof import('@vueuse/schema-org')['defineArticle']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
+    readonly defineBook: UnwrapRef<typeof import('@vueuse/schema-org')['defineBook']>
+    readonly defineBookEdition: UnwrapRef<typeof import('@vueuse/schema-org')['defineBookEdition']>
+    readonly defineBreadcrumb: UnwrapRef<typeof import('@vueuse/schema-org')['defineBreadcrumb']>
+    readonly defineComment: UnwrapRef<typeof import('@vueuse/schema-org')['defineComment']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
+    readonly defineCourse: UnwrapRef<typeof import('@vueuse/schema-org')['defineCourse']>
+    readonly defineEvent: UnwrapRef<typeof import('@vueuse/schema-org')['defineEvent']>
+    readonly defineHowTo: UnwrapRef<typeof import('@vueuse/schema-org')['defineHowTo']>
+    readonly defineHowToStep: UnwrapRef<typeof import('@vueuse/schema-org')['defineHowToStep']>
+    readonly defineImage: UnwrapRef<typeof import('@vueuse/schema-org')['defineImage']>
+    readonly defineItemList: UnwrapRef<typeof import('@vueuse/schema-org')['defineItemList']>
+    readonly defineLocalBusiness: UnwrapRef<typeof import('@vueuse/schema-org')['defineLocalBusiness']>
+    readonly defineMovie: UnwrapRef<typeof import('@vueuse/schema-org')['defineMovie']>
+    readonly defineOffer: UnwrapRef<typeof import('@vueuse/schema-org')['defineOffer']>
+    readonly defineOpeningHours: UnwrapRef<typeof import('@vueuse/schema-org')['defineOpeningHours']>
+    readonly defineOrganization: UnwrapRef<typeof import('@vueuse/schema-org')['defineOrganization']>
+    readonly definePerson: UnwrapRef<typeof import('@vueuse/schema-org')['definePerson']>
+    readonly definePlace: UnwrapRef<typeof import('@vueuse/schema-org')['definePlace']>
+    readonly defineProduct: UnwrapRef<typeof import('@vueuse/schema-org')['defineProduct']>
+    readonly defineQuestion: UnwrapRef<typeof import('@vueuse/schema-org')['defineQuestion']>
+    readonly defineReadAction: UnwrapRef<typeof import('@vueuse/schema-org')['defineReadAction']>
+    readonly defineRecipe: UnwrapRef<typeof import('@vueuse/schema-org')['defineRecipe']>
+    readonly defineReview: UnwrapRef<typeof import('@vueuse/schema-org')['defineReview']>
+    readonly defineSearchAction: UnwrapRef<typeof import('@vueuse/schema-org')['defineSearchAction']>
+    readonly defineSoftwareApp: UnwrapRef<typeof import('@vueuse/schema-org')['defineSoftwareApp']>
+    readonly defineVideo: UnwrapRef<typeof import('@vueuse/schema-org')['defineVideo']>
+    readonly defineVirtualLocation: UnwrapRef<typeof import('@vueuse/schema-org')['defineVirtualLocation']>
+    readonly defineWebPage: UnwrapRef<typeof import('@vueuse/schema-org')['defineWebPage']>
+    readonly defineWebSite: UnwrapRef<typeof import('@vueuse/schema-org')['defineWebSite']>
     readonly eagerComputed: UnwrapRef<typeof import('@vueuse/core')['eagerComputed']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
@@ -486,6 +551,7 @@ declare module 'vue' {
     readonly useResizeObserver: UnwrapRef<typeof import('@vueuse/core')['useResizeObserver']>
     readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
+    readonly useSchemaOrg: UnwrapRef<typeof import('@vueuse/schema-org')['useSchemaOrg']>
     readonly useScreenOrientation: UnwrapRef<typeof import('@vueuse/core')['useScreenOrientation']>
     readonly useScreenSafeArea: UnwrapRef<typeof import('@vueuse/core')['useScreenSafeArea']>
     readonly useScriptTag: UnwrapRef<typeof import('@vueuse/core')['useScriptTag']>

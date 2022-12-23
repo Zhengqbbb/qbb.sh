@@ -1,6 +1,17 @@
 import type { ComputedRef } from 'vue'
 import type { PageMeta } from '~build/node'
-import { appName, author, description, keywords, site, title as siteName, twitterCreator } from '~/meta'
+import {
+  appName,
+  author,
+  description,
+  github,
+  instagram,
+  keywords,
+  site,
+  title as siteName,
+  twitter,
+  twitterCreator,
+} from '~/meta'
 import { isExternal } from '~/utils'
 
 /**
@@ -48,4 +59,28 @@ export const useHeadByFrontmatter = (): void => {
       { name: 'theme-color', content: computed(() => isDark.value ? '#050505' : '#ffffff') },
     ],
   })
+
+  useSchemaOrg([
+    defineWebSite({
+      url: site,
+      name: description,
+      logo: '/logo.png',
+    }),
+    definePerson({
+      name: author,
+      image: '/me.png',
+      url: site,
+      sameAs: [
+        github,
+        instagram,
+        twitter,
+      ],
+    }),
+    defineWebPage({
+      name: title,
+      image: headerImage,
+      url: site + fullPath.value,
+      author,
+    }),
+  ])
 }
