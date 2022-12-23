@@ -63,8 +63,10 @@ export const useHeadByFrontmatter = (): void => {
   useSchemaOrg([
     defineWebSite({
       url: site,
-      name: description,
+      name: siteName,
+      description: 'Q.Ben Zheng Personal Website. Zhengqbbb a vibrant script developer. Core team member of X-CMD',
       logo: '/logo.png',
+      inLanguage: ['en', 'zh'],
     }),
     definePerson({
       name: author,
@@ -81,6 +83,7 @@ export const useHeadByFrontmatter = (): void => {
       image: headerImage,
       url: site + fullPath.value,
       author,
+      inLanguage: lang,
     }),
   ])
 }
