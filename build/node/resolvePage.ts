@@ -9,6 +9,7 @@ import fs from 'fs-extra'
 import matter from 'gray-matter'
 import dayjs from 'dayjs'
 import type { RouteMeta, RouteRecordNormalized } from 'vue-router'
+import { ogImg } from '../../src/meta'
 import { type ReadingTime, readingTime } from './readingTime'
 
 export interface PostPager {
@@ -84,7 +85,7 @@ export const resolvePostList = (routes: any[]) => {
       path: item.path,
       title: item.meta.frontmatter.title,
       description: item.meta.frontmatter.description ?? item.meta.frontmatter.desc ?? '',
-      headerImage: item.meta.frontmatter.headerImage ?? `/og/${item.name}.png`,
+      headerImage: item.meta.frontmatter.headerImage ?? ogImg,
       date: item.meta.date,
       readingTime: item.meta.readingTime,
     }))
