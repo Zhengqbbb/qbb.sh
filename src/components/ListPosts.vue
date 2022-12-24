@@ -48,7 +48,7 @@ for (const post of posts) {
           </div>
           <time
             :datetime="dayjs(post.meta.date).toISOString()"
-            class="text-sm op-50 tracking-wid"
+            class="text-sm op-50"
           >
             <i v-if="post.meta.lang === 'zh'" class="md:absolute left--6 top-1 i-icon-park-outline:chinese" />
             {{ post.dateText }} · {{ post.readingTimeText }}
