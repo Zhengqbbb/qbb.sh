@@ -16,25 +16,35 @@ import imagemin from 'imagemin'
 // @ts-expect-error missing types
 import imageminWebp from 'imagemin-webp'
 // @ts-expect-error missing types
-import imageminOptipng from 'imagemin-optipng'
-// @ts-expect-error missing types
 import rm from 'rimraf'
+// import imageminOptipng from 'imagemin-optipng'
 
 const __ASSERT_DIR = resolve(__dirname, '../../public/image')
 
 const run = async () => {
-  return await imagemin([`${__ASSERT_DIR}/*.{png,jpeg,jpg}`], {
+  await imagemin([`${__ASSERT_DIR}/*.{png,jpeg,jpg}`], {
     destination: __ASSERT_DIR,
     plugins: [
       imageminWebp({ quality: 80 }),
     ],
   })
-  await imagemin(['public/og/*.png'], {
-    destination: 'public/og',
-    plugins: [
-      imageminOptipng(),
-    ],
-  })
+  const imagesFolderDir = await fg('*', { cwd: __ASSERT_DIR, absolute: true, onlyDirectories: true })
+  return Promise.all(
+    imagesFolderDir.map(async (folderDir) => {
+      await imagemin([`${folderDir}/*.{png,jpeg,jpg}`], {
+        destination: folderDir,
+        plugins: [
+          imageminWebp({ quality: 80 }),
+        ],
+      })
+    }),
+  )
+  // await imagemin(['public/og/*.png'], {
+  //   destination: 'public/og',
+  //   plugins: [
+  //     imageminOptipng(),
+  //   ],
+  // })
 }
 
 const clear = async () => {

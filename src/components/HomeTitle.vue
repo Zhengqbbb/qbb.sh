@@ -1,5 +1,11 @@
 <script setup lang="ts">
-const avatar = ref<HTMLImageElement | null>(null)
+const loadState = ref('')
+onMounted(() => {
+  const avatar = new Image()
+  avatar.src = '/me.webp'
+  avatar.onload = () => loadState.value = 'loaded'
+  avatar.onerror = () => loadState.value = 'unload'
+})
 </script>
 
 <template>
@@ -11,15 +17,15 @@ const avatar = ref<HTMLImageElement | null>(null)
     </div>
     <div
       class="w-24 h-24 border rounded-full overflow-hidden z-1"
+      :class="{ 'op-0': loadState === 'unload' }"
       shadow="slate-200 dark:slate-800"
     >
       <img
-        ref="avatar"
         alt="avatar"
         width="120" height="120"
         class="m-0! not-zoom avatar"
-        src="/me.webp"
-        @load="ref(avatar!.classList.add('loaded'))"
+        :class="{ loaded: loadState === 'loaded' }"
+        :src="loadState === 'loaded' ? '/me.webp' : ''"
       >
     </div>
   </div>
