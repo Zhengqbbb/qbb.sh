@@ -46,7 +46,7 @@ export async function generateRSS() {
       const raw = await fs.readFile(`${__sourceDir}/${p}`)
       const { data } = matter(raw)
       const { description, title: pageTitle, desc: descriptionAlias, headerImage } = data as PageFrontmatter
-      let image = `${site}/og/posts-${p.replace(/\.md?/, '.png')}`
+      let image = ogImg
       if (headerImage)
         image = isExternal(headerImage) ? headerImage : site + headerImage
 
