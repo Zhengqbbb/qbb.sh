@@ -33,7 +33,7 @@ if (isClient) {
 <template>
   <header
     ref="navbar"
-    class="z-40 w-full h-20 bg-c-bg bg-op-0 dark:bg-op-0 backdrop-blur-2 backdrop-saturate-50 select-none"
+    class="z-40 w-full h-20 bg-c-bg bg-op-0 dark:bg-op-0 transition-colors backdrop-blur-2 backdrop-saturate-50 select-none"
     :class="[
       isLeave
         && 'fixed -top-20 left-0 transition-transform duration-300',
