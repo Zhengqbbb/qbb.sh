@@ -37,7 +37,7 @@ I thought about what website would like be:
 
 Everything is created and maintained by myself, I can remember and parse whatever my create data. Enjoy lightweight, fast and free.<br>
 Don’t need to rely on any upstream depend, or cater to others people usage.<br>
-==Just do it==
+==Just enjoy. Just do it.==
 
 ## Thanks and inspired by
 
