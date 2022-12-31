@@ -38,6 +38,7 @@ declare global {
   const defineHowToStep: typeof import('@vueuse/schema-org')['defineHowToStep']
   const defineImage: typeof import('@vueuse/schema-org')['defineImage']
   const defineItemList: typeof import('@vueuse/schema-org')['defineItemList']
+  const defineListItem: typeof import('@vueuse/schema-org')['defineListItem']
   const defineLocalBusiness: typeof import('@vueuse/schema-org')['defineLocalBusiness']
   const defineMovie: typeof import('@vueuse/schema-org')['defineMovie']
   const defineOffer: typeof import('@vueuse/schema-org')['defineOffer']
@@ -349,6 +350,7 @@ declare module 'vue' {
     readonly defineHowToStep: UnwrapRef<typeof import('@vueuse/schema-org')['defineHowToStep']>
     readonly defineImage: UnwrapRef<typeof import('@vueuse/schema-org')['defineImage']>
     readonly defineItemList: UnwrapRef<typeof import('@vueuse/schema-org')['defineItemList']>
+    readonly defineListItem: UnwrapRef<typeof import('@vueuse/schema-org')['defineListItem']>
     readonly defineLocalBusiness: UnwrapRef<typeof import('@vueuse/schema-org')['defineLocalBusiness']>
     readonly defineMovie: UnwrapRef<typeof import('@vueuse/schema-org')['defineMovie']>
     readonly defineOffer: UnwrapRef<typeof import('@vueuse/schema-org')['defineOffer']>
