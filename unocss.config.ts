@@ -22,7 +22,8 @@ const _VARS: Theme = {
       innerCodeBG: 'rgba(130, 146, 167, 0.1)',
     },
     d: {
-      bg: 'rgb(5, 5, 5)',
+      // bg: 'rgb(5, 5, 5)',
+      bg: 'rgb(18, 18, 18)',
       fg: 'rgb(178, 178, 178)',
       fgDeep: 'rgb(221, 221, 221)',
       fgDeeper: 'rgb(255, 255, 255)',

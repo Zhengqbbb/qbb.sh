@@ -7,7 +7,7 @@ const router = useRouter()
 const meta = computed(() => router.currentRoute.value.meta) as ComputedRef<PageMeta>
 
 const lang = computed(() => meta.value.lang === 'zh' ? 'zh-CN' : 'en')
-const theme = computed(() => isDark.value ? 'dark_tritanopia' : 'light_tritanopia')
+const theme = computed(() => isDark.value ? 'dark_protanopia' : 'light')
 
 if (isClient) {
   /** @see https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md */

@@ -19,7 +19,7 @@ export const vitePWAOptions: Partial<VitePWAOptions> = {
   manifest: {
     name: 'Q.Ben',
     short_name: 'Q.Ben',
-    theme_color: '#050505',
+    theme_color: '#121212',
     icons: [
       {
         src: '/icon/apple-touch-120x120.png',

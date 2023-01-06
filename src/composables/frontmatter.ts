@@ -56,7 +56,7 @@ export const useHeadByFrontmatter = (): void => {
       { name: 'application-name', content: appName },
       { name: 'apple-mobile-web-app-title', content: siteName },
       { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
-      { name: 'theme-color', content: computed(() => isDark.value ? '#050505' : '#ffffff') },
+      { name: 'theme-color', content: computed(() => isDark.value ? '#121212' : '#ffffff') },
     ],
   })
 
