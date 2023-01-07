@@ -51,7 +51,6 @@ search_bing() {
     URL_JSON="$(gen_txt_to_json)"
 	BING_TOKEN="$(grep 'BING_TOKEN' <"$WORK_DIR/.env")"
 	local TOKEN="${BING_TOKEN#*=}"
-    echo "$URL_JSON"
 	[ -z "$TOKEN" ] && [ ! -f "$WORK_DIR/urls.txt" ] && return 0
     curl "https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch?apikey=$TOKEN" \
         -X POST \
