@@ -28,7 +28,7 @@ So I submitted [PR using `cz-customizable`](https://github.com/Renovamen/vuepres
 
 1. If you add the configuration of [commitlint](https://commitlint.js.org/), you need to configure two places, and their configurations can use the same one to affect each other
 
-2. ==Only the interactive mode of up and down selection is too slow to use==, if the declared scopes more than 20, then every time you commit, you need to find scope by typing <kbd>↑</kbd> and <kbd>↓</kbd><br>But in fact, when you commit You already have the answer in your mind, so the interactive method must have a **fuzzy search** feature<br>For example, adding a test to the table component is the most great interactive method<kbd>te</kbd> <kbd>Enter</kbd> Output `test`. <kbd>ta</kbd> <kbd>Enter</kbd> output `table`
+2. ==Only the interactive mode of up and down selection is too slow to use==, if the declared scopes more than 20, then every time you commit, you need to find scope by typing <kbd>↑</kbd> and <kbd>↓</kbd><br>But in fact, when you commit You already have the answer in your mind, so the interactive method must have a **fuzzy search** feature<br>For example, adding a test to the table component is the greatest interactive way<kbd>te</kbd> <kbd>Enter</kbd> Output `test`. <kbd>ta</kbd> <kbd>Enter</kbd> output `table`
 
 At that time, I decided to develop `cz-git` ==that can become the most friendly interactive and the greatest adapter==. LOL
 
@@ -71,7 +71,7 @@ module.exports = {
 
 ![cz-git-demo](/image/cz-demo-1.gif) <!-- <size="700x268"> -->
 
-### Complementary Interaction
+### Command-line completion
 
 ==completion is great in command line interaction==. Common operating methods is using <kbd>Tab</kbd> or <kbd>→</kbd> to complete the information.<br>
 Based on dynamic configuration method. We can have many feature, such as completing the pre-message template or completing the number of the ISSUE
@@ -116,7 +116,7 @@ And actually `czg` can be made smaller, but in order to take as an adapter, I ne
 
 ### Startup Speed
 
-`Commitizen CLI` needs to be matched with an adapter. You can understand that choose your favorite UI plugin, and it is only used as a launcher. <br>However, for command that are frequently used like `commit`, every time Node is started. It need to search for the adapter in `node_modules` layer by layer, This involves the loss caused by frequent traversal of the file system, so you will find that the startup speed is fast or slow
+`Commitizen CLI` needs to be matched with an adapter. You can understand that choose your favorite UI plugin, and it is only used as a launcher. <br>However, for command that are frequently used like `commit`, every time Node is started. It need to search for the adapter in `node_modules` layer by layer, This involves the loss caused by frequent traversal of the file system, so you will find that the startup speed sometime fast and sometime slow.
 
 ### Usage
 
