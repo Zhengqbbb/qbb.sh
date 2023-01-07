@@ -23,7 +23,7 @@ const _VARS: Theme = {
     },
     d: {
       // bg: 'rgb(5, 5, 5)',
-      bg: 'rgb(18, 18, 18)',
+      bg: 'rgb(16, 16, 16)',
       fg: 'rgb(178, 178, 178)',
       fgDeep: 'rgb(221, 221, 221)',
       fgDeeper: 'rgb(255, 255, 255)',
