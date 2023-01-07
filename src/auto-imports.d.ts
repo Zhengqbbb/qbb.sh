@@ -38,6 +38,7 @@ declare global {
   const defineHowToStep: typeof import('@vueuse/schema-org')['defineHowToStep']
   const defineImage: typeof import('@vueuse/schema-org')['defineImage']
   const defineItemList: typeof import('@vueuse/schema-org')['defineItemList']
+  const defineJobPosting: typeof import('@vueuse/schema-org')['defineJobPosting']
   const defineListItem: typeof import('@vueuse/schema-org')['defineListItem']
   const defineLocalBusiness: typeof import('@vueuse/schema-org')['defineLocalBusiness']
   const defineMovie: typeof import('@vueuse/schema-org')['defineMovie']
@@ -146,6 +147,7 @@ declare global {
   const useArrayMap: typeof import('@vueuse/core')['useArrayMap']
   const useArrayReduce: typeof import('@vueuse/core')['useArrayReduce']
   const useArraySome: typeof import('@vueuse/core')['useArraySome']
+  const useArrayUnique: typeof import('@vueuse/core')['useArrayUnique']
   const useAsyncQueue: typeof import('@vueuse/core')['useAsyncQueue']
   const useAsyncState: typeof import('@vueuse/core')['useAsyncState']
   const useAttrs: typeof import('vue')['useAttrs']
@@ -350,6 +352,7 @@ declare module 'vue' {
     readonly defineHowToStep: UnwrapRef<typeof import('@vueuse/schema-org')['defineHowToStep']>
     readonly defineImage: UnwrapRef<typeof import('@vueuse/schema-org')['defineImage']>
     readonly defineItemList: UnwrapRef<typeof import('@vueuse/schema-org')['defineItemList']>
+    readonly defineJobPosting: UnwrapRef<typeof import('@vueuse/schema-org')['defineJobPosting']>
     readonly defineListItem: UnwrapRef<typeof import('@vueuse/schema-org')['defineListItem']>
     readonly defineLocalBusiness: UnwrapRef<typeof import('@vueuse/schema-org')['defineLocalBusiness']>
     readonly defineMovie: UnwrapRef<typeof import('@vueuse/schema-org')['defineMovie']>
@@ -458,6 +461,7 @@ declare module 'vue' {
     readonly useArrayMap: UnwrapRef<typeof import('@vueuse/core')['useArrayMap']>
     readonly useArrayReduce: UnwrapRef<typeof import('@vueuse/core')['useArrayReduce']>
     readonly useArraySome: UnwrapRef<typeof import('@vueuse/core')['useArraySome']>
+    readonly useArrayUnique: UnwrapRef<typeof import('@vueuse/core')['useArrayUnique']>
     readonly useAsyncQueue: UnwrapRef<typeof import('@vueuse/core')['useAsyncQueue']>
     readonly useAsyncState: UnwrapRef<typeof import('@vueuse/core')['useAsyncState']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
