@@ -112,7 +112,7 @@ $ du -sh ./node_modules/*
 You will find that its project dependencies are complicated.<br> The total dependencies ==147==, the total size ==102 MB==, I can't accept it<br>
 So I don't recommend using `commitizen` as a project dependency
 
-And actually `czg` can be made smaller, but in order to take as an adapter, I need to use [`inquirer`](https://github.com/SBoudrias/Inquirer.js) TUI library, otherwise use other libraries or write natively It can around 500KB 🧐
+And actually `czg` can be made smaller, but in order to take as an adapter, I need to use [`inquirer`](https://github.com/SBoudrias/Inquirer.js) TUI library, otherwise use other libraries or write natively It can around 300-500KB 🧐
 
 ### Startup Speed
 
