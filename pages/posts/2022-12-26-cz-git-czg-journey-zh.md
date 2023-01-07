@@ -7,7 +7,7 @@ desc: 为什么会开发 cz-git 和 czg，我的开发心路历程
 
 ![cz-git-logo](/image/cz-git.webp) <!-- <size="500"> <class="m-auto"> <!> <desc="cz-git: https://cz-git.qbb.sh/zh/<br>czg : https://cz-git.qbb.sh/zh/cli/"> -->
 
-> 什么是 [Commitizen CLI](https://github.com/commitizen/cz-cli) : 基于 Node.js 的命令行工具，交互式辅助生成规范格式的<br> `git commit message` <br>
+> 什么是 [Commitizen CLI](https://github.com/commitizen/cz-cli) : 基于 Node.js 的命令行工具，交互式辅助生成规范格式的 `git commit message` <br>
 > 什么是 [Commitizen Adapter](https://github.com/commitizen/cz-cli#adapters)<sup>「适配器」</sup> : 更换 Commitizen CLI 交互行为的插件 <br>
 > <br>
 > [cz-git](https://cz-git.qbb.sh/zh/guide/introduction) : 一款轻量级，交互友好，高度自定义，遵循标准 Angular commit 规范的 **Commitizen Adapter**<br>
@@ -17,7 +17,7 @@ desc: 为什么会开发 cz-git 和 czg，我的开发心路历程
 
 ## 起源
 
-那还得是从今年年初给 [Vuepress-Theme-Gungnir](https://github.com/Renovamen/vuepress-theme-gungnir) 提交贡献开始说起，其实从实习开始我就一直有使用 `Commitizen CLI` + `cz-conventional-changelog` 的简单组合，只不过一般不打 commit 的范围直接就跳过。而 `Vuepress-Theme-Gungnir` 是一个融合了 博客主题，博客插件，演示及文档的 monorepo <sup>单体仓库</sup>。所以对于 commit message 是需要加上范围的<sup>一般为插件名或主题</sup>
+那还得是从今年年初给 [Vuepress-Theme-Gungnir](https://github.com/Renovamen/vuepress-theme-gungnir) 提交贡献开始说起，其实从实习开始我就一直有使用 `Commitizen CLI` + `cz-conventional-changelog` 的简单组合，只不过一般不打 commit 的范围直接就跳过。而 `Vuepress-Theme-Gungnir` 是一个融合了 博客主题，博客插件，演示及文档的 monorepo <sup>单体仓库</sup>。所以对于 commit message 是需要加上范围的<sup>一般为插件名或主题</sup><br>例子: `fix(plugin-rss): do something with plugin...`
 
 但对于我这样的懒人，而且还是全职做 CLI 的人来说，是绝不会干重复性输入的傻事
 
@@ -123,6 +123,7 @@ $ du -sh ./node_modules/*
 
 3. 更多命令的功能支持。`Commitizen CLI`在设计上是没有考虑给适配器来命令指令的扩展，简单点就是我们适配器想要做更多命令的行的功能，**仅只能使用环境变量的玩法，做不了 `SubCmd` 和 `Option`等命令行常见功能使用方式**，举几个例子吧
     - 想要在本次 commit 使用多选模式，最理想的使用方式是 `git czg checkbox`
+    - 想要在 commit message 中添加 Emoji，直接使用 `git czg emoji` 即可
     - 或是使用已定义的频繁使用的 message alias，像修改配置，修改文档错别字等，开启交互模式反而麻烦，这时候就可以直接使用 `git czg :fd`
 
 基于以上几点，让我完成了 `czg`，现在 `git czg` 敲起来也终于舒服了很多 🤗
