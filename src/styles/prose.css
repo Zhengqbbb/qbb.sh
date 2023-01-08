@@ -80,12 +80,10 @@
   --at-apply: font-500 op-70;
 }
 
-.prose h2 code {
-  font-size: 1.4rem !important;
-}
-
-.prose h3 code {
-  --at-apply: text-0.9em;
+.prose h2>code,
+.prose h3>code,
+.prose h4>code {
+  font-size: 0.9em !important;
 }
 
 /** EndSection: */
