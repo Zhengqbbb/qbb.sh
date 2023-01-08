@@ -22,21 +22,21 @@ desc: Why developed cz-git and czg. My development journey
 It have to start from submitting contributions to [Vuepress-Theme-Gungnir](https://github.com/Renovamen/vuepress-theme-gungnir) at the beginning of this year.
 In fact, I have been using `Commitizen CLI` since my internship. A simple combination of `Commitizen CLI` + `cz-conventional-changelog`, and I generally skipped input scope. <br>And `Vuepress-Theme-Gungnir` is a monorepo that integrates blog themes, blog plugins, demos and documentation. So for the commit message, you need to add the scope <sup>usually the plugin name or theme</sup>. e.g: `fix(plugin-rss): do something with plugin...`
 
-But for a lazy person like me who also is full-time development of CLI.<br>I will never do stupid things like repetitive input.
+But for a lazy person like me who also is full-time development of CLI.<br>**I will never do stupid things like repetitive input.**
 
-So I submitted [PR using `cz-customizable`](https://github.com/Renovamen/vuepress-theme-gungnir/pull/34), trying to solve the problem of repetitive input commit through declarative configuration scopes. But I known soon that `cz-customizable` didn't really solve the need after using.
+So I submitted [PR using `cz-customizable`](https://github.com/Renovamen/vuepress-theme-gungnir/pull/34), trying to resolve the problem of repetitive input commit through declarative configuration scopes. But I known soon that `cz-customizable` didn't really resolve the need after using.
 
 1. If you add the configuration of [commitlint](https://commitlint.js.org/), you need to configure two places, and their configurations can use the same one to affect each other
 
-2. ==Only the interactive mode of up and down selection is too slow to use==, if the declared scopes more than 20, then every time you commit, you need to find scope by typing <kbd>↑</kbd> and <kbd>↓</kbd><br>But in fact, when you commit You already have the answer in your mind, so the interactive method must have a **fuzzy search** feature<br>For example, adding a test to the table component is the greatest interactive way<kbd>te</kbd> <kbd>Enter</kbd> Output `test`. <kbd>ta</kbd> <kbd>Enter</kbd> output `table`
+2. **Only the interactive mode of up and down selection is too slow to use**, if the declared scopes more than 20, then every time you commit, you need to find scope by typing <kbd>↑</kbd> and <kbd>↓</kbd><br>But in fact, when you commit You already have the answer in your mind, so the interactive way must have a **fuzzy search** feature<br>For example, adding a test to the table component is the greatest interactive way<kbd>te</kbd> <kbd>Enter</kbd> Output `test`. <kbd>ta</kbd> <kbd>Enter</kbd> output `table`
 
-At that time, I decided to develop `cz-git` ==that can become the most friendly interactive and the greatest adapter==. LOL
+At that time, I decided to develop `cz-git` that can become the most friendly interactive and the greatest adapter. LOL
 
 ---
 
 ## Exploring Node.js CLI Can Do What
 
-Actually another very important reason is to explore Node.js can do what great effect.<br>BTW I am painful to develop CLI with SHELL and AWK in daily work, And the development of `cz-git` can transferred my attention <sup>😈 Playing Node</sup>
+Actually another very important reason is to explore Node.js can do what great effect.<br>BTW I am painful to develop CLI with SHELL and AWK in daily work, And the development of `cz-git` can transferred my attention <sup>😈😈 Playing Node</sup>
 
 ### Dynamic Configuration And Interaction
 
@@ -73,8 +73,8 @@ module.exports = {
 
 ### Command-line completion
 
-==completion is great in command line interaction==. Common operating methods is using <kbd>Tab</kbd> or <kbd>→</kbd> to complete the information.<br>
-Based on dynamic configuration method. We can have many feature, such as completing the pre-message template or completing the number of the ISSUE
+==completion is great in command line interaction==. Common operating way is using <kbd>Tab</kbd> or <kbd>→</kbd> to complete the information.<br>
+Based on dynamic configuration way. We can have many feature, such as completing the pre-message template or completing the number of the ISSUE
 
 The most classic example in [Element-Plus](https://github.com/element-plus/element-plus) component library, which has very strict requirements for component commit, except for the need to type `components` as the scope, it is also need to add the component name on prefix subject <br> e.g:
 
@@ -109,28 +109,28 @@ $ du -sh ./node_modules/*
 1.3M ./node_modules/czg
 ```
 
-You will find that its project dependencies are complicated.<br> The total dependencies ==147==, the total size ==102 MB==, I can't accept it<br>
-So I don't recommend using `commitizen` as a project dependency
+You will find that `commitizen` dependencies are complicated.<br> The total dependencies ==147==, the total size ==102 MB==, **I can't accept it**!<br>
+So I don't recommend using `commitizen` as a project dependency.
 
-And actually `czg` can be made smaller, but in order to take as an adapter, I need to use [`inquirer`](https://github.com/SBoudrias/Inquirer.js) TUI library, otherwise use other libraries or write natively It can around 300-500KB 🧐
+And actually `czg` can be made smaller, but in order to take as an adapter, I need to use [`inquirer`](https://github.com/SBoudrias/Inquirer.js) TUI library, otherwise use other TUI libraries or develop by myself It can around 300-500KB 🧐
 
 ### Startup Speed
 
-`Commitizen CLI` needs to be matched with an adapter. You can understand that choose your favorite UI plugin, and it is only used as a launcher. <br>However, for command that are frequently used like `commit`, every time Node is started. It need to search for the adapter in `node_modules` layer by layer, This involves the loss caused by frequent traversal of the file system, so you will find that the startup speed sometime fast and sometime slow.
+`Commitizen CLI` needs to be matched with an adapter. You can understand that choose your favorite UI plugin, and it is only used as a launcher. <br>However, for command that are frequently used like `commit`, every time Node is started. It need to search for the adapter in `node_modules` layer by layer, This involves the loss caused by frequent traversal of the file system, so you will find that the startup speed sometime fast or sometime slow.
 
 ### Usage
 
-1. Reduce redundant concepts, simpler. Using `Commitizen CLI` has an additional concept of *adapter*, **cannot be used out of the box**, basically you need to know *adapter* after installation and then configure the adapter.<br> More configuration steps and redundant concepts, it make usage becomes complex.
+1. Reduce redundant concepts, simpler. Using `Commitizen CLI` has an additional concept of *adapter*, **cannot be used out of the box**, basically you need to know *adapter* after installation and then configure the *adapter*.<br> More configuration steps and redundant concepts, it make usage becomes complex.
 
 2. `npx` usage. It is better to support `npx czg` directly usage as a Node CLI. Although `npx` is slowly startup speed in terminal using, it is still useful if you have good dependencies number and size control.
 
 3. More command line usage. `Commitizen CLI` does NOT provide the adapter can have command line usage. like `SubCommand` and `Option` feature can affect the interaction or result. The adapter just only using environment variables. A few examples:
-     - If you want to use multi select mode, The great way to use is typing `git czg checkbox`
-     - When you want to commit message with Emoji. just typing `git czg emoji`
+     - If you want to use multi select mode, Just typing `git czg checkbox`
+     - When you want to commit message with Emoji. Just also typing `git czg emoji`
      - Or using the defined and frequently used message alias<br> such as modifying the configuration, fix typos in the document<br> At this time, you can directly use `git czg :fd` without enabling interactive mode
 
 
-Based on the above points, I finished `czg`, and now `git czg` is finally comfortable to type and usage 🤗
+Based on the above points, I finished `czg`, and now `git czg` is finally comfortable to usage 🤗
 
 ---
 
@@ -138,4 +138,4 @@ Based on the above points, I finished `czg`, and now `git czg` is finally comfor
 
 It is my journey of developing `cz-git` and `czg`, a process of constantly exploring the friendly interaction of Node.js CLI, and making the tools better. Welcome give a [star ⭐](https://github.com/Zhengqbbb/cz-git)
 
-Finally, thanks guys who supported and provided suggestion and help all the time ! 😊
+Finally, thanks guys who supported and provided suggestion and help all the time ! Thx 😊
