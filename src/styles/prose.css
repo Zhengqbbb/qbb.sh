@@ -1,7 +1,7 @@
 /** Section: Init */
 
 .prose {
-  --at-apply: max-w-content text-c-fg text-4 leading-1.75em;
+  --at-apply: max-w-content text-c-fg text-4 leading-1.85em;
 }
 
 .prose> :first-child {
@@ -70,12 +70,10 @@
   --at-apply: font-500 op-70;
 }
 
-.prose h2 code {
-  font-size: text-sm;
-}
-
-.prose h3 code {
-  font-size: text-0.9em;
+.prose h2>code,
+.prose h3>code,
+.prose h4>code {
+  font-size: 0.9em !important;
 }
 
 /** EndSection: */
