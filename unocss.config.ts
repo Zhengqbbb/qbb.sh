@@ -92,8 +92,8 @@ export default defineConfig({
     presetUno(),
     presetWebFonts({
       fonts: {
-        // sans: ['Inter:400,600,800', 'Noto Sans SC:400,700'],
-        // mono: 'Noto Sans Mono:500,700',
+        sans: ['Inter:400,600,800', 'Noto Sans SC:400,700'],
+        mono: 'Noto Sans Mono:500,700',
       },
       extendTheme: false,
     }),
