@@ -76,7 +76,7 @@ export default defineConfig({
   rules: [],
   shortcuts: [
     ['nav-divider', 'w-1px h-18px bg-gray-200 dark:bg-coolgray-700'],
-    ['text-c-nowrap', 'overflow-hidden whitespace-nowrap text-ellipsis'],
+    // ['text-c-nowrap', 'overflow-hidden whitespace-nowrap text-ellipsis'], // `truncate`
     ...mergeVarCols(),
   ],
   presets: [
@@ -92,8 +92,8 @@ export default defineConfig({
     presetUno(),
     presetWebFonts({
       fonts: {
-        sans: ['Inter:400,600,800', 'Noto Sans SC:400,700'],
-        mono: 'Noto Sans Mono:500,700',
+        // sans: ['Inter:400,600,800', 'Noto Sans SC:400,700'],
+        // mono: 'Noto Sans Mono:500,700',
       },
       extendTheme: false,
     }),

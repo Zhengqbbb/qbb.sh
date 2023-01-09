@@ -1,7 +1,7 @@
 /** Section: Init */
 
 .prose {
-  --at-apply: max-w-content text-c-fg text-4 leading-1.75em;
+  --at-apply: max-w-content text-c-fg text-4 leading-1.85em;
 }
 
 .prose> :first-child {
@@ -519,7 +519,7 @@ html:not(.dark) .shiki-dark {
 
 .prose :not(pre)>code {
   --at-apply: bg-c-innerCodeBG border border-c-innerCodeBG;
-  --at-apply: text-c-fgDeep text-sm break-words py-0.4 px-1.2 rd-sm;
+  --at-apply: text-c-fgDeep text-sm break-words whitespace-nowrap py-0.4 px-1.2 rd-sm;
 }
 
 .prose pre {
@@ -606,7 +606,7 @@ html:not(.dark) .shiki-dark {
 }
 
 .table-of-contents a {
-  --at-apply: block border-none transition-colors-200 text-0.8rem text-c-nowrap;
+  --at-apply: block border-none transition-colors-200 text-0.8rem truncate;
   --at-apply: text-gray-700 text-op-60 dark:text-gray-200 dark:text-op-60;
   --at-apply: hover:text-c-fgDeeper focus:text-c-fgDeeper;
 }

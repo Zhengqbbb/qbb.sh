@@ -127,7 +127,7 @@ And actually `czg` can be made smaller, but in order to take as an adapter, I ne
 3. More command line usage. `Commitizen CLI` does NOT provide the adapter can have command line usage. like `SubCommand` and `Option` feature can affect the interaction or result. The adapter just only using environment variables. A few examples:
      - If you want to use multi select mode, Just typing `git czg checkbox`
      - When you want to commit message with Emoji. Just also typing `git czg emoji`
-     - Or using the defined and frequently used message alias<br> such as modifying the configuration, fix typos in the document<br> At this time, you can directly use `git czg :fd` without enabling interactive mode
+     - Or using the defined and frequently used message alias<br> such as modifying the configuration, fix typos in the document<br> At this time, you can directly use `git czg :fd` <sup>git czg :\<alias\></sup>, **without enabling interactive mode**
 
 
 Based on the above points, I finished `czg`, and now `git czg` is finally comfortable to usage 🤗

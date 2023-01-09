@@ -17,14 +17,14 @@ desc: 为什么会开发 cz-git 和 czg，我的开发心路历程
 
 ## 起源
 
-那还得是从今年年初给 [Vuepress-Theme-Gungnir](https://github.com/Renovamen/vuepress-theme-gungnir) 提交贡献开始说起，其实从实习开始我就一直有使用 `Commitizen CLI` + `cz-conventional-changelog` 的简单组合，只不过一般不打 commit 的范围直接就跳过。而 `Vuepress-Theme-Gungnir` 是一个融合了 博客主题，博客插件，演示及文档的 monorepo <sup>单体仓库</sup>。所以对于 commit message 是需要加上范围的<sup>一般为插件名或主题</sup><br>例子: `fix(plugin-rss): do something with plugin...`
+那还得是从今年年初给 [Vuepress-Theme-Gungnir](https://github.com/Renovamen/vuepress-theme-gungnir) 提交贡献开始说起，其实从实习开始我就一直有使用 `Commitizen CLI` + `cz-conventional-changelog` 的简单组合，只不过一般不打 commit 的范围直接就跳过<br>而 `Vuepress-Theme-Gungnir` 是一个融合了 博客主题，博客插件，演示及文档的 monorepo <sup>单体仓库</sup>。所以对于 commit message 是需要加上范围的<sup>一般为插件名或主题</sup><br>例子: `fix(plugin-rss): do something with plugin...`
 
 但对于我这样的懒人，而且还是全职做 CLI 的人来说，是绝不会干重复性输入的傻事
 
 所以很快我就提交了 [PR 使用 `cz-customizable`](https://github.com/Renovamen/vuepress-theme-gungnir/pull/34)，想通过声明式配置来解决重复性输入 commit 的范围<sup>scope</sup>。但很快就发现，这并不能真正解决需求
 
 1. 如果加上 [commitilint](https://commitlint.js.org/) 的配置，就需要配置两个地方，他们的配置是可以用同一份，互相影响
-2. 其次是==仅有上下选择的交互方式用起来太慢了==，如果声明的范围达到20个，那么每次 commit，就需要上下寻找对应的范围，但其实你在 commit 的时候其实脑海里就已经有了答案，所以交互方式就势必要有搜索功能<br>举个例子，为 table 组件添加测试，最为理想的交互方式 <kbd>te</kbd> <kbd>Enter</kbd> 输出 `test`。<kbd>ta</kbd> <kbd>Enter</kbd> 输出 `table`
+2. 其次是==仅有上下选择的交互方式用起来太慢了==，如果声明的范围达到20个，那么每次 commit，就需要上下寻找对应的范围，但其实你在 commit 的时候脑海里就已经有了答案，所以交互方式就势必要有搜索功能<br>举个例子，为 table 组件添加测试，最为理想的交互方式 <kbd>te</kbd> <kbd>Enter</kbd> 输出 `test`。<kbd>ta</kbd> <kbd>Enter</kbd> 输出 `table`
 
 所以当时开发 `cz-git` 目标就是，==做一款市面上交互最能打，最好用的适配器==，嘿嘿
 
@@ -36,9 +36,9 @@ desc: 为什么会开发 cz-git 和 czg，我的开发心路历程
 
 ### 动态的配置与交互
 
-使用 Node.js 做 CLI 最大的优势就是在于 **你可以编写 JavaScript 配置来作为动态配置来驱动他的UI行为**，赋予他一定的智能化，让他更契合你使用习惯
+使用 Node.js 做 CLI 最大的优势就是在于 **你可以编写 JavaScript 配置来玩动态配置驱动其 UI 与行为**，赋予 CLI 一定的智能化，让 CLI 更契合使用习惯
 
-举个例子：在编写 monorepo 配置时可以利用 `path` 和 `fs` 模块动态定义 commit message 中的scopes<sup>范围</sup>显示<br>当然你也可以利用 git 命令的结果来判断是否要为空选项置于顶部，毕竟有的时候并不需要添加范围
+举个例子：在编写 monorepo 配置时可以利用 `path` 和 `fs` 模块动态定义 commit message 中的scopes<sup>范围</sup>显示，当然我们也可以利用 git 命令的结果来决定选择项的位置
 
 :::details 查看 `.commitlintrc.cjs` 配置代码
 ```js
@@ -105,28 +105,28 @@ $ du -sh ./node_modules/*
 1.3M ./node_modules/czg
 ```
 
-细看后你会发现它的项目依赖非常复杂，共计依赖==147个==，共计大小==102MB==，我接受不了！<br>
+细看后你会发现它的项目依赖非常复杂，共计依赖==147个==，共计大小==102MB==，我无法接受！<br>
 所以我非常不建议将 `commitizen` 作为项目依赖项
 
-而 `czg` 其实还可以做到更小，但是为了兼顾作为适配器需要使用 [`inquirer`](https://github.com/SBoudrias/Inquirer.js) TUI 库，不然使用其他库或是原生写应该可以做到300-500KB左右 🧐
+> 当然 `czg` 其实还可以做到更小，但是为了兼顾作为适配器需要使用 [`inquirer`](https://github.com/SBoudrias/Inquirer.js) TUI 库，不然使用其他 TUI 库或是原生写应该可以做到300-500KB左右 🧐
 
 ### 启动速度
 
-`Commitizen CLI` 是需要搭配交互适配器，你可以理解为可以选择自己喜欢的 UI 插件，而他仅仅就作为一个启动器。<br>但是像 `commit`这种高频使用的 CLI，在每次启动的时候，Node就比较拉胯，需要在 `node_modules` 当中一层层寻找你设置的适配器，这涉及到频繁遍历文件系统所会带来损耗，所以你会发现启动速度是时快时慢
+`Commitizen CLI` 是需要搭配适配器使用，你可以理解为可以选择自己喜欢的 UI 插件，而他仅仅就作为一个命令的启动器<br>但是像 `commit`这种高频使用的 CLI，在每次启动的时候，Node 就比较拉胯，需要在 `node_modules` 当中一层层寻找你设置的适配器包，这涉及到频繁遍历文件系统所会带来损耗，所以你会发现启动速度是时快时慢
 
 
 ### 使用体验
 
-1. 抛去多余的概念，更简单。使用 `Commitizen CLI` 多了一个适配器的概念，**做不了开箱即用**，基本上安装完都需要知道 *适配器* 然后配置一下使用的 *适配器*，多了配置步骤和多余的概念，就让人感觉给项目添加一个交互式的命令行工具很复杂
+1. 抛去多余的概念，更简单。使用 `Commitizen CLI` 由于多了一个适配器的概念，**做不了开箱即用**，基本上安装完都需要知道 *适配器* 然后配置一下使用的 *适配器*，多了配置步骤和多余的概念，就让人感觉给项目添加一个交互式的命令行工具很复杂
 
 2. `npx` 使用。作为 Node 的 CLI 最好是能支持 `npx czg` 直接启动的方式，虽然 `npx` 在启动速度上也是比较拉胯，但如果你依赖和体积控制的比较好，日常突然想用的时候还是很好用的
 
-3. 更多命令行的玩法支持。`Commitizen CLI`在设计上是没有考虑给适配器来做命令指令的扩展，简单点就是我们适配器想要做更多命令的行的功能，**只能使用环境变量的玩法，做不了 `SubCmd` 和 `Option`等命令行常见功能使用方式**，举几个例子吧
-    - 想要在本次 commit 使用多选范围模式，直接添加子命令即可 `git czg checkbox`
+3. 更多命令行的玩法支持。`Commitizen CLI`在设计上是没有考虑给适配器来做命令指令的玩法扩展，你可以理解为我们适配器想要做更多命令行的玩法功能，**就只能使用环境变量的玩法，做不了 `SubCommand` <sup>子命令</sup> 和 `Option`<sup>参数传递</sup> 等命令行常见功能使用方式**，举几个例子
+    - 如果想要在本次 commit 使用多选范围模式，直接添加子命令即可 `git czg checkbox`
     - 想要在 commit message 中添加 Emoji，同理直接使用 `git czg emoji` 即可
-    - 或是使用已定义的频繁使用 message alias，像修改配置，修改文档错别字等，开启交互模式反而麻烦，这时候就可以直接使用 `git czg :fd`
+    - 或是使用已定义的频繁使用 message alias，像修改配置，修改文档错别字等，这时候开启交互模式反而麻烦，就可以直接使用 `git czg :fd` <sup>git czg :\<alias\></sup>
 
-基于以上几点，让我完成了 `czg`，现在 `git czg` 敲起来也终于舒服了很多 🤗
+基于以上几点，让我完成了 `czg`，而现在 `git czg` 敲起来也终于左右手得以连贯舒适了很多 🤗
 
 ---
 
