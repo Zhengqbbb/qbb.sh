@@ -47,12 +47,12 @@
   --at-apply: top--0.5em;
 }
 
-.prose kbd{
+.prose kbd {
   --at-apply: text-sm py-0.4 px-1.2 mx-0.6 bg-gradient-to-br from-gray-200 to-slate-50;
   box-shadow: inset 0 -2px 0 0 #cdcde6, inset 0 0 1px 1px #fff, 0 1px 2px 1px rgba(30, 35, 90, .4);
 }
 
-.dark .prose kbd{
+.dark .prose kbd {
   --at-apply: bg-gradient-to-br from-blue-gray-900 to-dark-600;
   box-shadow: -1px -1px 1px #505050, 1px 1px 6px #000;
 }
@@ -230,7 +230,7 @@
 .prose ul ol,
 .prose ol ul,
 .prose ol ol {
-  --at-apply: my-0.75em pl-0;
+  --at-apply: my-0em pl-0;
 }
 
 /** EndSection: */
@@ -265,8 +265,8 @@
   content: attr(data-step);
   --at-apply: flex justify-center items-center z-2;
   --at-apply: text-c-dim rd-full border op-80 border-c-dim;
-  flex: 0 0 clamp(1.8rem,5vw,1.8rem);
-  height: clamp(1.8rem,5vw,1.8rem);
+  flex: 0 0 clamp(1.8rem, 5vw, 1.8rem);
+  height: clamp(1.8rem, 5vw, 1.8rem);
 }
 
 .prose .step-flow.ol .step-flow-item::after {
@@ -471,7 +471,7 @@
 }
 
 .prose .code-header-item {
-  --at-apply: px-2 py-1 rd box-border cursor-pointer transition-background-color-300 transition-op-200;
+  --at-apply: px-2 py-1 rd box-border cursor-pointer transition-colors-300 transition-op-200;
   --at-apply: op-60 hover:text-c-fgDeeper hover:op-100;
 }
 
@@ -537,8 +537,47 @@ html:not(.dark) .shiki-dark {
   hyphens: none;
 }
 
-.prose .shiki-container code {
+.prose .shiki code {
   --at-apply: block py-0 px-6 min-w-full text-sm text-c-fgDeep leading-1.5em;
+}
+
+.prose [class*=language-] code .diff,
+.prose [class*=language-] code .highlighted {
+  width: calc(100% + 48px);
+  --at-apply: inline-block bg-l-innerCodeBG dark:bg-dark-700 mx--24px px-24px;
+}
+
+.prose [class*=language-] code .highlighted.error,
+.prose [class*=language-] code .diff.remove {
+  --at-apply: op-90 bg-red-6 bg-op-20 dark:bg-red-5 dark:bg-op-20;
+}
+
+.prose [class*=language-] code .diff.add {
+  --at-apply: bg-emerald-3 bg-op-40 dark:bg-emerald-6 dark:bg-op-30;
+}
+
+.prose [class*=language-] code .highlighted.error{
+  --at-apply: op-100;
+}
+
+.prose [class*=language-] code .highlighted.warning{
+  --at-apply: bg-yellow-4 bg-op-30 dark:bg-yellow-3 dark:bg-op-20;
+}
+
+.prose [class*=language-]:hover .has-focused-lines .line:not(.has-focus) {
+  filter: blur(0);
+  opacity: 1;
+}
+
+.prose [class*=language-] .has-focused-lines .line:not(.has-focus) {
+  opacity: .7;
+  transition: filter .35s,opacity .35s;
+}
+
+.prose [class*=language-] .has-focused-lines .line:not(.has-focus) {
+  filter: blur(0.095rem);
+  opacity: .4;
+  transition: filter .35s,opacity .35s;
 }
 
 /** Powered by: vitepress */

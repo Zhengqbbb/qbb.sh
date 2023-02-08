@@ -97,16 +97,16 @@ In an accidental docker environment test, The idea of `Commitizen CLI` alternati
 
 If you add `commitizen` as a dependency in your project, you will find that downloading dependencies takes a long time
 
-```sh
-$ npm install -D commitizen
-added 148 packages, and audited 149 packages in 2 m
-$ du -sh ./node_modules
-102M ./node_modules
+```ansi
+[90m$[0m [32mnpm[0m install -D [31mcommitizen[0m
+added [35m148[0m packages, and audited 149 packages in [35m2 m[0m
+[90m$[0m [32mdu[0m -sh ./node_modules
+[35m102M[0m ./node_modules
 
-$ npm install -D czg
-added 1 package, and audited 2 packages in 408 ms
-$ du -sh ./node_modules/*
-1.3M ./node_modules/czg
+[90m$[0m [32mnpm[0m install -D [31mczg[0m
+added [35m1[0m packages, and audited 2 packages in [35m408 ms[0m
+[90m$[0m [32mdu[0m -sh ./node_modules
+[35m1.3M[0m ./node_modules
 ```
 
 You will find that `commitizen` dependencies are complicated.<br> The total dependencies ==147==, the total size ==102 MB==, **I can't accept it**!<br>

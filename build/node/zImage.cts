@@ -15,7 +15,6 @@ import { resolve } from 'pathe'
 import imagemin from 'imagemin'
 // @ts-expect-error missing types
 import imageminWebp from 'imagemin-webp'
-// @ts-expect-error missing types
 import rm from 'rimraf'
 // import imageminOptipng from 'imagemin-optipng'
 

@@ -5,8 +5,8 @@ import Jsx from '@vitejs/plugin-vue-jsx'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import Markdown from 'vite-plugin-vue-markdown'
-import ViteRadar from 'vite-plugin-radar'
 import { VitePWA } from 'vite-plugin-pwa'
+import { VitePluginRadar } from 'vite-plugin-radar'
 import { SchemaOrgResolver, schemaAutoImports } from '@vueuse/schema-org'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -15,6 +15,7 @@ import {
   registerMarkdownPlugins,
   resolvePageFile,
   resolvePostList,
+  shiki,
   vitePWAOptions,
 } from './build'
 
@@ -56,6 +57,10 @@ export default defineConfig({
       headEnabled: false,
       markdownItOptions: {
         quotes: '""\'\'',
+        highlight: await shiki({
+          light: 'vitesse-light',
+          dark: 'vitesse-dark',
+        }),
       },
       markdownItSetup: md => registerMarkdownPlugins(md),
     }),
@@ -90,7 +95,7 @@ export default defineConfig({
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
     Layouts(),
     // https://github.com/stafyniaksacha/vite-plugin-radar#vite-plugin-radar
-    ViteRadar({
+    VitePluginRadar({
       analytics: [{ id: process.env.GOOGLE_ANALYTICS_ID || '' }],
       tongji: [{ id: process.env.BAIDU_TONGJI_ID || '' }],
     }),

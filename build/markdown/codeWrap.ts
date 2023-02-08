@@ -1,3 +1,5 @@
+// Powered by: https://github.com/vuejs/vitepress
+
 // markdown-it plugin for wrapping <pre> ... </pre>.
 //
 // If your plugin was chained before preWrapper, you can add additional element directly.
@@ -9,11 +11,15 @@
 
 import type MarkdownIt from 'markdown-it'
 
-export const codePreWrapperPlugin = (md: MarkdownIt) => {
+export const CodeBlockWrapPlugin = (md: MarkdownIt) => {
   const fence = md.renderer.rules.fence!
   md.renderer.rules.fence = (...args) => {
     const [tokens, idx] = args
-    const lang = tokens[idx].info.trim().replace(/-vue$/, '')
+    const lang = tokens[idx].info
+      .trim()
+      .replace(/(-vue|{| ).*$/, '')
+      .replace('ansi', 'sh')
+
     const rawCode = fence(...args)
     return `<div class="language-${lang}">
     <button title="Copy Code" class="copy"></button>
@@ -23,4 +29,4 @@ export const codePreWrapperPlugin = (md: MarkdownIt) => {
   }
 }
 
-export default codePreWrapperPlugin
+export default CodeBlockWrapPlugin

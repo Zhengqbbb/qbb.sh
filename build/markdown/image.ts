@@ -60,9 +60,10 @@ export const ImagePlugin = (md: MarkdownIt) => {
 
       if (match.groups?.notZoom) {
         const imageClass = tokens[idx].attrs?.findIndex(i => i?.[0] === 'class')
-        imageClass === undefined || imageClass === -1
-          ? tokens[idx].attrs?.push(['class', 'not-zoom'])
-          : tokens[idx].attrs?.[imageClass][1].concat(' not-zoom')
+        if (imageClass === undefined || imageClass === -1)
+          tokens[idx].attrs?.push(['class', 'not-zoom'])
+        else
+          tokens[idx].attrs?.[imageClass][1].concat(' not-zoom')
       }
 
       if (match.groups?.desc) {
