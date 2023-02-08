@@ -98,15 +98,15 @@ In an accidental docker environment test, The idea of `Commitizen CLI` alternati
 If you add `commitizen` as a dependency in your project, you will find that downloading dependencies takes a long time
 
 ```ansi
-[90m$[0m [32mnpm[0m install -D [31mcommitizen[0m
-added [35m148[0m packages, and audited 149 packages in [35m2 m[0m
+[90m$[0m [32mnpm[0m install -D [36mcommitizen[0m
+added [31m148[0m packages, and audited 149 packages in [31m2 m[0m
 [90m$[0m [32mdu[0m -sh ./node_modules
-[35m102M[0m ./node_modules
+[31m102M[0m ./node_modules
 
-[90m$[0m [32mnpm[0m install -D [31mczg[0m
-added [35m1[0m packages, and audited 2 packages in [35m408 ms[0m
+[90m$[0m [32mnpm[0m install -D [36mczg[0m
+added [31m1[0m packages, and audited 2 packages in [31m408 ms[0m
 [90m$[0m [32mdu[0m -sh ./node_modules
-[35m1.3M[0m ./node_modules
+[31m1.3M[0m ./node_modules
 ```
 
 You will find that `commitizen` dependencies are complicated.<br> The total dependencies ==147==, the total size ==102 MB==, **I can't accept it**!<br>

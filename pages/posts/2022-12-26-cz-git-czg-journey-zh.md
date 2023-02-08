@@ -94,15 +94,15 @@ feat(components): [button] I did something with button
 如果你在项目当中添加 `commitizen` 作为依赖项，你会发现下载依赖非常久
 
 ```ansi
-[90m$[0m [32mnpm[0m install -D [31mcommitizen[0m
-added [35m148[0m packages, and audited 149 packages in [35m2 m[0m
+[90m$[0m [32mnpm[0m install -D [36mcommitizen[0m
+added [31m148[0m packages, and audited 149 packages in [31m2 m[0m
 [90m$[0m [32mdu[0m -sh ./node_modules
-[35m102M[0m ./node_modules
+[31m102M[0m ./node_modules
 
-[90m$[0m [32mnpm[0m install -D [31mczg[0m
-added [35m1[0m packages, and audited 2 packages in [35m408 ms[0m
+[90m$[0m [32mnpm[0m install -D [36mczg[0m
+added [31m1[0m packages, and audited 2 packages in [31m408 ms[0m
 [90m$[0m [32mdu[0m -sh ./node_modules
-[35m1.3M[0m ./node_modules
+[31m1.3M[0m ./node_modules
 ```
 
 细看后你会发现它的项目依赖非常复杂，共计依赖==147个==，共计大小==102MB==，我无法接受！<br>
