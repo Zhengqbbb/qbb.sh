@@ -20,8 +20,8 @@ export const appName = 'Q.Ben'
 /** site key  */
 /** @see https://giscus.app | https://github.com/Zhengqbbb/qbb.sh/pull/7 */
 export const giscusConfig = {
-  repo: 'Zhengqbbb/qbb.sh',
-  repoId: 'R_kgDOH3qttQ',
+  repo: 'Zhengqbbb/vuepress-plugin',
+  repoId: 'MDEwOlJlcG9zaXRvcnkxODM4OTUyNTQ',
   category: 'Announcements',
-  categoryId: 'DIC_kwDOH3qttc4CRiZK',
+  categoryId: 'DIC_kwDOCvYE1s4CAdr1',
 }
