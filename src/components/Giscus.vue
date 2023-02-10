@@ -26,6 +26,7 @@ if (isClient) {
     element.setAttribute('data-mapping', 'pathname')
     element.setAttribute('data-input-position', 'top')
     element.setAttribute('data-reactions-enabled', '1')
+    element.setAttribute('data-strict', '1')
     element.setAttribute('data-emit-metadata', '0')
     return element
   }
