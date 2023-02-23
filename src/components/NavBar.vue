@@ -33,23 +33,23 @@ if (isClient) {
 <template>
   <header
     ref="navbar"
-    class="z-40 w-full h-20 bg-c-bg bg-op-0 dark:bg-op-0 transition-colors backdrop-blur-4 backdrop-saturate-50 select-none"
+    class="z-40 w-full h-17 bg-c-bg bg-op-0 dark:bg-op-0 transition-background-color-500 backdrop-blur-4 backdrop-saturate-50 select-none"
     :class="[
       isLeave
-        && 'fixed -top-20 left-0 transition-transform duration-300',
+        && 'fixed -top-17 left-0 transition-transform duration-300',
       isVisible && 'translate-y-full bg-op-80 dark:bg-op-80',
       !isLeave && !isVisible && 'absolute top-0 left-0',
     ]"
   >
     <div class="max-w-120ch m-auto flex justify-between items-center">
       <router-link
-        class="w-11 h-11 m-6 outline-none hover:op-70 transition-opacity" to="/"
+        class="w-11 h-11 mt-0.6rem mx-6 outline-none hover:op-70 transition-opacity" to="/"
       >
         <img v-show="isDark" width="44" height="44" src="/logo-dark.svg" alt="logo">
         <img v-show="!isDark" width="44" height="44" src="/logo-light.svg" alt="logo">
       </router-link>
 
-      <nav class="nav box-border p-8 flex items-center space-x-3">
+      <nav class="nav box-border py-5 px-6 flex items-center space-x-3">
         <router-link to="/posts" title="Blog" class="nav-item">
           <div i-majesticons:paper-fold-text-line class="md:hidden" />
           <span class="lt-md:hidden">Blog</span>
