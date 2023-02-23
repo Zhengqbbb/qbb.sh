@@ -27,7 +27,7 @@ export const usePosts = () => {
   const router = useRouter()
 
   const posts = computed<PostRouterRecord[]>(() =>
-    getPosts(router.getRoutes()),
+    getPosts(router.getRoutes().filter(v => v.name)),
   )
 
   const mappingPostYear = computed(() => {
