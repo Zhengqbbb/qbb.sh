@@ -87,7 +87,7 @@ onMounted(() => {
   </article>
 
   <div class="prose m-auto my-8">
-    <hr>
+    <hr class="mx-0! border-style-dotted">
     <PostPager />
     <Footer />
     <Giscus :key="router.currentRoute.value.fullPath" />
