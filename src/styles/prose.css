@@ -1,7 +1,7 @@
 /** Section: Init */
 
 .prose {
-  --at-apply: max-w-content text-c-fg text-4 leading-1.85em;
+  --at-apply: max-w-content text-c-fg text-4 leading-1.9em;
 }
 
 .prose> :first-child {
@@ -320,7 +320,7 @@
 /** Section: Divide */
 
 .prose hr {
-  --at-apply: my-8 mx-space border-c-border;
+  --at-apply: my-8 mx-10em border-c-border;
 }
 
 /** EndSection: */

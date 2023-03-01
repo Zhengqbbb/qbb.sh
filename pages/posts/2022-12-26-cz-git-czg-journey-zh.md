@@ -19,14 +19,14 @@ desc: 为什么会开发 cz-git 和 czg，我的开发心路历程
 
 那还得是从今年年初给 [Vuepress-Theme-Gungnir](https://github.com/Renovamen/vuepress-theme-gungnir) 提交贡献开始说起，其实从实习开始我就一直有使用 `Commitizen CLI` + `cz-conventional-changelog` 的简单组合，只不过一般不打 commit 的范围直接就跳过<br>而 `Vuepress-Theme-Gungnir` 是一个融合了 博客主题，博客插件，演示及文档的 monorepo <sup>单体仓库</sup>。所以对于 commit message 是需要加上范围的<sup>一般为插件名或主题</sup><br>例子: `fix(plugin-rss): do something with plugin...`
 
-但对于我这样的懒人，而且还是全职做 CLI 的人来说，是绝不会干重复性输入的傻事
+==但对于我这样的懒人，而且还是全职做 CLI 的人来说，是绝不会干重复性输入的傻事==
 
 所以很快我就提交了 [PR 使用 `cz-customizable`](https://github.com/Renovamen/vuepress-theme-gungnir/pull/34)，想通过声明式配置来解决重复性输入 commit 的范围<sup>scope</sup>。但很快就发现，这并不能真正解决需求
 
 1. 如果加上 [commitilint](https://commitlint.js.org/) 的配置，就需要配置两个地方，他们的配置是可以用同一份，互相影响
 2. 其次是==仅有上下选择的交互方式用起来太慢了==，如果声明的范围达到20个，那么每次 commit，就需要上下寻找对应的范围，但其实你在 commit 的时候脑海里就已经有了答案，所以交互方式就势必要有搜索功能<br>举个例子，为 table 组件添加测试，最为理想的交互方式 <kbd>te</kbd> <kbd>Enter</kbd> 输出 `test`。<kbd>ta</kbd> <kbd>Enter</kbd> 输出 `table`
 
-所以当时开发 `cz-git` 目标就是，==做一款市面上交互最能打，最好用的适配器==，嘿嘿
+所以当时开发 `cz-git` 目标就是，做一款市面上交互最能打，最好用的适配器，嘿嘿
 
 ---
 
