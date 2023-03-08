@@ -1,4 +1,5 @@
 {
+  "$schema": "https://cdn.jsdelivr.net/gh/Zhengqbbb/cz-git@main/docs/public/schema/cz-git-1.5.3.json",
   "path": "node_modules/cz-git",
   "alias": {
     ":": "docs: update posts",

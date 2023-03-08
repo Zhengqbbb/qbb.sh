@@ -6,7 +6,6 @@ import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import Markdown from 'vite-plugin-vue-markdown'
 import { VitePWA } from 'vite-plugin-pwa'
-import { VitePluginRadar } from 'vite-plugin-radar'
 import { SchemaOrgResolver, schemaAutoImports } from '@vueuse/schema-org'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -94,11 +93,6 @@ export default defineConfig({
     VitePWA(vitePWAOptions),
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
     Layouts(),
-    // https://github.com/stafyniaksacha/vite-plugin-radar#vite-plugin-radar
-    VitePluginRadar({
-      analytics: [{ id: process.env.GOOGLE_ANALYTICS_ID || '' }],
-      tongji: [{ id: process.env.BAIDU_TONGJI_ID || '' }],
-    }),
   ],
 
   // https://github.com/antfu/vite-ssg
