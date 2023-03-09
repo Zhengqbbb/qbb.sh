@@ -63,7 +63,7 @@ export const useHeadByFrontmatter = (): void => {
   if (!isClient) {
     useHead({
       script: [
-        { 'async': '', 'defer': '', 'data-website-id': `${process.env.UMAIMI_ID || ''}`, 'src': `${process.env.UMAIMI_ENDPOINT || ''}` },
+        { 'async': '', 'defer': '', 'data-website-id': `${process.env.UMAMI_ID || ''}`, 'src': `${process.env.UMAMI_ENDPOINT || ''}` },
       ],
     })
   }
