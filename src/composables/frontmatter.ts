@@ -12,7 +12,7 @@ import {
   twitter,
   twitterCreator,
 } from '~/meta'
-import { isExternal } from '~/utils'
+import { isClient, isExternal } from '~/utils'
 
 /**
  * data generate base (/build/node/resolvePost.ts)
@@ -58,10 +58,15 @@ export const useHeadByFrontmatter = (): void => {
       { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
       { name: 'theme-color', content: computed(() => isDark.value ? '#121212' : '#ffffff') },
     ],
-    script: [
-      { 'async': '', 'defer': '', 'data-website-id': `${process.env.UMAIMI_ID || ''}`, 'src': `${process.env.UMAIMI_ENDPOINT || ''}` },
-    ],
   })
+
+  if (!isClient) {
+    useHead({
+      script: [
+        { 'async': '', 'defer': '', 'data-website-id': `${process.env.UMAIMI_ID || ''}`, 'src': `${process.env.UMAIMI_ENDPOINT || ''}` },
+      ],
+    })
+  }
 
   useSchemaOrg([
     defineWebSite({
