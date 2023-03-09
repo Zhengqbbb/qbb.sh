@@ -59,7 +59,7 @@ export const useHeadByFrontmatter = (): void => {
       { name: 'theme-color', content: computed(() => isDark.value ? '#121212' : '#ffffff') },
     ],
     script: [
-      { 'async': true, 'defer': true, 'data-website-id': `${process.env.UMAIMI_ID || ''}`, 'src': `${process.env.UMAIMI_ENDPOINT || ''}` },
+      { 'async': '', 'defer': '', 'data-website-id': `${process.env.UMAIMI_ID || ''}`, 'src': `${process.env.UMAIMI_ENDPOINT || ''}` },
     ],
   })
 
