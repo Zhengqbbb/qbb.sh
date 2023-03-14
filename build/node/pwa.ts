@@ -6,6 +6,7 @@ import { resolve } from 'pathe'
 const __GOOGLE_FONT_REGEX = new RegExp('^https://fonts.googleapis.com/.*', 'i')
 const __GSTATIC_FONTS_REGEX = new RegExp('^https://fonts.gstatic.com/.*', 'i')
 const __JSDELIVR_CDN_REGEX = new RegExp('^https://cdn.jsdelivr.net/.*', 'i')
+const __UNPKG_CDN_REGEX = new RegExp('^https://unpkg.com/.*', 'i')
 const __GITHUB_SOURCE_CONTENT_REGEX = new RegExp('^https://(((raw|user-images|camo).githubusercontent.com))/.*', 'i')
 
 /**
@@ -48,6 +49,7 @@ export const vitePWAOptions: Partial<VitePWAOptions> = {
     navigateFallbackDenylist: [/^\/new/],
     globPatterns: ['**/*.{js,css,webp,png,svg,gif,ico,woff2}'],
     navigateFallback: null,
+    mode: 'production',
     runtimeCaching: [
       {
         urlPattern: __GOOGLE_FONT_REGEX,
@@ -82,6 +84,20 @@ export const vitePWAOptions: Partial<VitePWAOptions> = {
         handler: 'CacheFirst',
         options: {
           cacheName: 'jsdelivr-cdn-cache',
+          expiration: {
+            maxEntries: 10,
+            maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
+          },
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
+        },
+      },
+      {
+        urlPattern: __UNPKG_CDN_REGEX,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'unpkg-cdn-cache',
           expiration: {
             maxEntries: 10,
             maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days

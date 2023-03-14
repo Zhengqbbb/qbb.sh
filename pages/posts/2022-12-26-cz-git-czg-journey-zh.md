@@ -43,8 +43,8 @@ desc: 为什么会开发 cz-git 和 czg，我的开发心路历程
 :::details 查看 `.commitlintrc.cjs` 配置代码
 ```js
 // .commitlintrc.cjs
-const fs = require('fs')
-const path = require('path')
+const fs = require('node:fs')
+const path = require('node:path')
 const packages = fs.readdirSync(path.resolve(__dirname, 'packages'))
 
 const scopeComplete = execSync('git status --porcelain || true')
