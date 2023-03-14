@@ -1,5 +1,5 @@
 import { readFile, writeFile } from 'node:fs/promises'
-import { fileURLToPath } from 'url'
+import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'pathe'
 import fs from 'fs-extra'
 import fg from 'fast-glob'
@@ -7,7 +7,6 @@ import matter from 'gray-matter'
 import { type PropType, createSSRApp } from 'vue'
 import { renderToString } from 'vue/server-renderer'
 import { parse } from '@vue/compiler-sfc'
-// @ts-expect-error missing types
 import satori, { init } from 'satori/wasm'
 import { html } from 'satori-html'
 import initYoga from 'yoga-wasm-web'
@@ -23,7 +22,9 @@ const __output = 'public/og'
 const __outputDir = resolve(__dirname, `../../../${__output}`)
 
 /**
- * @description: auto generate og image for Build Pre
+ * Main
+ *
+ * auto generate og image for Build Pre
  * @author Zhengqbbb <https://github.com/Zhengqbbb>
  * @usage pnpm gen:og
  */
@@ -60,7 +61,6 @@ export async function genOG() {
 }
 
 async function initEnv() {
-  // @ts-expect-error missing types
   const yoga = await initYoga(
     await readFile((resolve('node_modules/yoga-wasm-web/dist/yoga.wasm'))),
   )
@@ -140,11 +140,11 @@ function getTheme(): TemplateTheme {
   const holdBG = `background-image: linear-gradient(${angle}deg, ${bgTWrap}, ${bgTInner} 30%, ${bgBInner} 70%, ${bgBWrap});`
   const holdFG = 'color: #ffffff;'
   return {
-    wholeDivStyle: holdBG + holdFG,
+    backgroundStyle: holdBG + holdFG,
   }
   // DEBUG
   return {
-    wholeDivStyle: 'background-image: linear-gradient(120deg, rgb(27, 26, 28), rgb(6, 6, 7) 30%, rgb(25, 95, 60) 70%, rgb(16, 15, 16));color: #ffffff;',
+    backgroundStyle: 'background-image: linear-gradient(120deg, rgb(27, 26, 28), rgb(6, 6, 7) 30%, rgb(25, 95, 60) 70%, rgb(16, 15, 16));color: #ffffff;',
   }
 }
 
@@ -170,7 +170,7 @@ async function genPNG(svg: string, output: string) {
     console.log(`\x1B[90m${__output}/\x1B[36m${i}\x1B[0m`)
   })
   console.log(`  \x1B[90mGenerate Open Gragh Image in ${((Date.now() - start) / 1000).toFixed(2)}s\x1B[0m`)
-}()).catch((err) => {
+}()).catch((err: Error) => {
   console.error(err)
   process.exit(1)
 })

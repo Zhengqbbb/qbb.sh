@@ -10,7 +10,7 @@ defineProps<{ title: string; desc: string; site: string; theme: TemplateTheme }>
 
 <template>
   <div
-    :style="theme.wholeDivStyle"
+    :style="theme.backgroundStyle"
     tw="w-full h-full text-1.4rem flex flex-col items-center justify-between px-2rem py-2rem"
   >
     <div tw="flex w-full">
