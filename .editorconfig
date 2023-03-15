@@ -20,3 +20,7 @@ tab_width = 4
 tab_width = 4
 indent_size = 4
 indent_style = space
+
+[build/node/**/*.{ts,mts,cts}]
+indent_size = 4
+tab_width = 4

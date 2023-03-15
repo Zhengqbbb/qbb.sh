@@ -4,16 +4,10 @@ import { dirname, resolve } from 'pathe'
 import fs from 'fs-extra'
 import fg from 'fast-glob'
 import matter from 'gray-matter'
-import { type PropType, createSSRApp } from 'vue'
-import { renderToString } from 'vue/server-renderer'
-import { parse } from '@vue/compiler-sfc'
-import satori, { init } from 'satori/wasm'
-import { html } from 'satori-html'
-import initYoga from 'yoga-wasm-web'
 import { renderAsync } from '@resvg/resvg-js'
-import type { SatoriOptions } from 'satori'
+import { type SatoriOptions, satoriVue } from 'x-satori/vue'
 import type { PageFrontmatter } from '../resolvePage'
-import { site as siteDefault, description as siteDesc, title as siteName, siteShort } from './meta.mjs'
+import { description as siteDesc, title as siteName, siteShort } from './meta.mjs'
 import type { TemplateTheme } from './type'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -29,7 +23,6 @@ const __outputDir = resolve(__dirname, `../../../${__output}`)
  * @usage pnpm gen:og
  */
 export async function genOG() {
-  await initEnv()
   const files = fg.sync('**/*.{md,vue}', { cwd: __sourceDir, absolute: true })
 
   // return await genPNG(await genSVG(siteName, siteDesc, siteShort), resolve(__dirname, './a.png'))
@@ -58,33 +51,6 @@ export async function genOG() {
       return flatPath
     }),
   )
-}
-
-async function initEnv() {
-  const yoga = await initYoga(
-    await readFile((resolve('node_modules/yoga-wasm-web/dist/yoga.wasm'))),
-  )
-  init(yoga)
-}
-
-async function getTemplateObj(title?: string, desc?: string, site?: string, theme?: TemplateTheme) {
-  const { descriptor } = parse(
-    await readFile(resolve(__dirname, './Template.vue'), 'utf8'),
-  )
-  const SFC = createSSRApp(
-    {
-      props: {
-        title: { type: String, default: siteName },
-        desc: { type: String, default: siteDesc },
-        site: { type: String, default: siteDefault },
-        theme: { type: Object as PropType<TemplateTheme> },
-      },
-      template: descriptor.template?.content ?? '',
-    },
-    { title, desc, site, theme },
-  )
-  const rendered = await renderToString(SFC)
-  return html(rendered)
 }
 
 async function genSVG(title?: string, desc?: string, site?: string) {
@@ -123,11 +89,16 @@ async function genSVG(title?: string, desc?: string, site?: string) {
         style: 'normal',
       },
     ],
+    props: {
+      title,
+      desc,
+      site,
+      theme: getTheme(),
+    },
   }
-  return await satori(
-    await getTemplateObj(title, desc, site, getTheme()),
-    opt,
-  )
+  const tempStr = await readFile(resolve(__dirname, './Template.vue'), 'utf8')
+
+  return await satoriVue(opt, tempStr)
 }
 
 const random = (n: number, m: number) => Math.floor(Math.random() * (m - n + 1) + n)
