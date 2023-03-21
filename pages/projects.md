@@ -16,6 +16,10 @@ projects:
       desc: 'Commitizen CLI alternative'
       icon: 'i-carbon:terminal'
       link: 'https://cz-git.qbb.sh/cli/'
+    - name: 'x-satori'
+      desc: 'Using Vue file to generate Open Graph image by satori'
+      icon: 'i-carbon:image'
+      link: 'https://github.com/Zhengqbbb/x-satori'
   VS Code Extensions:
     - name: 'vitesse-qb'
       desc: 'VS Code theme fork by Vitesse Theme'
