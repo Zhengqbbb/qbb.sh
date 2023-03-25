@@ -18,6 +18,7 @@ defineProps<{ projects: Record<string, any[]> }>()
         >
           <div class="space-x-10">
             <XCmd v-if="item.icon === 'x-cmd'" class="text-4xl" />
+            <VitesstQB v-else-if="item.icon === 'vitesse-qb'" class="text-4xl" />
             <div v-else :class="item.icon || 'i-carbon-unknown'" class="text-4xl" />
           </div>
           <div class="flex-auto">

@@ -23,6 +23,7 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     StepFlow: typeof import('./components/StepFlow.vue')['default']
     StepFlowItem: typeof import('./components/StepFlowItem.vue')['default']
+    VitesstQB: typeof import('./components/icons/VitesstQB.vue')['default']
     XCmd: typeof import('./components/icons/XCmd.vue')['default']
   }
 }
