@@ -10,10 +10,10 @@ desc: 为什么会开发 cz-git 和 czg，我的开发心路历程
 > 什么是 [Commitizen CLI](https://github.com/commitizen/cz-cli) : 基于 Node.js 的命令行工具，交互式辅助生成规范格式的 `git commit message` <br>
 > 什么是 [Commitizen Adapter](https://github.com/commitizen/cz-cli#adapters)<sup>「适配器」</sup> : 更换 Commitizen CLI 交互行为的插件 <br>
 > <br>
-> [cz-git](https://cz-git.qbb.sh/zh/guide/introduction) : 一款轻量级，交互友好，高度自定义，遵循标准 Angular commit 规范的 **Commitizen Adapter**<br>
+> [cz-git](https://cz-git.qbb.sh/zh/guide/introduction) : 一款轻量级，交互友好，高度自定义，遵循标准 Angular commit 规范的 Commitizen Adapter<br>
 > [czg](https://cz-git.qbb.sh/zh/cli/) : 可以理解为是一款内置了 `cz-git` 适配器的 `Commitizen CLI` 替代品
 
-**本文我将介绍为什么会开发 `cz-git` 以及 `czg`。我的开发心路历程 🤗**
+**本文我将介绍为什么会开发 `cz-git` 以及 `czg`。我的开发心路历程** 🤗
 
 ## 起源
 
@@ -24,7 +24,7 @@ desc: 为什么会开发 cz-git 和 czg，我的开发心路历程
 所以很快我就提交了 [PR 使用 `cz-customizable`](https://github.com/Renovamen/vuepress-theme-gungnir/pull/34)，想通过声明式配置来解决重复性输入 commit 的范围<sup>scope</sup>。但很快就发现，这并不能真正解决需求
 
 1. 如果加上 [commitilint](https://commitlint.js.org/) 的配置，就需要配置两个地方，他们的配置是可以用同一份，互相影响
-2. 其次是==仅有上下选择的交互方式用起来太慢了==，如果声明的范围达到20个，那么每次 commit，就需要上下寻找对应的范围，但其实你在 commit 的时候脑海里就已经有了答案，所以交互方式就势必要有搜索功能<br>举个例子，为 table 组件添加测试，最为理想的交互方式 <kbd>te</kbd> <kbd>Enter</kbd> 输出 `test`。<kbd>ta</kbd> <kbd>Enter</kbd> 输出 `table`
+2. 其次是仅有上下选择的交互方式用起来太慢了，如果声明的范围达到20个，那么每次 commit，就需要上下寻找对应的范围，但其实你在 commit 的时候脑海里就已经有了答案，所以交互方式就势必要有搜索功能<br>举个例子，为 table 组件添加测试，最为理想的交互方式 <kbd>te</kbd> <kbd>Enter</kbd> 输出 `test`。<kbd>ta</kbd> <kbd>Enter</kbd> 输出 `table`
 
 所以当时开发 `cz-git` 目标就是，做一款市面上交互最能打，最好用的适配器，嘿嘿
 
@@ -69,7 +69,7 @@ module.exports = {
 
 ### 补全型交互
 
-==在命令行中智能补全交互尤为关键==，操作手法一般是使用 <kbd>Tab</kbd> 或 <kbd>→</kbd> 补全信息<br>
+**在命令行中智能补全交互尤为关键**，操作手法一般是使用 <kbd>Tab</kbd> 或 <kbd>→</kbd> 补全信息<br>
 基于上述动态配置处理手法，我们可以拥有玩法就很多了，补全前置消息模版亦或是补全 ISSUE 的编号都可以
 
 最经典的例子，就是在 [Element-Plus](https://github.com/element-plus/element-plus) 组件库中的使用，其对于组件 commit 的要求很严格，除了需要输入 `components` 作为范围之外，还需要将组件名进行标识，方便后续统一处理生成 CHANGELOG<br> e.g:

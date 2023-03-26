@@ -77,7 +77,7 @@ onMounted(() => {
 <template>
   <div class="prose m-auto mb-space">
     <h1>{{ title }}</h1>
-    <p class="op-50">
+    <p class="c-gray-500 dark:c-gray-400">
       {{ formatDate(date, lang) }} · {{ readingTime.minutes }}{{ lang === 'zh' ? '分钟' : 'min' }}
     </p>
   </div>

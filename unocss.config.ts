@@ -12,7 +12,7 @@ import type { Theme } from 'unocss/preset-mini'
 const _VARS: Theme = {
   colors: {
     l: {
-      bg: 'rgb(255, 255, 255)',
+      bg: 'rgb(252, 252, 252)',
       fg: 'rgb(85, 85, 85)',
       fgDeep: 'rgb(34, 34, 34)',
       fgDeeper: 'rgb(0, 0, 0)',

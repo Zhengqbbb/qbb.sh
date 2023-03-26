@@ -328,7 +328,7 @@
 /** Section: Blockquote */
 
 .prose blockquote {
-  --at-apply: text-c-fg text-inherit font-500 not-italic op-60;
+  --at-apply: text-c-fg text-inherit no-italic font-500 op-90 dark:op-80;
   --at-apply: my-space mx-0 pl-3 border-l-3px border-c-border;
   quotes: "\201C" "\201D" "\2018" "\2019";
 }

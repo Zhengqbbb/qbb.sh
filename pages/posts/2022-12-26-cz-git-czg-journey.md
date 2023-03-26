@@ -12,8 +12,8 @@ desc: Why developed cz-git and czg. My development journey
 > What is [Commitizen CLI](https://github.com/commitizen/cz-cli) : Based on Node.js command line tool，Interactively generate standard formatted `git commit message` <br>
 > What is [Commitizen Adapter](https://github.com/commitizen/cz-cli#adapters) : Plugin that replaces Commitizen CLI interaction behavior <br>
 > <br>
-> [cz-git](https://cz-git.qbb.sh/zh/guide/introduction) : Lightweight, interactive friendly, highly customizable, standard Angular commit formatted **Commitizen Adapter**<br>
-> [czg](https://cz-git.qbb.sh/zh/cli/) : Understand it as built-in `cz-git` adapter `Commitizen CLI` **alternative**
+> [cz-git](https://cz-git.qbb.sh/zh/guide/introduction) : Lightweight, interactive friendly, highly customizable, standard Angular commit formatted *Commitizen Adapter*<br>
+> [czg](https://cz-git.qbb.sh/zh/cli/) : Understand it as built-in `cz-git` adapter `Commitizen CLI` *alternative*
 
 **In this article, I will introduce why `cz-git` and `czg` were developed. My development journey 🤗**
 
@@ -73,7 +73,7 @@ module.exports = {
 
 ### Command-line completion
 
-==completion is great in command line interaction==. Common operating way is using <kbd>Tab</kbd> or <kbd>→</kbd> to complete the information.<br>
+**Completion is great in command line interaction**. Common operating way is using <kbd>Tab</kbd> or <kbd>→</kbd> to complete the information.<br>
 Based on dynamic configuration way. We can have many feature, such as completing the pre-message template or completing the number of the ISSUE
 
 The most classic example in [Element-Plus](https://github.com/element-plus/element-plus) component library, which has very strict requirements for component commit, except for the need to type `components` as the scope, it is also need to add the component name on prefix subject <br> e.g:
