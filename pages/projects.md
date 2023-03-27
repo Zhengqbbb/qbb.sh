@@ -26,7 +26,7 @@ projects:
       icon: 'vitesse-qb'
       link: 'https://github.com/qbbsh/vitesse-qb'
     - name: 'CLI'
-      desc: 'CLI starter template'
+      desc: 'Node CLI starter template'
       icon: 'i-carbon:terminal'
       link: 'https://github.com/qbbsh/cli'
   VS Code Extensions:
