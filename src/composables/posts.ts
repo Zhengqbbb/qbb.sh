@@ -2,8 +2,8 @@ import dayjs from 'dayjs'
 import { formatDate } from '~/utils'
 import type { PageMeta, PostRouterRecord } from '~build/node'
 
-export const getPosts = (routers: any[]) =>
-  routers
+export function getPosts(routers: any[]) {
+  return routers
     .filter(page => page.meta.layout === 'post')
     .map(
       (page: any): PostRouterRecord => {
@@ -22,8 +22,9 @@ export const getPosts = (routers: any[]) =>
       },
     )
     .sort((a, b) => dayjs(b.meta.date).unix() - dayjs(a.meta.date).unix())
+}
 
-export const usePosts = () => {
+export function usePosts() {
   const router = useRouter()
 
   const posts = computed<PostRouterRecord[]>(() =>

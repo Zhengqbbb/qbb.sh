@@ -1,13 +1,17 @@
 import dayjs from 'dayjs'
 import 'dayjs/locale/zh-cn'
 
-export const isExternal = (path: string) => {
+export function isExternal(path: string) {
   const outboundRE = /^(https?:|mailto:|tel:)/
   return outboundRE.test(path)
 }
 
-export const getYear = (a: Date | string | number) => new Date(a).getFullYear()
-export const isSameYear = (a: Date | string | number, b: Date | string | number) => a && b && getYear(a) === getYear(b)
+export function getYear(a: Date | string | number) {
+  return new Date(a).getFullYear()
+}
+export function isSameYear(a: Date | string | number, b: Date | string | number) {
+  return a && b && getYear(a) === getYear(b)
+}
 export function formatDate(d?: string | Date | null, lang = 'en') {
   if (!d)
     return

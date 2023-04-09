@@ -39,11 +39,11 @@ export interface ReadingTime {
   words: number
 }
 
-const getNumCN = (text: string): number => {
+function getNumCN(text: string): number {
   return (text.match(/[\u4E00-\u9FA5]/g) || []).length
 }
 
-const getNumEN = (text: string): number => {
+function getNumEN(text: string): number {
   return (
     text
       .replace(/[\u4E00-\u9FA5]/g, '')
@@ -53,21 +53,19 @@ const getNumEN = (text: string): number => {
   ).length
 }
 
-const excludeCodeBlock = (text: string): string => {
+function excludeCodeBlock(text: string): string {
   return text.replace(/```[\s\S]*?```/g, '')
 }
 
-const excludeTexBlock = (text: string): string => {
+function excludeTexBlock(text: string): string {
   return text.replace(/\$\$[\s\S]*?\$\$/g, '')
 }
 
 /**
  *  Powered by: https://github.com/Renovamen/renovamen.github.io
  */
-export const readingTime = (
-  text: string,
-  options?: ReadingTimeOptions,
-): ReadingTime => {
+export function readingTime(text: string,
+  options?: ReadingTimeOptions): ReadingTime {
   options = options || {}
 
   // use default values if necessary

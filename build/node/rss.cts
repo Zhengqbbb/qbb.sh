@@ -29,7 +29,7 @@ export async function generateRSS() {
     id: site,
     link: site,
     author: { name: author, link: site, email },
-    copyright: `CC BY-NC-SA 4.0 2022 © ${author}`,
+    copyright: `CC BY-NC-SA 4.0 2023 © ${author}`,
     feedLinks: {
       json: `${site}/feed.json`,
       atom: `${site}/feed.atom`,

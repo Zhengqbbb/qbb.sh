@@ -11,7 +11,7 @@
 
 import type MarkdownIt from 'markdown-it'
 
-export const CodeBlockWrapPlugin = (md: MarkdownIt) => {
+export function CodeBlockWrapPlugin(md: MarkdownIt) {
   const fence = md.renderer.rules.fence!
   md.renderer.rules.fence = (...args) => {
     const [tokens, idx] = args

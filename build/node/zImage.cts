@@ -20,7 +20,7 @@ import rm from 'rimraf'
 
 const __ASSERT_DIR = resolve(__dirname, '../../public/image')
 
-const run = async () => {
+async function run() {
   await imagemin([`${__ASSERT_DIR}/*.{png,jpeg,jpg}`], {
     destination: __ASSERT_DIR,
     plugins: [
@@ -46,7 +46,7 @@ const run = async () => {
   // })
 }
 
-const clear = async () => {
+async function clear() {
   const images = await fg('**/*.{png,jpeg,jpg}', { cwd: __ASSERT_DIR, absolute: true })
   images.forEach((p) => {
     rm.sync(p)

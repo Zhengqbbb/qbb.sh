@@ -15,7 +15,7 @@ import highlightLinesPlugin from './highlightLines'
 import slugify from './slugify'
 
 export * from './shiki'
-export const registerMarkdownPlugins = (md: MarkdownIt) => {
+export function registerMarkdownPlugins(md: MarkdownIt) {
   md.use(Mark)
   md.use(CheckBox)
   md.use(ImagePlugin)

@@ -2,7 +2,7 @@ import type MarkdownIt from 'markdown-it'
 import type { RenderRule } from 'markdown-it/lib/renderer'
 import container from 'markdown-it-container'
 
-export const containerPlugin = (md: MarkdownIt) => {
+export function containerPlugin(md: MarkdownIt) {
   md.use(...createMdContainer('tip', 'TIP', md))
     .use(...createMdContainer('info', 'INFO', md))
     .use(...createMdContainer('warning', 'WARNING', md))

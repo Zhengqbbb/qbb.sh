@@ -13,7 +13,7 @@ import type MarkdownIt from 'markdown-it'
  *  use lazy attrs. width 900. height 220. figcaption<image description>: hello world.<a href="http:...">@hello</a>
  * @author Zhengqbbb <https://github.com/Zhengqbbb>
  */
-export const ImagePlugin = (md: MarkdownIt) => {
+export function ImagePlugin(md: MarkdownIt) {
   const imageRE = /^<!-- (?<link>\<link="\[.*\)"\>)? ?(?<size>\<size="(\d+)(x\d+)?"\>)? ?(?<class>\<class="[A-Za-z0-9-#$: ]+"\>)? ?(?<notZoom>\<!\>)? ?(?<desc>\<desc=".*"\>)? ?-->/i
   const sizeRE = /size="(?<width>\d+)(?<height>x\d+)?"/i
   const linkRE = /link="\[(?<title>.*)\]\((?<link>.*)\)"/i

@@ -1,5 +1,6 @@
 <script lang="tsx">
 import type { Component, PropType } from 'vue'
+
 export default defineComponent({
   name: 'StepFlow',
   props: {

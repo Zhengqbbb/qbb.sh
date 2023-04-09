@@ -24,7 +24,7 @@ const __X_THEMES = [{
 const __SHIKI_BASE_PATH = resolve(__dirname, '../../node_modules/shiki')
 const __SHIKI_SHELL_PATH = resolve(__SHIKI_BASE_PATH, './languages/shellscript.tmLanguage.json')
 
-const theme = () => {
+function theme() {
   __X_THEMES.forEach((t) => {
     const themePath = resolve(__SHIKI_BASE_PATH, `./themes/${t.name}.json`)
     // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -117,7 +117,7 @@ const theme = () => {
   fs.writeFileSync(resolve(__SHIKI_SHELL_PATH), JSON.stringify(data), 'utf-8')
 }
 
-const shell = () => {
+function shell() {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const data = require(__SHIKI_SHELL_PATH)
   data.repository.support.patterns.push(

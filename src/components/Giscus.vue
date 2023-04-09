@@ -3,6 +3,7 @@ import type { ComputedRef } from 'vue'
 import { giscusConfig } from '~/meta'
 import { isClient } from '~/utils'
 import type { PageMeta } from '~build/node'
+
 const router = useRouter()
 const meta = computed(() => router.currentRoute.value.meta) as ComputedRef<PageMeta>
 

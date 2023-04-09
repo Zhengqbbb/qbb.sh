@@ -19,8 +19,9 @@ const emojiArray = [
   'ㄟ(▔▽▔)ㄏ',
 ]
 
-const getEmoji = (): string =>
-  emojiArray[Math.floor(Math.random() * emojiArray.length)]
+function getEmoji(): string {
+  return emojiArray[Math.floor(Math.random() * emojiArray.length)]
+}
 </script>
 
 <template>

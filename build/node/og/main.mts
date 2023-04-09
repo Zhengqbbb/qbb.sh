@@ -101,7 +101,9 @@ async function genSVG(title?: string, desc?: string, site?: string) {
   return await satoriVue(opt, tempStr)
 }
 
-const random = (n: number, m: number) => Math.floor(Math.random() * (m - n + 1) + n)
+function random(n: number, m: number) {
+  return Math.floor(Math.random() * (m - n + 1) + n)
+}
 function getTheme(): TemplateTheme {
   const angle = random(110, 160)
   const bgTWrap = `rgb(${random(0, 10)}, ${random(0, 10)}, ${random(0, 10)})`

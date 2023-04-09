@@ -61,7 +61,7 @@ export interface PostRouterRecord extends RouteRecordNormalized {
   meta: PageMeta
 }
 
-export const resolvePageFile = (route: any) => {
+export function resolvePageFile(route: any) {
   const routePath: string = route.path
   const isPost = routePath.startsWith('/posts') && routePath !== '/posts'
 
@@ -83,7 +83,7 @@ export const resolvePageFile = (route: any) => {
 /**
  * @description: generated Posts List for page use
  */
-export const resolvePostList = (routes: any[]) => {
+export function resolvePostList(routes: any[]) {
   const blogs = routes
     .filter((item: any) => item.meta?.layout === 'post')
     .map((item: any) => ({

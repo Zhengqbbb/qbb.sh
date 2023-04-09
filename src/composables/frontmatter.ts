@@ -18,7 +18,7 @@ import { isClient, isExternal } from '~/utils'
  * data generate base (/build/node/resolvePost.ts)
  * Reactive setup current page OG head tag and title, description by current page frontmatter
  */
-export const useHeadByFrontmatter = (): void => {
+export function useHeadByFrontmatter(): void {
   const router = useRouter()
   const meta = computed(() => router.currentRoute.value.meta) as ComputedRef<PageMeta>
   const fullPath = computed(() => router.currentRoute.value.fullPath)

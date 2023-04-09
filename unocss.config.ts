@@ -13,7 +13,7 @@ const _VARS: Theme = {
   colors: {
     l: {
       bg: 'rgb(252, 252, 252)',
-      fg: 'rgb(85, 85, 85)',
+      fg: 'rgb(17, 17, 17)',
       fgDeep: 'rgb(34, 34, 34)',
       fgDeeper: 'rgb(0, 0, 0)',
       dim: 'rgb(75, 85, 99)',
@@ -55,7 +55,7 @@ const _VARS: Theme = {
  * @example: ['bg-c-bg', 'bg-l-bg dark:bg-d-bg']
  */
 const COLS = ['bg', 'text', 'border']
-const mergeVarCols = () => {
+function mergeVarCols() {
   const res = Object.assign([])
   const lightMP: any = _VARS?.colors?.l
   for (const name in lightMP) {

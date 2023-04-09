@@ -5,6 +5,7 @@
  * https://tailwindcss.com/docs/customizing-colors
  */
 import type { TemplateTheme } from './type'
+
 defineProps<{ title: string; desc: string; site: string; theme: TemplateTheme }>()
 </script>
 

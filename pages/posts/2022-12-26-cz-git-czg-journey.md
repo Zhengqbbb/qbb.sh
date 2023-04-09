@@ -49,6 +49,7 @@ For example: when writing monorepo configuration, you can use `path` and `fs` mo
 // .commitlintrc.cjs
 const fs = require('node:fs')
 const path = require('node:path')
+
 const packages = fs.readdirSync(path.resolve(__dirname, 'packages'))
 
 const scopeComplete = execSync('git status --porcelain || true')

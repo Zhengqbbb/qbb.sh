@@ -10,7 +10,7 @@ import generatedRoutes from '~pages'
 
 const routes = setupLayouts(generatedRoutes)
 
-const scrollBehavior = (to: any, from: any, savedPosition: any) => {
+function scrollBehavior(to: any, from: any, savedPosition: any) {
   if (savedPosition)
     return savedPosition
   else

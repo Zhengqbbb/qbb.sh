@@ -1,5 +1,6 @@
 <script lang="tsx">
 import type { Component } from 'vue'
+
 export default defineComponent({
   name: 'CodeGroup',
   setup(_, { slots }) {
