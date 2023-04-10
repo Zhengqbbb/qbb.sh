@@ -12,11 +12,7 @@ export function getPosts(routers: any[]) {
           ...page,
           title: meta.frontmatter.title,
           headerImage: meta.frontmatter.headerImage,
-          readingTimeText: `${String(meta.readingTime.minutes)} ${
-            meta.lang === 'zh'
-            ? '分钟'
-            : 'min'
-          }`,
+          readingTimeText: `${String(meta.readingTime.minutes)} min`,
           dateText: formatDate(meta.date),
         }
       },
