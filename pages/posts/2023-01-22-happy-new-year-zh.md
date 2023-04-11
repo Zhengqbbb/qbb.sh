@@ -22,10 +22,10 @@ description: Happy new year. Bye 2022. Hello 2023
 
 「全职: "**full**"-time」<br>
 
-> 但有的时候我爸妈真的会问我是不是在开发核弹 <sup>不着家</sup> ？？？ 🤣<br>
-> 也有的小伙伴可能知道，来我的项目发 Issue 和 Discussions 帖。我是真的可以秒响应 😅
+> 然而有的时候我爸妈真的会问我是不是在开发核弹 <sup>不着家</sup> ？？？ 🤣<br>
+> 也有的小伙伴可能知道，来我的项目发 Issue 和 Discussions 帖。我是真的会秒响应 😅
 
-不过是真的很累，但同时又会很好奇很想知道它在别人眼中的价值<br>
+不过也是真的很累，但同时又会很好奇很想知道做出来后它在别人眼中是怎么样的产品<br>
 想知道我们花费了最好的青春和精力开发出来的东西，能让对应领域能激起多大的水花<br>
 如果能帮到别人，那一定会很有成就感和自豪吧，嘿嘿<br>
 但现在我们更多的是想**活**下去，我们还想继续做更多更有价值有意义的事情呀！
@@ -41,8 +41,8 @@ description: Happy new year. Bye 2022. Hello 2023
 
 1. 体积，启动速度，交互体验
 2. 而且我也要摸清楚在 git commit 当中存在的需求点和痛点是什么
-3. 白天给 Shell 折磨，闲下来捣鼓 Node.js，来转移我的注意力，解解压。不得不说不用做基建的感觉真不错，有这么多丰富 API 还能用数组和对象! 真的已经很知足了 🥹
-4. 顺便探索一下 Vitepress 静态文档生成器，因为 X-CMD 的文档是我来开发 <sup>完全脚本生成</sup>，而且到时候留给我的时间大概也就只有两天，我必须要提前把 Vitepress 配置和玩法都过一遍。所以 cz-git 的文档就像我的练兵场，完整度还是很高的 🫠
+3. 白天已经给 Shell 折磨了，一闲下来就捣鼓 Node.js，来转移我的注意力，解解压。不得不说不用做基建的感觉真不错，有这么多丰富 API ，还能用数组和对象! 真的已经很知足了 🥹
+4. 顺便探索一下 Vitepress 静态文档生成器，因为 X-CMD 的文档是我来开发 <sup>完全脚本生成</sup>，而且到时候留给我的时间大概也就只有两天，我必须要提前把 Vitepress 配置和玩法都过一遍。所以 cz-git 的文档就像我的练兵场，完整度拉满 🫠
 
 现在 cz-git star ⭐ 500+ ｜ npm 下载量也在 60k+/m。真的很感谢大家在这一年的支持 🫡
 
@@ -85,7 +85,7 @@ description: Happy new year. Bye 2022. Hello 2023
 
 今年在 Node.js 也出了一款 Terminal UI [「clack」](https://github.com/natemoo-re/clack)，看着好精美，体积也小，等稳定以后可以基于 clack 之上进行扩展 UI 部件，然后我还想再写多几款实用的 Node.js CLI 🤩
 
-也想做一款自己满意的 「<i class="i-carbon:mac-command"/> Command K」 Web 组件，目前体验了各大网站和应用下来<br>
+也很想做一款让自己满意的 「<i class="i-carbon:mac-command"/> Command K」 Web 组件，目前体验了各大网站和应用下来<br>
 最佳的是 Telegram 的桌面端的搜索和 [Emil Kowalski](https://emilkowal.ski/) ▲ 个人网站中的 command 组件，可惜没有开源不能看到更多细节处理
 
 也希望今年能有一点点时间让我折腾一下 Next.js 13, Nuxt.js 3, Astro 2 😬 <br>
@@ -95,6 +95,6 @@ description: Happy new year. Bye 2022. Hello 2023
 
 ## 结语
 
-虽然这两年过的着实有点太苦，但探索更难更有意义的事情还是很有意义的
+虽然这两年过的着实有点太苦，但探索更难更有价值的事情还是很有意义的
 
-启程 2023 ！
+启程 2023 ！ 🍾
