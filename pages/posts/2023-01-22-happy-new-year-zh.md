@@ -62,7 +62,7 @@ description: Happy new year. Bye 2022. Hello 2023
 
 ## 最近
 
-安利一下最近买的软件，果然只有消费能最快获得欣喜和满足:
+安利一下最近买的软件，果然只有消费能最快获得快乐和满足:
 
 1. [Screen Studio](https://screen.studio/) - 演示录屏
 2. [CleanShot X](https://cleanshot.com/) - 截图
@@ -95,6 +95,6 @@ description: Happy new year. Bye 2022. Hello 2023
 
 ## 结语
 
-虽然这两年过的着实有点太苦，但探索更难更有价值的事情还是很有意义的
+虽然这两年过的着实有点太苦，但也绝不放弃探索更难更有意义的事情
 
 启程 2023 ！ 🍾
