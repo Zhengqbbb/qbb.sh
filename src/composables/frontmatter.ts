@@ -64,7 +64,6 @@ export function useHeadByFrontmatter(): void {
     useHead({
       script: [
         { 'async': '', 'defer': '', 'data-website-id': `${process.env.UMAMI_ID || ''}`, 'src': `${process.env.UMAMI_ENDPOINT || ''}` },
-        { 'async': '', 'defer': '', 'data-nscript': 'beforeInteractive', 'src': `https://hm.baidu.com/hm.js?${process.env.BAIDU_TONGJI_ID || ''}` },
       ],
     })
   }

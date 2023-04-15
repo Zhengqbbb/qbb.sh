@@ -15,7 +15,3 @@ export const instagram = 'https://www.instagram.com/qbqiubin/'
 
 /** application info */
 export const appName = 'Q.Ben'
-
-/** site search console  */
-export const googleVerify = 'j6cNWewUj3QcJBpdv48t67XoDxdlKPQ6dwKgXg9Nigo'
-export const baiduVerify = 'code-GZMUSi21Xe'
