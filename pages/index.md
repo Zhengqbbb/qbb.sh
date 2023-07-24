@@ -4,7 +4,7 @@ headerImage: '/og/index.png'
 
 <HomeTitle>Q.Ben Zheng</HomeTitle>
 
-Hi, I am Q.Ben<sup>(or QB)</sup>, a vibrant script developer. Core team member of **X**.
+Hi, I am Q.Ben<sup>(or QB)</sup>, a vibrant script developer. Core team member of **X-CMD**.
 
 I'm currently focusing development of command line applications.<br>
 Designing and building the CLI<sup>(Command-Line Interface)</sup> guide website.<br>
