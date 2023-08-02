@@ -26,7 +26,7 @@ description: Happy new year. Bye 2022. Hello 2023
 
 「全职: "**full**"-time」<br>
 
-> 然而有的时候我爸妈真的会问我是不是在开发核弹 <sup>不着家</sup> ？？？ 🤣<br>
+> 有的时候我爸妈真的会问我是不是在开发核弹 <sup>不着家</sup> ？？？ 🤣<br>
 > 也有的小伙伴可能知道，来我的项目发 Issue 和 Discussions 帖。我是真的会秒响应
 
 虽然很累，但我又会很好奇 X 做出来后它在别人眼中是怎么样的工具<br>
