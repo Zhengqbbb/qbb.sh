@@ -6,7 +6,7 @@ projects:
     - name: 'X-CMD'
       desc: 'Collection of CLI'
       icon: 'x-cmd'
-      link: 'https://github.com/x-cmd'
+      link: 'https://www.x-cmd.com/'
   CLI:
     - name: 'cz-git'
       desc: 'Commitizen CLI adapter'
