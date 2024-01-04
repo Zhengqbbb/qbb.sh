@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { author, email, site } from '~/meta'
+
+const year = new Date().getFullYear()
 </script>
 
 <template>
@@ -12,7 +14,7 @@ import { author, email, site } from '~/meta'
         target="_blank"
         href="https://creativecommons.org/licenses/by-nc/4.0/"
       >CC BY-NC-SA 4.0</a>
-      2023 ©
+      {{ year }} ©
       <a
         :href="`mailto:${email}`"
         class="item"
