@@ -1,17 +1,17 @@
 {
-  "$schema": "https://cdn.jsdelivr.net/gh/Zhengqbbb/cz-git@main/docs/public/schema/cz-git-1.5.3.json",
+  "$schema": "https://cdn.jsdelivr.net/gh/Zhengqbbb/cz-git@1.9.2/docs/public/schema/cz-git.json",
   "path": "node_modules/cz-git",
   "alias": {
     ":": "docs: update posts",
     "f": "docs: fix typos",
     "r": "docs: update README",
+    "a": "feat(theme): update page theme",
     "b": "build: bump dependencies",
     "s": "style: update code format",
-    "a": "chore(theme): update page theme",
-    "i": "chore: initial commit",
+    "i": "feat: initial commit",
     "c": "chore: update config"
   },
-  "scopes": ["posts", "theme"],
+  "scopes": ["posts", "theme", "script", "config"],
   "skipQuestions": ["body", "breaking", "footerPrefix", "footer"],
   "customScopesAlign": "top"
 }

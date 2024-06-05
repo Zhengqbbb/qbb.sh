@@ -1,3 +1,5 @@
-# shellcheck shell=sh disable=SC1091,SC2034,SC3043 #xsh
+# shellcheck shell=dash
 
-x bun x -y taze -r -I -i
+(
+    x bun x -y taze -r -I -i
+)

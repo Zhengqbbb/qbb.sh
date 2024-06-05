@@ -1,73 +1,66 @@
 {
-  "cSpell.words": [
-    "'s",
-    "antfu",
-    "Astro",
-    "commitilint",
-    "commitlint",
-    "Debi",
-    "demi",
-    "Gitee",
-    "Gungnir",
-    "helloworld",
-    "iconify",
-    "intlify",
-    "Kowalski",
-    "Luohu",
-    "Nuxt",
-    "POSIX",
-    "Qbenben",
-    "Shenzhen",
-    "Vite",
-    "vitejs",
-    "Vitepress",
-    "Vitesse",
-    "vitest",
-    "Vuepress",
-    "vueuse",
-    "Zheng"
-  ],
   "cSpell.files": [
     "pages/**/*"
   ],
-  "volar.autoCompleteRefs": true,
-  // use eslint
-  "prettier.enable": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "editor.formatOnSave": false,
   "files.associations": {
-    "*.css": "css",
-    ".czrc": "json",
-    "_headers": "properties",
-    "_redirects": "properties",
     "**/.x-cmd/*": "shellscript",
-    "**/.x-cmd/*.yml": "yaml"
+    "**/.x-cmd/*.yml": "yaml",
+    "**/.x-cmd/*.*js": "javascript",
+    "**/.x-cmd/*.*ts": "typescript",
+    "**/.x-cmd/*.awk": "awk",
+    "**/.x-cmd/*.json": "json",
+    "**/.x-cmd/*.jso": "json",
+    "*.css": "postcss"
   },
-  "explicitFolding.rules": {
-    "css": [
-      {
-        "beginRegex": "^\\/\\*\\*\\sSection:?",
-        "endRegex": "^\\/\\*\\*\\sEndSection",
-        "autoFold": true
-      }
-    ],
-    "shellscript": [
-      {
-        "beginRegex": "^\\s*#\\s*Section:?",
-        "endRegex": "^\\s*#\\s*EndSection",
-        "autoFold": true
-      }
-    ]
+  // Enable the ESlint flat config support
+  // (remove this if your ESLint extension above v3.0.5)
+  "eslint.experimental.useFlatConfig": true,
+
+  // Disable the default formatter, use eslint instead
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
   },
-  "cssvar.files": [
-    "src/styles/vars.css"
+
+  // Silent the stylistic rules in you IDE, but still auto fix them
+  "eslint.rules.customizations": [
+    { "rule": "style/*", "severity": "off" },
+    { "rule": "format/*", "severity": "off" },
+    { "rule": "*-indent", "severity": "off" },
+    { "rule": "*-spacing", "severity": "off" },
+    { "rule": "*-spaces", "severity": "off" },
+    { "rule": "*-order", "severity": "off" },
+    { "rule": "*-dangle", "severity": "off" },
+    { "rule": "*-newline", "severity": "off" },
+    { "rule": "*quotes", "severity": "off" },
+    { "rule": "*semi", "severity": "off" }
   ],
-  "vscode-color-picker.languages": [
-    "yaml",
+
+  // Enable eslint for all supported languages
+  "eslint.validate": [
     "javascript",
+    "javascriptreact",
     "typescript",
-    "vue"
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml",
+    "toml",
+    "xml",
+    "gql",
+    "graphql",
+    "astro",
+    "css",
+    "less",
+    "scss",
+    "pcss",
+    "postcss"
   ]
 }
