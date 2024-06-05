@@ -12,7 +12,7 @@ Blog posts content are licensed under [CC BY-NC-SA 4.0](https://creativecommons.
 <h1 align="center">Vitesse ✘ QB Template</h1>
 
 <p align="center">
-    <img src="https://cdn.jsdelivr.net/gh/Zhengqbbb/qbb.sh/public/image/vitesse-qb.svg" alt="Vitesse-qb-logo" width="180" data-width="180" data-height="180">
+    <img src="https://cdn.jsdelivr.net/gh/Zhengqbbb/qbb.sh@1.0.0/public/image/vitesse-qb.svg" alt="Vitesse-qb-logo" width="180" data-width="180" data-height="180">
 </p>
 
 built on 🏕 [Vitesse](https://github.com/antfu/vitesse) 🏕
