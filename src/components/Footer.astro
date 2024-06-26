@@ -1,0 +1,48 @@
+---
+import Meta from '~/meta'
+
+const year = new Date().getFullYear()
+const { footerClass = '' } = Astro.props
+---
+
+<footer
+    class="my-10 text-sm"
+    class:list={[footerClass]}
+    flex="~ items-center justify-between gap-4 col-reverse sm:row"
+>
+    <div class="text-c-fg-1">
+        <a
+            class="item"
+            target="_blank"
+            href="https://creativecommons.org/licenses/by-nc/4.0/"
+            >CC BY-NC-SA 4.0</a
+        >
+        {year} ©
+        <a href={`mailto:${Meta.email}`} class="item"> {Meta.author}</a>
+    </div>
+    <div class="text-c-fg-2" flex="~ items-center gap-1.4">
+        <a href="/posts" class="item" title="Blog"> Blog </a>
+        <span role="separator"></span>
+        <a class="item" target="_blank" href={`${Meta.site}/feed.xml`}>RSS</a>
+    </div>
+</footer>
+
+<style scoped>
+    footer a.item {
+        text-decoration-color: transparent;
+        -webkit-text-decoration-color: transparent;
+        text-decoration-line: underline;
+        text-decoration-style: dashed;
+        text-underline-offset: 5px;
+        text-decoration-thickness: 1px;
+        transition-property: text-decoration-color;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 250ms;
+    }
+    footer a.item:hover,
+    footer a.item:focus,
+    footer a.item:active {
+        text-decoration-color: hsl(var(--c-fg-2));
+        -webkit-text-decoration-color: hsl(var(--c-fg-2));
+    }
+</style>

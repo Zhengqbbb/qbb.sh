@@ -1,6 +1,12 @@
 {
   "recommendations": [
-    "astro-build.astro-vscode"
+    "antfu.iconify",
+    "antfu.unocss",
+    "antfu.goto-alias",
+    "astro-build.astro-vscode",
+    "csstools.postcss",
+    "dbaeumer.vscode-eslint",
+    "zokugun.explicit-folding"
   ],
   "unwantedRecommendations": []
 }

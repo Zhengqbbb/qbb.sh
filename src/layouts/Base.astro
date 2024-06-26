@@ -1,0 +1,31 @@
+---
+import '~/styles/index.css'
+import BaseHead from '~/components/BaseHead.astro'
+import Header from '~/components/Header.astro'
+import SquareLines from '~/components/SquareLines.astro'
+import Meta from '~/meta'
+
+interface Props {
+    title?: string
+    desc?: string
+}
+
+const { title = Meta.title, desc = Meta.description } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <BaseHead title={title} desc={desc} />
+    </head>
+    <body class="min-h-100vh">
+        <SquareLines />
+        <Header />
+        <div class="px-7 xl:px-0">
+            <slot />
+        </div>
+        <script src="../main.ts"></script>
+    </body>
+</html>

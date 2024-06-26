@@ -1,0 +1,28 @@
+<div
+    class="mb-0"
+    flex="~ col-reverse items-start gap-3 sm:(row items-center justify-between)"
+>
+    <h1
+        class="c gradient-font gradient-main sm:pt-10 font-bold leading-normal text-3xl md:(text-4xl leading-12)"
+    >
+        <slot />
+    </h1>
+    <div
+        class="p-1 rotate-0 sm:p-2 size-38 border border-dashed rd-full border-c-border:60"
+    >
+        <div class="p-1 sm:p-2 border border-dashed rd-full">
+            <div class="rd-full overflow-hidden">
+                <img
+                    id="home-avatar"
+                    class="c not-zoom avatar"
+                    loading="eager"
+                    decoding="auto"
+                    width="300"
+                    height="300"
+                    src="/me.webp"
+                    alt="avatar"
+                />
+            </div>
+        </div>
+    </div>
+</div>

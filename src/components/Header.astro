@@ -1,0 +1,94 @@
+---
+import Meta from '~/meta'
+---
+
+<div class="w-full h-$c-nav-hight opacity-0 pointer-events-none"></div>
+<header
+    id="header"
+    class="z-40 w-full h-$c-nav-hight absolute top-0 select-none"
+>
+    <div
+        class="h-full max-w-108ch border-transparent mx-auto select-none transition-colors"
+        p="x-0 sm:(x-4)"
+        flex="~ justify-between items-center"
+        border="b l-0 r-0 lg:(r l rd-b-sm)"
+    >
+        <a
+            href="/"
+            class="h-full mx-7 outline-none hover:op-80 active:op-80 transition-opacity"
+            flex="~ items-center"
+        >
+            <img
+                id="load-dark"
+                width="44"
+                height="44"
+                src="/logo-dark.svg"
+                alt="logo"
+                class="hidden dark:block"
+            />
+            <img
+                id="load-light"
+                width="44"
+                height="44"
+                src="/logo-light.svg"
+                alt="logo"
+                class="dark:hidden"
+            />
+        </a>
+
+        <nav class="py-5 px-6 space-x-3" flex="~ items-center">
+            <a href="/posts" title="Blog">
+                <i i-majesticons:paper-fold-text-line class="md:hidden"></i>
+                <span class="lt-md:hidden text-sm">Blog</span>
+            </a>
+            <a href="/projects" title="Projects">
+                <i i-uil:apps class="md:hidden"></i>
+                <span class="lt-md:hidden text-sm">Projects</span>
+            </a>
+
+            <span role="separator"></span>
+
+            <a href={Meta.twitter} target="_blank" title="Twitter">
+                <i i-ri-twitter-x-line></i>
+                <span class="visually-hidden">Twitter | X</span>
+            </a>
+            <a href={Meta.instagram} target="_blank" title="Instagram">
+                <i i-lucide:instagram></i>
+                <span class="visually-hidden">Instagram</span>
+            </a>
+            <a
+                href={Meta.github}
+                target="_blank"
+                title="GitHub"
+                rel="noreferrer"
+            >
+                <i i-uil-github-alt></i>
+                <span class="visually-hidden">GitHub</span>
+            </a>
+
+            <span role="separator"></span>
+
+            <button id="theme-toggle" title="Toggle Color Scheme">
+                <div class="i-ri-sun-line dark:i-ri-moon-line"></div>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<style>
+    nav a,
+    header nav button {
+        cursor: pointer;
+        text-decoration: none;
+        color: hsl(var(--c-fg-2));
+        transition: color 0.2s ease;
+        outline: none;
+    }
+
+    header nav a:hover,
+    header nav a:active,
+    header nav a:focus,
+    header nav button:hover {
+        color: hsl(var(--c-fg-3));
+    }
+</style>

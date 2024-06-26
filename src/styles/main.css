@@ -1,0 +1,280 @@
+/** Section: Base */
+html {
+    font-family: var(--c-font-family-base);
+    --at-apply: bg-c-bg text-c-fg text-17px leading-2em overflow-scroll;
+}
+
+code,
+kbd,
+samp,
+pre {
+    font-family: var(--c-font-family-mono);
+}
+/** EndSection: */
+
+/** Section: Global */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    white-space: nowrap;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    overflow: hidden;
+}
+
+.gradient-font {
+    -webkit-text-fill-color: transparent;
+    --at-apply: text-transparent bg-clip-text;
+}
+.gradient-main {
+    background-image: linear-gradient(
+        200deg,
+        hsl(var(--c-fg-4)),
+        hsl(var(--c-fg-3))
+    );
+    --at-apply: bg-clip-text;
+}
+/** EndSection: */
+
+/** Section: Scrollbar */
+* {
+    scrollbar-color: hsl(var(--c-scrollbar)) hsl(var(--c-scrollbar-bg));
+}
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar:horizontal {
+    height: 6px;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+    background: hsl(var(--c-scrollbar-bg));
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--c-scrollbar));
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--c-scrollbar-hover));
+}
+/** EndSection: */
+
+/** Section: Home */
+.avatar.loaded {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+}
+
+.avatar {
+    opacity: 0;
+    transform: scale(1.5);
+    filter: blur(8px);
+    transition: 0.8s ease;
+    transition-property: filter, opacity, transform;
+    will-change: filter, transform;
+}
+
+@keyframes c-fade-out {
+    from {
+        opacity: 0.25;
+    }
+    to {
+        opacity: 0.02;
+    }
+}
+.c-animate-fade-out {
+    animation: c-fade-out 0.8s linear 1;
+}
+/** EndSection: */
+
+/** Section: Prose - Init */
+.prose > :first-child {
+    --at-apply: mt-0;
+}
+
+.prose > :last-child {
+    --at-apply: mb-0;
+}
+/** EndSection: */
+
+/** Section: Prose - Element */
+.prose p:not(.c) {
+    --at-apply: my-space;
+}
+
+.prose b:not(.c),
+.prose strong:not(.c),
+.prose mark {
+    --at-apply: text-c-fg-3 font-600;
+}
+
+.prose mark {
+    background-color: inherit;
+    --at-apply: decoration-underline decoration-1.3 decoration-offset-6;
+    --at-apply: decoration-wavy decoration-c-brand;
+}
+
+.prose sub,
+.prose sup {
+    --at-apply: text-xs relative v-baseline mx-0.1em;
+}
+
+.prose sup {
+    --at-apply: top--0.5em;
+}
+
+.prose kbd {
+    --at-apply: text-sm py-0.4 px-1.2 mx-0.6 bg-gradient-to-br from-gray-200
+        to-slate-50;
+    box-shadow:
+        inset 0 -2px 0 0 #cdcde6,
+        inset 0 0 1px 1px #fff,
+        0 1px 2px 1px rgba(30, 35, 90, 0.4);
+}
+
+.dark .prose kbd {
+    --at-apply: bg-gradient-to-br from-blue-gray-900 to-dark-600;
+    box-shadow:
+        -1px -1px 1px #505050,
+        1px 1px 6px #000;
+}
+/** EndSection: */
+
+/** Section: Prose - Link */
+.prose a:not(.c) {
+    --at-apply: text-c-fg-3 font-500;
+    --at-apply: ease property-[text-decoration-color] duration-300;
+    --at-apply: decoration-underline decoration-dashed decoration-1;
+    --at-apply: decoration-c-fg-1 decoration-offset-5;
+}
+
+.prose a:hover:not(.c),
+.prose a:active:not(.c),
+.prose a:focus:not(.c) {
+    --at-apply: decoration-c-fg-3;
+}
+/** EndSection: */
+
+/** Section: Prose - Header */
+.prose h1:not(.c) {
+    --at-apply: text-2xl font-700 my-1.5;
+}
+/** EndSection: */
+
+/** Section: Prose - Separator  */
+span[role='separator'] {
+    width: 4px;
+    height: 4px;
+    display: inline-block;
+    border-radius: 1px;
+    transform: rotate(45deg);
+    background: hsl(var(--c-fg-1), 0.4);
+}
+
+hr:not(.c) {
+    --at-apply: relative w-full h-auto border-t-0 mx-auto my-8;
+}
+
+hr:not(.c)::before {
+    content: '';
+    --at-apply: block w-full h-px border-t border-dashed border-c-border;
+}
+hr:not(.c)::after {
+    content: '';
+    --at-apply: absolute inset-0 bg-gradient-circle;
+    --at-apply: from-transparent to-c-bg;
+}
+/** EndSection: */
+
+/** Section: Prose - List */
+.prose ol:not(.c)[type='A'] {
+    --list-counter-style: upper-alpha;
+}
+
+.prose ol:not(.c)[type='a'] {
+    --list-counter-style: lower-alpha;
+}
+
+.prose ol:not(.c)[type='A s'] {
+    --list-counter-style: upper-alpha;
+}
+
+.prose ol:not(.c)[type='a s'] {
+    --list-counter-style: lower-alpha;
+}
+
+.prose ol:not(.c)[type='I'] {
+    --list-counter-style: upper-roman;
+}
+
+.prose ol:not(.c)[type='i'] {
+    --list-counter-style: lower-roman;
+}
+
+.prose ol:not(.c)[type='I s'] {
+    --list-counter-style: upper-roman;
+}
+
+.prose ol:not(.c)[type='i s'] {
+    --list-counter-style: lower-roman;
+}
+
+.prose ol:not(.c)[type='1'] {
+    --list-counter-style: decimal;
+}
+
+.prose ol:not(.c),
+.prose ul:not(.c) {
+    list-style-type: none;
+    margin-top: var(--c-space);
+    margin-bottom: var(--c-space);
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.prose ol:not(.c) > li,
+.prose ul:not(.c) > li {
+    position: relative;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    padding-left: 1.2em;
+}
+
+.prose ol:not(.c) > li::before {
+    content: counter(list-item, var(--list-counter-style, decimal)) '.';
+    position: absolute;
+    left: 0;
+    min-width: 0.375em;
+    color: hsl(var(--c-fg-1));
+    font-weight: 400;
+}
+
+.prose ul:not(.c) > li::before {
+    content: '';
+    position: absolute;
+    top: calc(0.875em - 0.08em);
+    left: 0;
+    width: 0.375em;
+    height: 0.375em;
+    background: hsl(var(--c-fg-1));
+    border-radius: 9999px;
+}
+
+.prose > ol:not(.c) > li p,
+.prose > ul:not(.c) > li p {
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+}
+
+.prose ul:not(.c) ul,
+.prose ul:not(.c) ol,
+.prose ol:not(.c) ul,
+.prose ol:not(.c) ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+/** EndSection: */

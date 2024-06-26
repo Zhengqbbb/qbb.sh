@@ -1,0 +1,25 @@
+---
+import Layout from '~/layouts/Base.astro'
+import Footer from '~/components/Footer.astro'
+import Meta from '~/meta'
+
+interface Props {
+    title?: string
+    desc?: string
+    mainClass?: string
+}
+
+const { title = Meta.title, desc = Meta.description, mainClass } = Astro.props
+---
+
+<Layout title={title} desc={desc}>
+    <main
+        class:list={[
+            'w-full max-w-$c-content-width mx-auto my-12',
+            [mainClass],
+        ]}
+    >
+        <slot />
+    </main>
+    <Footer footerClass="max-w-$c-content-width mx-auto" />
+</Layout>

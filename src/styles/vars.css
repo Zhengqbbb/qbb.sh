@@ -1,0 +1,60 @@
+:root {
+    --c-nav-hight: 80px;
+    --c-content-width: 800px;
+    --c-space: 1.12em;
+
+    --c-brand-50: 180, 20%, 97.06%;
+    --c-brand-100: 195, 12.5%, 93.73%;
+    --c-brand-200: 180, 15.49%, 86.08%;
+    --c-brand-300: 180, 15.23%, 70.39%;
+    --c-brand-400: 178, 14.56%, 59.61%;
+    --c-brand-500: 180, 14.17%, 48.43%;
+    --c-brand-600: 180, 15.42%, 39.41%;
+    --c-brand-700: 182.31, 15.85%, 32.16%;
+    --c-brand-800: 183, 14.29%, 27.45%;
+    --c-brand-900: 183.75, 13.11%, 23.92%;
+    --c-brand-950: 180, 13.58%, 15.88%;
+    --c-brand: var(--c-brand-300);
+
+    --c-bg: 0, 0%, 100%;
+    --c-fg: 0, 0%, 7%;
+    --c-fg-1: 217, 7%, 63%;
+    --c-fg-2: 0, 0%, 45%;
+    --c-fg-3: 0, 0%, 13%;
+    --c-fg-4: 0, 0%, 0%;
+    --c-border: 0, 0%, 84%;
+    --c-accent: 215, 14%, 34%;
+    --c-code-bg: 0, 0%, 97%;
+    --c-inner-code-bg: 220, 11%, 95%;
+    --c-scrollbar: 0, 0%, 93%;
+    --c-scrollbar-bg: 0, 0%, 100%;
+    --c-scrollbar-hover: 0, 0%, 73%;
+
+    --un-default-border-color: hsl(var(--c-border));
+    --c-font-family-base: 'Chinese Quotes', 'Inter var experimental',
+        'Inter var', 'Inter', 'MiSans', 'Noto Sans SC', 'ui-sans-serif',
+        'system-ui', '-apple-system', 'BlinkMacSystemFont', 'PingFang SC',
+        'Microsoft YaHei', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica',
+        'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --c-font-family-mono: 'Noto Sans Mono', 'NotoSansMono Nerd Font', 'Menlo',
+        'FiraCode Nerd Font', 'Fira Code', 'ui-monospace', 'SFMono-Regular',
+        'SF Mono', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New',
+        'monospace';
+}
+
+.dark {
+    --c-bg: 0, 0%, 4%;
+    --c-fg: 216, 11%, 81%;
+    --c-fg-1: 220, 1%, 49%;
+    --c-fg-2: 0, 0%, 64%;
+    --c-fg-3: 0, 0%, 88%;
+    --c-fg-4: 0, 0%, 100%;
+    --c-border: 0, 0%, 22%;
+    --c-accent: 240, 5%, 65%;
+    --c-code-bg: 0, 0%, 12%;
+    --c-inner-code-bg: 0, 0%, 14%;
+    --c-scrollbar: 0, 0%, 15%;
+    --c-scrollbar-bg: 0, 0%, 7%;
+    --c-scrollbar-hover: 0, 0%, 22%;
+}

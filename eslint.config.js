@@ -13,10 +13,15 @@ export default antfu(
                 'indent': ['error', 2],
                 'jsonc/indent': ['error', 2],
             },
+            javascript: {
+                'no-console': 'off',
+            },
             typescript: {
                 'ts/ban-ts-comment': 'off',
             },
         },
-        ignores: [],
+        ignores: [
+            'src/components/BaseHead.astro',
+        ],
     },
 )

@@ -1,0 +1,40 @@
+---
+import Layout from '~/layouts/Default.astro'
+
+/** Powered by: https://github.com/Renovamen/renovamen.github.io  */
+const emojiArray = [
+    '\\(o_o)/',
+    '(o^^)o',
+    '(˚Δ˚)b',
+    '(^-^*)',
+    '(^_^)b',
+    '(╯‵□′)╯',
+    "(='X'=)",
+    '(>_<)',
+    '\\(°ˊДˋ°)/',
+    'ㄟ(▔▽▔)ㄏ',
+]
+
+function getEmoji(): string {
+    return emojiArray[Math.floor(Math.random() * emojiArray.length)]
+}
+---
+
+<Layout
+    title="404 - Page Not Found"
+    desc="404 - Page Not Found"
+    mainClass="font-bold m-auto text-center mb-26"
+>
+    <h1 class="text-6xl mb-8 text-black dark:text-white">404</h1>
+    <p text="4xl">
+        {getEmoji()}
+    </p>
+    <h2 text="2xl" m="t-5 b-8">How did we get here ?</h2>
+    <a
+        href="/"
+        class="text-2xl text-c-brand-500 dark:text-c-brand transition-colors"
+        decoration="3 underline offset-4 transparent hover:c-brand"
+    >
+        ❯ cd /home/
+    </a>
+</Layout>
