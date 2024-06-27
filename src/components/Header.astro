@@ -2,20 +2,20 @@
 import Meta from '~/meta'
 ---
 
-<div class="w-full h-$c-nav-hight opacity-0 pointer-events-none"></div>
+<div class="pointer-events-none h-$c-nav-hight w-full opacity-0"></div>
 <header
     id="header"
-    class="z-40 w-full h-$c-nav-hight absolute top-0 select-none"
+    class="absolute top-0 z-40 h-$c-nav-hight w-full select-none"
 >
     <div
-        class="h-full max-w-108ch border-transparent mx-auto select-none transition-colors"
+        class="mx-auto h-full max-w-108ch select-none border-transparent transition-colors"
         p="x-0 sm:(x-4)"
         flex="~ justify-between items-center"
         border="b l-0 r-0 lg:(r l rd-b-sm)"
     >
         <a
             href="/"
-            class="h-full mx-7 outline-none hover:op-80 active:op-80 transition-opacity"
+            class="mx-7 h-full outline-none transition-opacity active:op-80 hover:op-80"
             flex="~ items-center"
         >
             <img
@@ -36,14 +36,14 @@ import Meta from '~/meta'
             />
         </a>
 
-        <nav class="py-5 px-6 space-x-3" flex="~ items-center">
+        <nav class="px-6 py-5 space-x-3" flex="~ items-center">
             <a href="/posts" title="Blog">
                 <i i-majesticons:paper-fold-text-line class="md:hidden"></i>
-                <span class="lt-md:hidden text-sm">Blog</span>
+                <span class="text-sm lt-md:hidden">Blog</span>
             </a>
             <a href="/projects" title="Projects">
                 <i i-uil:apps class="md:hidden"></i>
-                <span class="lt-md:hidden text-sm">Projects</span>
+                <span class="text-sm lt-md:hidden">Projects</span>
             </a>
 
             <span role="separator"></span>

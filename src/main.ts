@@ -1,4 +1,5 @@
 /* @unocss-include */
+/* astro will bundle and create inline script, the unocss not will be include style, need to using `content.filesystem` uno.config.ts */
 
 // #region - Appearance Theme
 window.toggleTheme = () => {
@@ -45,9 +46,9 @@ function handleHeaderElementScrollCB(el: HTMLElement) {
 document.addEventListener('DOMContentLoaded', () => {
     // Add Theme Change Observer
     const themeChangeObs = new MutationObserver(() => {
-        const themeColorMeta = document.querySelector('meta[name="theme-color"]')
-        if (themeColorMeta)
-            themeColorMeta.setAttribute('content', window.isDark ? '#121212' : '#ffffff')
+        const themeColorHeadMeta = document.querySelector('meta[name="theme-color"]')
+        if (themeColorHeadMeta)
+            themeColorHeadMeta.setAttribute('content', window.isDark ? '#0a0a0a' : '#ffffff')
     })
 
     themeChangeObs.observe(

@@ -174,15 +174,15 @@ span[role='separator'] {
     background: hsl(var(--c-fg-1), 0.4);
 }
 
-hr:not(.c) {
+.prose hr:not(.c) {
     --at-apply: relative w-full h-auto border-t-0 mx-auto my-8;
 }
 
-hr:not(.c)::before {
+.prose hr:not(.c)::before {
     content: '';
     --at-apply: block w-full h-px border-t border-dashed border-c-border;
 }
-hr:not(.c)::after {
+.prose hr:not(.c)::after {
     content: '';
     --at-apply: absolute inset-0 bg-gradient-circle;
     --at-apply: from-transparent to-c-bg;

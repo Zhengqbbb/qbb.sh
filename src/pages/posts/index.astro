@@ -1,0 +1,64 @@
+---
+import DashText from '~/components/DashText.astro'
+import PorjectList from '~/components/PostList.astro'
+import Layout from '~/layouts/Default.astro'
+import { getPostList } from '~/lib/server'
+
+const postList = await getPostList()
+
+/** Handle {year: data list} format */
+export type PostEntries = { [year: string]: typeof postList }
+const postEntries = postList.reduce((acc, post) => {
+    const postYear = post.data.date?.year
+    if (!postYear)
+        return acc
+
+    if (!acc[postYear])
+        acc[postYear] = [post]
+    else
+        acc[postYear].push(post)
+    return acc
+}, {} as PostEntries)
+
+---
+
+<Layout
+    title="Blog - Q.Ben Zheng"
+    desc="Q.Ben's Blog | Zhengqbbb"
+    image="/og/posts.png"
+    mainClass="mt-4 md:mt-6 lg:mt-8 xl4:mt-10 md:px-16"
+>
+    <div>
+        <h1
+            class="text-8 text-c-fg-4 font-600 leading-normal"
+            sm="text-9"
+            xl4="text-11"
+        >
+            My Writing
+        </h1>
+    </div>
+    <ul class="mb-10 mt-5 sm:mt-20" grid="~ rows-1 gap-5">
+        {
+            Object
+                .entries(postEntries)
+                .sort(([a], [b]) => Number.parseInt(b) - Number.parseInt(a))
+                .map(([year, posts]) => (
+                    <div
+                        class="relative mt-22 lt-sm:mb-[calc(min(var(--c-svg-h),var(--c-svg-max-h))*0.45*-1)] sm:first:mt-8"
+                        style="--c-svg-h: calc(100vw * 0.25); --c-svg-max-h: calc(664px * 0.25);"
+                    >
+                        <div class="pointer-events-none absolute left-0 top--20 h-auto w-full select-none md:left--10">
+                            <div class="absolute inset-0 from-transparent to-c-bg to-70% bg-gradient-to-b"></div>
+                            <DashText
+                                class="fill-none stroke-1 stroke-dash-5 stroke-offset-0 stroke-c-fg-1 text-44 font-bold font-sans dark:stroke-opacity-80"
+                            >
+                                {year}
+                            </DashText>
+                        </div>
+                    </div>
+
+                    <PorjectList posts={posts} />
+                ))
+        }
+    </ul>
+</Layout>

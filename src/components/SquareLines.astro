@@ -2,19 +2,19 @@
 import SquareLine from './SquareLine.astro'
 ---
 
-<div class="absolute w-full h-auto" style="z-index:-1">
+<div class="absolute h-auto w-full" style="z-index:-1">
     <div
-        class="absolute top-0 left-0 w-1/2 h-auto bg-neutral-100 dark:bg-neutral-800"
+        class="absolute left-0 top-0 h-auto w-1/2 bg-neutral-100 dark:bg-neutral-800"
     >
         <div
-            class="absolute inset-0 z-30 w-full h-full pointer-events-none bg-gradient-to-tl"
+            class="pointer-events-none absolute inset-0 z-30 h-full w-full bg-gradient-to-tl"
             from="c-bg 50%"
             via="transparent 90%"
             to="transparent 100%"
         >
         </div>
         <div
-            class="flex flex-col w-full h-full border-t border-l divide-y divide-dashed divide-c-border border-c-border"
+            class="h-full w-full flex flex-col border-l border-t border-c-border divide-y divide-c-border divide-dashed"
         >
             <SquareLine />
             <SquareLine />
@@ -26,17 +26,17 @@ import SquareLine from './SquareLine.astro'
     </div>
 
     <div
-        class="absolute top-0 right-0 w-1/2 h-auto bg-neutral-100 dark:bg-neutral-800"
+        class="absolute right-0 top-0 h-auto w-1/2 bg-neutral-100 dark:bg-neutral-800"
     >
         <div
-            class="absolute inset-0 z-30 w-full h-full pointer-events-none bg-gradient-to-tr"
+            class="pointer-events-none absolute inset-0 z-30 h-full w-full bg-gradient-to-tr"
             from="c-bg 50%"
             via="transparent 90%"
             to="transparent 100%"
         >
         </div>
         <div
-            class="flex flex-col w-full h-full border-t border-l divide-y divide-dashed divide-neutral-300 dark:divide-neutral-700 border-neutral-300 dark:border-neutral-900"
+            class="h-full w-full flex flex-col border-l border-t border-neutral-300 divide-y divide-neutral-300 divide-dashed dark:border-neutral-900 dark:divide-neutral-700"
         >
             <SquareLine />
             <SquareLine />
@@ -47,3 +47,4 @@ import SquareLine from './SquareLine.astro'
         </div>
     </div>
 </div>
+

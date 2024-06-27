@@ -23,6 +23,7 @@
     --c-fg-3: 0, 0%, 13%;
     --c-fg-4: 0, 0%, 0%;
     --c-border: 0, 0%, 84%;
+    --c-border-accent: 0, 0%, 78%;
     --c-accent: 215, 14%, 34%;
     --c-code-bg: 0, 0%, 97%;
     --c-inner-code-bg: 220, 11%, 95%;
@@ -51,6 +52,7 @@
     --c-fg-3: 0, 0%, 88%;
     --c-fg-4: 0, 0%, 100%;
     --c-border: 0, 0%, 22%;
+    --c-border-accent: 0, 0%, 32%;
     --c-accent: 240, 5%, 65%;
     --c-code-bg: 0, 0%, 12%;
     --c-inner-code-bg: 0, 0%, 14%;

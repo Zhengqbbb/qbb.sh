@@ -1,0 +1,55 @@
+---
+import type { PostEntries } from '~/pages/posts/index.astro'
+
+interface Props {
+    posts: PostEntries[string]
+}
+
+const {
+    posts,
+} = Astro.props
+---
+
+{posts.map(post => (
+    <li
+        class="group relative cursor-pointer border border-transparent rd border-dashed"
+    >
+        <div
+            class="border-c-border-accent absolute inset-0 z-10 size-full border rd border-dashed transition-transform-300 ease-out"
+            group-hover="translate-x-1 translate-y-1"
+        />
+        <div
+            class="border-c-border-accent absolute inset-0 z-20 size-full border rd border-dashed transition-transform-300 ease-out"
+            group-hover="-translate-x-1 -translate-y-1"
+            bg-c-bg
+        />
+        <a
+            class="relative z-30 block p-7 transition-transform-300 ease-out"
+            group-hover="translate-x--1 translate-y--1"
+            href={post.data.link}
+        >
+            <h2
+                class="text-xl text-c-fg-3 font-semibold sm:text-2xl"
+                flex="~ justify-start items-center"
+            >
+                {post.data.title}
+                <i
+                    class="i-uil:arrow-right text-base op-0 transition-all-200 ease-in-out -translate-x-1"
+                    group-hover="translate-x-1 op-100"
+                ></i>
+            </h2>
+            <p
+                class="mb-1 mt-3 text-sm text-c-fg-2"
+            >
+                {post.data.desc}
+            </p>
+            <time
+                class="text-xs text-c-fg"
+                datetime={post.data.date?.iso}
+            >
+                Posted on {post.data.date?.listText}
+            </time>
+            {!!post.data.isCN && (<sup role="img" class="i-icon-park-outline:chinese absolute right-3 top-3 rd-xs text-xs text-c-fg-1"></sup>)}
+        </a>
+    </li>
+))}

@@ -1,28 +1,60 @@
 ---
 import Layout from '~/layouts/Default.astro'
-import HomeTitle from '~/components/HomeTitle.astro'
 import HomeXBackgroud from '~/components/HomeXBackgroud.astro'
 ---
 
 <Layout mainClass="mt-4 md:mt-6 lg:mt-8 xl4:mt-14">
     <div class="prose">
-        <HomeTitle> Q.Ben Zheng </HomeTitle>
+
+        <div
+            flex="~ col-reverse items-start gap-3 sm:(row items-center justify-between)"
+        >
+            <h1
+                class="c gradient-font gradient-main text-7 font-bold leading-normal"
+                sm="text-9 pt-18"
+                xl4="text-11"
+            >
+                Q.Ben Zheng
+            </h1>
+            <div
+                class="size-25 rotate-0 border border-c-border:60 rd-full border-dashed p-1 xl4:p-2"
+                size="25 sm:30 xl4:36"
+            >
+                <div class="border rd-full border-dashed p-1 xl4:p-2">
+                    <div class="overflow-hidden rd-full">
+                        <img
+                            id="home-avatar"
+                            class="c not-zoom avatar"
+                            loading="eager"
+                            decoding="auto"
+                            width="300"
+                            height="300"
+                            src="/me.webp"
+                            alt="avatar"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <p>
             Hi, I am Q.Ben<sup>(or QB)</sup>, a vibrant script developer. Core
             team member of
-            <a target="_blank" rel="noreferrer" href="https://x-cmd.com/"
-                >X-CMD
+            <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://x-cmd.com/"
+            >X-CMD
             </a>.
         </p>
         <p>
-            I'm currently focusing development of command line applications.<br
-            /> Designing and building the CLI<sup>(Command-line interface)</sup>
+            I'm currently focusing development of command line applications.<br /> Designing and building the CLI<sup>(Command-line interface)</sup>
             guide website.<br /><mark>X is everything</mark>. You can expect it
             like a POSIX SHELL magic.
         </p>
-        <div role="separator" class="relative w-full mx-auto my-8 sm:my-10">
-            <div class="w-full h-px border-t border-dashed"></div>
+        <div role="separator" class="relative mx-auto my-8 w-full sm:my-10">
+            <div class="h-px w-full border-t border-dashed"></div>
             <div
                 class="absolute inset-0 bg-gradient-circle"
                 from="transparent 10% lt-sm:20%"
@@ -35,11 +67,13 @@ import HomeXBackgroud from '~/components/HomeXBackgroud.astro'
                 Find me: <a
                     href="https://github.com/Zhengqbbb"
                     target="_blank"
-                    rel="noopener">GitHub</a
+                    rel="noopener"
+                         >GitHub</a
                 > | <a
                     href="https://twitter.com/zhengqbbb"
                     target="_blank"
-                    rel="noopener">Twitter</a
+                    rel="noopener"
+                    >Twitter</a
                 >. Tracking my daily working.
             </li>
             <li>
@@ -47,7 +81,8 @@ import HomeXBackgroud from '~/components/HomeXBackgroud.astro'
                 moment on <a
                     href="https://www.instagram.com/qbqiubin/"
                     target="_blank"
-                    rel="noopener">Instagram</a
+                    rel="noopener"
+                          >Instagram</a
                 >.
             </li>
             <li>
@@ -55,21 +90,26 @@ import HomeXBackgroud from '~/components/HomeXBackgroud.astro'
                 <a
                     href="https://github.com/sponsors/Zhengqbbb"
                     target="_blank"
-                    rel="noopener">GitHub Sponsor</a
+                    rel="noopener"
+                >GitHub Sponsor</a
                 > | <a
                     href="https://afdian.net/a/qbbsh"
                     target="_blank"
-                    rel="noopener">爱发电</a
+                    rel="noopener"
+                    >爱发电</a
                 >
             </li>
         </ul>
 
         <p>
-            I'm live in <a
+            I'm live in
+            <a
                 href="https://www.google.com/maps/place/Luohu+District,+Shenzhen,+Guangdong+Province,+China/@22.5714604,114.1083405,13z/data=!4m13!1m7!3m6!1s0x3403f56281e978c3:0x3f81202fd3e54b98!2sLuohu+District,+Shenzhen,+Guangdong+Province,+China!3b1!8m2!3d22.5483599!4d114.13166!3m4!1s0x3403f56281e978c3:0x3f81202fd3e54b98!8m2!3d22.5483599!4d114.13166"
                 target="_blank"
-                rel="noopener">Luohu District, Shenzhen</a
-            >. If you're near me, let's hang out.
+                rel="noopener"
+            >
+                Luohu District, Shenzhen
+            </a>. If you're near me, let's hang out.
         </p>
         <HomeXBackgroud />
     </div>

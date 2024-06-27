@@ -16,7 +16,7 @@ export default defineConfig({
             lg: '1024px',
             xl: '1280px',
             xl2: '1424px', // macbook 13
-            xl3: '1520px', // macbook 15
+            xl3: '1520px', // macbook 16
             xl4: '1650px',
         },
         colors: {
@@ -28,6 +28,7 @@ export default defineConfig({
             'c-fg-3': 'hsl(var(--c-fg-3) , %alpha)',
             'c-fg-4': 'hsl(var(--c-fg-4) , %alpha)',
             'c-border': 'hsl(var(--c-border) , %alpha)',
+            'c-border-accent': 'hsl(var(--c-border-accent) , %alpha)',
             'c-accent': 'hsl(var(--c-accent) , %alpha)',
             'c-code-bg': 'hsl(var(--c-code-bg) , %alpha)',
             'c-inner-code-bg': 'hsl(var(--c-inner-code-bg) , %alpha)',
@@ -51,6 +52,9 @@ export default defineConfig({
         ['bg-gradient-ellipse', 'bg-[radial-gradient(ellipse_at_center,var(--un-gradient-stops))]'],
         ['bg-gradient-circle', 'bg-[radial-gradient(circle_at_center,var(--un-gradient-stops))]'],
     ],
+    content: {
+        filesystem: ['src/main.ts'],
+    },
     presets: [
         presetAttributify(),
         presetUno(),

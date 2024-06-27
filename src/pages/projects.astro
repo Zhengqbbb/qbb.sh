@@ -1,0 +1,11 @@
+---
+import { getEntry } from 'astro:content'
+import Layout from '~/layouts/Default.astro'
+
+const a = await getEntry('projects', 'index')
+// console.log(a)
+---
+
+<Layout>
+  <h1>Hello, Astro!</h1>
+</Layout>

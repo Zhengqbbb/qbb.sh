@@ -1,7 +1,11 @@
 ---
 import Meta from '~/meta'
 
-const { title, desc } = Astro.props
+const {
+    title = Meta.title,
+    desc = Meta.description,
+    image = Meta.ogImg,
+} = Astro.props
 ---
 
 <title>{title}</title>
@@ -13,20 +17,35 @@ const { title, desc } = Astro.props
         ("dark" === t || e && "light" !== t) && document.documentElement.classList.toggle("dark", !0);
     }())
 </script>
-<meta name="keywords" content={Meta.keywords}>
+<meta name="keywords" content={Meta.keywords} >
 <meta name="application-name", content={Meta.appName}>
 <meta name="apple-mobile-web-app-title", content={Meta.title}>
 <meta name="apple-mobile-web-app-status-bar-style", content="default">
-<meta name="theme-color" content="#0A0A0A">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" href="/icon/apple-touch-120x120.png" />
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#aaaaaa" />
-<link rel="alternate" type="application/rss+xml" href={`${Meta.site}/feed.xml`} />
-<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-<link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-<link rel="preconnect" crossorigin="anonymous" href="https://fonts.googleapis.com" />
-<link rel="preconnect" crossorigin="anonymous" href="https://fonts.gstatic.com" />
-<link rel="preconnect" crossorigin="anonymous" href="https://unpkg.com" />
-<link rel="preconnect" crossorigin="anonymous" href="https://registry.npmmirror.com" />
-<link rel="preload" href="/me.webp" as="image" />
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" >
+<link rel="icon" type="image/x-icon" href="/favicon.ico" >
+<link rel="apple-touch-icon" href="/icon/apple-touch-120x120.png" >
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#aaaaaa" >
+<link rel="alternate" type="application/rss+xml" href={`${Meta.site}/feed.xml`} >
+<meta name="author" content="Q.Ben Zheng" >
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content={Meta.twitterCreator} >
+<meta name="twitter:title" content={title} >
+<meta name="twitter:description" content={desc} >
+<meta name="twitter:image" content={image} >
+<meta property="og:title" content={title} >
+<meta property="og:description" content={desc} >
+<meta property="og:image" content={image} >
+<meta property="og:type" content="website">
+<meta property="og:url" content={Meta.site}>
+<meta name="application-name" content="Q.Ben">
+<meta name="apple-mobile-web-app-title" content={Meta.title} >
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="generator" content={Astro.generator} />
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" >
+<link rel="preconnect" crossorigin="anonymous" href="https://fonts.googleapis.com" >
+<link rel="preconnect" crossorigin="anonymous" href="https://fonts.gstatic.com" >
+<link rel="preconnect" crossorigin="anonymous" href="https://unpkg.com" >
+<link rel="preconnect" crossorigin="anonymous" href="https://registry.npmmirror.com" >
+<link rel="preload" href="/me.webp" as="image" >
