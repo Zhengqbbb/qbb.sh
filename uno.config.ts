@@ -51,6 +51,7 @@ export default defineConfig({
     shortcuts: [
         ['bg-gradient-ellipse', 'bg-[radial-gradient(ellipse_at_center,var(--un-gradient-stops))]'],
         ['bg-gradient-circle', 'bg-[radial-gradient(circle_at_center,var(--un-gradient-stops))]'],
+        ['c-sk', 'animate-pulse bg-neutral-200 dark:bg-neutral-900'],
     ],
     content: {
         filesystem: ['src/main.ts'],

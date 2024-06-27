@@ -22,7 +22,7 @@ const {
             <div
                 bg-c-bg
                 class="absolute inset-0 z-20 size-full border border-c-border-accent rd border-dashed transition-transform-300 ease-out"
-                group-hover="-translate-x-1 -translate-y-1"
+                group-hover="translate-x--1 translate-y--1"
             />
             <a
                 class="relative z-30 p-7 transition-transform-300 ease-out sm:p-3"
@@ -31,10 +31,24 @@ const {
                 href={project.link}
                 {...isExternal(project.link) ? { rel: 'noreferrer', target: '_blank' } : {}}
             >
-                <img class="aspect-[16/10] h-auto w-full rd-sm" src={project.image} alt={`${project.title} image`} />
+                <div class="relative before:content-empty" before="absolute inset-0 c-sk rd-sm">
+                    <img
+                        class="relative block aspect-[16/10] h-auto w-full rd-sm op-0"
+                        src={project.image}
+                        alt={`${project.title} image`}
+                        onload="this.classList.remove('op-0');this.parentElement.classList.remove('before:content-empty');"
+                    />
+                </div>
                 <div class="mb-1 mt-2 px-2">
-                    <h3 class="text-c-fg-3 font-semibold tracking-tight">
+                    <h3
+                        class="text-c-fg-3 font-semibold tracking-tight"
+                        flex="~ justify-start items-center"
+                    >
                         {project.title}
+                        <i
+                            class="i-uil:arrow-right translate-x--1 translate-y-1 rotate--45 text-base op-0 transition-all-200 ease-in-out"
+                            group-hover="translate-x-0 translate-y-0 op-100"
+                        ></i>
                     </h3>
                     <p class="line-clamp-2 text-sm text-c-fg-2">
                         {project.desc}
