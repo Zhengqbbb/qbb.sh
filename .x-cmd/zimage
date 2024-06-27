@@ -1,0 +1,33 @@
+# shellcheck shell=dash disable=SC2016,SC2317
+
+(
+WORK_DIR="$(x wsroot)"
+_QUALITY="$(x gum input --width 0 --placeholder ' Quality 0-100')" || exit 130
+[ -n "$_QUALITY" ] || _QUALITY="75"
+
+confirm_rm_img(){
+    printf "\033[90m%s\033[0m\n" "========================================================================================"
+    du -sh "$1"
+    du -sh "$2"
+    x gum confirm "Delete the original image? : $1"
+}
+
+# Section: Main
+command find "$WORK_DIR/public/image" -type f  -name '*.png' -or -name '*.jpg' -or -name '*.jpeg' | \
+    {
+        if [ -n "$1" ]; then
+            head -n 1
+        else
+            command cat
+        fi
+    } | \
+    x arg1 '
+        [ -f "$1" ] || exit 0
+        _tmp="${1%.*}.webp"
+        printf "\033[90m%s\033[0m\n" "" "========================================================================================"
+        printf "\033[90m%s\033[0m\n" "x cwebp -q $_QUALITY  $1 -o $_tmp"
+        x cwebp -q "$_QUALITY"   "$1" -o "$_tmp" || exit 1
+        confirm_rm_img "$1" "$_tmp"
+        [ "$?" != 0 ] || x rmrf "$1"
+    '
+)

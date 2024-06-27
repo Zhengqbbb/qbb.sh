@@ -1,4 +1,61 @@
-- title: x-cmd
-  desc: A command line tool for managing your projects.
-  image: /image/website-x-cmd.webp
-  link: https://x-cmd.com/
+Main Work:
+  - title: X-CMD
+    desc: >-
+      Open Source lightweight posix script for tools management and classic command extensions
+    link: https://www.x-cmd.com/
+    image: /image/project-x-cmd.webp
+
+CLI:
+  - title: cz-git
+    desc: >-
+      Commitizen CLI adapter. A git commit tool for conventional commits
+    link: https://cz-git.qbb.sh/
+    image: /image/project-cz-git.webp
+  - title: czg
+    desc: >-
+      Commitizen CLI alternative. A git commit tool for conventional commits
+    link: https://cz-git.qbb.sh/cli/
+    image: /image/project-czg.webp
+  - title: x-satori
+    desc: >-
+      Using Vue file to generate Open Graph image by satori
+    link: https://github.com/Zhengqbbb/x-satori
+    image: /image/project-x-satori.webp
+
+Starter Templates:
+  - title: Vitesse ✘ QB
+    desc: >-
+      Vite SSG website template
+    link: https://vitesse-qb.netlify.app/
+    image: /image/project-vitesse-qb.webp
+  - title: CLI
+    desc: >-
+      Node CLI starter template
+    link: https://github.com/qbbsh/cli
+    image: /image/project-starter-cli.webp
+
+VS Code Extensions:
+  - title: vitesse-qb
+    desc: >-
+      VS Code theme fork by Vitesse Theme
+    link: https://github.com/Zhengqbbb/vitesse-qb-vscode-theme
+    image: /image/project-vscode-theme.webp
+
+Vuepress Plugins:
+  - title: clipboard
+    desc: >-
+      Generate code copy button (Vuepress V2 plugin)
+    link: https://vuepress.qbb.sh/clipboard/
+    image: /image/project-vuepress-plugin-clipboard.webp
+  - title: china-search-console
+    desc: >-
+      Enhance China search console (Vuepress V2 plugin)
+    link: https://vuepress.qbb.sh/china-search-console/
+    image: /image/project-vuepress-plugin-china-search-console.webp
+
+Toy:
+  - title: qb-coin
+    desc: >-
+      Manage and view BSC coins in terminal
+    link: https://github.com/Zhengqbbb/qb-coin
+    image: /image/project-qb-coin.webp

@@ -31,14 +31,14 @@ const blog = defineCollection({
 
 const projects = defineCollection({
     type: 'data',
-    schema: z.array(
+    schema: z.record(z.array(
         z.object({
             title: z.string(),
             desc: z.string(),
             link: z.string(),
             image: z.string(),
         }),
-    ),
+    )),
 })
 
 export const collections = {

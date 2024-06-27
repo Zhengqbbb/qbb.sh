@@ -28,15 +28,13 @@ const postEntries = postList.reduce((acc, post) => {
     image="/og/posts.png"
     mainClass="mt-4 md:mt-6 lg:mt-8 xl4:mt-10 md:px-16"
 >
-    <div>
-        <h1
-            class="text-8 text-c-fg-4 font-600 leading-normal"
-            sm="text-9"
-            xl4="text-11"
-        >
-            My Writing
-        </h1>
-    </div>
+    <h1
+        class="text-8 text-c-fg-4 font-600 leading-normal"
+        sm="text-9"
+        xl4="text-11"
+    >
+        My Writing
+    </h1>
     <ul class="mb-10 mt-5 sm:mt-20" grid="~ rows-1 gap-5">
         {
             Object
@@ -44,11 +42,10 @@ const postEntries = postList.reduce((acc, post) => {
                 .sort(([a], [b]) => Number.parseInt(b) - Number.parseInt(a))
                 .map(([year, posts]) => (
                     <div
-                        class="relative mt-22 lt-sm:mb-[calc(min(var(--c-svg-h),var(--c-svg-max-h))*0.45*-1)] sm:first:mt-8"
-                        style="--c-svg-h: calc(100vw * 0.25); --c-svg-max-h: calc(664px * 0.25);"
+                        class="relative mt-22 lt-sm:mb--48px sm:first:mt-8"
                     >
-                        <div class="pointer-events-none absolute left-0 top--20 h-auto w-full select-none md:left--10">
-                            <div class="absolute inset-0 from-transparent to-c-bg to-70% bg-gradient-to-b"></div>
+                        <div class="pointer-events-none absolute left-0 top--20 h-auto w-full select-none md:left--10 lt-sm:w-370px">
+                            <div class="absolute inset-0 from-transparent to-c-bg to-90% bg-gradient-to-b dark:to-80%"></div>
                             <DashText
                                 class="fill-none stroke-1 stroke-dash-5 stroke-offset-0 stroke-c-fg-1 text-44 font-bold font-sans dark:stroke-opacity-80"
                             >

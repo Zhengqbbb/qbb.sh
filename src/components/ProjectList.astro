@@ -1,0 +1,47 @@
+---
+import type { ProjectEntries } from '~/pages/projects.astro'
+import { isExternal } from '~/lib/server'
+
+interface Props {
+    projects: ProjectEntries['data'][string]
+}
+
+const {
+    projects,
+} = Astro.props
+
+---
+
+<ul grid="~ cols-1 gap-7 sm:(gap-5 cols-2) items-stretch">
+    {projects.map(project => (
+        <li class="group relative cursor-pointer border border-transparent rd border-dashed lt-sm:first-mt--10">
+            <div
+                class="absolute inset-0 z-10 size-full border border-c-border-accent rd border-dashed transition-transform-300 ease-out"
+                group-hover="translate-x-1 translate-y-1"
+            />
+            <div
+                bg-c-bg
+                class="absolute inset-0 z-20 size-full border border-c-border-accent rd border-dashed transition-transform-300 ease-out"
+                group-hover="-translate-x-1 -translate-y-1"
+            />
+            <a
+                class="relative z-30 p-7 transition-transform-300 ease-out sm:p-3"
+                group-hover="translate-x--1 translate-y--1"
+                flex="~ col items-stretch"
+                href={project.link}
+                {...isExternal(project.link) ? { rel: 'noreferrer', target: '_blank' } : {}}
+            >
+                <img class="aspect-[16/10] h-auto w-full rd-sm" src={project.image} alt={`${project.title} image`} />
+                <div class="mb-1 mt-2 px-2">
+                    <h3 class="text-c-fg-3 font-semibold tracking-tight">
+                        {project.title}
+                    </h3>
+                    <p class="line-clamp-2 text-sm text-c-fg-2">
+                        {project.desc}
+                    </p>
+                </div>
+            </a>
+        </li>
+    ))}
+</ul>
+

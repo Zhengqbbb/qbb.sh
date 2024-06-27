@@ -1,11 +1,51 @@
 ---
 import { getEntry } from 'astro:content'
+import DashText from '~/components/DashText.astro'
 import Layout from '~/layouts/Default.astro'
+import ProjectList from '~/components/ProjectList.astro'
 
-const a = await getEntry('projects', 'index')
-// console.log(a)
+const projectEntries = await getEntry('projects', 'index')
+export type ProjectEntries = typeof projectEntries
+
 ---
 
-<Layout>
-  <h1>Hello, Astro!</h1>
+<Layout
+    title="Projects - Q.Ben Zheng"
+    desc="Q.Ben's Projects | Zhengqbbb"
+    image="/og/projects.png"
+    mainClass="mt-4 md:mt-6 lg:mt-8 xl4:mt-10 md:px-16"
+>
+    <h1
+        class="text-8 text-c-fg-4 font-600 leading-normal"
+        sm="text-9"
+        xl4="text-11"
+    >
+        My Projects
+    </h1>
+    <p class="mt-2 text-c-fg-2 leading-6 lg:text-lg lg:leading-8 sm:leading-7">
+        A collection of my projects, including open-source projects, personal projects, and some of my work.
+    </p>
+    <div>
+    {
+        Object
+            .entries(projectEntries.data)
+            .map(([categroy, projects]) => (
+                <div
+                    class="relative mt-28 lt-sm:mb--0 sm:first:mt-24"
+                >
+                    <div class="pointer-events-none absolute left-0 top--28 h-auto w-full select-none">
+                        <div class="absolute inset-0 from-transparent to-c-bg to-70% bg-gradient-to-b lt-sm:to-100%"></div>
+                        <DashText
+                            class="fill-none stroke-1 stroke-dash-5 stroke-offset-0 stroke-c-fg-3 text-18 font-bold font-sans dark:stroke-opacity-80"
+                            center="true"
+                        >
+                            {categroy}
+                        </DashText>
+                    </div>
+
+                    <ProjectList projects={projects} />
+                </div>
+            ))
+    }
+    </div>
 </Layout>
