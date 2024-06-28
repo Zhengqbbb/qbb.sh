@@ -1,4 +1,5 @@
 import { loadRemoteCDNs } from '~/lib/client/cdn'
+import { loadGiscusEl, toggleGiscusTheme } from '~/lib/client/giscus'
 
 // #region - Appearance Theme
 window.toggleTheme = () => {
@@ -78,6 +79,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const themeColorHeadMeta = document.querySelector('meta[name="theme-color"]')
         if (themeColorHeadMeta)
             themeColorHeadMeta.setAttribute('content', window.isDark ? '#0a0a0a' : '#ffffff')
+        if (document.getElementById('giscus'))
+            toggleGiscusTheme(window.isDark)
     })
 
     themeChangeObs.observe(
@@ -107,6 +110,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         link.as = 'image'
         document.head.appendChild(link)
     }
+
+    // Inject Giscus
+    const giscusEl = document.getElementById('giscus')
+    if (giscusEl)
+        loadGiscusEl()
 
     // Main CDN Loader
     Promise.all([

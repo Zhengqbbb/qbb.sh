@@ -14,7 +14,7 @@ const {
     !(function () {
         var e = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
         var t = localStorage.getItem("theme-scheme") || "auto";
-        ("dark" === t || e && "light" !== t) && document.documentElement.classList.toggle("dark", !0);
+        ("dark" === t || e && "light" !== t) && (document.documentElement.classList.toggle("dark", !0),window.isDark=!0);
     }())
 </script>
 <script id="pre-register-function" is:inline>

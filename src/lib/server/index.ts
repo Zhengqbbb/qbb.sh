@@ -10,10 +10,10 @@ export async function getPostList(): Promise<CollectionEntry<'blog'>[]> {
             const date = post.slug.substring(0, 10)
             if (date.length !== 10)
                 return null
-            post.data.lang = post.slug.endsWith('-zh') ? 'zh' : 'cn'
+            post.data.lang = post.slug.endsWith('-zh') ? 'zh' : 'en'
             post.data.image ??= `/og/posts-${post.slug}.png`
             post.data.readTime = `${calcReadingTime(post.body).minutes}`
-            post.data.link = `/posts/${post.slug}/`
+            post.data.link = `/posts/${post.slug}`
             post.data.date = {
                 date,
                 year: date.substring(0, 4),
@@ -23,7 +23,7 @@ export async function getPostList(): Promise<CollectionEntry<'blog'>[]> {
                     day: 'numeric',
                     year: 'numeric',
                 }),
-                postText: new Date(date).toLocaleDateString(post.data.lang === 'cn' ? 'zh-CN' : 'en-US', {
+                postText: new Date(date).toLocaleDateString(post.data.lang === 'zh' ? 'zh-CN' : 'en-US', {
                     month: 'short',
                     day: 'numeric',
                     year: 'numeric',

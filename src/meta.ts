@@ -14,12 +14,12 @@ export default {
     twitterCreator: '@zhengqbbb',
     instagram: 'https://www.instagram.com/qbqiubin/',
     email: 'zhengqbbb@gmail.com',
-    // giscus
-    /** @see https://giscus.app */
-    giscusConfig: {
-        repo: 'Zhengqbbb/vuepress-plugin',
-        repoId: 'MDEwOlJlcG9zaXRvcnkxODM4OTUyNTQ',
-        category: 'Announcements',
-        categoryId: 'DIC_kwDOCvYE1s4CAdr1',
-    },
+}
+
+/** @see https://giscus.app */
+export const GISCUS = {
+    repo: 'Zhengqbbb/vuepress-plugin',
+    repoId: 'MDEwOlJlcG9zaXRvcnkxODM4OTUyNTQ',
+    category: 'Announcements',
+    categoryId: 'DIC_kwDOCvYE1s4CAdr1',
 }

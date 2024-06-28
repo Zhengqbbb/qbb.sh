@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content'
 import Layout from '~/layouts/Base.astro'
 import PostPager from '~/components/PostPager.astro'
 import Footer from '~/components/Footer.astro'
-import Giscus from '~/components/Giscus.astro'
 
 export async function getStaticPaths() {
     const blogEntries = await getCollection('blog')
@@ -18,25 +17,33 @@ const { Content } = await post.render();
 ---
 
 <Layout {...post.data}>
-    <main class="mx-auto my-12 max-w-$c-content-width w-full">
-        <h1>
-            {post.data.title}
-        </h1>
-        <p>
-            {post.data.date?.postText}
-            ·
-            {post.data.readTime}
-            {post.data.lang === 'zh' ? '分钟' : 'min'}
-        </p>
-        <article class="prose post">
+    <main class="mx-auto mt-10 max-w-[calc(var(--c-content-width)+96px)] w-full bg-c-bg">
+
+        <div class="relative flex flex-col justify-stretch border-b-0 border-t border-neutral-200 px-0 pt-6 md:border-l md:border-r dark:border-neutral-800 md:rd-t lg:px-0 sm:px-5 md:pt-16">
+            <div class="absolute left-0 top-0 mt-1 hidden h-full w-px translate-x--1px from-transparent to-c-bg bg-gradient-to-b md:block"></div>
+            <div class="absolute right-0 top-0 mt-1 hidden h-full w-px translate-x-1px from-transparent to-c-bg bg-gradient-to-b md:block"></div>
+            <div class="mx-auto max-w-$c-content-width w-full md:mb-3 md:px-16">
+                <h1 class="text-8 text-c-fg-4 font-700 leading-normal md:text-10">
+                    {post.data.title}
+                </h1>
+                <p class="text-c-fg-1 lt-sm:(my-2 text-sm)" flex="~ items-center gap-2">
+                    <span class="">{post.data.date?.postText}</span>
+                    <span role="separator"></span>
+                    {post.data.readTime} {post.data.lang === 'zh' ? '分钟' : 'min'}
+                </p>
+            </div>
+        </div>
+
+        <article class="prose post mx-auto max-w-$c-content-width md:px-16">
             <Content />
         </article>
     </main>
 
-    <div>
-        <hr>
-        <PostPager />
-        <Footer footerClass="max-w-$c-content-width mx-auto" />
-        <Giscus />
+    <div class="mx-auto my-20 max-w-$c-content-width">
+        <hr class="prose after:from-90%!">
+        <PostPager prev={post.data.prev} next={post.data.next} />
+        <hr class="prose after:from-90%!">
+        <Footer />
+        <div id="giscus" class="giscus" />
     </div>
 </Layout>
