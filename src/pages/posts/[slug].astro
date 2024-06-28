@@ -1,11 +1,11 @@
 ---
-import { getCollection } from 'astro:content'
 import Layout from '~/layouts/Base.astro'
 import PostPager from '~/components/PostPager.astro'
 import Footer from '~/components/Footer.astro'
+import { getPostList } from '~/lib/server'
 
 export async function getStaticPaths() {
-    const blogEntries = await getCollection('blog')
+    const blogEntries = await getPostList()
     return blogEntries.map(post => ({
         params: { slug: post.slug },
         props: { post },
@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props
-const { Content } = await post.render();
+const { Content } = await post.render()
 ---
 
 <Layout {...post.data}>
@@ -23,7 +23,7 @@ const { Content } = await post.render();
             <div class="absolute left-0 top-0 mt-1 hidden h-full w-px translate-x--1px from-transparent to-c-bg bg-gradient-to-b md:block"></div>
             <div class="absolute right-0 top-0 mt-1 hidden h-full w-px translate-x-1px from-transparent to-c-bg bg-gradient-to-b md:block"></div>
             <div class="mx-auto max-w-$c-content-width w-full md:mb-3 md:px-16">
-                <h1 class="text-8 text-c-fg-4 font-700 leading-normal md:text-10">
+                <h1 class="text-8 text-c-fg-4 font-600 leading-normal md:text-10">
                     {post.data.title}
                 </h1>
                 <p class="text-c-fg-1 lt-sm:(my-2 text-sm)" flex="~ items-center gap-2">

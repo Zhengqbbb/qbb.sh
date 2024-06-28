@@ -34,7 +34,7 @@ export default defineConfig({
             'c-inner-code-bg': 'hsl(var(--c-inner-code-bg) , %alpha)',
         },
         borderRadius: {
-            xs: '4px',
+            xs: '8px',
             sm: '12px',
             DEFAULT: '16px',
             md: '30px',
@@ -55,7 +55,7 @@ export default defineConfig({
     shortcuts: [
         ['bg-gradient-ellipse', 'bg-[radial-gradient(ellipse_at_center,var(--un-gradient-stops))]'],
         ['bg-gradient-circle', 'bg-[radial-gradient(circle_at_center,var(--un-gradient-stops))]'],
-        ['image-unloaded', ' blur-4! op-50!'],
+        ['image-unloaded', ' blur-4! op-0!'],
         ['image-transition', 'transition-property-["filter,opacity,transform"] duration-400 ease'],
         ['image-loaded', 'blur-0 op-100 image-transition'],
         ['c-sk', 'animate-pulse bg-neutral-200 dark:bg-neutral-900'],

@@ -132,11 +132,14 @@ pre {
 .prose img:not(.c),
 .prose p:not(.c) {
     --at-apply: my-space;
-
 }
 
 .prose img:not(.c) {
     --at-apply: rd md:rd-md;
+}
+
+.prose img[src$=".gif"]:not(.c) {
+    --at-apply: rd-xs border shadow-lg;
 }
 
 .prose b:not(.c),
@@ -177,6 +180,9 @@ pre {
 }
 /** EndSection: */
 
+/** Section: Prose - Header */
+/** EndSection: */
+
 /** Section: Prose - Link */
 .prose a:not(.c) {
     --at-apply: text-c-fg-3 font-500;
@@ -190,9 +196,6 @@ pre {
 .prose a:focus:not(.c) {
     --at-apply: decoration-c-fg-3;
 }
-/** EndSection: */
-
-/** Section: Prose - Header */
 /** EndSection: */
 
 /** Section: Prose - Separator  */

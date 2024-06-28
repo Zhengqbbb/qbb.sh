@@ -1,4 +1,5 @@
 ---
+import { pwaInfo } from 'virtual:pwa-info'
 import Meta from '~/meta'
 
 const {
@@ -52,3 +53,4 @@ const {
 <link rel="preconnect" crossorigin="anonymous" href="https://fonts.gstatic.com" >
 <link rel="preconnect" crossorigin="anonymous" href="https://unpkg.com" >
 <link rel="preconnect" crossorigin="anonymous" href="https://registry.npmmirror.com" >
+{ pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }

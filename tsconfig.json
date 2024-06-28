@@ -5,7 +5,11 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]
-    }
+    },
+    "types": [
+      "vite-plugin-pwa/vanillajs",
+      "vite-plugin-pwa/info"
+    ]
   },
   "include": ["src/**/*.astro", "src/**/*.ts"]
 }
