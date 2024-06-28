@@ -2,7 +2,7 @@
 import { getEntry } from 'astro:content'
 import Layout from '~/layouts/Default.astro'
 import DashText from '~/components/DashText.astro'
-import ProjectList from '~/components/ListProject.astro'
+import ListProject from '~/components/ListProject.astro'
 
 const projectEntries = await getEntry('projects', 'index')
 ---
@@ -42,7 +42,7 @@ const projectEntries = await getEntry('projects', 'index')
                         </DashText>
                     </div>
 
-                    <ProjectList projects={projects} />
+                    <ListProject projects={projects} />
                 </div>
             ))
     }

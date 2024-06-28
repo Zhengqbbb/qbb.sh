@@ -2,7 +2,7 @@
 import type { CollectionEntry } from 'astro:content'
 import Layout from '~/layouts/Default.astro'
 import DashText from '~/components/DashText.astro'
-import PorjectList from '~/components/ListPost.astro'
+import ListPost from '~/components/ListPost.astro'
 import { getPostList } from '~/lib/server'
 
 const postList = await getPostList()
@@ -55,7 +55,7 @@ const postEntries = postList.reduce((acc, post) => {
                         </div>
                     </div>
 
-                    <PorjectList posts={posts} />
+                    <ListPost posts={posts} />
                 ))
         }
     </ul>

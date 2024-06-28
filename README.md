@@ -7,7 +7,7 @@ This is Q.Ben personal website. built with [Astro](https://astro.build/) and [Un
 ## Credits
 
 - [ccbikai/astro-aria](https://github.com/ccbikai/astro-aria)
-- [Static-Templates/aria](https://github.com/static-templates/aria)
+- [static-templates/aria](https://github.com/static-templates/aria)
 - [antfu.me](https://antfu.me/)
 - [zxh.me](https://zxh.me/)
 - [shud.in](https://shud.in/)

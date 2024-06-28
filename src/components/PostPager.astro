@@ -1,7 +1,72 @@
 ---
-const props = Astro.props
+import type { CollectionEntry } from 'astro:content'
+
+interface Props {
+    prev: CollectionEntry<'blog'>['data']['prev']
+    next: CollectionEntry<'blog'>['data']['next']
+}
+
+const { prev, next } = Astro.props
 ---
 
-<div {...props}>
-    <slot />
+<div class="md:px-4" grid="~ sm:cols-2 gap-5 cols-1">
+    {!!prev && (
+        <div class="group relative cursor-pointer border border-transparent rd-sm border-dashed">
+            <div
+                class="absolute inset-0 z-10 size-full border border-c-border-accent rd-sm border-dashed transition-transform-300 ease-out"
+                group-hover="translate-x-1 translate-y-1"
+            />
+            <div
+                bg-c-bg
+                class="absolute inset-0 z-20 size-full border border-c-border-accent rd-sm border-dashed transition-transform-300 ease-out"
+                group-hover="translate-x--1 translate-y--1"
+            />
+            <a
+                href={prev.link}
+                class="relative z-30 block px-6 py-4 transition-transform-300 ease-out"
+                group-hover="translate-x--1 translate-y--1"
+            >
+                <div class="relative text-sm text-c-fg-2">
+                    <i
+                        class="i-uil:arrow-right absolute left--4 top-50% translate-x-1 translate-y--50% rotate-180 text-base op-0 transition-all-200 ease-in-out"
+                        group-hover="translate-x--1 op-100"
+                    ></i>
+                    Previous page
+                </div>
+                <div class="line-clamp-2 mt-2 text-c-fg-3">
+                    {prev.title}
+                </div>
+            </a>
+        </div>
+    )}
+
+    {!!next && (
+        <div class="group relative cursor-pointer border border-transparent rd-sm border-dashed text-right sm:col-start-2">
+            <div
+                class="absolute inset-0 z-10 size-full border border-c-border-accent rd-sm border-dashed transition-transform-300 ease-out"
+                group-hover="translate-x-1 translate-y-1"
+            />
+            <div
+                bg-c-bg
+                class="absolute inset-0 z-20 size-full border border-c-border-accent rd-sm border-dashed transition-transform-300 ease-out"
+                group-hover="translate-x--1 translate-y--1"
+            />
+            <a
+                href={next.link}
+                class="relative z-30 block px-6 py-4 transition-transform-300 ease-out"
+                group-hover="translate-x--1 translate-y--1"
+            >
+                <div class="relative text-sm text-c-fg-2">
+                    Previous page
+                    <i
+                        class="i-uil:arrow-right absolute right--4 top-50% translate-x--1 translate-y--50% text-base op-0 transition-all-200 ease-in-out"
+                        group-hover="translate-x-1 op-100"
+                    ></i>
+                </div>
+                <div class="line-clamp-2 mt-2 text-c-fg-3">
+                    {next.title}
+                </div>
+            </a>
+        </div>
+    )}
 </div>

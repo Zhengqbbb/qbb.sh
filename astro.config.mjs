@@ -5,11 +5,11 @@ import Meta from './src/meta'
 
 export default defineConfig({
     site: Meta.site,
+    integrations: [
+        UnoCSS({ injectReset: true }),
+    ],
     prefetch: {
         defaultStrategy: 'viewport',
         prefetchAll: true,
     },
-    integrations: [
-        UnoCSS({ injectReset: true }),
-    ],
 })

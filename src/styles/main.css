@@ -129,8 +129,14 @@ pre {
 /** EndSection: */
 
 /** Section: Prose - Element */
+.prose img:not(.c),
 .prose p:not(.c) {
     --at-apply: my-space;
+
+}
+
+.prose img:not(.c) {
+    --at-apply: rd md:rd-md;
 }
 
 .prose b:not(.c),
@@ -176,7 +182,7 @@ pre {
     --at-apply: text-c-fg-3 font-500;
     --at-apply: ease property-[text-decoration-color] duration-300;
     --at-apply: decoration-underline decoration-dashed decoration-1;
-    --at-apply: decoration-c-fg-1 decoration-offset-5;
+    --at-apply: decoration-c-fg-1 decoration-offset-6;
 }
 
 .prose a:hover:not(.c),
@@ -187,9 +193,6 @@ pre {
 /** EndSection: */
 
 /** Section: Prose - Header */
-.prose h1:not(.c) {
-    --at-apply: text-2xl font-700 my-1.5;
-}
 /** EndSection: */
 
 /** Section: Prose - Separator  */
@@ -202,16 +205,20 @@ span[role='separator'] {
     background: hsl(var(--c-fg-1), 0.4);
 }
 
+hr.prose,
 .prose hr:not(.c) {
-    --at-apply: relative w-full h-auto border-t-0 mx-auto my-8;
+    --at-apply: relative w-full h-px border-t-0 mx-auto my-8;
 }
 
+hr.prose::before,
 .prose hr:not(.c)::before {
     --at-apply: content-empty block w-full h-px border-t border-dashed border-c-border;
 }
+
+hr.prose::after,
 .prose hr:not(.c)::after {
     --at-apply: content-empty absolute inset-0 bg-gradient-circle;
-    --at-apply: from-transparent to-c-bg;
+    --at-apply: from-transparent to-c-bg from-40%;
 }
 /** EndSection: */
 
