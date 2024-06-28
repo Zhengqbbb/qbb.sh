@@ -1,6 +1,9 @@
 ---
 import { getCollection } from 'astro:content'
-import Layout from '~/layouts/Default.astro'
+import Layout from '~/layouts/Base.astro'
+import PostPager from '~/components/PostPager.astro'
+import Footer from '~/components/Footer.astro'
+import Giscus from '~/components/Giscus.astro'
 
 export async function getStaticPaths() {
     const blogEntries = await getCollection('blog')
@@ -14,9 +17,26 @@ const { post } = Astro.props
 const { Content } = await post.render();
 ---
 
-<Layout>
-    <article class="prose">
-        <h1>{post.data.title}</h1>
-        <Content />
-    </article>
+<Layout {...post.data}>
+    <main class="mx-auto my-12 max-w-$c-content-width w-full">
+        <h1>
+            {post.data.title}
+        </h1>
+        <p>
+            {post.data.date?.postText}
+            ·
+            {post.data.readTime}
+            {post.data.lang === 'zh' ? '分钟' : 'min'}
+        </p>
+        <article class="prose post">
+            <Content />
+        </article>
+    </main>
+
+    <div>
+        <hr>
+        <PostPager />
+        <Footer footerClass="max-w-$c-content-width mx-auto" />
+        <Giscus />
+    </div>
 </Layout>

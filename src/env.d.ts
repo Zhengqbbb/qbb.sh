@@ -5,6 +5,17 @@ import type { AttributifyAttributes } from '@unocss/preset-attributify'
 import type mediumZoom from 'medium-zoom'
 
 declare global {
+    interface Window {
+        isDark: boolean
+        toggleTheme: () => void
+        mediumZoom: typeof mediumZoom | undefined
+        /** for support removeEventListener */
+        headerScrollHandler: () => void
+        /** Global image loaded CallBack Fn */
+        cImageOnLoad: () => void
+        cImageOnError: () => void
+    }
+
     namespace astroHTML.JSX {
         interface HTMLAttributes extends AttributifyAttributes {
             xl2?: string
@@ -15,13 +26,5 @@ declare global {
             to?: string
             decoration?: string
         }
-    }
-
-    interface Window {
-        isDark: boolean
-        toggleTheme: () => void
-        /** support for removeEventListener */
-        headerScrollHandler: () => void
-        mediumZoom: typeof mediumZoom | undefined
     }
 }

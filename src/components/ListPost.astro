@@ -8,9 +8,10 @@ interface Props {
 const { posts } = Astro.props
 ---
 
-{posts.map(post => (
+{posts.map((post, idx) => (
     <li
-        class="group relative cursor-pointer border border-transparent rd border-dashed"
+        class="group slide-enter relative cursor-pointer border border-transparent rd border-dashed"
+        style={`--enter-stage: ${(idx + 1) * 2}`}
     >
         <div
             class="absolute inset-0 z-10 size-full border border-c-border-accent rd border-dashed transition-transform-300 ease-out"
@@ -47,7 +48,10 @@ const { posts } = Astro.props
             >
                 Posted on {post.data.date?.listText}
             </time>
-            {!!post.data.isCN && (<sup role="img" class="i-icon-park-outline:chinese absolute right-3 top-3 rd-xs text-xs text-c-fg-1"></sup>)}
+            {
+                post.data.lang === 'zh'
+                && (<sup role="img" class="i-icon-park-outline:chinese absolute right-3 top-3 rd-xs text-xs text-c-fg-1"></sup>)
+            }
         </a>
     </li>
 ))}

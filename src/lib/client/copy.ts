@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 /** from 'vitepress/src/client/app/composables/copyCode.ts' */
 export async function copyToClipboard(text: string) {
     try {

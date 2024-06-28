@@ -6,16 +6,16 @@ const { footerClass = '' } = Astro.props
 ---
 
 <footer
+    flex="~ items-center justify-between gap-4 col-reverse sm:row"
     class="my-10 text-sm"
     class:list={[footerClass]}
-    flex="~ items-center justify-between gap-4 col-reverse sm:row"
 >
     <div class="text-c-fg-1">
         <a
             class="item"
             target="_blank"
             href="https://creativecommons.org/licenses/by-nc/4.0/"
-            >CC BY-NC-SA 4.0</a
+        >CC BY-NC-SA 4.0</a
         >
         {year} ©
         <a href={`mailto:${Meta.email}`} class="item"> {Meta.author}</a>

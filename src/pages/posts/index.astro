@@ -43,7 +43,7 @@ const postEntries = postList.reduce((acc, post) => {
                 .sort(([a], [b]) => Number.parseInt(b) - Number.parseInt(a))
                 .map(([year, posts]) => (
                     <div
-                        class="relative mt-22 lt-sm:mb--48px sm:first:mt-8"
+                        class="slide-enter relative mt-22 lt-sm:mb--48px sm:first:mt-8"
                     >
                         <div class="pointer-events-none absolute left-0 top--20 h-auto w-full select-none md:left--10 lt-sm:w-370px">
                             <div class="absolute inset-0 from-transparent to-c-bg to-90% bg-gradient-to-b dark:to-80%"></div>

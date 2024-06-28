@@ -13,9 +13,13 @@ const {
 <script id="check-dark-mode" is:inline>
     !(function () {
         var e = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-        var t = localStorage.getItem("theme-scheme") || "auto"; 
+        var t = localStorage.getItem("theme-scheme") || "auto";
         ("dark" === t || e && "light" !== t) && document.documentElement.classList.toggle("dark", !0);
     }())
+</script>
+<script id="pre-register-function" is:inline>
+    window.cImageOnLoad=function(){this.classList.remove("op-0", "image-unloaded"),this.removeAttribute("loading"),this.parentElement.classList.remove("before:content-empty")};
+    window.cImageOnError=function(){this.parentElement.classList.add("error")};
 </script>
 <meta name="keywords" content={Meta.keywords} >
 <meta name="application-name", content={Meta.appName}>

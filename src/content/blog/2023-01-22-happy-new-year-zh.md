@@ -89,7 +89,8 @@ desc: Happy new year. Bye 2022. Hello 2023
 
 今年在 Node.js 也出了一款 Terminal UI [「clack」](https://github.com/natemoo-re/clack)，看着好精美，体积也小，等稳定以后可以基于 clack 之上进行扩展 UI 部件，然后我还想再写多几款实用的 Node.js CLI 🤩
 
-也很想做一款让自己满意的 「<i class="i-carbon:mac-command"/> Command K」 Web 组件，目前体验了各大网站和应用下来<br>
+也很想做一款让自己满意的 「<i class="i-carbon:mac-command"></i> Command K」 Web 组件，目前体验了各大网站和应用下来
+<br>
 最佳的是 Telegram 的桌面端的搜索和 [Emil Kowalski](https://emilkowal.ski/) ▲ 个人网站中的 command 组件，可惜没有开源不能看到更多细节处理
 
 也希望今年能有一点点时间让我折腾一下 Next.js 13, Nuxt.js 3, Astro 2 😬 <br>

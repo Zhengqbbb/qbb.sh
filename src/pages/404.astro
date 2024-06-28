@@ -1,7 +1,25 @@
 ---
 import Layout from '~/layouts/Default.astro'
+---
 
-/** Powered by: https://github.com/Renovamen/renovamen.github.io  */
+<Layout
+    title="404 - Page Not Found"
+    desc="404 - Page Not Found"
+    mainClass="font-bold m-auto text-center mb-26"
+>
+    <h1 class="mb-8 text-6xl text-c-fg-4">404</h1>
+    <p id="emoji-404" class="h-10 text-4xl"></p>
+    <h2 class="mb-8 mt-5 text-2xl">How did we get here ?</h2>
+    <a
+        href="/"
+        class="text-2xl text-c-brand-500 transition-colors dark:text-c-brand"
+        decoration="3 underline offset-4 transparent hover:c-brand"
+    >
+        ❯ cd /home/
+    </a>
+</Layout>
+
+<script is:inline type="module">
 const emojiArray = [
     '\\(o_o)/',
     '(o^^)o',
@@ -15,26 +33,8 @@ const emojiArray = [
     'ㄟ(▔▽▔)ㄏ',
 ]
 
-function getEmoji(): string {
-    return emojiArray[Math.floor(Math.random() * emojiArray.length)]
+const emoji = document.querySelector('#emoji-404')
+if (emoji) {
+    emoji.innerHTML = emojiArray[Math.floor(Math.random() * emojiArray.length)]
 }
----
-
-<Layout
-    title="404 - Page Not Found"
-    desc="404 - Page Not Found"
-    mainClass="font-bold m-auto text-center mb-26"
->
-    <h1 class="mb-8 text-6xl text-c-fg-4">404</h1>
-    <p text="4xl">
-        {getEmoji()}
-    </p>
-    <h2 text="2xl" m="t-5 b-8">How did we get here ?</h2>
-    <a
-        href="/"
-        class="text-2xl text-c-brand-500 transition-colors dark:text-c-brand"
-        decoration="3 underline offset-4 transparent hover:c-brand"
-    >
-        ❯ cd /home/
-    </a>
-</Layout>
+</script>

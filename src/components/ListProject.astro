@@ -14,7 +14,9 @@ const {
 
 <ul grid="~ cols-1 gap-7 sm:(gap-5 cols-2) items-stretch">
     {projects.map(project => (
-        <li class="group relative cursor-pointer border border-transparent rd border-dashed lt-sm:first-mt--10">
+        <li
+            class="group relative cursor-pointer border border-transparent rd border-dashed lt-sm:first-mt--10"
+        >
             <div
                 class="absolute inset-0 z-10 size-full border border-c-border-accent rd border-dashed transition-transform-300 ease-out"
                 group-hover="translate-x-1 translate-y-1"
@@ -31,12 +33,15 @@ const {
                 href={project.link}
                 {...isExternal(project.link) ? { rel: 'noreferrer', target: '_blank' } : {}}
             >
-                <div class="relative before:content-empty" before="absolute inset-0 c-sk rd-sm">
+                <div class="relative overflow-hidden before:content-empty" before="absolute inset-0 c-sk rd-sm">
                     <img
-                        class="aspect-[16/10] h-auto w-full rd-sm op-0"
+                        class="image-unloaded image-loaded aspect-[16/10] h-auto w-full rd-sm op-0"
+                        loading="lazy"
+                        decoding="async"
                         src={project.image}
                         alt={`${project.title} image`}
-                        onload="this.classList.remove('op-0');this.parentElement.classList.remove('before:content-empty');"
+                        onload="window?.cImageOnLoad?.call(this)"
+                        onerror="window?.cImageOnError?.call(this)"
                     />
                 </div>
                 <div class="mb-1 mt-2 px-2">

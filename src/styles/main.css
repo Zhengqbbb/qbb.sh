@@ -61,7 +61,7 @@ pre {
 }
 /** EndSection: */
 
-/** Section: Home */
+/** Section: Transition - Home */
 .avatar.loaded {
     opacity: 1;
     transform: scale(1);
@@ -87,6 +87,34 @@ pre {
 }
 .c-animate-fade-out {
     animation: c-fade-out 0.8s linear 1;
+}
+/** EndSection: */
+
+/** Section: Transition - slide-enter */
+/* @Powered By https://antfu.me - https://github.com/antfu/antfu.me/ */
+@keyframes c-slide-enter {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .slide-enter {
+        --enter-stage: 0;
+        --enter-step: 100ms;
+        --enter-initial: 0ms;
+        will-change: transform;
+        animation: c-slide-enter 0.6s both 1;
+        animation-delay: calc(
+            var(--enter-initial) + var(--enter-stage) * var(--enter-step)
+        );
+    }
 }
 /** EndSection: */
 

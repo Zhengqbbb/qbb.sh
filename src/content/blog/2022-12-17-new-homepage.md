@@ -30,9 +30,9 @@ I thought about what website would like be:
 :::info What Is Diff
 
 -   `**** generator`:
-    -   what data is provided <i class="text-c-fgDeeper i-material-symbols:keyboard-double-arrow-right" /> how get page data and how parse the data <i class="text-c-fgDeeper i-material-symbols:keyboard-double-arrow-right" /> realize the feature
+    -   what data is provided <i class="text-c-fgDeeper i-material-symbols:keyboard-double-arrow-right"></i> how get page data and how parse the data <i class="text-c-fgDeeper i-material-symbols:keyboard-double-arrow-right"></i> realize the feature
 -   `vite-ssg` + `vite-plugin-pages` +`vite-plugin-vue-layouts` + `vite-plugin-md`:
-    -   define page data <i class="text-c-fgDeeper i-material-symbols:keyboard-double-arrow-right" />parse page data <i class="text-c-fgDeeper i-material-symbols:keyboard-double-arrow-right" /> realize the feature
+    -   define page data <i class="text-c-fgDeeper i-material-symbols:keyboard-double-arrow-right"></i>parse page data <i class="text-c-fgDeeper i-material-symbols:keyboard-double-arrow-right"></i> realize the feature
         :::
 
 Everything is created and maintained by myself, I can remember and parse whatever my create data. Enjoy lightweight, fast and free.<br>

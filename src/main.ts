@@ -1,6 +1,3 @@
-/* @unocss-include */
-/* astro will bundle and create inline script, the unocss not will be include style, need to using `content.filesystem` uno.config.ts */
-
 import { loadRemoteCDNs } from '~/lib/client/cdn'
 
 // #region - Appearance Theme
@@ -18,6 +15,8 @@ document
 // #endregion
 
 // #region - Header Sticky
+/* @unocss-include */
+/* astro will bundle and create inline script, the unocss not will be include style, need to using `content.filesystem` uno.config.ts */
 const stickyClasses = ['fixed', 'h-[calc(var(--c-nav-hight)-24px)]']
 const unstickyClasses = ['absolute', 'h-$c-nav-hight']
 const stickyClassesContainer = [

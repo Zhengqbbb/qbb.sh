@@ -25,7 +25,7 @@ _Italic text_. **Bold text**. **_Bold and nested italic text_**. ~~Strike throug
 
 [Post List](/posts)
 
-<i class="i-carbon:logo-github"/> Github: https://github.com/qbbsh/vitesse-qb
+<i class="i-carbon:logo-github"></i> Github: https://github.com/qbbsh/vitesse-qb
 
 ## List
 

@@ -16,7 +16,8 @@ const blog = defineCollection({
             listText: z.string(),
             postText: z.string(),
         }).optional(),
-        isCN: z.boolean().optional(),
+        lang: z.string().optional(),
+        /** unit: minutes */
         readTime: z.string().optional(),
         prev: z.object({
             title: z.string(),

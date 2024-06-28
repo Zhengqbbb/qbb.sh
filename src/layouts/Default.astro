@@ -14,10 +14,8 @@ const props = Astro.props
 
 <Layout {...props}>
     <main
-        class:list={[
-            'w-full max-w-$c-content-width mx-auto my-12',
-            [props.mainClass],
-        ]}
+        class="mx-auto my-12 max-w-$c-content-width w-full"
+        class:list={[props.mainClass]}
     >
         <slot />
     </main>
