@@ -1,21 +1,41 @@
 # shellcheck shell=dash disable=SC2016,SC2317
 
+###
+ # Convert images to WebP format
+ #
+ # @powered by: X-CMD
+ # @see: https://www.x-cmd.com/mod/ws
+ # @usage: `xws zimage`                 - All /public/image
+ # @usage: `xws zimage [-1]`            - Only the first one image on /public/image
+ # @usage: `xws zimage [-1] <quality>`  - Directly use quality and skip quality input
+###
+
 (
+
 WORK_DIR="$(x wsroot)"
-_QUALITY="$(x gum input --width 0 --placeholder ' Quality 0-100')" || exit 130
-[ -n "$_QUALITY" ] || _QUALITY="75"
+while true; do
+    case "$1" in
+        "")     break                   ;;
+        -1)     _ONE="1";       shift   ;;
+        *)      _QUALITY="$1";  shift   ;;
+    esac
+done
+if [ -z "$_QUALITY" ]; then
+    _QUALITY="$(x gum input --width 0 --placeholder ' Quality 0-100')" || exit 130
+    [ -n "$_QUALITY" ] || _QUALITY="75"
+fi
 
 confirm_rm_img(){
     printf "\033[90m%s\033[0m\n" "========================================================================================"
-    du -sh "$1"
-    du -sh "$2"
+    command du -sh "$1"
+    command du -sh "$2"
     x gum confirm "Delete the original image? : $1"
 }
 
 # Section: Main
 command find "$WORK_DIR/public/image" -type f  -name '*.png' -or -name '*.jpg' -or -name '*.jpeg' | \
     {
-        if [ -n "$1" ]; then
+        if [ -n "$_ONE" ]; then
             head -n 1
         else
             command cat
@@ -30,4 +50,5 @@ command find "$WORK_DIR/public/image" -type f  -name '*.png' -or -name '*.jpg' -
         confirm_rm_img "$1" "$_tmp"
         [ "$?" != 0 ] || x rmrf "$1"
     '
+
 )

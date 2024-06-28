@@ -1,5 +1,13 @@
 # shellcheck shell=dash
 
+###
+ # Bump the version of packages
+ #
+ # @powered by: X-CMD
+ # @see: https://www.x-cmd.com/mod/ws
+ # @usage: `xws bump`
+###
+
 (
     x bun x -y taze -r -I -i
 )
