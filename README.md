@@ -16,4 +16,4 @@ This is Q.Ben personal website. built with [Astro](https://astro.build/) and [Un
 ## License
 
 - Theme code licensed under [MIT](https://github.com/Zhengqbbb/qbb.sh/blob/main/LICENSE)
-- Blog posts content are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
+- Blog posts content and images are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
