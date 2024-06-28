@@ -12,7 +12,6 @@
     "lint": "eslint .",
     "cz": "czg"
   },
-  "dependencies": {},
   "devDependencies": {
     "@antfu/eslint-config": "^2.21.1",
     "@astrojs/check": "^0.7.0",
@@ -29,6 +28,7 @@
     "eslint-plugin-astro": "^1.2.2",
     "eslint-plugin-format": "^0.1.2",
     "fast-glob": "^3.3.2",
+    "medium-zoom": "^1.1.0",
     "pathe": "^1.1.2",
     "prettier-plugin-astro": "^0.14.0",
     "tsx": "^4.15.7",

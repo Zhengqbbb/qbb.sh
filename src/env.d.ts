@@ -2,6 +2,7 @@
 /// <reference types="astro/client" />
 
 import type { AttributifyAttributes } from '@unocss/preset-attributify'
+import type mediumZoom from 'medium-zoom'
 
 declare global {
     namespace astroHTML.JSX {
@@ -21,5 +22,6 @@ declare global {
         toggleTheme: () => void
         /** support for removeEventListener */
         headerScrollHandler: () => void
+        mediumZoom: typeof mediumZoom | undefined
     }
 }

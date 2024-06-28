@@ -1,9 +1,9 @@
 ---
-import type { ProjectEntries } from '~/pages/projects.astro'
+import type { CollectionEntry } from 'astro:content'
 import { isExternal } from '~/lib/server'
 
 interface Props {
-    projects: ProjectEntries['data'][string]
+    projects: CollectionEntry<'projects'>['data'][string]
 }
 
 const {
@@ -33,7 +33,7 @@ const {
             >
                 <div class="relative before:content-empty" before="absolute inset-0 c-sk rd-sm">
                     <img
-                        class="relative block aspect-[16/10] h-auto w-full rd-sm op-0"
+                        class="aspect-[16/10] h-auto w-full rd-sm op-0"
                         src={project.image}
                         alt={`${project.title} image`}
                         onload="this.classList.remove('op-0');this.parentElement.classList.remove('before:content-empty');"

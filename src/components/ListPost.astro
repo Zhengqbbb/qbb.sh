@@ -1,13 +1,11 @@
 ---
-import type { PostEntries } from '~/pages/posts/index.astro'
+import type { CollectionEntry } from 'astro:content'
 
 interface Props {
-    posts: PostEntries[string]
+    posts: CollectionEntry<'blog'>[]
 }
 
-const {
-    posts,
-} = Astro.props
+const { posts } = Astro.props
 ---
 
 {posts.map(post => (

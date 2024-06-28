@@ -2,6 +2,8 @@
   "cSpell.files": [
     "pages/**/*"
   ],
+  "files.trimTrailingWhitespace": true,
+  "editor.detectIndentation": true,
   "files.associations": {
     "**/.x-cmd/*": "shellscript",
     "**/.x-cmd/*.yml": "yaml",

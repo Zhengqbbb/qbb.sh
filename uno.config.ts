@@ -47,7 +47,11 @@ export default defineConfig({
             mono: 'var(--c-font-family-mono)',
         },
     },
-    rules: [],
+    rules: [
+        [/^slide-enter-(\d+)$/, ([_, n]) => ({
+            '--enter-stage': n,
+        })],
+    ],
     shortcuts: [
         ['bg-gradient-ellipse', 'bg-[radial-gradient(ellipse_at_center,var(--un-gradient-stops))]'],
         ['bg-gradient-circle', 'bg-[radial-gradient(circle_at_center,var(--un-gradient-stops))]'],

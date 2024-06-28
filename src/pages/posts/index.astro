@@ -1,13 +1,14 @@
 ---
-import DashText from '~/components/DashText.astro'
-import PorjectList from '~/components/PostList.astro'
+import type { CollectionEntry } from 'astro:content'
 import Layout from '~/layouts/Default.astro'
+import DashText from '~/components/DashText.astro'
+import PorjectList from '~/components/ListPost.astro'
 import { getPostList } from '~/lib/server'
 
 const postList = await getPostList()
 
 /** Handle {year: data list} format */
-export type PostEntries = { [year: string]: typeof postList }
+export type PostEntries = { [year: string]: CollectionEntry<'blog'>[] }
 const postEntries = postList.reduce((acc, post) => {
     const postYear = post.data.date?.year
     if (!postYear)

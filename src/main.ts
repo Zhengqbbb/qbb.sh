@@ -1,6 +1,8 @@
 /* @unocss-include */
 /* astro will bundle and create inline script, the unocss not will be include style, need to using `content.filesystem` uno.config.ts */
 
+import { loadRemoteCDNs } from '~/lib/client/cdn'
+
 // #region - Appearance Theme
 window.toggleTheme = () => {
     const element = document.documentElement
@@ -20,7 +22,7 @@ const stickyClasses = ['fixed', 'h-[calc(var(--c-nav-hight)-24px)]']
 const unstickyClasses = ['absolute', 'h-$c-nav-hight']
 const stickyClassesContainer = [
     'bg-white:80',
-    'dark:bg-neutral-900:98',
+    'dark:bg-neutral-900:60',
     'border-c-border:80',
     'backdrop-blur-2xl',
     'shadow-sm',
@@ -43,7 +45,35 @@ function handleHeaderElementScrollCB(el: HTMLElement) {
 }
 // #endregion
 
-document.addEventListener('DOMContentLoaded', () => {
+// #region - Medium-Zoom
+export async function mediumZoomLoader() {
+    if (typeof window.mediumZoom === 'function')
+        return window.mediumZoom
+
+    // main loader
+    await loadRemoteCDNs(
+        'https://unpkg.com/medium-zoom@1.1.0/dist/medium-zoom.min.js',
+        'https://registry.npmmirror.com/medium-zoom/1.1.0/files/dist/medium-zoom.min.js',
+        'js',
+    )
+
+    if (!window?.mediumZoom) {
+        console.error('mediumZoom not found')
+        return null
+    }
+
+    return window.mediumZoom
+}
+
+async function attachMediumZoom(selectors = '.prose :not(a) > img:not(.not-zoom)') {
+    const mediumZoom = await mediumZoomLoader()
+    if (!mediumZoom)
+        return
+    mediumZoom(selectors)
+}
+// #endregion
+
+document.addEventListener('DOMContentLoaded', async () => {
     // Add Theme Change Observer
     const themeChangeObs = new MutationObserver(() => {
         const themeColorHeadMeta = document.querySelector('meta[name="theme-color"]')
@@ -78,4 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
         link.as = 'image'
         document.head.appendChild(link)
     }
+
+    // Main CDN Loader
+    Promise.all([
+        attachMediumZoom(),
+    ])
 })

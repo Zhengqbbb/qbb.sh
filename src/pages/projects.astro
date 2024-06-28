@@ -1,12 +1,10 @@
 ---
 import { getEntry } from 'astro:content'
-import DashText from '~/components/DashText.astro'
 import Layout from '~/layouts/Default.astro'
-import ProjectList from '~/components/ProjectList.astro'
+import DashText from '~/components/DashText.astro'
+import ProjectList from '~/components/ListProject.astro'
 
 const projectEntries = await getEntry('projects', 'index')
-export type ProjectEntries = typeof projectEntries
-
 ---
 
 <Layout

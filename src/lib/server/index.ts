@@ -1,8 +1,9 @@
+import type { CollectionEntry } from 'astro:content'
 import { getCollection } from 'astro:content'
 import { calcReadingTime } from './readtime'
 
 /** parsed post data */
-export async function getPostList() {
+export async function getPostList(): Promise<CollectionEntry<'blog'>[]> {
     const posts = await getCollection('blog')
     let res = posts
         .map((post) => {
