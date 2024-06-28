@@ -49,6 +49,6 @@ Don’t need to rely on any upstream depend, or cater to others people usage.<br
 -   Anthony Fu : https://antfu.me/
 -   Shu Ding: https://shud.in/
 -   Xiaohan Zou: https://zxh.io/
--   Vitepress: https://vitepress.vuejs.org/
+-   VitePress: https://vitepress.vuejs.org/
 
 Hope everyone can have a satisfied personal website. And now I will start to creative journey 🤗 ~
