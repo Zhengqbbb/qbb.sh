@@ -1,7 +1,7 @@
 import { GISCUS } from '~/meta'
 
 /** @see https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md */
-export function loadGiscusEl() {
+export function injectGiscusEl() {
     const theme = window.isDark ? 'dark_protanopia' : 'light'
     const lang = document.documentElement.getAttribute('lang') === 'zh'
         ? 'zh-CN'

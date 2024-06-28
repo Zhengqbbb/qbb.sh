@@ -1,5 +1,5 @@
 import { loadRemoteCDNs } from '~/lib/client/cdn'
-import { loadGiscusEl, toggleGiscusTheme } from '~/lib/client/giscus'
+import { injectGiscusEl, toggleGiscusTheme } from '~/lib/client/giscus'
 
 // #region - Appearance Theme
 window.toggleTheme = () => {
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Inject Giscus
     const giscusEl = document.getElementById('giscus')
     if (giscusEl)
-        loadGiscusEl()
+        injectGiscusEl()
 
     // Main CDN Loader
     Promise.all([
