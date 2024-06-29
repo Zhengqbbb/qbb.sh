@@ -1,3 +1,8 @@
+/**
+ * The main entry point inline script handle
+ * Astro does not support handle the inline script
+ * So the ts file have to handle it manually by esbuild
+ */
 import { loadRemoteCDNs } from '~/lib/client/cdn'
 import { injectGiscusEl, toggleGiscusTheme } from '~/lib/client/giscus'
 

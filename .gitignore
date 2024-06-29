@@ -1,5 +1,7 @@
 # build output
 dist/
+src/lib/client/main.js
+
 # generated types
 .astro/
 

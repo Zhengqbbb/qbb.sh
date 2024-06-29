@@ -25,6 +25,9 @@ declare global {
             via?: string
             to?: string
             decoration?: string
+            dangerouslySetInnerHTML?: {
+                __html?: string
+            }
         }
     }
 }

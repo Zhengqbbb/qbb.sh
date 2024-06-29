@@ -1,3 +1,5 @@
+import { dirname } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import type { VitePWAOptions } from 'vite-plugin-pwa'
 import fg from 'fast-glob'
 import { resolve } from 'pathe'
@@ -21,7 +23,7 @@ export default {
     registerType: 'autoUpdate',
     includeAssets: fg.sync(
         '**/*.{webp,png,jpg,svg,gif,ico,txt,woff2}',
-        { cwd: resolve(import.meta.dirname, '../../public') },
+        { cwd: resolve(dirname(fileURLToPath(import.meta.url)), '../../public') },
     ),
     manifest: {
         name: 'Q.Ben',
@@ -54,7 +56,7 @@ export default {
     workbox: {
         navigateFallbackDenylist: [/^\/new/],
         globPatterns: ['**/*.{js,css,webp,png,svg,gif,mp4,ico,woff2}'],
-        navigateFallback: null,
+        navigateFallback: '/404',
         mode: 'production',
         runtimeCaching: [
             ...Object

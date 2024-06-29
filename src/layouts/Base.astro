@@ -3,6 +3,7 @@ import '~/styles/index.css'
 import BaseHead from '~/components/BaseHead.astro'
 import Header from '~/components/Header.astro'
 import SquareLines from '~/components/SquareLines.astro'
+import { getMainFileRaw } from '~/lib/server'
 
 interface Props {
     title?: string
@@ -12,6 +13,7 @@ interface Props {
 }
 
 const props = Astro.props
+const mainCodeRaw = getMainFileRaw()
 ---
 
 <!doctype html>
@@ -27,6 +29,7 @@ const props = Astro.props
         <div class="px-7 xl:px-0">
             <slot />
         </div>
-        <script src="../main.ts"></script>
+
+        <script is:inline type="module" set:html={mainCodeRaw}></script>
     </body>
 </html>

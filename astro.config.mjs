@@ -17,8 +17,22 @@ export default defineConfig({
             ...vitePWAOptions,
         }),
     ],
+    vite: {
+        build: { cssCodeSplit: false },
+        server: {
+            warmup: {
+                clientFiles: ['./src/lib/client/main.js'],
+            },
+        },
+    },
     prefetch: {
         defaultStrategy: 'viewport',
         prefetchAll: true,
+    },
+    markdown: {
+        shikiConfig: {
+            theme: 'vitesse-dark',
+            wrap: true,
+        },
     },
 })

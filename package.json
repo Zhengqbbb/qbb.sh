@@ -6,8 +6,12 @@
     "pnpm": ">=9"
   },
   "scripts": {
-    "dev": "astro dev --host --port 3000",
-    "build": "astro check && astro build",
+    "dev": "run-p dev:main dev:docs",
+    "dev:docs": "astro dev --host --port 3000",
+    "dev:main": "esbuild src/main.ts --watch --bundle --format=esm --outdir=src/lib/client",
+    "build": "run-s build:main build:docs",
+    "build:docs": "astro check && astro build",
+    "build:main": "esbuild src/main.ts --minify --bundle --format=esm --outdir=src/lib/client",
     "preview": "astro preview --host --port 8888",
     "lint": "eslint .",
     "cz": "czg"
@@ -31,10 +35,12 @@
     "eslint-plugin-format": "^0.1.2",
     "fast-glob": "^3.3.2",
     "medium-zoom": "^1.1.0",
+    "npm-run-all": "^4.1.5",
     "pathe": "^1.1.2",
     "prettier-plugin-astro": "^0.14.0",
     "tsx": "^4.15.7",
     "typescript": "^5.5.2",
-    "unocss": "^0.61.0"
+    "unocss": "^0.61.0",
+    "workbox-window": "^7.1.0"
   }
 }
