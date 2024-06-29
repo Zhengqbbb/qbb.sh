@@ -12,6 +12,12 @@ This is Q.Ben personal website. built with [Astro](https://astro.build/) and [Un
 - [zxh.me](https://zxh.me/)
 - [shud.in](https://shud.in/)
 - [VitePress](https://vitepress.dev/)
+<br>
+<br>
+- qbb.sh previous version - built with [Vitesse](https://github.com/antfu-collective/vitesse)
+    - [Preview](https://vitesse.qbb.sh/)
+    - [Source Code](https://github.com/Zhengqbbb/qbb.sh/tree/vitesse)
+    - [Vitesse ✘ qb theme template](https://vitesse-qb.netlify.app/)
 
 ## License
 
