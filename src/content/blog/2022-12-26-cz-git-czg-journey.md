@@ -8,7 +8,10 @@ desc: Why developed cz-git and czg. My development journey
 ![cz-git-logo](/image/cz-git.webp) <!-- <size="500"> <class="m-auto"> <!> <desc="cz-git: https://cz-git.qbb.sh/<br>czg : https://cz-git.qbb.sh/cli/"> -->
 
 > What is [Commitizen CLI](https://github.com/commitizen/cz-cli) : Based on Node.js command line tool，Interactively generate standard formatted `git commit message` <br>
-> What is [Commitizen Adapter](https://github.com/commitizen/cz-cli#adapters) : Plugin that replaces Commitizen CLI interaction behavior <br> > <br> > [cz-git](https://cz-git.qbb.sh/zh/guide/introduction) : Lightweight, interactive friendly, highly customizable, standard Angular commit formatted _Commitizen Adapter_<br> > [czg](https://cz-git.qbb.sh/zh/cli/) : Understand it as built-in `cz-git` adapter `Commitizen CLI` _alternative_
+> What is [Commitizen Adapter](https://github.com/commitizen/cz-cli#adapters) : Plugin that replaces Commitizen CLI interaction behavior <br>
+> <br>
+> [cz-git](https://cz-git.qbb.sh/zh/guide/introduction) : Lightweight, interactive friendly, highly customizable, standard Angular commit formatted _Commitizen Adapter_<br>
+> [czg](https://cz-git.qbb.sh/zh/cli/) : Understand it as built-in `cz-git` adapter `Commitizen CLI` _alternative_
 
 **In this article, I will introduce why `cz-git` and `czg` were developed. My development journey 🤗**
 

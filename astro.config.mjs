@@ -4,18 +4,14 @@ import UnoCSS from 'unocss/astro'
 import AstroPWA from '@vite-pwa/astro'
 import Meta from './src/meta'
 import vitePWAOptions from './src/lib/server/pwa'
+import { rehypePlugins, remarkPlugins } from './src/lib/markdown'
 
 export default defineConfig({
     site: Meta.site,
     integrations: [
         UnoCSS({ injectReset: true }),
         /** Add PWA for enforcing caching of CDN fonts and static resources  */
-        AstroPWA({
-            mode: 'development',
-            base: '/',
-            scope: '/',
-            ...vitePWAOptions,
-        }),
+        AstroPWA(vitePWAOptions),
     ],
     vite: {
         build: { cssCodeSplit: false },
@@ -34,5 +30,7 @@ export default defineConfig({
             theme: 'vitesse-dark',
             wrap: true,
         },
+        remarkPlugins,
+        rehypePlugins,
     },
 })

@@ -14,6 +14,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props
 const { Content } = await post.render()
+
 ---
 
 <Layout {...post.data}>
@@ -27,8 +28,12 @@ const { Content } = await post.render()
                     {post.data.title}
                 </h1>
                 <p class="text-c-fg-1 lt-sm:(my-2 text-sm)" flex="~ items-center gap-2">
-                    <span class="">{post.data.date?.postText}</span>
-                    <span role="separator"></span>
+                    {
+                        post.data.date?.postText
+                            ? (<span>{post.data.date?.postText}</span>)
+                            : (<span>draft</span>)
+                    }
+                     <span role="separator"></span>
                     {post.data.readTime} {post.data.lang === 'zh' ? '分钟' : 'min'}
                 </p>
             </div>
@@ -47,3 +52,54 @@ const { Content } = await post.render()
         <div id="giscus" class="giscus" />
     </div>
 </Layout>
+
+<script>
+function navigate() {
+    if (location.hash) {
+        const el = document.querySelector(decodeURIComponent(location.hash))
+        if (!el)
+            return
+        const top = el.getBoundingClientRect().top
+        const offset = window.scrollY
+        window.scrollTo({
+            top: top + offset - 80,
+            behavior: 'smooth',
+        })
+    }
+}
+
+function handleAnchors(event: Event) {
+    const evt = event as MouseEvent & { target: HTMLElement }
+    const link = evt.target.closest('a')
+
+    if (
+        !evt.defaultPrevented
+        && link
+        && evt.button === 0
+        && link.target !== '_blank'
+        && link.rel !== 'external'
+        && !link.download
+        && !evt.metaKey
+        && !evt.ctrlKey
+        && !evt.shiftKey
+        && !evt.altKey
+    ) {
+        const url = new URL(link.href)
+        if (url.origin !== window.location.origin)
+            return
+
+        evt.preventDefault()
+        const { pathname, hash } = url
+        if (hash && (!pathname || pathname === location.pathname)) {
+            window.history.replaceState({}, '', hash)
+            navigate()
+        }
+        else {
+            window.location.href = pathname + hash
+        }
+    }
+}
+
+const content = document.querySelector('.prose.post')
+content?.addEventListener('click', handleAnchors, { passive: false })
+</script>

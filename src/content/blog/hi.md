@@ -25,7 +25,7 @@ _Italic text_. **Bold text**. **_Bold and nested italic text_**. ~~Strike throug
 
 [Post List](/posts)
 
-<i class="i-carbon:logo-github"></i> Github: https://github.com/qbbsh/vitesse-qb
+<i class="i-carbon:logo-github"></i> Github: https://github.com/Zhengqbbb
 
 ## List
 
@@ -56,20 +56,17 @@ Released the first available version
 ---
 
 ::::ol
-:::li Get a clean template base the current site
+:::li Show help
 
 ```sh
-npx degit qbbsh/vitesse-qb my-site
+npx czg --help
 ```
 
 :::
-:::li Download dependent startup project
+:::li Launch CLI
 
 ```sh
-cd my-site
-# pnpm command not found? try `npm install -g pnpm`
-pnpm i
-pnpm dev
+npx czg
 ```
 
 :::
@@ -77,7 +74,7 @@ pnpm dev
 
 ## Blockquote
 
-> **What is SSG**: static site generation. Static-generated websites are nothing new for developers. We have been building them since the beginning of the web. Using Vite-SSG ad Vue.js building rich website do so easily.
+> **What is SSG**: static site generation. Static-generated websites are nothing new for developers. We have been building them since the beginning of the web.
 
 ## Table
 
@@ -130,31 +127,22 @@ class SomeClass:
 ... prompt'''
 ```
 
-### Code Group
+## GitHub-style alerts
 
-:::: code-group
-::: code-group-item npm
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
 
-```sh
-npm install -D cz-git
-```
+> [!TIP]
+> Optional information to help a user be more successful.
 
-:::
-::: code-group-item yarn
+> [!IMPORTANT]
+> Crucial information necessary for users to succeed.
 
-```sh
-yarn add -D cz-git
-```
+> [!WARNING]
+> Critical content demanding immediate user attention due to potential risks.
 
-:::
-::: code-group-item pnpm
-
-```sh
-pnpm install -D cz-git
-```
-
-:::
-::::
+> [!CAUTION]
+> Negative potential consequences of an action.
 
 ## Containers
 
@@ -180,13 +168,13 @@ This is a details block.
 
 ## Images
 
-![Image Example](/image/vitesse.webp) <!-- <size="400"> <class="m-auto"> <desc="Campground by [@Finca Los Vientos](https://reurl.cc/28aQr4) • Aug 2021"> -->
+![Image Example](/image/astro.webp) <!-- <size="400"> <class="m-auto"> <desc="Campground by [@Finca Los Vientos](https://reurl.cc/28aQr4) • Aug 2021"> -->
 
-![Image Example](/image/vitesse.webp) <!-- <desc="Campground by [@Finca Los Vientos](https://reurl.cc/28aQr4) • Aug 2021"> -->
+![Image Example](/image/astro.webp) <!-- <desc="Campground by [@Finca Los Vientos](https://reurl.cc/28aQr4) • Aug 2021"> -->
 
 ## CheckBox
 
--   [x] Done - 1
--   [x] Done - 2
--   [ ] TODO - 3
--   [ ] TODO - 4
+- [x] Done - 1
+- [x] Done - 2
+- [ ] TODO - 3
+- [ ] TODO - 4

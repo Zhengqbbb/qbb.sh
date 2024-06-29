@@ -178,6 +178,8 @@ pre {
     margin-right: 0.15rem;
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
     box-shadow:
         inset 0 -2px 0 0 #cdcde6,
         inset 0 0 1px 1px #fff,
@@ -193,6 +195,63 @@ pre {
 /** EndSection: */
 
 /** Section: Prose - Header */
+.prose h2:not(.c) {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    --un-text-opacity: 1;
+    color: hsl(var(--c-fg-3));
+}
+
+.prose h3:not(.c) {
+    margin-top: 1.6em;
+    margin-bottom: 1.2em;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.6em;
+    color: hsl(var(--c-fg));
+
+}
+
+.prose h4:not(.c) {
+    margin-top: 1.2em;
+    font-weight: 600;
+    line-height: 1.5em;
+    color: inherit;
+    color: hsl(var(--c-fg));
+}
+
+.prose h6:not(.c) {
+    color: hsl(var(--c-fg-2));
+}
+
+.prose .c a.header-anchor {
+    display: none;
+}
+.prose a:not(.c).header-anchor {
+    float: left;
+    margin-top: 0.025rem;
+    margin-left: -1.2em;
+    padding-right: 0.5em;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-decoration: none;
+}
+h2:hover .header-anchor,
+h2:focus .header-anchor,
+h3:hover .header-anchor,
+h3:focus .header-anchor,
+h4:hover .header-anchor,
+h4:focus .header-anchor,
+h5:hover .header-anchor,
+h5:focus .header-anchor,
+h6:hover .header-anchor,
+h6:focus .header-anchor {
+    opacity: 1 !important;
+}
 /** EndSection: */
 
 /** Section: Prose - Link */
@@ -217,6 +276,8 @@ pre {
     line-height: 0.5rem;
     border-width: 1px;
     border-radius: 8px;
+    margin-top: var(--c-space);
+    margin-bottom: var(--c-space);
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
@@ -343,7 +404,7 @@ hr.prose::after,
 }
 
 .prose ol:not(.c) > li,
-.prose ul:not(.c) > li {
+.prose ul:not(.c):not(.contains-task-list) > li {
     position: relative;
     margin-top: 0.2em;
     margin-bottom: 0.2em;
@@ -359,7 +420,7 @@ hr.prose::after,
     font-weight: 400;
 }
 
-.prose ul:not(.c) > li::before {
+.prose ul:not(.c):not(.contains-task-list) > li::before {
     content: '';
     position: absolute;
     top: calc(0.875em - 0.08em);
@@ -383,6 +444,72 @@ hr.prose::after,
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 0;
+}
+/** EndSection: */
+
+/** Section: Prose - Blockquote */
+.prose blockquote {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+    position: relative;
+    margin-top: var(--c-space);
+    margin-bottom: var(--c-space);
+    padding-left: 1rem;
+    color: hsl(var(--c-fg-2));
+}
+
+.prose blockquote::after {
+    --at-apply: content-empty absolute top-0 bottom-0 left-0;
+    --at-apply: w-4px rd-2 bg-gradient-circle from-90% from-neutral-300 dark:from-neutral-800 to-transparent;
+}
+
+.prose blockquote> :first-child {
+--at-apply: mt-0 mt-1;
+}
+
+.prose blockquote> :last-child {
+--at-apply: mb-0 pb-1;
+}
+
+/** EndSection: */
+
+/** Section: Prose - Checkbox */
+.prose input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.45rem;
+    background: transparent;
+}
+
+.prose input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.prose input[type="checkbox"]:not([checked])::before {
+    --at-apply: i-uil:square-shape text-c-fg-1;
+}
+
+.prose input[type="checkbox"][checked]::before {
+    --at-apply: i-ph:check-bold text-c-fg-1;
+}
+.prose input[type="checkbox"][checked]{
+    --at-apply: decoration-line-through decoration-1 dark:decoration--1 text-c-fg-1;
+}
+/** EndSection: */
+
+/** Section: Prose - GitHub Alert */
+.prose .markdown-alert p {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.5em;
+}
+.prose .markdown-alert .markdown-alert-title {
+    margin-bottom: 0.5em;
 }
 /** EndSection: */
 

@@ -3,7 +3,7 @@ title: New homepage
 desc: Building a static personal website by Vite-SSG
 ---
 
-![vitesse-qb](/image/vitesse-qb.svg) <!-- <size="180"> <class="m-auto"> <!> -->
+![vitesse-qb](/image/new-homepage.svg) <!-- <size="180"> <class="m-auto"> <!> -->
 
 Static site generation(SSG). Seems to have been around since I started programming.
 

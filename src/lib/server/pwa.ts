@@ -20,6 +20,9 @@ const STATIC_REOMTE_ASSETS = {
  * @see https://vite-pwa-org.netlify.app/frameworks/astro
  */
 export default {
+    mode: 'development',
+    base: '/',
+    scope: '/',
     registerType: 'autoUpdate',
     includeAssets: fg.sync(
         '**/*.{webp,png,jpg,svg,gif,ico,txt,woff2}',

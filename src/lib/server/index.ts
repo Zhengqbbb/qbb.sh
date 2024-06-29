@@ -6,18 +6,20 @@ import type { CollectionEntry } from 'astro:content'
 import { resolve } from 'pathe'
 import { calcReadingTime } from './readtime'
 
+export const postHasDate = (post: CollectionEntry<'blog'>) => !!post.data.date
+
 /** parsed post data */
 export async function getPostList(): Promise<CollectionEntry<'blog'>[]> {
     const posts = await getCollection('blog')
     let res = posts
         .map((post) => {
-            const date = post.slug.substring(0, 10)
-            if (date.length !== 10)
-                return null
             post.data.lang = post.slug.endsWith('-zh') ? 'zh' : 'en'
             post.data.image ??= `/og/posts-${post.slug}.png`
             post.data.readTime = `${calcReadingTime(post.body).minutes}`
             post.data.link = `/posts/${post.slug}`
+            const date = post.slug.substring(0, 10)
+            if (date.length !== 10)
+                return post
             post.data.date = {
                 date,
                 year: date.substring(0, 4),
@@ -35,19 +37,18 @@ export async function getPostList(): Promise<CollectionEntry<'blog'>[]> {
             }
             return post
         })
-        .filter(post => post !== null)
         .sort((a, b) => {
             return a!.slug > b!.slug ? -1 : 1
         }) as Required<typeof posts>
 
     res = res.map((post, idx) => {
-        if (res?.[idx + 1]) {
+        if (res?.[idx + 1] && (postHasDate(res?.[idx + 1]))) {
             post.data.next = {
                 title: res[idx + 1].data.title,
                 link: res[idx + 1].data.link || '',
             }
         }
-        if (res?.[idx - 1]) {
+        if (res?.[idx - 1] && (postHasDate(res?.[idx - 1]))) {
             post.data.prev = {
                 title: res[idx - 1].data.title,
                 link: res[idx - 1].data.link || '',
