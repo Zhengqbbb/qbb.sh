@@ -1,0 +1,9 @@
+[build]
+publish = "dist"
+command = "pnpm run build"
+
+[build.environment]
+NODE_VERSION = "20"
+
+[build.processing.html]
+pretty_urls = true
