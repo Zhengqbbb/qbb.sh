@@ -82,13 +82,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const avatarEl = document.getElementById('home-avatar')
     if (avatarEl) {
         const avatar = new Image()
-        avatar.src = '/me.webp'
+        avatar.src = '/me.webp?v=240630'
         avatar.onload = () => avatarEl.classList.add('loaded')
     }
     else {
         const link = document.createElement('link')
         link.rel = 'preload'
-        link.href = '/me.webp'
+        link.href = '/me.webp?v=240630'
         link.as = 'image'
         document.head.appendChild(link)
     }
