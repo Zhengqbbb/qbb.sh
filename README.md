@@ -1,8 +1,12 @@
 <h1 align="center">Hi 🤗</h1>
 
-This is Q.Ben personal website. built with [Astro](https://astro.build/) and [UnoCSS](https://unocss.dev/)
+<p align="center">
+This is Q.Ben personal website. build with <a href="https://astro.build/">Astro</a> and <a href="https://unocss.dev/">UnoCSS</a>
+</p>
 
-[https://qbb.sh](https://www.qbb.sh/)
+<p align="center">
+  <a href="https://www.qbb.sh/">https://qbb.sh</a>
+</p>
 
 ## Credits
 
