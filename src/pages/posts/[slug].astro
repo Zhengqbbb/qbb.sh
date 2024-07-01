@@ -3,6 +3,7 @@ import Layout from '~/layouts/Base.astro'
 import PostPager from '~/components/PostPager.astro'
 import Footer from '~/components/Footer.astro'
 import { getPostList } from '~/lib/server'
+import Meta from '~/meta'
 
 export async function getStaticPaths() {
     const blogEntries = await getPostList()
@@ -17,7 +18,7 @@ const { Content } = await post.render()
 
 ---
 
-<Layout {...post.data}>
+<Layout {...post.data} title={`${post.data.title} - ${Meta.author}`}>
     <main class="mx-auto mt-10 max-w-[calc(var(--c-content-width)+96px)] w-full bg-c-bg">
 
         <div class="relative flex flex-col justify-stretch border-b-0 border-t border-neutral-200 px-0 pt-6 md:border-l md:border-r dark:border-neutral-800 md:rd-t lg:px-0 sm:px-5 md:pt-16">
@@ -45,61 +46,10 @@ const { Content } = await post.render()
     </main>
 
     <div class="mx-auto my-20 max-w-$c-content-width">
-        <hr class="prose after:from-90%!">
+        <hr class="my-8 border-dashed">
         <PostPager prev={post.data.prev} next={post.data.next} />
-        <hr class="prose after:from-90%!">
-        <Footer />
+        <hr class="mt-8 border-dashed">
+        <Footer footerClass="mt-4 mb-8" />
         <div id="giscus" class="giscus" />
     </div>
 </Layout>
-
-<script>
-function navigate() {
-    if (location.hash) {
-        const el = document.querySelector(decodeURIComponent(location.hash))
-        if (!el)
-            return
-        const top = el.getBoundingClientRect().top
-        const offset = window.scrollY
-        window.scrollTo({
-            top: top + offset - 80,
-            behavior: 'smooth',
-        })
-    }
-}
-
-function handleAnchors(event: Event) {
-    const evt = event as MouseEvent & { target: HTMLElement }
-    const link = evt.target.closest('a')
-
-    if (
-        !evt.defaultPrevented
-        && link
-        && evt.button === 0
-        && link.target !== '_blank'
-        && link.rel !== 'external'
-        && !link.download
-        && !evt.metaKey
-        && !evt.ctrlKey
-        && !evt.shiftKey
-        && !evt.altKey
-    ) {
-        const url = new URL(link.href)
-        if (url.origin !== window.location.origin)
-            return
-
-        evt.preventDefault()
-        const { pathname, hash } = url
-        if (hash && (!pathname || pathname === location.pathname)) {
-            window.history.replaceState({}, '', hash)
-            navigate()
-        }
-        else {
-            window.location.href = pathname + hash
-        }
-    }
-}
-
-const content = document.querySelector('.prose.post')
-content?.addEventListener('click', handleAnchors, { passive: false })
-</script>
