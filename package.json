@@ -3,7 +3,7 @@
   "private": true,
   "engines": {
     "node": ">=20",
-    "pnpm": ">=9"
+    "pnpm": ">=8"
   },
   "scripts": {
     "dev": "run-p dev:main dev:docs",
