@@ -19,6 +19,7 @@ const STATIC_REOMTE_ASSETS = {
  * can find more information on Workbox section.
  * @see https://vite-pwa-org.netlify.app/frameworks/astro
  */
+/** Add PWA for enforcing caching of CDN fonts and static resources  */
 export default {
     mode: 'development',
     base: '/',

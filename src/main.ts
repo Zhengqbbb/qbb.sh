@@ -3,8 +3,7 @@
  * Astro does not support handle the inline script
  * So the ts file have to handle it manually by esbuild
  */
-import { loadRemoteCDNs } from '~/lib/client/cdn'
-import { injectGiscusEl, toggleGiscusTheme } from '~/lib/client/giscus'
+import { navigate, toggleGiscusTheme } from '~/lib/client'
 
 // #region - Appearance Theme
 window.toggleTheme = () => {
@@ -22,7 +21,10 @@ document
 
 // #region - Header Sticky
 /* @unocss-include */
-/* astro will bundle and create inline script, the unocss not will be include style, need to using `content.filesystem` uno.config.ts */
+/* astro will bundle and create inline script
+ * the unocss not will be include style,
+ * need to using `content.filesystem` uno.config.ts
+ */
 const stickyClasses = ['fixed', 'h-[calc(var(--c-nav-hight)-24px)]']
 const unstickyClasses = ['absolute', 'h-$c-nav-hight']
 const stickyClassesContainer = [
@@ -50,34 +52,6 @@ function handleHeaderElementScrollCB(el: HTMLElement) {
 }
 // #endregion
 
-// #region - Medium-Zoom
-export async function mediumZoomLoader() {
-    if (typeof window.mediumZoom === 'function')
-        return window.mediumZoom
-
-    // main loader
-    await loadRemoteCDNs(
-        'https://unpkg.com/medium-zoom@1.1.0/dist/medium-zoom.min.js',
-        'https://registry.npmmirror.com/medium-zoom/1.1.0/files/dist/medium-zoom.min.js',
-        'js',
-    )
-
-    if (!window?.mediumZoom) {
-        console.error('mediumZoom not found')
-        return null
-    }
-
-    return window.mediumZoom
-}
-
-async function attachMediumZoom(selectors = '.prose :not(a) > img:not(.not-zoom)') {
-    const mediumZoom = await mediumZoomLoader()
-    if (!mediumZoom)
-        return
-    mediumZoom(selectors)
-}
-// #endregion
-
 document.addEventListener('DOMContentLoaded', async () => {
     // Add Theme Change Observer
     const themeChangeObs = new MutationObserver(() => {
@@ -101,7 +75,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         window.addEventListener('scroll', window.headerScrollHandler)
     }
 
-    // Home Page
+    // Handle Page Enter with Hash
+    !!window.location.hash && setTimeout(navigate)
+
+    // Home Page Preload
     const avatarEl = document.getElementById('home-avatar')
     if (avatarEl) {
         const avatar = new Image()
@@ -115,14 +92,4 @@ document.addEventListener('DOMContentLoaded', async () => {
         link.as = 'image'
         document.head.appendChild(link)
     }
-
-    // Inject Giscus
-    const giscusEl = document.getElementById('giscus')
-    if (giscusEl)
-        injectGiscusEl()
-
-    // Main CDN Loader
-    Promise.all([
-        attachMediumZoom(),
-    ])
 })

@@ -4,7 +4,8 @@ desc: 为什么会开发 cz-git 和 czg，我的开发心路历程
 ---
 
 
-![cz-git-logo](/image/cz-git.webp) <!-- <size="500"> <class="m-auto"> <!> <desc="cz-git: https://cz-git.qbb.sh/zh/<br>czg : https://cz-git.qbb.sh/zh/cli/"> -->
+![cz-git-logo](/image/cz-git.webp)
+:f[cz-git: https://cz-git.qbb.sh/zh/<br>czg : https://cz-git.qbb.sh/zh/cli/]{size=500 fclass=m-auto .no-zoom}
 
 > 什么是 [Commitizen CLI](https://github.com/commitizen/cz-cli) : 基于 Node.js 的命令行工具，交互式辅助生成规范格式的 `git commit message` <br>
 > 什么是 [Commitizen Adapter](https://github.com/commitizen/cz-cli#adapters)<sup>「适配器」</sup> : 更换 Commitizen CLI 交互行为的插件 <br>
@@ -18,7 +19,7 @@ desc: 为什么会开发 cz-git 和 czg，我的开发心路历程
 
 那还得是从今年年初给 [Vuepress-Theme-Gungnir](https://github.com/Renovamen/vuepress-theme-gungnir) 提交贡献开始说起，其实从实习开始我就一直有使用 `Commitizen CLI` + `cz-conventional-changelog` 的简单组合，只不过一般不打 commit 的范围直接就跳过<br>而 `Vuepress-Theme-Gungnir` 是一个融合了 博客主题，博客插件，演示及文档的 monorepo <sup>单体仓库</sup>。所以对于 commit message 是需要加上范围的<sup>一般为插件名或主题</sup><br>例子: `fix(plugin-rss): do something with plugin...`
 
-==但对于我这样的懒人，而且还是全职做 CLI 的人来说，是绝不会干重复性输入的傻事==
+:m[但对于我这样的懒人，而且还是全职做 CLI 的人来说，是绝不会干重复性输入的傻事]
 
 所以很快我就提交了 [PR 使用 `cz-customizable`](https://github.com/Renovamen/vuepress-theme-gungnir/pull/34)，想通过声明式配置来解决重复性输入 commit 的范围<sup>scope</sup>。但很快就发现，这并不能真正解决需求
 
@@ -26,8 +27,6 @@ desc: 为什么会开发 cz-git 和 czg，我的开发心路历程
 2. 其次是仅有上下选择的交互方式用起来太慢了，如果声明的范围达到20个，那么每次 commit，就需要上下寻找对应的范围，但其实你在 commit 的时候脑海里就已经有了答案，所以交互方式就势必要有搜索功能<br>举个例子，为 table 组件添加测试，最为理想的交互方式 <kbd>te</kbd> <kbd>Enter</kbd> 输出 `test`。<kbd>ta</kbd> <kbd>Enter</kbd> 输出 `table`
 
 所以当时开发 `cz-git` 目标就是，做一款市面上交互最能打，最好用的适配器，嘿嘿
-
----
 
 ## 不断探索 Node.js CLI 的边界
 
@@ -39,7 +38,7 @@ desc: 为什么会开发 cz-git 和 czg，我的开发心路历程
 
 举个例子：在编写 monorepo 配置时可以利用 `path` 和 `fs` 模块动态定义 commit message 中的scopes<sup>范围</sup>显示，当然我们也可以利用 git 命令的结果来决定选择项的位置
 
-:::details 查看 `.commitlintrc.cjs` 配置代码
+:::details[查看 `.commitlintrc.cjs` 配置代码]
 ```js
 // .commitlintrc.cjs
 const path = require('node:path')
@@ -65,7 +64,9 @@ module.exports = {
 ```
 :::
 
-![cz-git-demo](/image/cz-demo-1.gif) <!-- <size="700x268"> -->
+![cz-git-demo](/image/cz-demo-1.gif)
+:f{size=664x257}
+
 
 ### 补全型交互
 
@@ -81,7 +82,8 @@ feat(components): [button] I did something with button
 处理的手法都大同小异，文档中都有详细的[记录](https://cz-git.qbb.sh/zh/recipes/default-subject)，这里就不再叙述了<br>
 最终得到的效果和整体交互体验还是很舒服的 🤗
 
-![cz-git-demo](/image/cz-demo-2.gif) <!-- <size="700x268"> -->
+![cz-git-demo](/image/cz-demo-2.gif)
+:f{size=664x257}
 
 ---
 
@@ -127,8 +129,6 @@ added [31m1[0m packages, and audited 2 packages in [31m408 ms[0m
     - 或是使用已定义的频繁使用 message alias，像修改配置，修改文档错别字等，这时候开启交互模式反而麻烦，就可以直接使用 `git czg :fd` <sup>git czg :\<alias\></sup>
 
 基于以上几点，让我完成了 `czg`，而现在 `git czg` 敲起来也终于左右手得以连贯舒适了很多 🤗
-
----
 
 ## 结语
 

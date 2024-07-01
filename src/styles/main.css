@@ -129,6 +129,8 @@ pre {
 /** EndSection: */
 
 /** Section: Prose - Element */
+.prose video:not(.c),
+.prose figure:not(.c),
 .prose img:not(.c),
 .prose p:not(.c) {
     margin-top: var(--c-space);
@@ -196,13 +198,26 @@ pre {
 
 /** Section: Prose - Header */
 .prose h2:not(.c) {
+    /* --at-apply: border-t-1 border-neutral-200 dark:border-neutral-800; */
+    --at-apply: border-t-1 border-c-border;
+    position: relative;
     margin-top: 1.5em;
     margin-bottom: 1em;
+    padding-top: 2.25rem;
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 1.3em;
     --un-text-opacity: 1;
     color: hsl(var(--c-fg-3));
+}
+
+.prose h2:not(.c)::before {
+    --at-apply: content-empty absolute h-2px w-1em top--1.5px right-0;
+    --at-apply: bg-gradient-to-r from-transparent to-c-brand;
+}
+.prose h2:not(.c)::after {
+    --at-apply: content-empty absolute h-2px w-1em top--1.5px left-0;
+    --at-apply: bg-gradient-to-l from-transparent to-c-brand;
 }
 
 .prose h3:not(.c) {
@@ -266,6 +281,53 @@ h6:focus .header-anchor {
 .prose a:active:not(.c),
 .prose a:focus:not(.c) {
     --at-apply: decoration-c-fg-3;
+}
+/** EndSection: */
+
+/** Section: Prose - Image */
+.prose figure:not(.c) {
+    width: fit-content;
+}
+
+.prose figure:not(.c)>div>* {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.prose figure figcaption:not(.c) {
+    color: hsl(var(--c-fg-2));
+    font-size: 0.875rem;
+    line-height: 1.75em;
+    margin-top: 0.75em;
+}
+
+.prose figure div.error::before {
+    content: "";
+    background: hsl(var(--c-bg-accent)) var(--c-icon-img-borken) no-repeat center / 50% 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    color: transparent;
+    animation: none;
+}
+.prose figure div.error::after{
+    content: attr(alt);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top-width: 1px;
+    border-color: hsl(var(--c-border));
+    z-index: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    font-size: .85rem;
+    color: hsl(var(--c-fg-2));
 }
 /** EndSection: */
 
@@ -451,15 +513,13 @@ hr.prose::after,
 .prose blockquote {
     quotes: "\201C" "\201D" "\2018" "\2019";
     position: relative;
+    color: hsl(var(--c-fg-2));
     margin-top: var(--c-space);
     margin-bottom: var(--c-space);
     padding-left: 1rem;
-    color: hsl(var(--c-fg-2));
-}
-
-.prose blockquote::after {
-    --at-apply: content-empty absolute top-0 bottom-0 left-0;
-    --at-apply: w-4px rd-2 bg-gradient-circle from-90% from-neutral-300 dark:from-neutral-800 to-transparent;
+    border-left-width: 0.25em;
+    border-left-style: solid;
+    border-left-color: hsl(var(--c-border-accent));
 }
 
 .prose blockquote> :first-child {
@@ -470,6 +530,38 @@ hr.prose::after,
 --at-apply: mb-0 pb-1;
 }
 
+/** EndSection: */
+
+/** Section: Prose - Table */
+.prose .table-wrap {
+    --at-apply: my-space overflow-x-auto;
+    -webkit-overflow-scrolling: touch;
+}
+.prose table {
+    --at-apply: table-auto border-separate border-spacing-0;
+    --at-apply: w-full text-left text-sm leading-1.75em;
+  }
+
+.prose thead th {
+    --at-apply: text-c-fg font-normal align-middle py-2 px-3;
+    --at-apply: border-y;
+}
+
+.prose thead th {
+    --at-apply: min-w-32;
+}
+
+.prose thead th:nth-child(1) {
+    --at-apply: border-l rd-lt-xs rd-lb-xs;
+}
+
+.prose thead th:last-child {
+    --at-apply: border-r rd-rt-xs rd-rb-xs;
+}
+
+.prose tbody td {
+    --at-apply: align-inherit py-3 px-3 border-b-1;
+}
 /** EndSection: */
 
 /** Section: Prose - Checkbox */
@@ -520,5 +612,8 @@ hr.prose::after,
 }
 .medium-zoom-overlay ~ img {
     z-index: 101;
+}
+.prose .medium-zoom-image {
+    transition-property: filter,opacity,transform !important;
 }
 /** EndSection: */

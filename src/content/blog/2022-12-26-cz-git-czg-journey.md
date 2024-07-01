@@ -5,7 +5,8 @@ desc: Why developed cz-git and czg. My development journey
 
 > [中文 Chinese Version](/posts/2022-12-26-cz-git-czg-journey-zh)
 
-![cz-git-logo](/image/cz-git.webp) <!-- <size="500"> <class="m-auto"> <!> <desc="cz-git: https://cz-git.qbb.sh/<br>czg : https://cz-git.qbb.sh/cli/"> -->
+![cz-git-logo](/image/cz-git.webp)
+:f[cz-git: https://cz-git.qbb.sh/<br>czg : https://cz-git.qbb.sh/cli/]{size=500 fclass=m-auto .no-zoom}
 
 > What is [Commitizen CLI](https://github.com/commitizen/cz-cli) : Based on Node.js command line tool，Interactively generate standard formatted `git commit message` <br>
 > What is [Commitizen Adapter](https://github.com/commitizen/cz-cli#adapters) : Plugin that replaces Commitizen CLI interaction behavior <br>
@@ -30,8 +31,6 @@ So I submitted [PR using `cz-customizable`](https://github.com/Renovamen/vuepres
 
 At that time, I decided to develop `cz-git` that can become the most friendly interactive and the greatest adapter. LOL
 
----
-
 ## Exploring Node.js CLI Can Do What
 
 Actually another very important reason is to explore Node.js can do what great effect.<br>BTW I am painful to develop CLI with SHELL and AWK in daily work, And the development of `cz-git` can transferred my attention <sup>😈😈 Playing Node</sup>
@@ -42,7 +41,7 @@ The advantage of using `Node.js` to do CLI is that **you can write JavaScript co
 
 For example: when writing monorepo configuration, you can use `path` and `fs` modules to dynamically define the scopes. And you can use the git command to determine the position of the selection item
 
-:::details View `.commitlintrc.cjs` configure code
+:::details[View `.commitlintrc.cjs` configure code]
 
 ```js
 // .commitlintrc.cjs
@@ -70,7 +69,8 @@ module.exports = {
 
 :::
 
-![cz-git-demo](/image/cz-demo-1.gif) <!-- <size="700x268"> -->
+![cz-git-demo](/image/cz-demo-1.gif)
+:f{size=664x257}
 
 ### Command-line completion
 
@@ -86,7 +86,8 @@ feat(components): [button] I did something with button
 The processing methods are similar, and there are detailed records on [website recipes](https://cz-git.qbb.sh/recipes/default-subject)<br>
 The final effect and interactive experience are comfortable and nice 🤗
 
-![cz-git-demo](/image/cz-demo-2.gif) <!-- <size="700x268"> -->
+![cz-git-demo](/image/cz-demo-2.gif)
+:f{size=664x257}
 
 ---
 
@@ -131,8 +132,6 @@ And actually `czg` can be made smaller, but in order to take as an adapter, I ne
     - Or using the defined and frequently used message alias<br> such as modifying the configuration, fix typos in the document<br> At this time, you can directly use `git czg :fd` <sup>git czg :\<alias\></sup>, **without enabling interactive mode**
 
 Based on the above points, I finished `czg`, and now `git czg` is finally comfortable to usage 🤗
-
----
 
 ## Wrapping Up
 

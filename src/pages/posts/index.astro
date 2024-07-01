@@ -4,6 +4,7 @@ import Layout from '~/layouts/Default.astro'
 import DashText from '~/components/DashText.astro'
 import ListPost from '~/components/ListPost.astro'
 import { getPostList } from '~/lib/server'
+import Meta from '~/meta'
 
 const postList = await getPostList()
 
@@ -24,7 +25,7 @@ const postEntries = postList.reduce((acc, post) => {
 ---
 
 <Layout
-    title="Blog - Q.Ben Zheng"
+    title={`Blog - ${Meta.author}`}
     desc="Q.Ben's Blog | Zhengqbbb"
     image="/og/posts.png"
     mainClass="mt-4 md:mt-6 lg:mt-8 xl4:mt-10 md:px-16"

@@ -3,7 +3,10 @@ title: New homepage
 desc: Building a static personal website by Vite-SSG
 ---
 
-![vitesse-qb](/image/new-homepage.svg) <!-- <size="180"> <class="m-auto"> <!> -->
+![vitesse-qb](/image/new-homepage.svg)
+:f{size=664x318 .no-zoom}
+
+## 2022
 
 Static site generation(SSG). Seems to have been around since I started programming.
 
@@ -27,28 +30,31 @@ I thought about what website would like be:
 
 ## Tech stack
 
-:::info What Is Diff
+:::info[What Is Diff]
 
 -   `**** generator`:
     -   what data is provided <i class="text-c-fgDeeper i-material-symbols:keyboard-double-arrow-right"></i> how get page data and how parse the data <i class="text-c-fgDeeper i-material-symbols:keyboard-double-arrow-right"></i> realize the feature
 -   `vite-ssg` + `vite-plugin-pages` +`vite-plugin-vue-layouts` + `vite-plugin-md`:
     -   define page data <i class="text-c-fgDeeper i-material-symbols:keyboard-double-arrow-right"></i>parse page data <i class="text-c-fgDeeper i-material-symbols:keyboard-double-arrow-right"></i> realize the feature
-        :::
+:::
 
 Everything is created and maintained by myself, I can remember and parse whatever my create data. Enjoy lightweight, fast and free.<br>
 Don’t need to rely on any upstream depend, or cater to others people usage.<br>
-==Just enjoy. Just do it.==
+:m[Just enjoy. Just do it.]
 
 ## Thanks and inspired by
 
-> I prepared a clean personal website template if you like my website style
->
-> Preview | Guide: [https://vitesse-qb.netlify.app/](https://vitesse-qb.netlify.app/) <br>
-> Chinese Version. 中文版本: [https://vitesse-qb-cn.netlify.app/](https://vitesse-qb-cn.netlify.app/)
+- [ccbikai/astro-aria](https://github.com/ccbikai/astro-aria)
+- [static-templates/aria](https://github.com/static-templates/aria)
+- [antfu.me](https://antfu.me/)
+- [zxh.me](https://zxh.me/)
+- [shud.in](https://shud.in/)
+- [VitePress](https://vitepress.dev/)
 
--   Anthony Fu : https://antfu.me/
--   Shu Ding: https://shud.in/
--   Xiaohan Zou: https://zxh.me/
--   VitePress: https://vitepress.vuejs.org/
+- qbb.sh previous version - built with [Vitesse](https://github.com/antfu-collective/vitesse)
+    - [Preview](https://vitesse.qbb.sh/)
+    - [Source Code](https://github.com/Zhengqbbb/qbb.sh/tree/vitesse)
+    - [Vitesse ✘ qb theme template](https://vitesse-qb.netlify.app/)
+    - Chinese Version. 中文版本: [Vitesse ✘ qb theme template](https://vitesse-qb-cn.netlify.app/)
 
 Hope everyone can have a satisfied personal website. And now I will start to creative journey 🤗 ~

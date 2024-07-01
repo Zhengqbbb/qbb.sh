@@ -19,13 +19,13 @@ Most people would find the picture of our universe as an infinite tower of torto
 
 Recent breakthroughs in physics, made possible in part by fantastic new technologies, suggest answers to some of these longstanding questions. Someday these answers may seem as obvious to us as the earth orbiting the sun – or perhaps as ridiculous as a tower of tortoises. Only time (whatever that may be) will tell.
 
-_Italic text_. **Bold text**. **_Bold and nested italic text_**. ~~Strike through text~~. ==highlight text==.
+_Italic text_. **Bold text**. **_Bold and nested italic text_**. ~~Strike through text~~. :m[highlight text].
 
 ## Link
 
 [Post List](/posts)
 
-<i class="i-carbon:logo-github"></i> Github: https://github.com/Zhengqbbb
+:i{carbon:logo-github} Github: https://github.com/Zhengqbbb
 
 ## List
 
@@ -41,40 +41,26 @@ _Italic text_. **Bold text**. **_Bold and nested italic text_**. ~~Strike throug
 2. The second ...
 3. The third ...
 
----
-
-::::ul
-:::li 2022-02-15
-Create repo
-:::
-
-:::li 2022-02-28
-Released the first available version
-:::
-::::
-
----
-
-::::ol
-:::li Show help
-
-```sh
-npx czg --help
-```
-
-:::
-:::li Launch CLI
-
-```sh
-npx czg
-```
-
-:::
-::::
-
 ## Blockquote
 
 > **What is SSG**: static site generation. Static-generated websites are nothing new for developers. We have been building them since the beginning of the web.
+
+## GitHub-style alerts
+
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
 
 ## Table
 
@@ -127,53 +113,50 @@ class SomeClass:
 ... prompt'''
 ```
 
-## GitHub-style alerts
-
-> [!NOTE]
-> Highlights information that users should take into account, even when skimming.
-
-> [!TIP]
-> Optional information to help a user be more successful.
-
-> [!IMPORTANT]
-> Crucial information necessary for users to succeed.
-
-> [!WARNING]
-> Critical content demanding immediate user attention due to potential risks.
-
-> [!CAUTION]
-> Negative potential consequences of an action.
-
 ## Containers
 
-::: info
+:::info
 This is an info message.
 :::
 
-::: tip
+:::tip
 This is a tip message.
 :::
 
-::: warning
+:::warning
 This is a warning message.
 :::
 
-::: danger
+:::danger
 This is a dangerous warning message.
 :::
 
-::: details Details
+:::details
 This is a details block.
+:::
+
+### Custom Container Title
+
+:::info[<i class="i-uil:lightbulb-alt"></i> - Custom Title]
+This is an info message.
 :::
 
 ## Images
 
-![Image Example](/image/astro.webp) <!-- <size="400"> <class="m-auto"> <desc="Campground by [@Finca Los Vientos](https://reurl.cc/28aQr4) • Aug 2021"> -->
+![Image Example](/image/astro.webp)
+:f{.no-zoom.m-auto fclass=m-auto size=200}
 
-![Image Example](/image/astro.webp) <!-- <desc="Campground by [@Finca Los Vientos](https://reurl.cc/28aQr4) • Aug 2021"> -->
+![Image Example](/image/astro.webp)
+:f[Picture from [Astro Together 2024](https://astro.build/blog/astro-together-montreal/) • June 2024]{size=300 .m-auto fclass=m-auto}
+
+![Image Example](/image/astro.webp)
+:f[Picture from [Astro Together 2024](https://astro.build/blog/astro-together-montreal/) • June 2024]
+
+![Image Example](/image/astro.webp)
+:f
 
 ## CheckBox
-
+remarkImage
 - [x] Done - 1
 - [x] Done - 2
 - [ ] TODO - 3

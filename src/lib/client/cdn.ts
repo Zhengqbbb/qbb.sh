@@ -20,7 +20,11 @@ export function loadRemoteCDN(src: string, type: 'js' | 'css' = 'js') {
 }
 
 /** The CDN script loaded and Add Obj to window */
-export async function loadRemoteCDNs(mainSrc: string, backupSrc: string, type: 'js' | 'css' = 'js') {
+export async function loadRemoteCDNs(
+    mainSrc: string,
+    backupSrc: string,
+    type: 'js' | 'css' = 'js',
+) {
     try {
         type === 'js'
             ? await loadRemoteCDN(mainSrc, 'js')

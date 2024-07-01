@@ -3,12 +3,13 @@ import { getEntry } from 'astro:content'
 import Layout from '~/layouts/Default.astro'
 import DashText from '~/components/DashText.astro'
 import ListProject from '~/components/ListProject.astro'
+import Meta from '~/meta'
 
 const projectEntries = await getEntry('projects', 'index')
 ---
 
 <Layout
-    title="Projects - Q.Ben Zheng"
+    title={`Projects - ${Meta.author}`}
     desc="Q.Ben's Projects | Zhengqbbb"
     image="/og/projects.png"
     mainClass="mt-4 md:mt-6 lg:mt-8 xl4:mt-10 md:px-16"

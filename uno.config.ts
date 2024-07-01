@@ -22,6 +22,7 @@ export default defineConfig({
         colors: {
             ...expandColorsDepth('brand'),
             'c-bg': 'hsl(var(--c-bg) , %alpha)',
+            'c-bg-accent': 'hsl(var(--c-bg-accent) , %alpha)',
             'c-fg': 'hsl(var(--c-fg) , %alpha)',
             'c-fg-1': 'hsl(var(--c-fg-1) , %alpha)',
             'c-fg-2': 'hsl(var(--c-fg-2) , %alpha)',
