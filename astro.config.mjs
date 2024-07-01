@@ -21,6 +21,7 @@ export default defineConfig({
             reload: ['./src/lib/client/main.js'],
             restart: ['./src/lib/markdown/**/*.ts'],
         })],
+        optimizeDeps: { exclude: ['@resvg/resvg-js'] },
     },
     prefetch: {
         defaultStrategy: 'viewport',

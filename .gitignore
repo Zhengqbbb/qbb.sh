@@ -1,6 +1,7 @@
 # build output
 dist/
 src/lib/client/main.js
+src/lib/server/og/test.png
 
 # generated types
 .astro/

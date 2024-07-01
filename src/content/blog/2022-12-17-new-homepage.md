@@ -1,6 +1,6 @@
 ---
 title: New homepage
-desc: Building a static personal website by Vite-SSG
+desc: Building a static personal website journey
 ---
 
 ![vitesse-qb](/image/new-homepage.svg)
