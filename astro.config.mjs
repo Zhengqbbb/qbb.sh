@@ -10,6 +10,9 @@ import { rehypePlugins, remarkPlugins } from './src/lib/markdown'
 
 export default defineConfig({
     site: Meta.site,
+    build: {
+        format: 'preserve',
+    },
     integrations: [
         UnoCSS({ injectReset: true }),
         AstroPWA(vitePWAOptions),
