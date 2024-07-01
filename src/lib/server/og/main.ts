@@ -25,7 +25,7 @@ import { genPNG } from './index'
             const targetFile = resolve(__OUTPUT, tmpPath)
 
             // has been generated
-            if (fs.existsSync(targetFile))
+            if (fs.existsSync(targetFile) || !tmpPath.startsWith('20'))
                 return false
 
             const raw = await readFile(p, 'utf-8')

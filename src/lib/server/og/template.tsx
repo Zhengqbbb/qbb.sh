@@ -15,8 +15,8 @@ export default (
             <div tw="flex absolute h-auto w-full">
                 <div tw="flex flex-col absolute left--2rem top-0 h-auto w-1/2">
                     <div tw="flex relative h-[30px] w-full flex h-[60px]">
-                        <div tw="w-66px h-66px" style={{ backgroundColor: 'hsl(0,0%,5.8%)' }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor: 'hsl(0,0%,5.8%)', borderLeft: '1px dashed #3b3b3b' }}></div>
+                        <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a' }}></div>
+                        <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b' }}></div>
                         <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b' }}></div>
                         <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b' }}></div>
                         <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b' }}></div>
@@ -69,7 +69,7 @@ export default (
                         <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b' }}></div>
                         <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b' }}></div>
                         <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b' }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b', borderRight: '1px dashed #3b3b3b' }}></div>
+                        <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b' }}></div>
                     </div>
                     <div tw="flex relative h-[30px] w-full flex h-[60px]">
                         <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b', borderTop: '1px dashed #3b3b3b' }}></div>
@@ -79,7 +79,7 @@ export default (
                         <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b', borderTop: '1px dashed #3b3b3b' }}></div>
                         <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b', borderTop: '1px dashed #3b3b3b' }}></div>
                         <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b', borderTop: '1px dashed #3b3b3b' }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b', borderTop: '1px dashed #3b3b3b', borderRight: '1px dashed #3b3b3b' }}></div>
+                        <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b', borderTop: '1px dashed #3b3b3b' }}></div>
                     </div>
                     <div tw="flex relative h-[30px] w-full flex h-[60px]">
                         <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b', borderTop: '1px dashed #3b3b3b' }}></div>
@@ -89,7 +89,7 @@ export default (
                         <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b', borderTop: '1px dashed #3b3b3b' }}></div>
                         <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b', borderTop: '1px dashed #3b3b3b' }}></div>
                         <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b', borderTop: '1px dashed #3b3b3b' }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b', borderTop: '1px dashed #3b3b3b', borderRight: '1px dashed #3b3b3b' }}></div>
+                        <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderLeft: '1px dashed #3b3b3b', borderTop: '1px dashed #3b3b3b' }}></div>
                     </div>
                     <div tw="flex relative h-[30px] w-full flex h-[60px]">
                         <div tw="w-66px h-66px" style={{ backgroundColor: '#0a0a0a', borderTop: '1px dashed #3b3b3b' }}></div>

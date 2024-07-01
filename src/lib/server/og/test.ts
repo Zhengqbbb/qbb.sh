@@ -12,8 +12,21 @@ import { genPNG } from './index'
     const _DIRNAME = dirname(fileURLToPath(import.meta.url))
     // const res = await genSVG()
     // console.log(res)
+
+    /** Debug */
+    // await genPNG(
+    //     resolve(_DIRNAME, './test.png'),
+    // )
+
+    // await genPNG(
+    //     resolve(_DIRNAME, '../../../../public/og/blog.png'),
+    //     'Blog - Q.Ben Zheng',
+    //     'Q.Ben\'s Blog | Zhengqbbb',
+    // )
     await genPNG(
-        resolve(_DIRNAME, './test.png'),
+        resolve(_DIRNAME, '../../../../public/og/project.png'),
+        'Projects - Q.Ben Zheng',
+        'Q.Ben\'s Projects | Zhengqbbb',
     )
 }()).catch((err: Error) => {
     console.error(err)
