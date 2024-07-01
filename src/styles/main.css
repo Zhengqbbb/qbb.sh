@@ -683,5 +683,7 @@ hr.prose::after,
 }
 .prose .medium-zoom-image {
     transition-property: filter,opacity,transform !important;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition-duration: 400ms !important;
 }
 /** EndSection: */
