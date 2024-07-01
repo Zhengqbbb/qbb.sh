@@ -107,7 +107,7 @@ added [31m1[0m packages, and audited 2 packages in [31m408 ms[0m
 [31m1.3M[0m ./node_modules
 ```
 
-细看后你会发现它的项目依赖非常复杂，共计依赖==147个==，共计大小==102MB==，我无法接受！<br>
+细看后你会发现它的项目依赖非常复杂，共计依赖:m[147个]==，共计大小:m[102MB]，我无法接受！<br>
 所以我非常不建议将 `commitizen` 作为项目依赖项
 
 > 当然 `czg` 其实还可以做到更小，但是为了兼顾作为适配器需要使用 [`inquirer`](https://github.com/SBoudrias/Inquirer.js) TUI 库，不然使用其他 TUI 库或是原生写应该可以做到300-500KB左右 🧐

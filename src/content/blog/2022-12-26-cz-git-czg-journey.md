@@ -111,7 +111,7 @@ added [31m1[0m packages, and audited 2 packages in [31m408 ms[0m
 [31m1.3M[0m ./node_modules
 ```
 
-You will find that `commitizen` dependencies are complicated.<br> The total dependencies ==147==, the total size ==102 MB==, **I can't accept it**!<br>
+You will find that `commitizen` dependencies are complicated.<br> The total dependencies :m[147], the total size :m[102 MB], **I can't accept it**!<br>
 So I don't recommend using `commitizen` as a project dependency.
 
 And actually `czg` can be made smaller, but in order to take as an adapter, I need to use [`inquirer`](https://github.com/SBoudrias/Inquirer.js) TUI library, otherwise use other TUI libraries or develop by myself It can around 300-500KB 🧐

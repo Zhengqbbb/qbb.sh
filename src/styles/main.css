@@ -129,6 +129,10 @@ pre {
 /** EndSection: */
 
 /** Section: Prose - Element */
+.prose .custom-block,
+.prose .astro-code,
+.prose .table-wrap,
+.prose blockquote,
 .prose video:not(.c),
 .prose figure:not(.c),
 .prose img:not(.c),
@@ -226,7 +230,7 @@ pre {
     font-size: 1.25rem;
     font-weight: 600;
     line-height: 1.6em;
-    color: hsl(var(--c-fg));
+    color: hsl(var(--c-fg-3));
 
 }
 
@@ -333,13 +337,10 @@ h6:focus .header-anchor {
 
 /** Section: Prose - Code */
 .prose .astro-code {
-    --at-apply: shadow-lg;
+    --at-apply: shadow-lg rd-xs;
     position: relative;
     line-height: 0.5rem;
     border-width: 1px;
-    border-radius: 8px;
-    margin-top: var(--c-space);
-    margin-bottom: var(--c-space);
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
@@ -468,8 +469,8 @@ hr.prose::after,
 .prose ol:not(.c) > li,
 .prose ul:not(.c):not(.contains-task-list) > li {
     position: relative;
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
+    margin-top: .6666667em;
+    margin-bottom: .6666667em;
     padding-left: 1.2em;
 }
 
@@ -514,8 +515,6 @@ hr.prose::after,
     quotes: "\201C" "\201D" "\2018" "\2019";
     position: relative;
     color: hsl(var(--c-fg-2));
-    margin-top: var(--c-space);
-    margin-bottom: var(--c-space);
     padding-left: 1rem;
     border-left-width: 0.25em;
     border-left-style: solid;
@@ -534,7 +533,7 @@ hr.prose::after,
 
 /** Section: Prose - Table */
 .prose .table-wrap {
-    --at-apply: my-space overflow-x-auto;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
 .prose table {
@@ -602,6 +601,75 @@ hr.prose::after,
 }
 .prose .markdown-alert .markdown-alert-title {
     margin-bottom: 0.5em;
+}
+/** EndSection: */
+
+/** Section: Prose - Container */
+.prose .custom-block {
+    --at-apply: rd-xs;
+    color: hsl(var(--c-fg-3));
+    padding: 16px 16px 8px;
+    line-height: 24px;
+    font-size: 15px;
+    border-width: 1px;
+}
+.prose .custom-block p:first-child {
+    margin: 0;
+}
+.prose .custom-block p {
+    margin: 8px 0;
+    line-height: 24px;
+}
+
+.prose .custom-block.details summary,
+.prose .custom-block-title {
+    font-weight: 600;
+}
+
+.prose .custom-block.info {
+    --at-apply: shadow-sm;
+    border-color: var(--c-block-info-border);
+}
+
+.prose .custom-block.details {
+    --at-apply: shadow;
+    padding: 16px;
+    border-style: dashed;
+    border-color: var(--c-block-info-border);
+}
+.prose .custom-block.details summary {
+    cursor: pointer;
+}
+
+.prose .custom-block.tip {
+    border-color: var(--c-block-tip-border);
+    background-color: var(--c-block-tip-bg);
+}
+.prose .custom-block.warning {
+    border-color: var(--c-block-warning-border);
+    background-color: var(--c-block-warning-bg);
+}
+.prose .custom-block.danger {
+    border-color: var(--c-block-danger-border);
+    background-color: var(--c-block-danger-bg);
+}
+
+.prose .custom-block :not(pre) > code::before,
+.prose .custom-block :not(pre) > code::after {
+    content: '`';
+    font-size: 12px;
+}
+.prose .custom-block :not(pre) > code {
+    border: none;
+}
+.prose .custom-block.tip :not(pre) > code {
+    background-color: var(--c-block-tip-code-bg);
+}
+.prose .custom-block.warning :not(pre) > code {
+    background-color: var(--c-block-warning-code-bg);
+}
+.prose .custom-block.danger :not(pre) > code {
+    background-color: var(--c-block-danger-code-bg);
 }
 /** EndSection: */
 

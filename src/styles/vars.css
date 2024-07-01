@@ -25,6 +25,7 @@
     --c-fg-4: 0, 0%, 0%;
     --c-border: 0, 0%, 84%;
     --c-border-accent: 0, 0%, 78%;
+    --un-default-border-color: hsl(var(--c-border));
     --c-accent: 215, 14%, 34%;
     --c-code-bg: 0, 0%, 97%;
     --c-inner-code-bg: 220, 11%, 95%;
@@ -32,7 +33,21 @@
     --c-scrollbar-bg: 0, 0%, 100%;
     --c-scrollbar-hover: 0, 0%, 73%;
 
-    --un-default-border-color: hsl(var(--c-border));
+    --c-green-soft: hsla(160, 67%, 55%, 0.14);
+    --c-yellow-soft: hsla(45, 93%, 47%, 0.14);
+    --c-red-soft: hsla(350, 83%, 68%, 0.14);
+    --c-block-tip-bg: var(--c-green-soft);
+    --c-block-tip-code-bg: var(--c-green-soft);
+    --c-block-tip-border: transparent;
+    --c-block-warning-bg: var(--c-yellow-soft);
+    --c-block-warning-code-bg: var(--c-yellow-soft);
+    --c-block-warning-border: transparent;
+    --c-block-danger-bg: var(--c-red-soft);
+    --c-block-danger-code-bg: var(--c-red-soft);
+    --c-block-danger-border: transparent;
+    --c-block-info-border: hsl(var(--c-border-accent));
+    --c-block-details-border: hsl(var(--c-border-accent));
+
     --c-font-family-base: 'Chinese Quotes', 'Inter var experimental',
         'Inter var', 'Inter', 'MiSans', 'Noto Sans SC', 'ui-sans-serif',
         'system-ui', '-apple-system', 'BlinkMacSystemFont', 'PingFang SC',
@@ -49,10 +64,10 @@
 .dark {
     --c-bg: 0, 0%, 4%;
     --c-bg-accent: 0, 0%, 10%;
-    --c-fg: 216, 11%, 81%;
+    --c-fg: 216, 12%, 84%;
     --c-fg-1: 220, 1%, 49%;
     --c-fg-2: 0, 0%, 64%;
-    --c-fg-3: 0, 0%, 88%;
+    --c-fg-3: 0, 0%, 95%;
     --c-fg-4: 0, 0%, 100%;
     --c-border: 0, 0%, 22%;
     --c-border-accent: 0, 0%, 32%;
@@ -62,4 +77,10 @@
     --c-scrollbar: 0, 0%, 15%;
     --c-scrollbar-bg: 0, 0%, 7%;
     --c-scrollbar-hover: 0, 0%, 22%;
+    --c-green-soft: hsla(160, 70%, 52%, 0.16);
+    --c-yellow-soft: hsla(48, 100%, 50%, 0.16);
+    --c-red-soft: hsla(350, 94%, 62%, 0.16);
+    --c-block-tip-border: hsla(160, 70%, 52%, 0.1);
+    --c-block-warning-border: hsla(48, 100%, 50%, 0.1);
+    --c-block-danger-border: hsla(350, 94%, 62%, 0.1);
 }

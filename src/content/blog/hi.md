@@ -3,6 +3,9 @@ title: Hello World
 desc: Hi there! Welcome to my blog
 ---
 
+![Image Example](/image/astro.webp)
+:f[Picture from [Astro Together 2024](https://astro.build/blog/astro-together-montreal/) • June 2024]{size=400 fclass=m-auto}
+
 ## H2 Heading
 
 ### H3 Heading
@@ -29,17 +32,22 @@ _Italic text_. **Bold text**. **_Bold and nested italic text_**. ~~Strike throug
 
 ## List
 
--   foo
--   bar
--   fruit
-    -   apple
-    -   banana
+### Tips for Embracing Minimalist Coding
+
+- **Refactor Relentlessly**: Always be on the lookout for ways to streamline and optimize your code.
+- **Embrace White Space**: Just as in design, white space in code can improve readability and comprehension.
+- **Prioritize Functionality**: Before adding a new feature, ask yourself if it truly adds value or just complicates things.
+- **Stay Updated**: Newer coding practices and languages often offer more concise ways to achieve the same results.
+
 
 ---
 
-1. The first ...
-2. The second ...
-3. The third ...
+### 🌱 Growth Beyond Blogging
+
+1. **Monetize with Ads**: Once you have a steady stream of visitors, consider integrating ads. Platforms like Google AdSense can be a good starting point.
+2. **Affiliate Marketing**: Recommend products or services and earn a commission for every sale made through your referral.
+3. **Sell Digital Products**: Leverage your expertise to create and sell e-books, courses, or software tools.
+4. **Offer Consultation Services**: As an expert in your field, you can offer consultation services to businesses or individuals.
 
 ## Blockquote
 
@@ -128,7 +136,7 @@ This is a warning message.
 :::
 
 :::danger
-This is a dangerous warning message.
+This is a dangerous `warning` message.
 :::
 
 :::details
@@ -137,7 +145,7 @@ This is a details block.
 
 ### Custom Container Title
 
-:::info[<i class="i-uil:lightbulb-alt"></i> - Custom Title]
+:::tip[<i class="i-uil:lightbulb-alt"></i> - Custom Title]
 This is an info message.
 :::
 

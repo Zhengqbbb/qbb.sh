@@ -22,6 +22,8 @@ const mainCodeRaw = getMainFileRaw()
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <BaseHead {...props} />
+        <script is:inline type="module" set:html={mainCodeRaw}></script>
+        <script src="/src/minor.ts"></script>
     </head>
     <body class="min-h-100vh">
         <SquareLines />
@@ -30,7 +32,5 @@ const mainCodeRaw = getMainFileRaw()
             <slot />
         </div>
 
-        <script is:inline type="module" set:html={mainCodeRaw}></script>
-        <script src="/src/minor.ts"></script>
     </body>
 </html>

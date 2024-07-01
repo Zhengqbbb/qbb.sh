@@ -8,7 +8,7 @@ desc: Happy new year. Bye 2022. Hello 2023
 
 本来想着一月份发的文章给我拖到现在才发 😆 但平时真的抽不开一点时间来好好写这篇总结，只好在这个深夜好好来补一下这篇文章 😁
 
-## X
+## X-CMD
 
 今年是全职开发 CLI 工具<sup> POSIX SHELL 与 AWK </sup>的第二年，这段时间就要进入内测阶段<br>而我主要负责 theme 与 git 生态领域，和一些基建模块
 
@@ -76,7 +76,7 @@ desc: Happy new year. Bye 2022. Hello 2023
 
 ## 未来
 
-那肯定是 X 慢慢要走向公测了，毕竟这几年的心血都在这了，也该见证成果了<br>
+那肯定是 X-CMD 慢慢要走向公测了，毕竟这几年的心血都在这了，也该见证成果了<br>
 **希望大家到时候可以支持一下**，嘿嘿
 
 今年在 Node.js 也出了一款 Terminal UI [「clack」](https://github.com/natemoo-re/clack)，看着好精美，体积也小，等稳定以后可以基于 clack 之上进行扩展 UI 部件，然后我还想再写多几款实用的 Node.js CLI 🤩
