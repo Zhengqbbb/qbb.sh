@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config'
 import UnoCSS from 'unocss/astro'
 import AstroPWA from '@vite-pwa/astro'
+import Sitemap from '@astrojs/sitemap'
 import ViteRestart from 'vite-plugin-restart'
 import Meta from './src/meta'
 import vitePWAOptions from './src/lib/server/pwa'
@@ -12,6 +13,7 @@ export default defineConfig({
     integrations: [
         UnoCSS({ injectReset: true }),
         AstroPWA(vitePWAOptions),
+        Sitemap(),
     ],
     vite: {
         build: { cssCodeSplit: false },
