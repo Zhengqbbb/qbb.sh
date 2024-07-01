@@ -17,7 +17,11 @@ export async function GET() {
             description: item.data.desc,
             author: `${Meta.email} (${Meta.author})`,
             pubDate: new Date(item.data.date!.iso),
-            customData: `<enclosure url="${Meta.site}/og/posts-${item.slug}.png" length="0" type="image/png" />`,
+            enclosure: {
+                url: `${Meta.site}/og/posts-${item.slug}.png`,
+                length: 0,
+                type: 'image/png',
+            },
         })),
     })
 }
