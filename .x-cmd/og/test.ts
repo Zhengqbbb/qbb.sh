@@ -8,7 +8,7 @@ import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import process from 'node:process'
 import { resolve } from 'pathe'
-import { genPNG, genSVG } from './index'
+import { genPNG } from './index'
 
 (async function () {
     const __DIRNAME = dirname(fileURLToPath(import.meta.url))
