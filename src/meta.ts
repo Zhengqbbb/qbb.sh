@@ -8,7 +8,7 @@ export default {
     author: 'Q.Ben Zheng',
     appName: 'Q.Ben',
     // social links
-    ogImg: 'https://qbb.sh/og/index.png?v=240702',
+    ogImg: 'https://qbb.sh/og/index.png?v=240703',
     github: 'https://github.com/Zhengqbbb',
     twitter: 'https://twitter.com/zhengqbbb',
     twitterCreator: '@zhengqbbb',

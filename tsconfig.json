@@ -12,5 +12,5 @@
       "vite-plugin-pwa/info"
     ]
   },
-  "include": ["src/**/*.astro", "src/**/*.ts"]
+  "include": ["src/**/*.astro", "src/**/*.ts", ".x-cmd/**/*.ts"]
 }

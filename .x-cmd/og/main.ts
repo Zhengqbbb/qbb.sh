@@ -4,24 +4,20 @@ import { readFile } from 'node:fs/promises'
 import fs from 'node:fs'
 import fg from 'fast-glob'
 import matter from 'gray-matter'
-import { resolve } from 'pathe'
+import { basename, resolve } from 'pathe'
 import { genPNG } from './index'
 
 (async function () {
     const __DIRNAME = dirname(fileURLToPath(import.meta.url))
-    const __SOURCE = resolve(__DIRNAME, '../../../content/blog')
-    const __OUTPUT = resolve(__DIRNAME, '../../../../public/og')
+    const __SOURCE = resolve(__DIRNAME, '../../src/content/blog')
+    const __OUTPUT = resolve(__DIRNAME, '../../public/og')
 
     const files = fg.sync('**/*.{md,mdx}', { cwd: __SOURCE, absolute: true })
 
     return await Promise.all(
         files.map(async (p) => {
-            const tmpPath = p
-                .replace(__SOURCE, '')
+            const tmpPath = basename(p)
                 .replace(/(\.md|\.mdx)$/, '.png')
-                .replaceAll('/', '-')
-                .substring(1)
-                .replace(/(-index\.png)$/, '.png')
             const targetFile = resolve(__OUTPUT, tmpPath)
 
             // has been generated

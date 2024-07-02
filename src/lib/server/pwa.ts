@@ -35,7 +35,7 @@ export default {
         theme_color: '#0a0a0a',
         icons: [
             {
-                src: '/icon/apple-touch-120x120.png',
+                src: '/apple-touch-120x120.png',
                 sizes: '120x120',
                 type: 'image/png',
             },

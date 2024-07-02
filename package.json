@@ -12,7 +12,7 @@
     "build": "run-s gen:og build:main build:docs",
     "build:docs": "astro check && astro build",
     "build:main": "esbuild src/main.ts --minify --bundle --format=esm --outdir=src/lib/client",
-    "gen:og": "tsx src/lib/server/og/main.ts",
+    "gen:og": "tsx .x-cmd/og/main.ts",
     "preview": "astro preview --host --port 8888",
     "lint": "eslint .",
     "cz": "czg"
