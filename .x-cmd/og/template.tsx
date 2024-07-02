@@ -13,8 +13,8 @@ export default (
     const borderRight = bgBorderStyle
     const borderLeft = bgBorderStyle
     const bgBorderLen = 8
-    const bgLeftMask = ` linear-gradient(to top left , ${backgroundColor} 40% , transparent 100%  )`
-    const bgRightMask = `linear-gradient(to top right, ${backgroundColor} 40% , transparent 100%  )`
+    const bgLeftMask = ` linear-gradient(to top left , ${backgroundColor} 50% , transparent 70%, ${backgroundColor} 89%, transparent 90%, transparent 100%  )`
+    const bgRightMask = `linear-gradient(to top right, ${backgroundColor} 50% , transparent 70%, ${backgroundColor} 89%, transparent 90%, transparent 100%  )`
 
     return (
         <div
