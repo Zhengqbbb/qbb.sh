@@ -5,7 +5,7 @@ desc: 为什么会开发 cz-git 和 czg，我的开发心路历程
 
 
 ![cz-git-logo](/image/cz-git.webp)
-:f[cz-git: https://cz-git.qbb.sh/zh/<br>czg : https://cz-git.qbb.sh/zh/cli/]{size=500 fclass=m-auto .no-zoom}
+:f[cz-git: https://cz-git.qbb.sh/zh/<br>czg : https://cz-git.qbb.sh/zh/cli/]{size=500 figClass=m-auto .no-zoom}
 
 > 什么是 [Commitizen CLI](https://github.com/commitizen/cz-cli) : 基于 Node.js 的命令行工具，交互式辅助生成规范格式的 `git commit message` <br>
 > 什么是 [Commitizen Adapter](https://github.com/commitizen/cz-cli#adapters)<sup>「适配器」</sup> : 更换 Commitizen CLI 交互行为的插件 <br>

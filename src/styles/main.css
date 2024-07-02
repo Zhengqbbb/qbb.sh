@@ -416,7 +416,7 @@ hr.prose::before,
 hr.prose::after,
 .prose hr:not(.c)::after {
     --at-apply: content-empty absolute inset-0 bg-gradient-circle;
-    --at-apply: from-transparent to-c-bg from-40%;
+    --at-apply: from-transparent from-10% to-c-bg;
 }
 /** EndSection: */
 
@@ -626,6 +626,10 @@ hr.prose::after,
     font-weight: 600;
 }
 
+.prose .custom-block.details summary {
+    cursor: pointer;
+}
+
 .prose .custom-block.info {
     --at-apply: shadow-sm;
     border-color: var(--c-block-info-border);
@@ -637,8 +641,9 @@ hr.prose::after,
     border-style: dashed;
     border-color: var(--c-block-info-border);
 }
-.prose .custom-block.details summary {
-    cursor: pointer;
+
+.prose .custom-block.details *:last-child {
+    margin-bottom: 0;
 }
 
 .prose .custom-block.tip {

@@ -4,7 +4,7 @@ desc: Hi there! Welcome to my blog
 ---
 
 ![Image Example](/image/astro.webp)
-:f[Picture from [Astro Together 2024](https://astro.build/blog/astro-together-montreal/) • June 2024]{size=400 fclass=m-auto}
+:f[Picture from [Astro Together 2024](https://astro.build/blog/astro-together-montreal/) • June 2024]{size=400 figClass=m-auto}
 
 ## H2 Heading
 
@@ -152,10 +152,10 @@ This is an info message.
 ## Images
 
 ![Image Example](/image/astro.webp)
-:f{.no-zoom.m-auto fclass=m-auto size=200}
+:f{.no-zoom.m-auto figClass=m-auto size=200}
 
 ![Image Example](/image/astro.webp)
-:f[Picture from [Astro Together 2024](https://astro.build/blog/astro-together-montreal/) • June 2024]{size=300 .m-auto fclass=m-auto}
+:f[Picture from [Astro Together 2024](https://astro.build/blog/astro-together-montreal/) • June 2024]{size=300 .m-auto figClass=m-auto}
 
 ![Image Example](/image/astro.webp)
 :f[Picture from [Astro Together 2024](https://astro.build/blog/astro-together-montreal/) • June 2024]

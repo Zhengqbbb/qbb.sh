@@ -21,7 +21,7 @@ function calcSize(size: string) {
  * ====> only add lazy loading, onload, onerror, initalClass, and skeleton wrap with figure
  *
  * ![Image Example](/image/astro.webp)
- * :f{.no-zoom.m-auto fclass=m-auto size=200}
+ * :f{.no-zoom figClass=m-auto size=200}
  * ====> extra add size to width, hight and class "no-zoom m-auto" to image and "m-auto" to figure
  *
  * ![Image Example](/image/astro.webp)
@@ -38,6 +38,7 @@ export function remarkImage(): ReturnType<RemarkPlugin> {
             if (directiveIdx === -1)
                 return
 
+            console.log('imageNode', parent)
             const directiveNode = parent.children[directiveIdx]
             const directiveNodeAttrs = directiveNode?.attributes || {}
             imageNode.data ??= {}
@@ -52,6 +53,7 @@ export function remarkImage(): ReturnType<RemarkPlugin> {
             // #endregion
             // #region - Handle attributes and size to width, hight
             let figClass = ' '
+            let capClass = ''
             for (const attr in directiveNodeAttrs) {
                 if (attr === 'size') {
                     const { width, height } = calcSize(directiveNodeAttrs[attr])
@@ -59,8 +61,12 @@ export function remarkImage(): ReturnType<RemarkPlugin> {
                     imageNode.data.hProperties.height = height
                     delete directiveNodeAttrs[attr]
                 }
-                else if (attr === 'fclass') {
+                else if (attr === 'figClass') {
                     figClass += directiveNodeAttrs[attr]
+                    delete directiveNodeAttrs[attr]
+                }
+                else if (attr === 'capClass') {
+                    capClass += directiveNodeAttrs[attr]
                     delete directiveNodeAttrs[attr]
                 }
                 else {
@@ -92,7 +98,7 @@ export function remarkImage(): ReturnType<RemarkPlugin> {
             if (Array.isArray(directiveNodeCaption) && directiveNodeCaption.length > 0) {
                 figcaptionNode = {
                     type: 'paragraph',
-                    data: { hName: 'figcaption' },
+                    data: { hName: 'figcaption', hProperties: { class: capClass } },
                     children: directiveNodeCaption,
                 }
             }

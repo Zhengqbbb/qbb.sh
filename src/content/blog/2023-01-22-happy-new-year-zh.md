@@ -50,7 +50,7 @@ desc: Happy new year. Bye 2022. Hello 2023
 ## 旅游
 
 ![中山温泉宾馆](/image/2022-zhongshan.webp)
-:f[[🚩 中山温泉宾馆](https://www.google.com/maps/place/%E4%B8%AD%E5%B1%B1%E6%B8%A9%E6%B3%89%E5%AE%BE%E9%A6%86/@22.370977,113.4586033,17z/data=!3m1!4b1!4m9!3m8!1s0x3403d5e9716c34dd:0x7a5fae5b232a399e!5m2!4m1!1i2!8m2!3d22.370977!4d113.460792!16s%2Fg%2F1tmph37f?hl=zh-cn)]{size=664x498}
+:f[[🚩🚗 中山温泉宾馆](https://www.google.com/maps/place/%E4%B8%AD%E5%B1%B1%E6%B8%A9%E6%B3%89%E5%AE%BE%E9%A6%86/@22.370977,113.4586033,17z/data=!3m1!4b1!4m9!3m8!1s0x3403d5e9716c34dd:0x7a5fae5b232a399e!5m2!4m1!1i2!8m2!3d22.370977!4d113.460792!16s%2Fg%2F1tmph37f?hl=zh-cn)]{size=664x498}
 
 因为疫情，今年只和家人去了一趟中山温泉宾馆度过了一个周末<br>
 但正如我所料！珠三角没有真温泉，全是游泳池 ! 😑

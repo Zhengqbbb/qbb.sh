@@ -10,7 +10,7 @@ export default {
     // social links
     ogImg: 'https://qbb.sh/og/index.png?v=240703',
     github: 'https://github.com/Zhengqbbb',
-    twitter: 'https://twitter.com/zhengqbbb',
+    twitter: 'https://x.com/zhengqbbb',
     twitterCreator: '@zhengqbbb',
     instagram: 'https://www.instagram.com/qbqiubin/',
     email: 'zhengqbbb@gmail.com',
