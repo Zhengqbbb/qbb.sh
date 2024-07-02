@@ -7,10 +7,10 @@ const { footerClass = '' } = Astro.props
 
 <footer
     flex="~ items-center justify-between gap-4 col-reverse sm:row"
-    class="my-10 text-sm"
+    class="my-10 text-sm text-c-fg-1"
     class:list={[footerClass]}
 >
-    <div class="text-c-fg-1">
+    <div>
         <a
             class="item"
             target="_blank"
@@ -20,7 +20,7 @@ const { footerClass = '' } = Astro.props
         {year} ©
         <a href={`mailto:${Meta.email}`} class="item"> {Meta.author}</a>
     </div>
-    <div class="text-c-fg-2" flex="~ items-center gap-1.4">
+    <div flex="~ items-center gap-1.4">
         <a href="/posts" class="item" title="Blog"> Blog </a>
         <span role="separator"></span>
         <a class="item" target="_blank" href={`${Meta.site}/feed.xml`}>RSS</a>

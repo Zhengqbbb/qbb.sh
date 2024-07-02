@@ -10,7 +10,6 @@ export default (
     const backgroundColor = '#0a0a0a'
     const bgBorderStyle = `1px dashed #3b3b3b`
     const borderTop = bgBorderStyle
-    const borderRight = bgBorderStyle
     const borderLeft = bgBorderStyle
     const bgBorderRow = 8
     const bgBorderCol = 8
@@ -45,10 +44,10 @@ export default (
                         ))
                     }
                     <div tw="flex relative h-[30px] w-full flex h-[60px]">
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop, borderRight }}></div>
+                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
                         {
                             Array(bgBorderRow - 1).fill(null).map((_, idx) => (
-                                <div tw="w-66px h-66px" style={{ backgroundColor, borderTop, borderRight }} key={`left-${idx}`}></div>
+                                <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }} key={`left-${idx}`}></div>
                             ))
                         }
                     </div>
@@ -83,7 +82,7 @@ export default (
                                 <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }} key={`right-${idx}`}></div>
                             ))
                         }
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop, borderLeft }}></div>
+                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
                     </div>
                     <div
                         tw="absolute flex top-0 left-0 right-0 bottom-0 w-full"
