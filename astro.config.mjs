@@ -19,7 +19,7 @@ export default defineConfig({
         Sitemap(),
     ],
     vite: {
-        build: { cssCodeSplit: false },
+        // build: { cssCodeSplit: false },
         plugins: [ViteRestart({
             reload: ['./src/lib/client/main.js'],
             restart: ['./src/lib/markdown/**/*.ts'],
