@@ -8,7 +8,7 @@ import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import process from 'node:process'
 import { resolve } from 'pathe'
-import { genPNG } from './index'
+import { genPNG, genSVG } from './index'
 
 (async function () {
     const __DIRNAME = dirname(fileURLToPath(import.meta.url))
@@ -25,12 +25,12 @@ import { genPNG } from './index'
             resolve(_SOURCE, 'index.png'),
         )
         await genPNG(
-            resolve(_SOURCE, 'blog.png'),
+            resolve(_SOURCE, 'posts.png'),
             'Blog - Q.Ben Zheng',
             'Q.Ben\'s Blog | Zhengqbbb',
         )
         await genPNG(
-            resolve(_SOURCE, 'project.png'),
+            resolve(_SOURCE, 'projects.png'),
             'Projects - Q.Ben Zheng',
             'Q.Ben\'s Projects | Zhengqbbb',
         )

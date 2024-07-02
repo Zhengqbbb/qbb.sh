@@ -12,9 +12,10 @@ export default (
     const borderTop = bgBorderStyle
     const borderRight = bgBorderStyle
     const borderLeft = bgBorderStyle
-    const bgBorderLen = 8
-    const bgLeftMask = ` linear-gradient(to top left , ${backgroundColor} 50% , transparent 70%, ${backgroundColor} 89%, transparent 90%, transparent 100%  )`
-    const bgRightMask = `linear-gradient(to top right, ${backgroundColor} 50% , transparent 70%, ${backgroundColor} 89%, transparent 90%, transparent 100%  )`
+    const bgBorderRow = 8
+    const bgBorderCol = 8
+    const bgLeftMask = `  linear-gradient(to top left , ${backgroundColor} 50% , transparent 70%, ${backgroundColor} 89%, transparent 98%, transparent 100%)`
+    const bgRightMask = ` linear-gradient(to top right, ${backgroundColor} 46% , transparent 70%, ${backgroundColor} 89%, transparent 98%, transparent 100%)`
 
     return (
         <div
@@ -25,37 +26,31 @@ export default (
                 <div tw="flex flex-col absolute left--2rem top-0 h-auto w-1/2">
                     <div tw="flex relative h-[30px] w-full flex h-[60px]">
                         <div tw="w-66px h-66px" style={{ backgroundColor }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }}></div>
+                        {
+                            Array(bgBorderRow - 1).fill(null).map((_, idx) => (
+                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }} key={`left-${idx}`}></div>
+                            ))
+                        }
                     </div>
                     {
-                        Array(bgBorderLen).fill(null).map((_, idx) => (
+                        Array(bgBorderCol - 2).fill(null).map((_, idx) => (
                             <div tw="flex relative h-[30px] w-full flex h-[60px]" key={`left-${idx}`}>
                                 <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
-                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft, borderTop }}></div>
-                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft, borderTop }}></div>
-                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft, borderTop }}></div>
-                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft, borderTop }}></div>
-                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft, borderTop }}></div>
-                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft, borderTop }}></div>
-                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft, borderTop }}></div>
+                                {
+                                    Array(bgBorderRow - 1).fill(null).map((_, idx) => (
+                                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop, borderLeft }} key={`left-${idx}`}></div>
+                                    ))
+                                }
                             </div>
                         ))
                     }
                     <div tw="flex relative h-[30px] w-full flex h-[60px]">
                         <div tw="w-66px h-66px" style={{ backgroundColor, borderTop, borderRight }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
+                        {
+                            Array(bgBorderRow - 1).fill(null).map((_, idx) => (
+                                <div tw="w-66px h-66px" style={{ backgroundColor, borderTop, borderRight }} key={`left-${idx}`}></div>
+                            ))
+                        }
                     </div>
                     <div
                         tw="absolute flex top-0 left-0 right-0 bottom-0 w-full"
@@ -65,41 +60,33 @@ export default (
                 </div>
                 <div tw="flex flex-col absolute right--4.5rem top-0 h-auto w-1/2">
                     <div tw="flex relative h-[30px] w-full flex h-[60px]">
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }}></div>
+                        {
+                            Array(bgBorderRow).fill(null).map((_, idx) => (
+                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft }} key={`right-${idx}`}></div>
+                            ))
+                        }
                     </div>
                     {
-                        Array(bgBorderLen).fill(null).map((_, idx) => (
+                        Array(bgBorderCol - 2).fill(null).map((_, idx) => (
                             <div tw="flex relative h-[30px] w-full flex h-[60px]" key={`right-${idx}`}>
-                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft, borderTop }}></div>
-                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft, borderTop }}></div>
-                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft, borderTop }}></div>
-                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft, borderTop }}></div>
-                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft, borderTop }}></div>
-                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft, borderTop }}></div>
-                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft, borderTop }}></div>
-                                <div tw="w-66px h-66px" style={{ backgroundColor, borderLeft, borderTop }}></div>
+                                {
+                                    Array(bgBorderRow).fill(null).map((_, idx) => (
+                                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop, borderLeft }} key={`right-${idx}`}></div>
+                                    ))
+                                }
                             </div>
                         ))
                     }
                     <div tw="flex relative h-[30px] w-full flex h-[60px]">
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
-                        <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }}></div>
+                        {
+                            Array(bgBorderRow - 1).fill(null).map((_, idx) => (
+                                <div tw="w-66px h-66px" style={{ backgroundColor, borderTop }} key={`right-${idx}`}></div>
+                            ))
+                        }
                         <div tw="w-66px h-66px" style={{ backgroundColor, borderTop, borderLeft }}></div>
                     </div>
                     <div
-                        tw="absolute flex top-0 left-0 right-0 bottom--0 w-full"
+                        tw="absolute flex top-0 left-0 right-0 bottom-0 w-full"
                         style={{ backgroundImage: bgRightMask }}
                     >
                     </div>
@@ -125,7 +112,7 @@ export default (
                 </svg>
             </div>
 
-            <div tw="w-full flex relative mt--20 px-30 flex-col justify-center items-center">
+            <div tw="relative w-full flex relative mt--20 px-30 flex-col justify-center items-center">
                 <div tw="text-2.8rem font-bold text-white" style={{ whiteSpace: 'pre-wrap' }}>
                     {title}
                 </div>

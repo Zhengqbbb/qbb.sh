@@ -75,6 +75,7 @@ export async function genPNG(
             mode: 'width',
             value: 1200,
         },
+        imageRendering: 0,
     })
     return await writeFile(output, render.asPng())
 }
