@@ -3,8 +3,16 @@ title: New homepage
 desc: Building a static personal website journey
 ---
 
-![vitesse-qb](/image/new-homepage.svg)
+![vitesse-astro-qb](/image/new-homepage.svg)
 :f{size=664x318 .no-zoom}
+
+## 2024
+
+This website has been migrated to Astro, Anyway just for fun.
+
+- [Post Preview](/posts/hi) | [Source Code](https://github.com/Zhengqbbb/qbb.sh/tree/astro)
+
+- Vitesse Version: [Preview](https://vitesse.qbb.sh/) | [Source Code](https://github.com/Zhengqbbb/qbb.sh/tree/vitesse)
 
 ## 2022
 
