@@ -5,8 +5,10 @@ import Meta from '~/meta'
 const {
     title = Meta.title,
     desc = Meta.description,
-    image = Meta.ogImg,
+    image
 } = Astro.props
+
+const ogImg = image ? Meta.site + image : Meta.ogImg
 ---
 
 <title>{title}</title>
@@ -38,10 +40,10 @@ const {
 <meta name="twitter:creator" content={Meta.twitterCreator} >
 <meta name="twitter:title" content={title} >
 <meta name="twitter:description" content={desc} >
-<meta name="twitter:image" content={image} >
+<meta name="twitter:image" content={ogImg} >
 <meta property="og:title" content={title} >
 <meta property="og:description" content={desc} >
-<meta property="og:image" content={image} >
+<meta property="og:image" content={ogImg} >
 <meta property="og:type" content="website">
 <meta property="og:url" content={Meta.site}>
 <meta name="application-name" content="Q.Ben">
