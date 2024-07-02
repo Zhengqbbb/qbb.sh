@@ -4,7 +4,7 @@ desc: Hi there! Welcome to my blog
 ---
 
 ![Image Example](/image/astro.webp)
-:f[Picture from [Astro Together 2024](https://astro.build/blog/astro-together-montreal/) • June 2024]{size=400 figClass=m-auto}
+:f[Picture from [Astro Together 2024](https://astro.build/blog/astro-together-montreal/) • June 2024]{size=400 figClass=m-auto capClass=text-center}
 
 ## H2 Heading
 

@@ -4,15 +4,15 @@ desc: Building a static personal website journey
 ---
 
 ![vitesse-astro-qb](/image/new-homepage.svg)
-:f{size=664x318 .no-zoom}
+:f[[Post Preview](/posts/hi) | [Source Code](https://github.com/Zhengqbbb/qbb.sh/tree/astro)]{size=664x318 .no-zoom capClass=text-center}
 
 ## 2024
 
 This website has been migrated to Astro, Anyway just for fun.
 
-- [Post Preview](/posts/hi) | [Source Code](https://github.com/Zhengqbbb/qbb.sh/tree/astro)
+-
 
-- Vitesse Version: [Preview](https://vitesse.qbb.sh/) | [Source Code](https://github.com/Zhengqbbb/qbb.sh/tree/vitesse)
+- Previous Vitesse Version: [Preview](https://vitesse.qbb.sh/) | [Source Code](https://github.com/Zhengqbbb/qbb.sh/tree/vitesse)
 
 ## 2022
 
