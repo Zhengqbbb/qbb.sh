@@ -14,7 +14,7 @@ export async function getPostList(): Promise<CollectionEntry<'blog'>[]> {
     let res = posts
         .map((post) => {
             post.data.lang = post.slug.endsWith('-zh') ? 'zh' : 'en'
-            post.data.image ??= `/og/posts-${post.slug}.png`
+            post.data.image ??= `/og/${post.slug}.png`
             post.data.readTime = `${calcReadingTime(post.body).minutes}`
             post.data.link = `/posts/${post.slug}`
             const date = post.slug.substring(0, 10)
