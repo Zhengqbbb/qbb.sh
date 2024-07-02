@@ -38,7 +38,6 @@ export function remarkImage(): ReturnType<RemarkPlugin> {
             if (directiveIdx === -1)
                 return
 
-            console.log('imageNode', parent)
             const directiveNode = parent.children[directiveIdx]
             const directiveNodeAttrs = directiveNode?.attributes || {}
             imageNode.data ??= {}
