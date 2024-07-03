@@ -305,7 +305,7 @@ h6:focus .header-anchor {
     margin-top: 0.75em;
 }
 
-.figure div.error::before,
+.image-container div.error::before,
 .prose figure div.error::before {
     content: "";
     background: hsl(var(--c-bg-accent)) var(--c-icon-img-borken) no-repeat center / 50% 50%;
@@ -318,7 +318,7 @@ h6:focus .header-anchor {
     color: transparent;
     animation: none;
 }
-.figure div.error::after,
+.image-container div.error::after,
 .prose figure div.error::after{
     content: attr(alt);
     position: absolute;
@@ -538,29 +538,25 @@ hr.prose::after,
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
-.prose table {
+.prose table:not(c) {
     --at-apply: table-auto border-separate border-spacing-0;
     --at-apply: w-full text-left text-sm leading-1.75em;
   }
 
-.prose thead th {
+.prose table:not(c) thead th {
     --at-apply: text-c-fg font-normal align-middle py-2 px-3;
-    --at-apply: border-y;
+    --at-apply: border-y min-w-32 shadow-sm;
 }
 
-.prose thead th {
-    --at-apply: min-w-32;
-}
-
-.prose thead th:nth-child(1) {
+.prose table:not(c) thead th:nth-child(1) {
     --at-apply: border-l rd-lt-xs rd-lb-xs;
 }
 
-.prose thead th:last-child {
+.prose table:not(c) thead th:last-child {
     --at-apply: border-r rd-rt-xs rd-rb-xs;
 }
 
-.prose tbody td {
+.prose table:not(c) tbody td {
     --at-apply: align-inherit py-3 px-3 border-b-1;
 }
 /** EndSection: */
