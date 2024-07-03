@@ -10,8 +10,6 @@ desc: Building a static personal website journey
 
 This website has been migrated to Astro, Anyway just for fun.
 
--
-
 - Previous Vitesse Version: [Preview](https://vitesse.qbb.sh/) | [Source Code](https://github.com/Zhengqbbb/qbb.sh/tree/vitesse)
 
 ## 2022

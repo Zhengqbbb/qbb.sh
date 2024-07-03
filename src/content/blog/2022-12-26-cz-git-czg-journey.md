@@ -89,8 +89,6 @@ The final effect and interactive experience are comfortable and nice 🤗
 ![cz-git-demo](/image/cz-demo-2.gif)
 :f{size=664x257}
 
----
-
 ## The Development Journey of czg
 
 In an accidental docker environment test, The idea of `Commitizen CLI` alternatives development was born.

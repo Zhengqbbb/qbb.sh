@@ -164,7 +164,7 @@ This is an info message.
 :f
 
 ## CheckBox
-remarkImage
+
 - [x] Done - 1
 - [x] Done - 2
 - [ ] TODO - 3
