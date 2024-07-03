@@ -25,12 +25,12 @@ const mainCodeRaw = getMainFileRaw()
         <script is:inline type="module" set:html={mainCodeRaw}></script>
         <script src="/src/minor.ts"></script>
     </head>
+
     <body class="min-h-100vh">
         <SquareLines />
         <Header />
         <div class="px-7 xl:px-0">
             <slot />
         </div>
-
     </body>
 </html>

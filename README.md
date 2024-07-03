@@ -8,6 +8,10 @@ This is Q.Ben personal website. build with <a href="https://astro.build/">Astro<
     <samp>
         <a href="https://www.qbb.sh/">https://qbb.sh</a>
     </samp>
+    <br>
+    <samp>
+        <a href="https://www.qbb.sh/hi">https://qbb.sh/hi</a>
+    </samp>
 </p>
 
 <br>
