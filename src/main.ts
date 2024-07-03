@@ -18,9 +18,9 @@ document
     ?.addEventListener('click', window.toggleTheme)
 
 function setThemeColorHeadMeta() {
-    const themeColorHeadMeta = document.querySelector('meta[name="theme-color"]')
-    if (themeColorHeadMeta)
-        themeColorHeadMeta.setAttribute('content', window.isDark ? '#0a0a0a' : '#ffffff')
+    document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute('content', window.isDark ? '#0a0a0a' : '#ffffff')
 }
 // #endregion
 
@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.documentElement,
         { attributes: true, attributeFilter: ['class'] },
     )
-    setThemeColorHeadMeta()
 
     // Handle Header Sticky
     const headerEl = document.getElementById('header')
