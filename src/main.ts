@@ -61,8 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Add Theme Change Observer
     const themeChangeObs = new MutationObserver(() => {
         setThemeColorHeadMeta()
-        if (document.getElementById('giscus'))
-            toggleGiscusTheme(window.isDark)
+        !!document.getElementById('giscus') && toggleGiscusTheme(window.isDark)
     })
 
     themeChangeObs.observe(
