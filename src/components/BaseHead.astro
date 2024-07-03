@@ -15,7 +15,7 @@ const ogImg = image ? Meta.site + image : Meta.ogImg
 <meta name="description" content={desc}>
 <meta name="theme-color" content="#0a0a0a">
 <script id="check-dark-mode" is:inline>
-    (function(){var a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme-scheme")||"auto",t;e==="dark"||a&&e!=="light"?(document.documentElement.classList.toggle("dark",!0),window.isDark=!0):(t=document.querySelector('meta[name="theme-color"]'))==null||t.setAttribute("content","#ffffff");})();
+    (function(){(function(){var t;var r=window==null?void 0:window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme-scheme")||"auto";e==="dark"||e!=="light"&&r?(document.documentElement.classList.add("dark"),window.isDark=!0):(t=document.querySelector('meta[name="theme-color"]'))==null||t.setAttribute("content","#ffffff")})();})();
 </script>
 <script id="pre-register-function" is:inline>
     window.cImageOnLoad=function(){this.classList.remove("op-0", "image-unloaded"),this.removeAttribute("loading"),this.parentElement.classList.remove("before:content-empty")};
