@@ -1,0 +1,28 @@
+# shellcheck shell=dash disable=SC2016
+
+###
+ # A simple enter script to debug and genrate the opengraph image
+ #
+ # @powered by: X-CMD
+ # @see: https://www.x-cmd.com/mod/ws
+ # @usage: `xws gen-og`       - debug and test the image              => `tsx --watch .x-cmd/og/test.ts`
+ # @usage: `xws gen-og build` - genrate the home,projects,posts image => `tsx .x-cmd/og/test.ts build`
+ # @usage: `xws gen-og all`   - replace all the /public/og images     => `rm image`, `tsx .x-cmd/og/test.ts` `pnpm gen:og`
+###
+
+(
+# Section: Arg
+WORK_DIR="$(x wsroot)"
+
+# Section: Main
+case "${1}" in
+    a|all)
+                command find "$WORK_DIR/public/og" -type f -name "*.png" | \
+                    x arg1 'x rmrf $1'
+                command pnpm tsx "$WORK_DIR/.x-cmd/og/test.ts" build
+                command pnpm gen:og
+                ;;
+    b|build)    command pnpm tsx "$WORK_DIR/.x-cmd/og/test.ts" build    ;;
+    *)          command pnpm tsx --watch "$WORK_DIR/.x-cmd/og/test.ts"  ;;
+esac
+)

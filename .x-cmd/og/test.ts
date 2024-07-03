@@ -1,7 +1,7 @@
 /**
  * For test and debug, Run the file directly
  * @cli tsx .x-cmd/og/test.ts
- * @cli tsx watch .x-cmd/og/test.ts
+ * @cli tsx --watch .x-cmd/og/test.ts
  * @cli tsx .x-cmd/og/test.ts build
  */
 import process from 'node:process'
@@ -20,7 +20,6 @@ import { genPNG } from './index'
         )
     }
     else {
-        console.log(1)
         const __SOURCE = resolve(__DIRNAME, '../../public/og')
         await genPNG(
             resolve(__SOURCE, 'index.png'),
