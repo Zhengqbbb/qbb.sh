@@ -141,14 +141,6 @@ pre {
     margin-bottom: var(--c-space);
 }
 
-.prose img:not(.c) {
-    --at-apply: rd md:rd-md;
-}
-
-.prose img[src$=".gif"]:not(.c) {
-    --at-apply: border rd-xs shadow-lg;
-}
-
 .prose b:not(.c),
 .prose strong:not(.c),
 .prose mark {
@@ -289,6 +281,14 @@ h6:focus .header-anchor {
 /** EndSection: */
 
 /** Section: Prose - Image */
+.prose img:not(.c) {
+    --at-apply: rd md:rd-md;
+}
+
+.prose img[src$=".gif"]:not(.c) {
+    --at-apply: border rd-xs shadow-lg;
+}
+
 .prose figure:not(.c) {
     width: fit-content;
 }
@@ -305,6 +305,7 @@ h6:focus .header-anchor {
     margin-top: 0.75em;
 }
 
+.figure div.error::before,
 .prose figure div.error::before {
     content: "";
     background: hsl(var(--c-bg-accent)) var(--c-icon-img-borken) no-repeat center / 50% 50%;
@@ -317,6 +318,7 @@ h6:focus .header-anchor {
     color: transparent;
     animation: none;
 }
+.figure div.error::after,
 .prose figure div.error::after{
     content: attr(alt);
     position: absolute;

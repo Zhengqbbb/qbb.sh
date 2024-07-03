@@ -4,9 +4,11 @@
 This is Q.Ben personal website. build with <a href="https://astro.build/">Astro</a> and <a href="https://unocss.dev/">UnoCSS</a>
 </p>
 
-<pre align="center">
-  <a href="https://www.qbb.sh/">https://qbb.sh</a>
-</pre>
+<p align="center">
+    <samp>
+        <a href="https://www.qbb.sh/">https://qbb.sh</a>
+    </samp>
+</p>
 
 <br>
 
