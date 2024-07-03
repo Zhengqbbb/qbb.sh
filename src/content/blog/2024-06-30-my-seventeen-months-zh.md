@@ -25,7 +25,7 @@ desc: 一晃一年过半载，给这十七个月留下点痕迹
 - 2023.06.17 - [npx 与 bunx 在 JSON schema 校验大量 JSON 数据集时的对比](https://x.com/zhengqbbb/status/1669982917018423296)
 - 2023.09.27 - [分享 Nuxt3 + 无样式组件的网站开发体验](https://x.com/zhengqbbb/status/1706949854315106513)
 - 2023.11.25 - [利用 X-CMD 的 advise 模块，提供了 czg 命令原生补全](https://x.com/zhengqbbb/status/1728393080179712045)
-- 2024.02.03 - [使用 Google index API，使用 X-CMD 脚本一次批量删除失效页面](https://x.com/zhengqbbb/status/1753726896670396634)
+- 2024.02.03 - [借助 Google index API，使用 X-CMD 脚本一次批量删除失效页面](https://x.com/zhengqbbb/status/1753726896670396634)
 - 2024.03.14 - [利用 Shiki 的 ANSI 渲染，分享了 X-CMD Terminal Theme 页面](https://x.com/zhengqbbb/status/1767944194621128931)
 :::
 
