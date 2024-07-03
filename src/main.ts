@@ -13,10 +13,15 @@ window.toggleTheme = () => {
     window.isDark = isDark
     localStorage.setItem('theme-scheme', isDark ? 'dark' : 'light')
 }
-
 document
     ?.getElementById('theme-toggle')
     ?.addEventListener('click', window.toggleTheme)
+
+function setThemeColorHeadMeta() {
+    const themeColorHeadMeta = document.querySelector('meta[name="theme-color"]')
+    if (themeColorHeadMeta)
+        themeColorHeadMeta.setAttribute('content', window.isDark ? '#0a0a0a' : '#ffffff')
+}
 // #endregion
 
 // #region - Header Sticky
@@ -55,9 +60,7 @@ function handleHeaderElementScrollCB(el: HTMLElement) {
 document.addEventListener('DOMContentLoaded', async () => {
     // Add Theme Change Observer
     const themeChangeObs = new MutationObserver(() => {
-        const themeColorHeadMeta = document.querySelector('meta[name="theme-color"]')
-        if (themeColorHeadMeta)
-            themeColorHeadMeta.setAttribute('content', window.isDark ? '#0a0a0a' : '#ffffff')
+        setThemeColorHeadMeta()
         if (document.getElementById('giscus'))
             toggleGiscusTheme(window.isDark)
     })
@@ -66,6 +69,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.documentElement,
         { attributes: true, attributeFilter: ['class'] },
     )
+    setThemeColorHeadMeta()
 
     // Handle Header Sticky
     const headerEl = document.getElementById('header')
