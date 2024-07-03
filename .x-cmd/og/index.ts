@@ -9,12 +9,12 @@ import template from './template'
 
 const _DIRNAME = dirname(fileURLToPath(import.meta.url))
 /**
- * That is why I don't use Astro file interface to gen OpenGraph image.
+ * That is why I don't use Astro file endpoints to gen OpenGraph image.
  * It look like designed for SSR more, not for SSG.
  * Using build end hook replace it.
  */
 // const _DIRNAME = import.meta?.env?.PROD
-//     ? resolve(dirname(fileURLToPath(import.meta.url)), '../../src/lib/server/og')
+//     ? resolve(dirname(fileURLToPath(import.meta.url)), '../../../../src/lib/server/og')
 //     : dirname(fileURLToPath(import.meta.url))
 
 export const baseSatoriOpts: SatoriOptions = {
@@ -62,7 +62,7 @@ export async function genSVG(
     return await satori(template(title, desc, site), baseSatoriOpts)
 }
 
-/** For mian.ts debug */
+/** For mian.ts */
 export async function genPNG(
     output: string,
     title?: string,

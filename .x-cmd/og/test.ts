@@ -1,12 +1,12 @@
 /**
  * For test and debug, Run the file directly
  * @cli tsx .x-cmd/og/test.ts
- * @cli tsx --watch .x-cmd/og/test.ts
+ * @cli tsx watch .x-cmd/og/test.ts
  * @cli tsx .x-cmd/og/test.ts build
  */
+import process from 'node:process'
 import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import process from 'node:process'
 import { resolve } from 'pathe'
 import { genPNG } from './index'
 
@@ -20,17 +20,18 @@ import { genPNG } from './index'
         )
     }
     else {
-        const _SOURCE = resolve(__DIRNAME, '../../public/og')
+        console.log(1)
+        const __SOURCE = resolve(__DIRNAME, '../../public/og')
         await genPNG(
-            resolve(_SOURCE, 'index.png'),
+            resolve(__SOURCE, 'index.png'),
         )
         await genPNG(
-            resolve(_SOURCE, 'posts.png'),
+            resolve(__SOURCE, 'posts.png'),
             'Blog - Q.Ben Zheng',
             'Q.Ben\'s Blog | Zhengqbbb',
         )
         await genPNG(
-            resolve(_SOURCE, 'projects.png'),
+            resolve(__SOURCE, 'projects.png'),
             'Projects - Q.Ben Zheng',
             'Q.Ben\'s Projects | Zhengqbbb',
         )
