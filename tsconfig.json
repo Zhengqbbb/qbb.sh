@@ -10,7 +10,8 @@
     "types": [
       "vite-plugin-pwa/vanillajs",
       "vite-plugin-pwa/info"
-    ]
+    ],
+    "alwaysStrict": false
   },
   "include": ["src/**/*.astro", "src/**/*.ts", ".x-cmd/**/*.ts"]
 }
