@@ -14,12 +14,12 @@ const ogImg = image ? Meta.site + image : Meta.ogImg
 <title>{title}</title>
 <meta name="description" content={desc}>
 <meta name="theme-color" content="#0a0a0a">
+<Fragment set:html={import.meta.env.INJECT_BEFORE_HEAD_INLINE_SCRIPT} />
 <script id="check-dark-mode" is:inline>
-    (function(){(function(){var t;var r=window==null?void 0:window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme-scheme")||"auto";e==="dark"||e!=="light"&&r?(document.documentElement.classList.add("dark"),window.isDark=!0):(t=document.querySelector('meta[name="theme-color"]'))==null||t.setAttribute("content","#ffffff")})();})();
+    "use strict";(function(){(function(){var t;var r=window==null?void 0:window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme-scheme")||"auto";e==="dark"||e!=="light"&&r?(document.documentElement.classList.add("dark"),window.isDark=!0):(t=document.querySelector('meta[name="theme-color"]'))==null||t.setAttribute("content","#ffffff")})();})();
 </script>
-<script id="pre-register-function" is:inline>
-    window.cImageOnLoad=function(){this.classList.remove("op-0", "image-unloaded"),this.removeAttribute("loading"),this.parentElement.classList.remove("before:content-empty")};
-    window.cImageOnError=function(){this.parentElement.classList.add("error")};
+<script id="regist-global-fn" is:inline>
+    "use strict";(function(){window.cImageOnLoad=function(){var e;this.classList.remove("op-0","image-unloaded"),this.removeAttribute("loading"),(e=this==null?void 0:this.parentElement)==null||e.classList.remove("before:content-empty")};window.cImageOnError=function(){var e;(e=this==null?void 0:this.parentElement)==null||e.classList.add("error")};})();
 </script>
 <meta name="keywords" content={Meta.keywords} >
 <meta name="application-name", content={Meta.appName}>
