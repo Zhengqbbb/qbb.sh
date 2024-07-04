@@ -1,6 +1,5 @@
 # build output
 dist/
-src/lib/client/main.js
 .x-cmd/og/test.png
 
 # generated types

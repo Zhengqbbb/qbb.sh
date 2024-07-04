@@ -6,6 +6,8 @@ import Sitemap from '@astrojs/sitemap'
 import ViteRestart from 'vite-plugin-restart'
 import Meta from './src/meta'
 import vitePWAOptions from './src/lib/server/pwa'
+import injectBeforeHeadEl from './src/lib/server/injectBeforeHeadEl'
+import injectAfterHeadEl from './src/lib/server/injectAfterHeadEl'
 import { rehypePlugins, remarkPlugins } from './src/lib/markdown'
 
 export default defineConfig({
@@ -17,12 +19,18 @@ export default defineConfig({
         UnoCSS({ injectReset: true }),
         AstroPWA(vitePWAOptions),
         Sitemap(),
+        injectBeforeHeadEl(),
+        injectAfterHeadEl(),
     ],
     vite: {
         build: { cssCodeSplit: false },
         plugins: [ViteRestart({
-            reload: ['./src/lib/client/main.js'],
-            restart: ['./src/lib/markdown/**/*.ts'],
+            reload: [],
+            restart: [
+                './src/main.ts',
+                './src/lib/markdown/**/*.ts',
+                './src/lib/client/head/**/*.ts',
+            ],
         })],
     },
     prefetch: {

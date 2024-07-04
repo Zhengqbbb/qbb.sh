@@ -25,9 +25,27 @@ declare global {
             via?: string
             to?: string
             decoration?: string
-            dangerouslySetInnerHTML?: {
-                __html?: string
-            }
+        }
+    }
+
+    interface ImportMetaEnv {
+        /** Add Before Head Element By injectBeforeHeadEl.ts Integration */
+        readonly INJECT_BEFORE_HEAD_INLINE_SCRIPT: string
+        /** Add Aftre Head Element By injectAfterHeadEl.ts Integration */
+        readonly INJECT_AFTRE_HEAD_INLINE_SCRIPT: string
+        /** Prod env with additional elements of the head, such as site tracking code */
+        readonly HEAD_INJECT: string
+    }
+    interface ImportMeta {
+        readonly env: ImportMetaEnv
+    }
+
+    declare namespace NodeJS {
+        interface ProcessEnv {
+            /** Add Before Head Element By injectBeforeHeadEl.ts Integration */
+            INJECT_BEFORE_HEAD_INLINE_SCRIPT: string
+            /** Add Aftre Head Element By injectAfterHeadEl.ts Integration */
+            INJECT_AFTRE_HEAD_INLINE_SCRIPT: string
         }
     }
 }

@@ -19,8 +19,6 @@ export default antfu(
                 'ts/ban-ts-comment': 'off',
             },
         },
-        ignores: [
-            'src/components/BaseHead.astro',
-        ],
+        ignores: [],
     },
 )

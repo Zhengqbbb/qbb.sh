@@ -1,9 +1,5 @@
-import fs from 'node:fs'
-import { dirname } from 'node:path'
-import { fileURLToPath } from 'node:url'
-import { getCollection } from 'astro:content'
 import type { CollectionEntry } from 'astro:content'
-import { resolve } from 'pathe'
+import { getCollection } from 'astro:content'
 import { calcReadingTime } from './readtime'
 
 export const postHasDate = (post: CollectionEntry<'blog'>) => !!post.data.date
@@ -60,30 +56,6 @@ export async function getPostList(): Promise<CollectionEntry<'blog'>[]> {
     })
 
     return res as Required<typeof posts>
-}
-
-declare global {
-    /** The main code is using layout. Use in memory storage */
-    // eslint-disable-next-line vars-on-top, no-var
-    var __C_MAIN_RAW: string
-}
-export function getMainFileRaw() {
-    const __dirname = dirname(fileURLToPath(import.meta.url))
-    /** ... 😃 astro __dirname are diff dev and prod */
-    if (import.meta.env.MODE === 'development') {
-        const mainPath = resolve(__dirname, '../client/main.js')
-        return fs.readFileSync(mainPath, 'utf-8')
-    }
-    else {
-        const mainPath = resolve(__dirname, '../../src/lib/client/main.js')
-        if (globalThis.__C_MAIN_RAW) {
-            return globalThis.__C_MAIN_RAW
-        }
-        else {
-            globalThis.__C_MAIN_RAW = fs.readFileSync(mainPath, 'utf-8')
-            return globalThis.__C_MAIN_RAW
-        }
-    }
 }
 
 export function isExternal(path: string) {

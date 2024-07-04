@@ -1,7 +1,8 @@
 /**
  * The main entry point inline script handle
  * Astro does not support handle the inline script
- * So the ts file have to handle it manually by esbuild
+ * So the ts file have to handle it manually by integration and esbuild
+ * '/src/lib/server/injectAfterHeadEl.ts'
  */
 import { navigate, toggleGiscusTheme } from '~/lib/client'
 

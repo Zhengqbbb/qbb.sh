@@ -5,9 +5,7 @@
  * Is inline script handle by ownerself
  * Need using ES5 target for this file. Because of the type=module not will execute immediately
  *
- * Repalce the script by command:
- * @cli
-pnpm esbuild ./src/lib/client/head/checkTheme.ts --bundle --target=es5 --banner:js='<script id="check-dark-mode" is:inline>' --footer:js='</script>' --minify
+ * Will using 'src/lib/server/injectBeforeHeadEl.ts' Integration to inject the script
  */
 
 (() => {

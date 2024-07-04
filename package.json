@@ -6,12 +6,9 @@
     "pnpm": ">=8"
   },
   "scripts": {
-    "dev": "run-p dev:main dev:docs",
-    "dev:docs": "astro dev --host --port 3000",
-    "dev:main": "esbuild src/main.ts --watch --bundle --format=esm --outdir=src/lib/client",
-    "build": "run-s gen:og build:main build:docs",
+    "dev": "astro dev --host --port 3000",
+    "build": "run-s gen:og build:docs",
     "build:docs": "astro check && astro build",
-    "build:main": "esbuild src/main.ts --minify --bundle --format=esm --outdir=src/lib/client",
     "gen:og": "tsx .x-cmd/og/main.ts",
     "preview": "astro preview --host --port 8888",
     "lint": "eslint .",

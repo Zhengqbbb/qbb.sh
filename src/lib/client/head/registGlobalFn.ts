@@ -4,13 +4,13 @@
  *    - Image onLoad  callback Fn  - <img onload="window?.cImageOnLoad.call(this)" >
  *    - Image onError callback Fn  - <img onerror="window?.cImageOnError.call(this)" >
  *
- * Repalce the script by command:
- * @cli
-pnpm esbuild ./src/lib/client/head/registGlobalFn.ts --bundle --target=es5 --banner:js='<script id="regist-global-fn" is:inline>' --footer:js='</script>' --minify
+ * Will using 'src/lib/server/injectBeforeHeadEl.ts' Integration to inject the script
  */
+/* @unocss-include */
 
 window.cImageOnLoad = function (this: HTMLElement) {
     this.classList.remove('op-0', 'image-unloaded')
+    // remove loading=lazy attr. Avoid medium-zoom no-cache reload image in ios phone
     this.removeAttribute('loading')
     this?.parentElement?.classList.remove('before:content-empty')
 }
