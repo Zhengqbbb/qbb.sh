@@ -5,9 +5,9 @@
  #
  # @powered by: X-CMD
  # @see: https://www.x-cmd.com/mod/ws
- # @usage: `xws gen-og`       - debug and test the image              => `tsx --watch .x-cmd/og/test.ts`
- # @usage: `xws gen-og build` - genrate the home,projects,posts image => `tsx .x-cmd/og/test.ts build`
- # @usage: `xws gen-og all`   - replace all the /public/og images     => `rm image`, `tsx .x-cmd/og/test.ts` `pnpm gen:og`
+ # @usage: `xw gen-og`       - debug and test the image              => `tsx --watch .x-cmd/og/test.ts`
+ # @usage: `xw gen-og build` - genrate the home,projects,posts image => `tsx .x-cmd/og/test.ts build`
+ # @usage: `xw gen-og all`   - replace all the /public/og images     => `rm image`, `tsx .x-cmd/og/test.ts` `pnpm gen:og`
 ###
 
 (

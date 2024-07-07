@@ -5,9 +5,9 @@
  #
  # @powered by: X-CMD
  # @see: https://www.x-cmd.com/mod/ws
- # @usage: `xws zimage`                 - All /public/image
- # @usage: `xws zimage [-1]`            - Only the first one image on /public/image
- # @usage: `xws zimage [-1] [quality]`  - Directly use quality and skip quality input
+ # @usage: `xw zimage`                 - All /public/image
+ # @usage: `xw zimage [-1]`            - Only the first one image on /public/image
+ # @usage: `xw zimage [-1] [quality]`  - Directly use quality and skip quality input
 ###
 
 (
