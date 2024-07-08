@@ -1,4 +1,3 @@
-// astro.config.ts
 import { defineConfig } from 'astro/config'
 import UnoCSS from 'unocss/astro'
 import AstroPWA from '@vite-pwa/astro'
@@ -13,6 +12,12 @@ import { rehypePlugins, remarkPlugins } from './src/lib/markdown'
 export default defineConfig({
     site: Meta.site,
     build: {
+        /**
+         * I turn on:
+         *   - netlify `pretty_urls`
+         *   - vercel `cleanUrls`
+         * If not. Plz using default and move file src/pages/posts.astro - src/pages/posts/index.astro
+         */
         format: 'preserve',
     },
     integrations: [
