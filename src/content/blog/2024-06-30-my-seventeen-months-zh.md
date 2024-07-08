@@ -65,7 +65,7 @@ desc: 一晃一年过半载，给这十七个月留下点痕迹
 - **忧是**：后续要增强站点的时候，还是卡了一段时间
     - 对于 script 的 bundle 行为很奇怪，明明代码只有一句 console.log 都 bundle 分了一个文件，但是如果想要 script inline 的话，则需要自行处理，缺少了一个既要又要的方式
     - 还有就是能很明显感觉到 Astro 偏向 SSR，例如禁用 `transformIndexHtml` 导致在构建时你想给页面统一注入有点麻烦等...
-    - 其次就是 `__dirname` 开发和构建时不一致 😶‍🌫️，对于一个脚本开发者来说，这点很敏感，我不能保证这 script 绝对能获取到数据，以及后续 Astro 升级会不会做出更改等，导致后面我连 file endpoints，hook 都不敢过多尝试
+    - 其次就是 `__dirname` 开发和构建时不一致 😶‍🌫️，对于一个脚本开发者来说，这点很敏感，我不能保证这 script 绝对能获取到数据，以及后续 Astro 升级会不会做出更改等，~~导致后面我连 file endpoints，hook 都不敢过多尝试~~: 后面折腾了好一会使用 hook 统一注入了 inline script
 
 :m[但总的来说，Astro 体验还是很好的，目前的 profile 也做到了想要的体积和交互体验 😇]
 
