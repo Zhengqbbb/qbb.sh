@@ -88,11 +88,4 @@ document.addEventListener('DOMContentLoaded', async () => {
         avatar.src = '/me.webp'
         avatar.onload = () => avatarEl.classList.add('loaded')
     }
-    else {
-        const link = document.createElement('link')
-        link.rel = 'preload'
-        link.href = '/me.webp'
-        link.as = 'image'
-        document.head.appendChild(link)
-    }
 })
