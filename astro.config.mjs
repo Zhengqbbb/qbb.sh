@@ -15,7 +15,7 @@ export default defineConfig({
         /**
          * I turn on:
          *   - netlify `pretty_urls`
-         *   - vercel `cleanUrls`
+         *   - vercel  `cleanUrls`
          * If not. Plz using default and move file src/pages/posts.astro - src/pages/posts/index.astro
          */
         format: 'preserve',
