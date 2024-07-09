@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url'
 import type { VitePWAOptions } from 'vite-plugin-pwa'
 import fg from 'fast-glob'
 import { resolve } from 'pathe'
+import Meta from '../../meta'
 
 /* eslint-disable prefer-regex-literals */
 const STATIC_REOMTE_ASSETS = {
@@ -30,8 +31,9 @@ export default {
         { cwd: resolve(dirname(fileURLToPath(import.meta.url)), '../../public') },
     ),
     manifest: {
-        name: 'Q.Ben',
-        short_name: 'Q.Ben',
+        name: Meta.appName,
+        short_name: Meta.appName,
+        description: Meta.description,
         theme_color: '#0a0a0a',
         icons: [
             {
@@ -58,10 +60,10 @@ export default {
         ],
     },
     workbox: {
-        navigateFallbackDenylist: [/^\/new/],
-        globPatterns: ['**/*.{js,css,webp,png,svg,gif,mp4,ico,woff2}'],
-        navigateFallback: '/404',
         mode: 'production',
+        navigateFallbackDenylist: [],
+        navigateFallback: null,
+        globPatterns: ['**/*.{js,css,webp,png,svg,gif,mp4,ico,woff2}'],
         runtimeCaching: [
             ...Object
                 .entries(STATIC_REOMTE_ASSETS)
