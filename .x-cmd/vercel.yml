@@ -1,0 +1,46 @@
+cleanUrls: true
+
+headers:
+  - source: /_astro/(.*)
+    headers:
+      - key: Cache-Control
+        value: max-age=31536000, immutable
+  - source: /manifest.webmanifest
+    headers:
+      - key: Content-Type
+        value: application/manifest+json
+
+redirects:
+  - source: /gh
+    destination: https://github.com/Zhengqbbb/
+    statusCode: 301
+  - source: /github
+    destination: https://github.com/Zhengqbbb/
+    statusCode: 301
+  - source: /discord
+    destination: https://discord.com/users/902369403818094593
+    statusCode: 301
+  - source: /x
+    destination: https://x.com/zhengqbbb/
+    statusCode: 301
+  - source: /tw
+    destination: https://twitter.com/zhengqbbb/
+    statusCode: 301
+  - source: /twitter
+    destination: https://twitter.com/zhengqbbb/
+    statusCode: 301
+  - source: /npm
+    destination: https://www.npmjs.com/~qbb.sh
+    statusCode: 301
+  - source: /instagram
+    destination: https://instagram.com/qbqiubin/
+    statusCode: 301
+  - source: /ig
+    destination: https://instagram.com/qbqiubin/
+    statusCode: 301
+  - source: /ins
+    destination: https://instagram.com/qbqiubin/
+    statusCode: 301
+  - source: /hi
+    destination: https://qbb.sh/posts/hi
+    statusCode: 301
