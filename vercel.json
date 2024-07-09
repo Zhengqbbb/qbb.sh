@@ -23,6 +23,10 @@
   ],
   "redirects": [
     {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml"
+    },
+    {
       "source": "/gh",
       "destination": "https://github.com/Zhengqbbb/",
       "statusCode": 301
