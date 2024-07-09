@@ -24,7 +24,8 @@
   "redirects": [
     {
       "source": "/sitemap.xml",
-      "destination": "/sitemap-index.xml"
+      "destination": "/sitemap-index.xml",
+      "statusCode": 301
     },
     {
       "source": "/gh",
