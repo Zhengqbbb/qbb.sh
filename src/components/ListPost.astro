@@ -21,10 +21,12 @@ const { posts } = Astro.props
             bg-c-bg
             class="absolute inset-0 z-20 size-full border border-c-border-accent rd border-dashed transition-transform-300 ease-out"
             group-hover="translate-x--1 translate-y--1"
+            group-active="card-translate-reset"
         />
         <a
             class="relative z-30 block p-7 transition-transform-300 ease-out"
             group-hover="translate-x--1 translate-y--1"
+            group-active="card-translate-reset"
             href={post.data.link}
         >
             <h2
