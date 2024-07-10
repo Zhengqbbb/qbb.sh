@@ -13,6 +13,11 @@ window.cImageOnLoad = function (this: HTMLElement) {
     // remove loading=lazy attr. Avoid medium-zoom no-cache reload image in ios phone
     this.removeAttribute('loading')
     this?.parentElement?.classList.remove('before:content-empty')
+    setTimeout(() => {
+        this.classList.remove('image-loaded')
+        this.removeAttribute('onload')
+        this.removeAttribute('onerror')
+    }, 400)
 }
 
 window.cImageOnError = function (this: HTMLElement) {
