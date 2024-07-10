@@ -298,7 +298,7 @@ h6:focus .header-anchor {
     margin-bottom: 0;
 }
 
-.prose figure figcaption:not(.c) {
+.prose figure:not(.c) figcaption {
     color: hsl(var(--c-fg-2));
     font-size: 0.875rem;
     line-height: 1.75em;
@@ -378,7 +378,7 @@ h6:focus .header-anchor {
     background: hsl(0, 0%, 22%);
 }
 
-.prose :not(pre)>code {
+.prose :not(pre)>code:not(.c) {
     background-color: hsl(var(--c-inner-code-bg));
     border-width: 1px;
     border-color: hsl(var(--c-border-accent));
