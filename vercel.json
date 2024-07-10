@@ -23,13 +23,13 @@
   ],
   "redirects": [
     {
-      "source": "/sitemap.xml",
-      "destination": "/sitemap-index.xml",
+      "source": "/hi",
+      "destination": "https://qbb.sh/posts/hi",
       "statusCode": 301
     },
     {
-      "source": "/hi",
-      "destination": "https://qbb.sh/posts/hi",
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml",
       "statusCode": 301
     },
     {
