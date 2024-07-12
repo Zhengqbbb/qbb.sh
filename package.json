@@ -43,7 +43,6 @@
     "rehype-external-links": "^3.0.0",
     "remark-directive": "^3.0.0",
     "remark-github-alerts": "0.1.0-beta.3",
-    "satori": "^0.10.13",
     "tsx": "^4.16.0",
     "typescript": "^5.5.3",
     "unocss": "^0.61.0",
