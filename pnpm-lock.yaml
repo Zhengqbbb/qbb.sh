@@ -92,9 +92,6 @@ importers:
       remark-github-alerts:
         specifier: 0.1.0-beta.3
         version: 0.1.0-beta.3(@types/mdast@4.0.4)(unified@11.0.5)
-      satori:
-        specifier: ^0.10.13
-        version: 0.10.13
       tsx:
         specifier: ^4.16.0
         version: 4.16.0
@@ -4090,10 +4087,6 @@ packages:
 
   satori-html@0.3.2:
     resolution: {integrity: sha512-wjTh14iqADFKDK80e51/98MplTGfxz2RmIzh0GqShlf4a67+BooLywF17TvJPD6phO0Hxm7Mf1N5LtRYvdkYRA==}
-
-  satori@0.10.13:
-    resolution: {integrity: sha512-klCwkVYMQ/ZN5inJLHzrUmGwoRfsdP7idB5hfpJ1jfiJk1ErDitK8Hkc6Kll1+Ox2WtqEuGecSZLnmup3CGzvQ==}
-    engines: {node: '>=16'}
 
   satori@0.10.14:
     resolution: {integrity: sha512-abovcqmwl97WKioxpkfuMeZmndB1TuDFY/R+FymrZyiGP+pMYomvgSzVPnbNMWHHESOPosVHGL352oFbdAnJcA==}
@@ -9666,19 +9659,6 @@ snapshots:
   satori-html@0.3.2:
     dependencies:
       ultrahtml: 1.5.3
-
-  satori@0.10.13:
-    dependencies:
-      '@shuding/opentype.js': 1.4.0-beta.0
-      css-background-parser: 0.1.0
-      css-box-shadow: 1.0.0-3
-      css-to-react-native: 3.2.0
-      emoji-regex: 10.3.0
-      escape-html: 1.0.3
-      linebreak: 1.1.0
-      parse-css-color: 0.2.1
-      postcss-value-parser: 4.2.0
-      yoga-wasm-web: 0.3.3
 
   satori@0.10.14:
     dependencies:
