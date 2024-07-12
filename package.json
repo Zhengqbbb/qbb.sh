@@ -7,10 +7,9 @@
   },
   "scripts": {
     "dev": "astro dev --host --port 3000",
-    "build": "run-s gen:og build:docs",
-    "build:docs": "astro check && astro build",
-    "gen:og": "tsx .x-cmd/og/main.ts",
+    "build": "astro check && astro build",
     "preview": "astro preview --host --port 8888",
+    "og:dev": "x-satori -c ./src/lib/server/og/config.ts -t ./src/lib/server/og/Template.astro --dev",
     "lint": "eslint .",
     "cz": "czg"
   },

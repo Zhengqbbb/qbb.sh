@@ -37,6 +37,7 @@ export default defineConfig({
                 './src/lib/client/head/**/*.ts',
             ],
         })],
+        optimizeDeps: { exclude: ['@resvg/resvg-js'] },
     },
     prefetch: {
         defaultStrategy: 'viewport',

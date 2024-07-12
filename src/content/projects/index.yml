@@ -18,7 +18,7 @@ CLI:
     image: /image/project-czg.webp
   - title: x-satori
     desc: >-
-      Using Vue file to generate Open Graph image by satori
+      Using Vue or Astro file to generate Open Graph image by satori
     link: https://github.com/Zhengqbbb/x-satori
     image: /image/project-x-satori.webp
 

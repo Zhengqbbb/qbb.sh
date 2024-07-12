@@ -13,5 +13,5 @@
     ],
     "alwaysStrict": false
   },
-  "include": ["src/**/*.astro", "src/**/*.ts", ".x-cmd/**/*.ts"]
+  "include": ["src/**/*.astro", "src/**/*.ts"]
 }
