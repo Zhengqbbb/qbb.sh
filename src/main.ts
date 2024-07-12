@@ -85,7 +85,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const bgUnGradient = document.getElementById('bg-un-gradient')
     if (bgUnGradient && bgUnGradient?.style?.cssText) {
         let op = 0.6
-        const transitionTime = 500; const transitionStep = 10; const initial = op
+        const initial = op
+        const transitionTime = 500
+        const transitionStep = 10
         const bgUnGradientTimer = setInterval(() => {
             if (op >= 1)
                 clearInterval(bgUnGradientTimer)
