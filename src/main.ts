@@ -81,6 +81,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Handle Page Enter with Hash
     !!window.location.hash && setTimeout(navigate)
 
+    // Page Background
+    const bgUnGradient = document.getElementById('bg-un-gradient')
+    if (bgUnGradient && bgUnGradient?.style?.cssText) {
+        let op = 0.6
+        const transitionTime = 500; const transitionStep = 10; const initial = op
+        const bgUnGradientTimer = setInterval(() => {
+            if (op >= 1)
+                clearInterval(bgUnGradientTimer)
+            else
+                bgUnGradient.style.cssText = `--bg-un-gradient: hsl(var(--c-bg), ${op}) 50%, transparent 90%, transparent 100%; z-index: -1;`
+            op += ((1 - initial) * transitionStep) / transitionTime
+        }, transitionStep)
+    }
+
     // Home Page Preload
     const avatarEl = document.getElementById('home-avatar')
     if (avatarEl) {

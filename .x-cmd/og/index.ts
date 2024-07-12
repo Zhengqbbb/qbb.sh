@@ -4,7 +4,6 @@ import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'pathe'
 import { Resvg, renderAsync } from '@resvg/resvg-js'
 import { satoriAstro } from 'x-satori/astro'
-import { experimental_AstroContainer as AstroContainer } from 'astro/container'
 
 const _DIRNAME = dirname(fileURLToPath(import.meta.url))
 

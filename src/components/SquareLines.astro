@@ -2,19 +2,21 @@
 import SquareLine from './SquareLine.astro'
 ---
 
-<div class="absolute h-auto w-full" style="z-index:-1">
+<div
+    id="bg-un-gradient"
+    style="--bg-un-gradient: hsl(var(--c-bg), 0.5) 50%, transparent 90%, transparent 100%; z-index: -1;"
+    class="absolute h-auto w-full"
+>
     <div
         class="absolute left-0 top-0 h-auto w-1/2 bg-neutral-100 dark:bg-neutral-800"
     >
         <div
             class="pointer-events-none absolute inset-0 z-30 h-full w-full bg-gradient-to-tl"
-            from="c-bg 50%"
-            via="transparent 90%"
-            to="transparent 100%"
+            style="--un-gradient-stops: var(--bg-un-gradient);"
         >
         </div>
         <div
-            class="h-full w-full flex flex-col border-l border-t border-neutral-300 divide-y divide-neutral-300 divide-dashed dark:border-neutral-900 dark:divide-neutral-700"
+            class="h-full w-full flex flex-col border-l border-t border-neutral-300 border-dashed divide-y divide-neutral-300 divide-dashed dark:border-neutral-900 dark:divide-neutral-700"
         >
             <SquareLine />
             <SquareLine />
@@ -30,13 +32,11 @@ import SquareLine from './SquareLine.astro'
     >
         <div
             class="pointer-events-none absolute inset-0 z-30 h-full w-full bg-gradient-to-tr"
-            from="c-bg 50%"
-            via="transparent 90%"
-            to="transparent 100%"
+            style="--un-gradient-stops: var(--bg-un-gradient);"
         >
         </div>
         <div
-            class="h-full w-full flex flex-col border-l border-t border-neutral-300 divide-y divide-neutral-300 divide-dashed dark:border-neutral-900 dark:divide-neutral-700"
+            class="h-full w-full flex flex-col border-l border-t border-neutral-300 border-dashed divide-y divide-neutral-300 divide-dashed dark:border-neutral-900 dark:divide-neutral-700"
         >
             <SquareLine />
             <SquareLine />
