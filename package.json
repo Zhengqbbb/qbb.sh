@@ -9,7 +9,7 @@
     "dev": "astro dev --host --port 3000",
     "build": "astro check && astro build",
     "preview": "astro preview --host --port 8888",
-    "og:dev": "x-satori -c ./src/lib/server/og/config.ts -t ./src/lib/server/og/Template.astro --dev",
+    "dev:og": "x-satori -c ./src/lib/server/og/config.ts -t ./src/lib/server/og/Template.astro --dev",
     "lint": "eslint .",
     "cz": "czg"
   },

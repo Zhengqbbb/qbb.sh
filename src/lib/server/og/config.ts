@@ -2,7 +2,7 @@ import { readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 import { defineSatoriConfig } from 'x-satori/astro'
-import Meta from '../../../meta' /** @see package.json `pnpm og:dev` => For CLI using a relative path */
+import Meta from '../../../meta' /** @see package.json `pnpm dev:og` => For CLI using a relative path */
 
 const _DIRNAME = import.meta.env?.PROD
     ? resolve(dirname(fileURLToPath(import.meta.url)), '../../src/lib/server/og')
