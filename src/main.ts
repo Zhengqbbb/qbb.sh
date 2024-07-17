@@ -85,15 +85,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     const bgUnGradient = document.getElementById('bg-un-gradient')
     if (bgUnGradient && bgUnGradient?.style?.cssText) {
         let op = 0.6
-        const initial = op
+        let blur = 1
+        const initial = { op, blur }
         const transitionTime = 500
         const transitionStep = 10
         const bgUnGradientTimer = setInterval(() => {
-            if (op >= 1)
+            if (op >= 1) {
                 clearInterval(bgUnGradientTimer)
-            else
-                bgUnGradient.style.cssText = `--bg-un-gradient: hsl(var(--c-bg), ${op}) 50%, transparent 90%, transparent 100%; z-index: -1;`
-            op += ((1 - initial) * transitionStep) / transitionTime
+                bgUnGradient.style.cssText = `--bg-un-gradient: hsl(var(--c-bg), 1) 50%, transparent 90%, transparent 100%; filter: blur(0); z-index: -1;`
+            }
+            else {
+                bgUnGradient.style.cssText
+                    = `--bg-un-gradient: hsl(var(--c-bg), ${op}) 50%, transparent 90%, transparent 100%; filter: blur(${blur}px); z-index: -1;`
+            }
+            op += ((1 - initial.op) * transitionStep) / transitionTime
+            blur += ((0 - initial.blur) * transitionStep) / transitionTime
+            console.log(op, blur)
         }, transitionStep)
     }
 
