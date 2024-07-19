@@ -17,6 +17,9 @@ export async function getPostImageBuffer(props: CollectionEntry<'blog'>) {
     config.props = props.data
     const svg = await satoriAstro(config, template)
     const resvg = new Resvg(svg, {
+        font: {
+            loadSystemFonts: false,
+        },
         fitTo: {
             mode: 'width',
             value: 1200,
