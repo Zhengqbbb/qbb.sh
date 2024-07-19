@@ -26,15 +26,17 @@ export async function loadRemoteCDNs(
     type: 'js' | 'css' = 'js',
 ) {
     try {
-        type === 'js'
-            ? await loadRemoteCDN(mainSrc, 'js')
-            : await loadRemoteCDN(mainSrc, 'css')
+        if (type === 'js')
+            await loadRemoteCDN(mainSrc, 'js')
+        else
+            await loadRemoteCDN(mainSrc, 'css')
     }
     catch {
         try {
-            type === 'js'
-                ? await loadRemoteCDN(backupSrc, 'js')
-                : await loadRemoteCDN(backupSrc, 'css')
+            if (type === 'js')
+                await loadRemoteCDN(backupSrc, 'js')
+            else
+                await loadRemoteCDN(backupSrc, 'css')
         }
         catch (error) {
             console.error('The remote CDN scripts load error:', error)

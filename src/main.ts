@@ -62,7 +62,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Add Theme Change Observer
     const themeChangeObs = new MutationObserver(() => {
         setThemeColorHeadMeta()
-        !!document.getElementById('giscus') && toggleGiscusTheme(window.isDark)
+        if (document.getElementById('giscus'))
+            toggleGiscusTheme(window.isDark)
     })
 
     themeChangeObs.observe(
@@ -79,7 +80,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // Handle Page Enter with Hash
-    !!window.location.hash && setTimeout(navigate)
+    if (window.location.hash)
+        setTimeout(navigate)
 
     // Page Background
     const bgUnGradient = document.getElementById('bg-un-gradient')

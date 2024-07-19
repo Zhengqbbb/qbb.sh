@@ -8,7 +8,7 @@ import { getPostList } from '~/lib/server'
 import { getPostImageBuffer } from '~/lib/server/og'
 
 export async function getStaticPaths() {
-    const _PROD_PUBLIC_OG_DIR = resolve(dirname(fileURLToPath(import.meta.url)), '../og')
+    const _PROD_PUBLIC_OG_DIR = resolve(dirname(fileURLToPath(import.meta.url)), '../../og')
     const blogEntries = await getPostList()
 
     return blogEntries

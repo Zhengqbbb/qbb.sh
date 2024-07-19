@@ -20,4 +20,5 @@ const content = document.querySelector('.prose.post')
 content?.addEventListener('click', handleAnchors, { passive: false })
 
 // inject Giscus
-!!document.getElementById('giscus') && injectGiscusEl()
+if (document.getElementById('giscus'))
+    injectGiscusEl()

@@ -7,7 +7,8 @@ import { satoriAstro } from 'x-satori/astro'
 import type { CollectionEntry } from 'astro:content'
 
 const _DIRNAME = import.meta.env?.PROD
-    ? resolve(dirname(fileURLToPath(import.meta.url)), '../../src/lib/server/og')
+    // 😅 Please ensure __dirname. Astro __dirname in dist folder on PROD (astro build) time 🫠
+    ? resolve(dirname(fileURLToPath(import.meta.url)), '../../../src/lib/server/og')
     : dirname(fileURLToPath(import.meta.url))
 
 export async function getPostImageBuffer(props: CollectionEntry<'blog'>) {
