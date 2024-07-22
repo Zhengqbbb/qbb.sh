@@ -57,7 +57,7 @@ export default defineConfig({
         ['bg-gradient-ellipse', 'bg-[radial-gradient(ellipse_at_center,var(--un-gradient-stops))]'],
         ['bg-gradient-circle', 'bg-[radial-gradient(circle_at_center,var(--un-gradient-stops))]'],
         ['image-unloaded', ' blur-4! op-0!'],
-        ['image-transition', 'transition-property-["filter,opacity,transform"] duration-400 ease'],
+        ['image-transition', 'property-[filter,opacity,transform] duration-400 ease'],
         ['image-loaded', 'blur-0 op-100 image-transition'],
         ['card-translate-reset', 'sm:(translate-x-0! translate-y-0! duration-100)'],
         ['c-sk', 'animate-pulse bg-neutral-200 dark:bg-neutral-900'],
