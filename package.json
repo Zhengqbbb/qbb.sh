@@ -45,7 +45,7 @@
     "unocss": "^0.61.5",
     "vite-plugin-restart": "^0.4.1",
     "workbox-window": "^7.1.0",
-    "x-satori": "0.2.0-beta.2"
+    "x-satori": "0.2.0-beta.8"
   },
   "pnpm": {
     "peerDependencyRules": {

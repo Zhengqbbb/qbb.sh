@@ -1,0 +1,69 @@
+# shellcheck shell=dash disable=SC2016,SC2317
+
+(
+# Section: Arg
+WORK_DIR="$(x wsroot)"
+
+# Section: Main
+command -v npm >/dev/null || {
+    x log :og error "npm is not installed"
+    exit 1
+}
+command -v bunx >/dev/null || {
+    x log :og error "bunx is not installed"
+    exit 1
+}
+
+frontmatter_to_json(){
+    command cat "$1" \
+    | command awk 'NR>1{if ($0 == "---") exit; else print $0;}' \
+    | x y2j
+}
+
+svg_to_png()(
+    local _slug="${1:?"Please provide a output slug"}"
+    local _props="${2:-"{}"}"
+    local _output="${WORK_DIR}/public/og/${_slug}.png"
+    command bunx x-satori     \
+        --config    "${WORK_DIR}/src/lib/server/og/config.ts"        \
+        --template  "${WORK_DIR}/src/lib/server/og/Template.astro"   \
+        --props "${_props}"   \
+    | command bunx resvg-cli  \
+        --no-system-font      \
+        --fit-width 1200      \
+        --image-rendering 0   \
+        - "$_output"
+)
+
+gen_extra_pages_og(){
+    while read -r _slug _props; do
+        # echo "111$_slug" "222$_props"
+        svg_to_png "$_slug" "$_props"
+    done <<A
+index           { "title": "Q.Ben Zheng | Zhengqbbb",   "desc": "Q.Ben Zheng's Personal Website" }
+projects        { "title": "Projects - Q.Ben Zheng",    "desc": "Q.Ben's Projects | Zhengqbbb" }
+posts           { "title": "Blog - Q.Ben Zheng",        "desc": "Q.Ben's Blog | Zhengqbbb" }
+A
+}
+
+case "$1" in
+    dev)
+        command bunx x-satori --dev \
+            --config    "${WORK_DIR}/src/lib/server/og/config.ts" \
+            --template  "${WORK_DIR}/src/lib/server/og/Template.astro"
+        ;;
+    all)
+        command find "${WORK_DIR}/src/content" -type f -name '*-*.md' \
+        | while read -r _file; do
+            # echo "$_file"
+            _slug="${_file##*/}"; _slug="${_slug%.*}";
+            _props="$(frontmatter_to_json "$_file")"
+            svg_to_png "$_slug" "$_props"
+        done
+        gen_extra_pages_og
+        ;;
+    *)
+        gen_extra_pages_og
+        ;;
+esac
+)
