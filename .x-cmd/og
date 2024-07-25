@@ -1,5 +1,15 @@
 # shellcheck shell=dash disable=SC2016,SC2317
 
+###
+ # Batch generation of Open Graph images
+ #
+ # @powered by: X-CMD
+ # @see: https://www.x-cmd.com/mod/ws
+ # @usage: `xw og`      -   Generate Open Graph images for not content pages
+ # @usage: `xw og dev`  -   Template Design Mode
+ # @usage: `xw og all`  -   Generate Open Graph images for all pages
+###
+
 (
 # Section: Arg
 WORK_DIR="$(x wsroot)"
