@@ -18,7 +18,7 @@ export async function GET() {
             author: `${Meta.email} (${Meta.author})`,
             pubDate: new Date(item.data.date!.iso),
             enclosure: {
-                url: `${Meta.site}/og/posts-${item.slug}.png`,
+                url: `${Meta.site}/og/${item.slug}.png`,
                 length: 0,
                 type: 'image/png',
             },
