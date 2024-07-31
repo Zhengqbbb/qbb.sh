@@ -94,11 +94,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         const bgUnGradientTimer = setInterval(() => {
             if (op >= 1) {
                 clearInterval(bgUnGradientTimer)
-                bgUnGradient.style.cssText = `--bg-un-gradient: hsl(var(--c-bg), 1) 50%, transparent 90%, transparent 100%; filter: blur(0); z-index: -1;`
+                bgUnGradient.style.cssText = `--bg-un-gradient: hsl(var(--c-bg)) 50%, transparent 90%, transparent 100%; filter: blur(0); z-index: -1;`
             }
             else {
                 bgUnGradient.style.cssText
-                    = `--bg-un-gradient: hsl(var(--c-bg), ${op}) 50%, transparent 90%, transparent 100%; filter: blur(${blur}px); z-index: -1;`
+                    = `--bg-un-gradient: hsl(var(--c-bg) / ${op}) 50%, transparent 90%, transparent 100%; filter: blur(${blur}px); z-index: -1;`
             }
             op += ((1 - initial.op) * transitionStep) / transitionTime
             blur += ((0 - initial.blur) * transitionStep) / transitionTime

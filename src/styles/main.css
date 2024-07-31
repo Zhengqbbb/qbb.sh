@@ -267,8 +267,9 @@ h6:focus .header-anchor {
 
 /** Section: Prose - Link */
 .prose a:not(.c) {
+    transition-property: text-decoration-color;
     --at-apply: text-c-fg-3 font-500;
-    --at-apply: ease property-[text-decoration-color] duration-300;
+    --at-apply: ease duration-300;
     --at-apply: decoration-underline decoration-dashed decoration-1;
     --at-apply: decoration-c-fg-1 decoration-offset-6;
 }
@@ -402,7 +403,7 @@ span[role='separator'] {
     display: inline-block;
     border-radius: 1px;
     transform: rotate(45deg);
-    background: hsl(var(--c-fg-1), 0.4);
+    background: hsl(var(--c-fg-1) / 0.4);
 }
 
 hr.prose,
@@ -679,7 +680,7 @@ hr.prose::after,
 /** Section: medium-zoom */
 .medium-zoom-overlay {
     z-index: 100;
-    background-color: hsl(var(--c-bg), 0.96) !important;
+    background-color: hsl(var(--c-bg) / 0.96) !important;
 }
 .medium-zoom-overlay ~ img {
     z-index: 101;

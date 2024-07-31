@@ -21,18 +21,18 @@ export default defineConfig({
         },
         colors: {
             ...expandColorsDepth('brand'),
-            'c-bg': 'hsl(var(--c-bg) , %alpha)',
-            'c-bg-accent': 'hsl(var(--c-bg-accent) , %alpha)',
-            'c-fg': 'hsl(var(--c-fg) , %alpha)',
-            'c-fg-1': 'hsl(var(--c-fg-1) , %alpha)',
-            'c-fg-2': 'hsl(var(--c-fg-2) , %alpha)',
-            'c-fg-3': 'hsl(var(--c-fg-3) , %alpha)',
-            'c-fg-4': 'hsl(var(--c-fg-4) , %alpha)',
-            'c-border': 'hsl(var(--c-border) , %alpha)',
-            'c-border-accent': 'hsl(var(--c-border-accent) , %alpha)',
-            'c-accent': 'hsl(var(--c-accent) , %alpha)',
-            'c-code-bg': 'hsl(var(--c-code-bg) , %alpha)',
-            'c-inner-code-bg': 'hsl(var(--c-inner-code-bg) , %alpha)',
+            'c-bg': 'hsl(var(--c-bg))',
+            'c-bg-accent': 'hsl(var(--c-bg-accent))',
+            'c-fg': 'hsl(var(--c-fg))',
+            'c-fg-1': 'hsl(var(--c-fg-1))',
+            'c-fg-2': 'hsl(var(--c-fg-2))',
+            'c-fg-3': 'hsl(var(--c-fg-3))',
+            'c-fg-4': 'hsl(var(--c-fg-4))',
+            'c-border': 'hsl(var(--c-border))',
+            'c-border-accent': 'hsl(var(--c-border-accent))',
+            'c-accent': 'hsl(var(--c-accent))',
+            'c-code-bg': 'hsl(var(--c-code-bg))',
+            'c-inner-code-bg': 'hsl(var(--c-inner-code-bg))',
         },
         borderRadius: {
             xs: '8px',
@@ -94,8 +94,8 @@ function expandColorsDepth(name: string) {
     const res: any = {}
     const depths = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900', '950']
     depths.forEach((depth) => {
-        res[`c-${name}-${depth}`] = `hsl(var(--c-${name}-${depth}) , %alpha)`
+        res[`c-${name}-${depth}`] = `hsl(var(--c-${name}-${depth}))`
     })
-    res[`c-${name}`] = `hsl(var(--c-${name}) , %alpha)`
+    res[`c-${name}`] = `hsl(var(--c-${name}))`
     return res
 }
