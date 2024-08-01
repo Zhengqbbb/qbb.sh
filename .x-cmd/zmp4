@@ -1,0 +1,19 @@
+# shellcheck shell=dash disable=SC2016
+
+(
+    # Section: Arg
+    WORK_DIR="$(x wsroot)"
+
+    # Section: Main
+    command find "$WORK_DIR/public/" -type f  -name '*.mp4' | x arg1 '
+        x ffmpeg \
+            -i "$1"                 \
+            -c:v libx264            \
+            -crf 30 -r 24           \
+            -movflags faststart     \
+            -c:a aac                \
+            -b:a 128k               \
+            -preset superfast       \
+            "${1%.*}_compressed.mp4" || exit 1
+    '
+)
