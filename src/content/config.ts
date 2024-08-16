@@ -5,9 +5,9 @@ const blog = defineCollection({
     schema: z.object({
         title: z.string(),
         desc: z.string(),
+        // #region [Optional] - gen from data
         /** Specify the use of Open Graph images */
         image: z.string().optional(),
-        /** gen from data */
         link: z.string().optional(),
         date: z.object({
             date: z.string(),
@@ -27,6 +27,7 @@ const blog = defineCollection({
             title: z.string(),
             link: z.string(),
         }).optional(),
+        // #endregion
     }),
 })
 
