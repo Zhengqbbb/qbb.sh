@@ -1,5 +1,13 @@
 # shellcheck shell=dash disable=SC2016
 
+###
+ # compressing all mp4 files in /public/ directory
+ #
+ # @powered by: X-CMD
+ # @see: https://www.x-cmd.com/mod/ws
+ # @usage: `xw zmp4`                 - All /public/*.mp4 files
+###
+
 (
     # Section: Arg
     WORK_DIR="$(x wsroot)"
