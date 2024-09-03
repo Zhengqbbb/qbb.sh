@@ -27,7 +27,7 @@ export default {
     scope: '/',
     registerType: 'autoUpdate',
     includeAssets: fg.sync(
-        '**/*.{webp,png,jpg,svg,gif,ico,txt,woff2}',
+        '**/*.{webp,jpg,jpeg,svg,gif,ico,txt,woff2}',
         { cwd: resolve(dirname(fileURLToPath(import.meta.url)), '../../public') },
     ),
     manifest: {
@@ -63,7 +63,7 @@ export default {
         mode: 'production',
         navigateFallbackDenylist: [],
         navigateFallback: null,
-        globPatterns: ['**/*.{js,css,webp,png,svg,gif,mp4,ico,woff2}'],
+        globPatterns: ['**/*.{js,css,webp,jpg,jpeg,svg,gif,mp4,ico,woff2}'],
         runtimeCaching: [
             ...Object
                 .entries(STATIC_REMOTE_ASSETS)
