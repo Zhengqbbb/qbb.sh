@@ -48,9 +48,9 @@
     --c-block-info-border: hsl(var(--c-border-accent));
     --c-block-details-border: hsl(var(--c-border-accent));
 
-    --c-font-family-base: 'Chinese Quotes', 'Inter var experimental',
-        'Inter var', 'Inter', 'MiSans', 'Noto Sans SC', 'Punctuation SC',
-        'ui-sans-serif', 'PingFang SC','system-ui', '-apple-system',
+    --c-font-family-base: 'Inter var experimental',
+        'Inter var', 'Inter', 'MiSans', 'Punctuation SC', 'Noto Sans SC',
+        'PingFang SC', 'ui-sans-serif', 'system-ui', '-apple-system',
         'BlinkMacSystemFont', 'Microsoft YaHei', 'Segoe UI', 'Roboto',
         'Helvetica Neue', 'Helvetica', 'Arial', 'Noto Sans', 'sans-serif',
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
