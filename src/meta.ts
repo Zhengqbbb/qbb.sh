@@ -16,7 +16,7 @@ export default {
     twitter: 'https://x.com/zhengqbbb',
     twitterCreator: '@zhengqbbb',
     instagram: 'https://www.instagram.com/qbqiubin/',
-    email: 'zhengqbbb@gmail.com',
+    email: 'hi@qbb.sh',
 }
 
 /** @see https://giscus.app */
