@@ -1,6 +1,7 @@
 import type { CollectionEntry } from 'astro:content'
 import { getCollection } from 'astro:content'
 import { calcReadingTime } from './readtime'
+import Meta from '~/meta'
 
 export const postHasDate = (post: CollectionEntry<'blog'>) => !!post.data.date
 
@@ -61,4 +62,8 @@ export async function getPostList(): Promise<CollectionEntry<'blog'>[]> {
 export function isExternal(path: string) {
     const outboundRE = /^(?:https?:|mailto:|tel:)/
     return outboundRE.test(path)
+}
+
+export function getImageUrl(src: string) {
+    return import.meta.env?.PROD ? Meta.cdnUrl + src : src
 }

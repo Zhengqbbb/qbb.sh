@@ -9,6 +9,7 @@ import remarkIcon from './icon'
 import remarkMarkEl from './mark'
 import remarkTableWrap from './table.ts'
 import remarkImage from './image.ts'
+import rehypeImageCDN from './imageCDN.ts'
 
 export const remarkPlugins: RemarkPlugins = [
     remarkDirective,
@@ -23,6 +24,7 @@ export const remarkPlugins: RemarkPlugins = [
 export const rehypePlugins: RehypePlugins = [
     [rehypeExternalLinks, { target: '_blank', rel: 'noreferrer' }],
     rehypeHeadingIds,
+    rehypeImageCDN,
     [
         rehypeAutolinkHeadings,
         {

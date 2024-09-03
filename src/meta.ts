@@ -2,13 +2,14 @@ export default {
     // basic default site info
     site: 'https://www.qbb.sh',
     siteShort: 'https://qbb.sh',
+    cdnUrl: 'https://static.qbb.sh',
     title: 'Q.Ben Zheng | Zhengqbbb',
     description: 'Q.Ben Zheng\'s Personal Website',
     keywords: 'Zhengqbbb, Q.Ben, qbb, Qbenben',
     author: 'Q.Ben Zheng',
     appName: 'Q.Ben',
     // social links
-    ogImg: 'https://qbb.sh/og/index.png?v=240703',
+    ogImg: 'https://static.qbb.sh/og/index.png',
     github: 'https://github.com/Zhengqbbb',
     twitter: 'https://x.com/zhengqbbb',
     twitterCreator: '@zhengqbbb',

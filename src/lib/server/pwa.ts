@@ -7,7 +7,8 @@ import Meta from '../../meta'
 
 /* eslint-disable prefer-regex-literals */
 const STATIC_REMOTE_ASSETS = {
-    'local-font-cache': new RegExp('\\.woff2$', 'i'),
+    // 'local-font-cache': new RegExp('\\.woff2$', 'i'),
+    'static-cache': new RegExp(`^${Meta.cdnUrl}/.*`, 'i'),
     'google-font-cache': new RegExp('^https://fonts.googleapis.com/.*', 'i'),
     'google-static-font-cache': new RegExp('^https://fonts.gstatic.com/.*', 'i'),
     'unpkg-cdn-cache': new RegExp('^https://unpkg.com/.*', 'i'),
@@ -28,7 +29,7 @@ export default {
     scope: '/',
     registerType: 'autoUpdate',
     includeAssets: fg.sync(
-        '**/*.{webp,jpg,jpeg,svg,gif,ico,txt}',
+        '**/*.{js,css,ico}',
         { cwd: resolve(dirname(fileURLToPath(import.meta.url)), '../../public') },
     ),
     manifest: {
@@ -64,7 +65,7 @@ export default {
         mode: 'production',
         navigateFallbackDenylist: [],
         navigateFallback: null,
-        globPatterns: ['**/*.{js,css,webp,jpg,jpeg,svg,gif,mp4,ico}'],
+        globPatterns: ['**/*.{js,css,ico}'],
         runtimeCaching: [
             ...Object
                 .entries(STATIC_REMOTE_ASSETS)

@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/Default.astro'
 import HomeXBackgroud from '~/components/HomeXBackgroud.astro'
+import { getImageUrl } from '~/lib/server'
 ---
 
 <Layout mainClass="mt-4 md:mt-6 lg:mt-8 xl4:mt-14">
@@ -29,7 +30,7 @@ import HomeXBackgroud from '~/components/HomeXBackgroud.astro'
                             decoding="auto"
                             width="300"
                             height="300"
-                            src="/me.webp"
+                            src={getImageUrl('/me.webp')}
                             alt="avatar"
                         />
                     </div>

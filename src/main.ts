@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const avatarEl = document.getElementById('home-avatar')
     if (avatarEl) {
         const avatar = new Image()
-        avatar.src = '/me.webp'
+        avatar.src = import.meta.env?.PROD ? 'https://static.qbb.sh/me.webp' : '/me.webp'
         avatar.onload = () => avatarEl.classList.add('loaded')
     }
 })

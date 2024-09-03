@@ -1,6 +1,7 @@
 ---
 import { pwaInfo } from 'virtual:pwa-info'
 import Meta from '~/meta'
+import { getImageUrl } from '~/lib/server'
 
 const {
     title = Meta.title,
@@ -8,7 +9,7 @@ const {
     image,
 } = Astro.props
 
-const ogImg = image ? Meta.site + image : Meta.ogImg
+const ogImg = image ? getImageUrl(image) : Meta.ogImg
 ---
 
 <title>{title}</title>
