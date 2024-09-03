@@ -49,11 +49,11 @@
     --c-block-details-border: hsl(var(--c-border-accent));
 
     --c-font-family-base: 'Chinese Quotes', 'Inter var experimental',
-        'Inter var', 'Inter', 'MiSans', 'Noto Sans SC', 'ui-sans-serif',
-        'system-ui', '-apple-system', 'BlinkMacSystemFont', 'PingFang SC',
-        'Microsoft YaHei', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica',
-        'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji',
-        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        'Inter var', 'Inter', 'MiSans', 'Noto Sans SC', 'Punctuation SC',
+        'ui-sans-serif', 'PingFang SC','system-ui', '-apple-system',
+        'BlinkMacSystemFont', 'Microsoft YaHei', 'Segoe UI', 'Roboto',
+        'Helvetica Neue', 'Helvetica', 'Arial', 'Noto Sans', 'sans-serif',
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     --c-font-family-mono: 'Noto Sans Mono', 'NotoSansMono Nerd Font', 'Menlo',
         'FiraCode Nerd Font', 'Fira Code', 'ui-monospace', 'SFMono-Regular',
         'SF Mono', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New',
