@@ -1,0 +1,31 @@
+# shellcheck shell=dash
+
+###
+ # Upload dist/image and dist/og to Cloudflare R2
+ #
+ # @powered by: X-CMD
+ # @see: https://www.x-cmd.com/mod/ws
+ # @see: https://www.x-cmd.com/pkg/rclone
+ # @see: https://developers.cloudflare.com/r2/examples/rclone/
+ # @usage: `xw r2`
+###
+
+(
+    # Section: Arg
+    WORK_DIR="$(x wsroot)"
+
+    # Section: Main
+    if [ -d "$WORK_DIR/dist" ]; then
+        x gum confirm --affirmative="Skip" --negative="Rebuild" "Rebuild dist? : $1"
+        case "$?" in
+            1)      npm run build || exit 1;;
+            0)      ;;
+            *)      exit 1;;
+        esac
+    else
+        npm run build || exit 1
+    fi
+
+    x rclone -P  sync "$WORK_DIR/dist/image" "cloudflare-r2:cdn-qbb-image/image" || exit 1
+    x rclone -P  sync "$WORK_DIR/dist/og"    "cloudflare-r2:cdn-qbb-image/og"    || exit 1
+)
