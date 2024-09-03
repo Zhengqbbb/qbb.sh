@@ -6,7 +6,7 @@ import { resolve } from 'pathe'
 import Meta from '../../meta'
 
 /* eslint-disable prefer-regex-literals */
-const STATIC_REOMTE_ASSETS = {
+const STATIC_REMOTE_ASSETS = {
     'google-font-cache': new RegExp('^https://fonts.googleapis.com/.*', 'i'),
     'google-static-font-cache': new RegExp('^https://fonts.gstatic.com/.*', 'i'),
     'unpkg-cdn-cache': new RegExp('^https://unpkg.com/.*', 'i'),
@@ -66,7 +66,7 @@ export default {
         globPatterns: ['**/*.{js,css,webp,png,svg,gif,mp4,ico,woff2}'],
         runtimeCaching: [
             ...Object
-                .entries(STATIC_REOMTE_ASSETS)
+                .entries(STATIC_REMOTE_ASSETS)
                 .map(([cacheName, regex]) => ({
                     urlPattern: regex,
                     handler: 'CacheFirst',

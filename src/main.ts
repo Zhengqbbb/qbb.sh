@@ -102,7 +102,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
             op += ((1 - initial.op) * transitionStep) / transitionTime
             blur += ((0 - initial.blur) * transitionStep) / transitionTime
-            console.log(op, blur)
         }, transitionStep)
     }
 
