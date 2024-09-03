@@ -20,3 +20,39 @@
         U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
         U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
+@font-face {
+    font-family: 'Punctuation SC';
+    font-weight: 400;
+    src: local('PingFang SC Regular'), local('Noto Sans CJK SC'),
+      local('Microsoft YaHei');
+    unicode-range: U+201C, U+201D, U+2018, U+2019, U+2E3A, U+2014, U+2013, U+2026,
+      U+00B7, U+007E, U+002F;
+}
+
+@font-face {
+    font-family: 'Punctuation SC';
+    font-weight: 500;
+    src: local('PingFang SC Medium'), local('Noto Sans CJK SC'),
+      local('Microsoft YaHei');
+    unicode-range: U+201C, U+201D, U+2018, U+2019, U+2E3A, U+2014, U+2013, U+2026,
+      U+00B7, U+007E, U+002F;
+}
+
+@font-face {
+    font-family: 'Punctuation SC';
+    font-weight: 600;
+    src: local('PingFang SC Semibold'), local('Noto Sans CJK SC Bold'),
+      local('Microsoft YaHei Bold');
+    unicode-range: U+201C, U+201D, U+2018, U+2019, U+2E3A, U+2014, U+2013, U+2026,
+      U+00B7, U+007E, U+002F;
+}
+
+@font-face {
+    font-family: 'Punctuation SC';
+    font-weight: 700;
+    src: local('PingFang SC Semibold'), local('Noto Sans CJK SC Bold'),
+      local('Microsoft YaHei Bold');
+    unicode-range: U+201C, U+201D, U+2018, U+2019, U+2E3A, U+2014, U+2013, U+2026,
+      U+00B7, U+007E, U+002F;
+}

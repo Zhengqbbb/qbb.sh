@@ -3,6 +3,7 @@ import {
     presetAttributify,
     presetIcons,
     presetUno,
+    presetWebFonts,
     transformerDirectives,
     transformerVariantGroup,
 } from 'unocss'
@@ -75,19 +76,13 @@ export default defineConfig({
                 'vertical-align': 'text-bottom',
             },
         }),
-        /**
-<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-<link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-<link rel="preconnect" crossorigin="anonymous" href="https://fonts.googleapis.com" />
-<link rel="preconnect" crossorigin="anonymous" href="https://fonts.gstatic.com" />
-         */
-        // presetWebFonts({
-        //     fonts: {
-        //         sans: 'Inter:400,500,600,800',
-        //         mono: 'Noto Sans Mono:500,700',
-        //     },
-        //     extendTheme: false,
-        // }),
+        presetWebFonts({
+            fonts: {
+                sans: 'Inter:400,500,600,800',
+                mono: 'Noto Sans Mono:500,700',
+            },
+            extendTheme: false,
+        }),
     ],
     transformers: [
         transformerDirectives(),
