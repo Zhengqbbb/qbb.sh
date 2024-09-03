@@ -106,10 +106,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // Home Page Preload
-    const avatarEl = document.getElementById('home-avatar')
+    const avatarEl = document.getElementById('home-avatar') as HTMLImageElement
     if (avatarEl) {
         const avatar = new Image()
-        avatar.src = import.meta.env?.PROD ? 'https://static.qbb.sh/me.webp' : '/me.webp'
+        avatar.src = avatarEl.src
         avatar.onload = () => avatarEl.classList.add('loaded')
     }
 })

@@ -1,15 +1,17 @@
+export const CDN_URL = 'https://static.qbb.sh'
+
 export default {
     // basic default site info
     site: 'https://www.qbb.sh',
     siteShort: 'https://qbb.sh',
-    cdnUrl: 'https://static.qbb.sh',
+    cdnUrl: CDN_URL,
     title: 'Q.Ben Zheng | Zhengqbbb',
     description: 'Q.Ben Zheng\'s Personal Website',
     keywords: 'Zhengqbbb, Q.Ben, qbb, Qbenben',
     author: 'Q.Ben Zheng',
     appName: 'Q.Ben',
     // social links
-    ogImg: 'https://static.qbb.sh/og/index.png',
+    ogImg: `${CDN_URL}/og/index.png`,
     github: 'https://github.com/Zhengqbbb',
     twitter: 'https://x.com/zhengqbbb',
     twitterCreator: '@zhengqbbb',
