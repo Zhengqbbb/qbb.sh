@@ -65,7 +65,7 @@ export default {
         mode: 'production',
         navigateFallbackDenylist: [],
         navigateFallback: null,
-        globPatterns: ['**/*.{js,css,ico}'],
+        globPatterns: ['**/*.{js,css,ico,svg}'],
         runtimeCaching: [
             ...Object
                 .entries(STATIC_REMOTE_ASSETS)
