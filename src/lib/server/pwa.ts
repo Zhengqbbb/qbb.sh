@@ -17,6 +17,12 @@ const STATIC_REMOTE_ASSETS = {
     'github-static-cache': new RegExp('^https://(((raw|user-images|camo).githubusercontent.com))/.*', 'i'),
 }
 
+const PWA_ASSETS = [
+    '**/*.{js,css,ico}',
+    'logo-*.svg',
+    'pwa-*.png',
+]
+
 /**
  * Vite Plugin PWA uses Workbox  library to build the service worker
  * can find more information on Workbox section.
@@ -29,7 +35,7 @@ export default {
     scope: '/',
     registerType: 'autoUpdate',
     includeAssets: fg.sync(
-        '**/*.{js,css,ico}',
+        PWA_ASSETS,
         { cwd: resolve(dirname(fileURLToPath(import.meta.url)), '../../public') },
     ),
     manifest: {
@@ -65,7 +71,7 @@ export default {
         mode: 'production',
         navigateFallbackDenylist: [],
         navigateFallback: null,
-        globPatterns: ['**/*.{js,css,ico,svg}'],
+        globPatterns: PWA_ASSETS,
         runtimeCaching: [
             ...Object
                 .entries(STATIC_REMOTE_ASSETS)

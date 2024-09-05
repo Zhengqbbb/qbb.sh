@@ -23,7 +23,12 @@ const { footerClass = '' } = Astro.props
     <div flex="~ items-center gap-1.4">
         <a href="/posts" class="item" title="Blog"> Blog </a>
         <span role="separator"></span>
-        <a class="item" target="_blank" href={`${Meta.site}/feed.xml`}>RSS</a>
+        <a
+            data-astro-prefetch="false"
+            class="item"
+            target="_blank"
+            href={`${Meta.site}/feed.xml`}
+        >RSS</a>
     </div>
 </footer>
 
