@@ -73,7 +73,7 @@ desc: 一晃一年过半载，给这十七个月留下点痕迹
 ## 生活
 
 ![2024-new-house](/image/2024-new-home.webp)
-:f[🏠 小宿舍 • 2024.06.23]{size=664x498 data-zoom-src="/image/2024-new-home.jpg" capClass=text-center}
+:f[🏠 小宿舍 • 2024.06.23]{size=664x498 data-zoom-src="https://static.qbb.sh/image/2024-new-home.jpg" capClass=text-center}
 
 这一年熬夜还是很严重，已经记不清上一次 2 点前睡觉是什么时候了，但这一年开始注重调节生活和工作了，放假如果非必要休想我看一眼代码 😤。
 
