@@ -12,6 +12,7 @@
 
 # docs  link
 /hi           https://qbb.sh/posts/hi                                   301
+/repo         https://github.com/Zhengqbbb/qbb.sh                       301
 /sitemap.xml  https://qbb.sh/sitemap-index.xml                          301
 
 /*            /404.html                                                 404

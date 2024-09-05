@@ -33,6 +33,11 @@
       "statusCode": 301
     },
     {
+      "source": "/repo",
+      "destination": "https://github.com/Zhengqbbb/qbb.sh",
+      "statusCode": 301
+    },
+    {
       "source": "/gh",
       "destination": "https://github.com/Zhengqbbb/",
       "statusCode": 301
