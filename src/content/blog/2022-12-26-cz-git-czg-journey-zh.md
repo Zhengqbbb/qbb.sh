@@ -85,8 +85,6 @@ feat(components): [button] I did something with button
 ![cz-git-demo](/image/cz-demo-2.gif)
 :f{size=664x257}
 
----
-
 ## czg 的开发历程
 
 在一次偶然的 docker 环境测试中，渐渐拉开我对于 `Commitizen CLI` 替代品开发的序幕

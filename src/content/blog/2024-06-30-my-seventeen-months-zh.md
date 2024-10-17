@@ -49,7 +49,7 @@ desc: 一晃一年过半载，给这十七个月留下点痕迹
 
 ### Timeline
 
-1. 迁移 Astro 的想法最早是在去年看见 [AstroPaper](https://astro-paper.pages.dev/) 这个项目后，被秒开的速度和 5KB 加载体积吓到了。随后就发现 [Xiaohan](https://zxh.me/) 也完成了迁移，随后就问了她开发体验和使用变化，详情可以看这个 :i{carbon:logo-github} [Giscus](https://github.com/This-is-an-Apple/giscus-zxh.io/discussions/23)
+1. 迁移 Astro 的想法最早是在去年看见 [AstroPaper](https://astro-paper.pages.dev/) 这个项目后，被秒开的速度和 5KB 加载体积吓到了。随后就发现 [Xiaohan](https://zxh.me/) 也完成了迁移，随后就问了她开发和使用体验，详情可以看这个 :i{carbon:logo-github} [Giscus](https://github.com/This-is-an-Apple/giscus-zxh.io/discussions/23)
 2. 平时用 Vue React 比较多，想知道一个针对为站点内容为中心的 Astro 框架实际开发体验
 3. 其次是平时接触的站点用 SSG 比较多，类似一个 personal profile 的站点，如果不需要过多处理元素和数据交互，hydration 也可以不要直接做到最小开销，毕竟之前只用到了顶部栏的显隐和滚动监听，所以我就想知道用 Astro 到底能做多小，以及控制页面交互流程是什么感觉
 4. 在年底的时候，我是想开始写年度总结的了，但是这一年我的编码习惯，对于 UnoCSS 的使用，以及颜色搭配上都不一样了，最可怕的是升级依赖，包括 Vite，PNPM 等依赖都需要大版本升级，想想干脆迁移到 Astro 看看什么效果，结果刚立项还是被 Eslint 劝退了，Astro 的 Eslint 是社区维护的，年初的时候还没跟上 flat config 的版本，越想越不对劲就关停到现在了 🐦
