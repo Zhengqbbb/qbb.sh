@@ -1,8 +1,8 @@
-import fs from 'node:fs'
-import process from 'node:process'
-import { dirname } from 'node:path'
-import { fileURLToPath } from 'node:url'
 import type { AstroIntegration } from 'astro'
+import fs from 'node:fs'
+import { dirname } from 'node:path'
+import process from 'node:process'
+import { fileURLToPath } from 'node:url'
 import esbuild from 'esbuild'
 import { resolve } from 'pathe'
 

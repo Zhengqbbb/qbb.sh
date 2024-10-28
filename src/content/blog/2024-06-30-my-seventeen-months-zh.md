@@ -12,7 +12,7 @@ desc: 一晃一年过半载，给这十七个月留下点痕迹
 
 今年我大部分有关技术的分享，都放在了 :i{carbon:logo-x}[我的推特](https://x.com/zhengqbbb) 上进行。
 
-- 推特上发线程类文章，可以做到很好分段说明
+- 推特上发线程型文章，可以做到很好分段说明
 - 毕竟我崇拜的开发者关注了我，有粉丝就有动力了
 - 花了大价钱买的 [Screen Studio](https://www.screen.studio/), [Canva](https://canva.com/), [CleanShot](https://cleanshot.com/) 视频编辑工具，就趁分享的时候还可以顺带练练手
 
@@ -52,7 +52,7 @@ desc: 一晃一年过半载，给这十七个月留下点痕迹
 1. 迁移 Astro 的想法最早是在去年看见 [AstroPaper](https://astro-paper.pages.dev/) 这个项目后，被秒开的速度和 5KB 加载体积吓到了。随后就发现 [Xiaohan](https://zxh.me/) 也完成了迁移，随后就问了她开发和使用体验，详情可以看这个 :i{carbon:logo-github} [Giscus](https://github.com/This-is-an-Apple/giscus-zxh.io/discussions/23)
 2. 平时用 Vue React 比较多，想知道一个针对为站点内容为中心的 Astro 框架实际开发体验
 3. 其次是平时接触的站点用 SSG 比较多，类似一个 personal profile 的站点，如果不需要过多处理元素和数据交互，hydration 也可以不要直接做到最小开销，毕竟之前只用到了顶部栏的显隐和滚动监听，所以我就想知道用 Astro 到底能做多小，以及控制页面交互流程是什么感觉
-4. 在年底的时候，我是想开始写年度总结的了，但是这一年我的编码习惯，对于 UnoCSS 的使用，以及颜色搭配上都不一样了，最可怕的是升级依赖，包括 Vite，PNPM 等依赖都需要大版本升级，想想干脆迁移到 Astro 看看什么效果，结果刚立项还是被 Eslint 劝退了，Astro 的 Eslint 是社区维护的，年初的时候还没跟上 flat config 的版本，越想越不对劲就关停到现在了 🐦
+4. 在年底的时候，我是想开始写年度总结的了，但是这一年我的编码习惯，对于 UnoCSS 的使用，以及颜色搭配上都不一样了，最可怕的是升级依赖，包括 Vite，PNPM 等依赖都需要大版本升级，想想干脆迁移到 Astro 看看什么效果，结果刚立项还是被 Eslint 劝退了，Astro 的 Eslint 是社区维护的，年初的时候还没跟上 flat config 的版本，越想越不对劲就关停到现在了 🕊️
 5. 直到最近看见了 :i{carbon:logo-x} [面条发的模版](https://x.com/ccbikai/status/1789994147237036482)，感觉真不戳，让我这个懒人彻底心动了，而且 Antfu 的 :i{carbon:logo-github} [Eslint](https://github.com/antfu/eslint-config) 也支持了 Astro，立马就着手动工
 
 > 下次有这个想法就该直接关掉博客和域名迁移到 GitHub ISSUE 写博客 😤
@@ -65,7 +65,7 @@ desc: 一晃一年过半载，给这十七个月留下点痕迹
 - **忧是**：后续要增强站点的时候，还是卡了一段时间
     - 对于 script 的 bundle 行为很奇怪，明明代码只有一句 console.log 都 bundle 分了一个文件，但是如果想要 script inline 的话，则需要自行处理，缺少了一个既要又要的方式
     - 还有就是能很明显感觉到 Astro 偏向 SSR，例如禁用 `transformIndexHtml` 导致在构建时你想给页面统一注入有点麻烦等...
-    - 其次就是 `__dirname` 开发和构建时不一致 😶‍🌫️，对于一个脚本开发者来说，这点很敏感，我不能保证这 script 绝对能获取到数据，以及后续 Astro 升级会不会做出更改等，~~导致后面我连 file endpoints，hook 都不敢过多尝试~~: 后面折腾了好一会使用 hook 统一注入了 inline script
+    - 其次就是 `__dirname` 开发和构建时不一致 😶‍🌫️，对于一个脚本开发者来说，这点很敏感，因为我不能保证这段 script 绝对能获取到数据，以及后续 Astro 升级会不会做出更改等，~~导致后面我连 file endpoints，hook 都不敢过多尝试~~: 后面折腾了好一会使用 hook 统一注入了 inline script
 
 :m[但总的来说，Astro 体验还是很好的，目前的 profile 也做到了想要的体积和交互体验 😇]
 

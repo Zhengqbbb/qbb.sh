@@ -1,6 +1,6 @@
-import { visit } from 'unist-util-visit'
-import type { Plugin } from 'unified'
 import type { Root } from 'hast'
+import type { Plugin } from 'unified'
+import { visit } from 'unist-util-visit'
 import Meta from '../../meta'
 
 const rehypeImageCDN: Plugin<[], Root> = () => {

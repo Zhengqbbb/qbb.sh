@@ -1,6 +1,6 @@
 import rss from '@astrojs/rss'
-import Meta from '~/meta'
 import { getPostList } from '~/lib/server'
+import Meta from '~/meta'
 
 export async function GET() {
     const posts = await getPostList().then((r) => {

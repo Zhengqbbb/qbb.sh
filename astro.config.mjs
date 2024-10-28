@@ -1,13 +1,13 @@
+import Sitemap from '@astrojs/sitemap'
+import AstroPWA from '@vite-pwa/astro'
 import { defineConfig } from 'astro/config'
 import UnoCSS from 'unocss/astro'
-import AstroPWA from '@vite-pwa/astro'
-import Sitemap from '@astrojs/sitemap'
 import ViteRestart from 'vite-plugin-restart'
-import Meta from './src/meta'
-import vitePWAOptions from './src/lib/server/pwa'
-import injectBeforeHeadEl from './src/lib/server/injectBeforeHeadEl'
-import injectAfterHeadEl from './src/lib/server/injectAfterHeadEl'
 import { rehypePlugins, remarkPlugins } from './src/lib/markdown'
+import injectAfterHeadEl from './src/lib/server/injectAfterHeadEl'
+import injectBeforeHeadEl from './src/lib/server/injectBeforeHeadEl'
+import vitePWAOptions from './src/lib/server/pwa'
+import Meta from './src/meta'
 
 export default defineConfig({
     site: Meta.site,

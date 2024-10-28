@@ -1,6 +1,6 @@
-import { visit } from 'unist-util-visit'
-import type * as mdast from 'mdast'
 import type { RemarkPlugin } from '@astrojs/markdown-remark'
+import type * as mdast from 'mdast'
+import { visit } from 'unist-util-visit'
 
 function calcSize(size: string) {
     const tmp = size.split('x')

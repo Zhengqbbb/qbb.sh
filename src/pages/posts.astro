@@ -1,8 +1,8 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import Layout from '~/layouts/Default.astro'
 import DashText from '~/components/DashText.astro'
 import ListPost from '~/components/ListPost.astro'
+import Layout from '~/layouts/Default.astro'
 import { getPostList } from '~/lib/server'
 import Meta from '~/meta'
 
@@ -19,6 +19,7 @@ const postEntries = postList.reduce((acc, post) => {
         acc[postYear] = [post]
     else
         acc[postYear].push(post)
+
     return acc
 }, {} as PostEntries)
 

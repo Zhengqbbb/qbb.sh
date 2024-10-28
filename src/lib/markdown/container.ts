@@ -1,6 +1,6 @@
-import { visit } from 'unist-util-visit'
-import type * as mdast from 'mdast'
 import type { RemarkPlugin } from '@astrojs/markdown-remark'
+import type * as mdast from 'mdast'
+import { visit } from 'unist-util-visit'
 
 /** @see https://github.com/remarkjs/remark-directive?tab=readme-ov-file#use */
 export function remarkContainer(): ReturnType<RemarkPlugin> {

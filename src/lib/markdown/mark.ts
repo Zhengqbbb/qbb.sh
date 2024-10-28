@@ -1,6 +1,6 @@
-import { visit } from 'unist-util-visit'
-import { h } from 'hastscript'
 import type { RemarkPlugin } from '@astrojs/markdown-remark'
+import { h } from 'hastscript'
+import { visit } from 'unist-util-visit'
 
 /** @see https://github.com/remarkjs/remark-directive?tab=readme-ov-file#use */
 /** For support: :m[hightlight text] => <mark>hightlight text</mark> */

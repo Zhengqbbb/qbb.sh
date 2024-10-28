@@ -1,7 +1,7 @@
 import type { CollectionEntry } from 'astro:content'
 import { getCollection } from 'astro:content'
-import { calcReadingTime } from './readtime'
 import Meta from '~/meta'
+import { calcReadingTime } from './readtime'
 
 export const postHasDate = (post: CollectionEntry<'blog'>) => !!post.data.date
 

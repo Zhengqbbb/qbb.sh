@@ -1,10 +1,10 @@
+import type { CollectionEntry } from 'astro:content'
+import { readFile } from 'node:fs/promises'
 import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { readFile } from 'node:fs/promises'
-import { resolve } from 'pathe'
 import { Resvg } from '@resvg/resvg-js'
+import { resolve } from 'pathe'
 import { satoriAstro } from 'x-satori/astro'
-import type { CollectionEntry } from 'astro:content'
 
 const _DIRNAME = import.meta.env?.PROD
     // 😅 Please ensure __dirname. Astro __dirname in dist folder on PROD (astro build) time 🫠

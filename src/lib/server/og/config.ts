@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises'
-import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { defineSatoriConfig } from 'x-satori/astro'
 import Meta from '../../../meta' /** @see package.json `pnpm dev:og` => For CLI using a relative path */
 

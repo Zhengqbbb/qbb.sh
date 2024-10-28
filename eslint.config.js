@@ -17,8 +17,15 @@ export default antfu(
             },
             typescript: {
                 'ts/ban-ts-comment': 'off',
+                'antfu/no-top-level-await': 'off',
             },
         },
         ignores: [],
+    },
+    {
+        files: ['**/*.astro'],
+        rules: {
+            'antfu/no-top-level-await': 'off',
+        },
     },
 )

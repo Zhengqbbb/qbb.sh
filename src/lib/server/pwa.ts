@@ -1,6 +1,6 @@
+import type { VitePWAOptions } from 'vite-plugin-pwa'
 import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import type { VitePWAOptions } from 'vite-plugin-pwa'
 import fg from 'fast-glob'
 import { resolve } from 'pathe'
 import Meta from '../../meta'

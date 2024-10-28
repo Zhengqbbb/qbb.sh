@@ -1,6 +1,6 @@
-import { visit } from 'unist-util-visit'
-import type * as mdast from 'mdast'
 import type { RemarkPlugin } from '@astrojs/markdown-remark'
+import type * as mdast from 'mdast'
+import { visit } from 'unist-util-visit'
 
 /** For add a wrap to table to horizontal slide */
 export function remarkTableWrap(): ReturnType<RemarkPlugin> {

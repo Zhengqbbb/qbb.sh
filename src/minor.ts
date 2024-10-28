@@ -4,8 +4,8 @@
  * - Enhance page interaction
  */
 
-import { registerSW } from 'virtual:pwa-register'
 import mediumZoom from 'medium-zoom'
+import { registerSW } from 'virtual:pwa-register'
 import { handleAnchors, injectGiscusEl } from '~/lib/client'
 
 // register the service worker - PWA
