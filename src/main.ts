@@ -94,7 +94,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const bgUnGradientTimer = setInterval(() => {
             if (op >= 1) {
                 clearInterval(bgUnGradientTimer)
-                bgUnGradient.style.cssText = `--bg-un-gradient: hsl(var(--c-bg)) 50%, transparent 90%, transparent 100%; filter: blur(0); z-index: -1;`
+                bgUnGradient.style.cssText
+                    = `--bg-un-gradient: hsl(var(--c-bg)) 50%, transparent 90%, transparent 100%; filter: blur(0); z-index: -1;`
             }
             else {
                 bgUnGradient.style.cssText
