@@ -16,6 +16,7 @@ export default {
     twitter: 'https://x.com/zhengqbbb',
     twitterCreator: '@zhengqbbb',
     instagram: 'https://www.instagram.com/qbqiubin/',
+    bluesky: 'https://bsky.app/profile/qbb.sh',
     email: 'hi@qbb.sh',
 }
 
