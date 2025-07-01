@@ -27,7 +27,7 @@ const projectEntries = await getEntry('projects', 'index')
     <div>
     {
         Object
-            .entries(projectEntries.data)
+            .entries(projectEntries?.data || [])
             .map(([categroy, projects], idx) => (
                 <div
                     class="slide-enter relative mt-28 lt-sm:mb--0 sm:first:mt-24"

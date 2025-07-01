@@ -22,7 +22,7 @@ const bgRightMask = ` linear-gradient(to top right, ${backgroundColor} 46% , tra
 >
     <div class="absolute h-auto w-full flex">
         <div class="absolute left--2rem top-0 h-auto w-1/2 flex flex-col">
-            <div class="relative h-[30px] h-[60px] w-full flex flex">
+            <div class="relative h-[60px] w-full flex">
                 <div class="h-66px w-66px flex" style={{ backgroundColor }}></div>
                 {
                     Array.from({ length: bgBorderRow - 1 }).fill(null).map(() => (
@@ -32,7 +32,7 @@ const bgRightMask = ` linear-gradient(to top right, ${backgroundColor} 46% , tra
             </div>
             {
                 Array.from({ length: bgBorderCol - 2 }).fill(null).map(() => (
-                    <div class="relative h-[30px] h-[60px] w-full flex flex">
+                    <div class="relative h-[60px] w-full flex">
                         <div class="h-66px w-66px flex" style={{ backgroundColor, borderTop }}></div>
                         {
                             Array.from({ length: bgBorderRow - 1 }).fill(null).map(() => (
@@ -42,7 +42,7 @@ const bgRightMask = ` linear-gradient(to top right, ${backgroundColor} 46% , tra
                     </div>
                 ))
             }
-            <div class="relative h-[30px] h-[60px] w-full flex flex">
+            <div class="relative h-[60px] w-full flex flex">
                 <div class="h-66px w-66px flex" style={{ backgroundColor, borderTop }}></div>
                 {
                     Array.from({ length: bgBorderRow - 1 }).fill(null).map(() => (
@@ -57,7 +57,7 @@ const bgRightMask = ` linear-gradient(to top right, ${backgroundColor} 46% , tra
             </div>
         </div>
         <div class="absolute right--4.5rem top-0 h-auto w-1/2 flex flex-col">
-            <div class="relative h-[30px] h-[60px] w-full flex flex">
+            <div class="relative h-[60px] w-full flex flex">
                 {
                     Array.from({ length: bgBorderRow }).fill(null).map(() => (
                         <div class="h-66px w-66px flex" style={{ backgroundColor, borderLeft }}></div>
@@ -66,7 +66,7 @@ const bgRightMask = ` linear-gradient(to top right, ${backgroundColor} 46% , tra
             </div>
             {
                 Array.from({ length: bgBorderCol - 2 }).fill(null).map(() => (
-                    <div class="relative h-[30px] h-[60px] w-full flex flex">
+                    <div class="relative h-[60px] w-full flex flex">
                         {
                             Array.from({ length: bgBorderRow }).fill(null).map(() => (
                                 <div class="h-66px w-66px flex" style={{ backgroundColor, borderTop, borderLeft }}></div>
@@ -75,7 +75,7 @@ const bgRightMask = ` linear-gradient(to top right, ${backgroundColor} 46% , tra
                     </div>
                 ))
             }
-            <div class="relative h-[30px] h-[60px] w-full flex flex">
+            <div class="relative h-[60px] w-full flex flex">
                 {
                     Array.from({ length: bgBorderRow - 1 }).fill(null).map(() => (
                         <div class="h-66px w-66px flex" style={{ backgroundColor, borderTop }}></div>
