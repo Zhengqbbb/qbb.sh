@@ -14,24 +14,23 @@ const { prev, next } = Astro.props
         <div class="group relative cursor-pointer border border-transparent rd-sm border-dashed">
             <div
                 class="absolute inset-0 z-10 size-full border border-c-border-accent rd-sm border-dashed transition-transform-300 ease-out"
-                group-hover="translate-x-1 translate-y-1"
+                un-translate="media-mouse:group-hover:[4px,4px]"
             />
             <div
                 bg-c-bg
                 class="absolute inset-0 z-20 size-full border border-c-border-accent rd-sm border-dashed transition-transform-300 ease-out"
-                group-hover="translate-x--1 translate-y--1"
+                un-translate="media-mouse:group-hover:[-4px,-4px]"
                 group-active="card-translate-reset"
             />
             <a
                 href={prev.link}
                 class="relative z-30 block px-6 py-4 transition-transform-300 ease-out"
-                group-hover="translate-x--1 translate-y--1"
+                un-translate="media-mouse:group-hover:[-4px,-4px]"
                 group-active="card-translate-reset"
             >
                 <div class="relative text-sm text-c-fg-2">
                     <i
-                        class="i-uil:arrow-right absolute left--4 top-50% translate-x-1 translate-y--50% rotate-180 text-base op-0 transition-all-200 ease-in-out"
-                        group-hover="translate-x--1 op-100"
+                        class="i-uil:arrow-right absolute left--4 top-50% translate-x-1 translate-y--50% rotate-180 text-base op-0 transition-all-200 ease-in-out media-mouse:group-hover:(translate-x--1 op-100)"
                     ></i>
                     Previous page
                 </div>
@@ -63,8 +62,7 @@ const { prev, next } = Astro.props
                 <div class="relative text-sm text-c-fg-2">
                     Previous page
                     <i
-                        class="i-uil:arrow-right absolute right--4 top-50% translate-x--1 translate-y--50% text-base op-0 transition-all-200 ease-in-out"
-                        group-hover="translate-x-1 op-100"
+                        class="i-uil:arrow-right absolute right--4 top-50% translate-x--1 translate-y--50% text-base op-0 transition-all-200 ease-in-out media-mouse:group-hover:(translate-x-1 op-100)"
                     ></i>
                 </div>
                 <div class="line-clamp-2 mt-2 text-c-fg-3">

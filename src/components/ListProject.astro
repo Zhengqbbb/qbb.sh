@@ -19,18 +19,18 @@ const {
         >
             <div
                 class="absolute inset-0 z-10 size-full border border-c-border-accent rd border-dashed transition-transform-300 ease-out"
-                group-hover="translate-x-1 translate-y-1"
+                un-translate="media-mouse:group-hover:[4px,4px]"
             />
             <div
                 bg-c-bg
                 class="absolute inset-0 z-20 size-full border border-c-border-accent rd border-dashed transition-transform-300 ease-out"
-                group-hover="translate-x--1 translate-y--1"
+                un-translate="media-mouse:group-hover:[-4px,-4px]"
                 group-active="card-translate-reset"
             />
             <a
                 flex="~ col items-stretch"
                 class="image-container relative z-30 p-7 transition-transform-300 ease-out sm:p-3"
-                group-hover="translate-x--1 translate-y--1"
+                un-translate="media-mouse:group-hover:[-4px,-4px]"
                 group-active="card-translate-reset"
                 href={project.link}
                 {...isExternal(project.link) ? { rel: 'noreferrer', target: '_blank' } : {}}
@@ -53,8 +53,7 @@ const {
                     >
                         {project.title}
                         <i
-                            class="i-uil:arrow-right translate-x--1 translate-y-1 rotate--45 text-base op-0 transition-all-200 ease-in-out"
-                            group-hover="translate-x-0 translate-y-0 op-100"
+                            class="i-uil:arrow-right translate-[-4px,4px] rotate--45 text-base op-0 transition-all-200 ease-in-out media-mouse:group-hover:(translate-0 op-100)"
                         ></i>
                     </h3>
                     <p class="line-clamp-2 text-sm text-c-fg-2">

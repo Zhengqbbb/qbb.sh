@@ -15,17 +15,17 @@ const { posts } = Astro.props
     >
         <div
             class="absolute inset-0 z-10 size-full border border-c-border-accent rd border-dashed transition-transform-300 ease-out"
-            group-hover="translate-x-1 translate-y-1"
+            un-translate="media-mouse:group-hover:[4px,4px]"
         />
         <div
             bg-c-bg
             class="absolute inset-0 z-20 size-full border border-c-border-accent rd border-dashed transition-transform-300 ease-out"
-            group-hover="translate-x--1 translate-y--1"
+            un-translate="media-mouse:group-hover:[-4px,-4px]"
             group-active="card-translate-reset"
         />
         <a
             class="relative z-30 block p-7 transition-transform-300 ease-out"
-            group-hover="translate-x--1 translate-y--1"
+            un-translate="media-mouse:group-hover:[-4px,-4px]"
             group-active="card-translate-reset"
             href={post.data.link}
         >
@@ -35,8 +35,7 @@ const { posts } = Astro.props
             >
                 {post.data.title}
                 <i
-                    class="i-uil:arrow-right translate-x--1 text-base op-0 transition-all-200 ease-in-out"
-                    group-hover="translate-x-1 op-100"
+                    class="i-uil:arrow-right translate-x--1 text-base op-0 transition-all-200 ease-in-out media-mouse:group-hover:(translate-x-1 op-100)"
                 ></i>
             </h2>
             <p

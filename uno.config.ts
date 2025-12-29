@@ -2,13 +2,17 @@ import {
     defineConfig,
     presetAttributify,
     presetIcons,
-    presetUno,
+    presetWind3,
     transformerDirectives,
     transformerVariantGroup,
 } from 'unocss'
 
 export default defineConfig({
     theme: {
+        media: {
+            mouse: '(pointer: fine)',
+            mhover: '(hover) and (pointer: fine)',
+        },
         breakpoints: {
             sm: '640px',
             md: '768px',
@@ -58,7 +62,7 @@ export default defineConfig({
         ['image-unloaded', ' blur-4! op-0!'],
         ['image-transition', 'property-[filter,opacity,transform] duration-400 ease'],
         ['image-loaded', 'blur-0 op-100 image-transition'],
-        ['card-translate-reset', 'sm:(translate-x-0! translate-y-0! duration-100)'],
+        ['card-translate-reset', 'media-mouse:(translate-x-0! translate-y-0! duration-100)'],
         ['c-sk', 'animate-pulse bg-neutral-200 dark:bg-neutral-900'],
     ],
     content: {
@@ -66,7 +70,7 @@ export default defineConfig({
     },
     presets: [
         presetAttributify(),
-        presetUno(),
+        presetWind3(),
         presetIcons({
             extraProperties: {
                 'display': 'inline-block',
