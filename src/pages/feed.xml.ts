@@ -12,13 +12,13 @@ export async function GET() {
         description: Meta.description,
         site: Meta.site,
         items: posts.map(item => ({
-            link: `/posts/${item.slug}`,
+            link: `/posts/${item.id}`,
             title: item.data.title,
             description: item.data.desc,
             author: `${Meta.email} (${Meta.author})`,
             pubDate: new Date(item.data.date!.iso),
             enclosure: {
-                url: `${Meta.site}/og/${item.slug}.png`,
+                url: `${Meta.site}/og/${item.id}.png`,
                 length: 0,
                 type: 'image/png',
             },

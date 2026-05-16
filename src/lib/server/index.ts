@@ -10,11 +10,11 @@ export async function getPostList(): Promise<CollectionEntry<'blog'>[]> {
     const posts = await getCollection('blog')
     let res = posts
         .map((post) => {
-            post.data.lang = post.slug.endsWith('-zh') ? 'zh' : 'en'
-            post.data.image ??= `/og/${post.slug}.png`
-            post.data.readTime = `${calcReadingTime(post.body).minutes}`
-            post.data.link = `/posts/${post.slug}`
-            const date = post.slug.substring(0, 10)
+            post.data.lang = post.id.endsWith('-zh') ? 'zh' : 'en'
+            post.data.image ??= `/og/${post.id}.png`
+            post.data.readTime = `${calcReadingTime(post.body ?? '').minutes}`
+            post.data.link = `/posts/${post.id}`
+            const date = post.id.substring(0, 10)
             if (date.length !== 10)
                 return post
             post.data.date = {
@@ -35,7 +35,7 @@ export async function getPostList(): Promise<CollectionEntry<'blog'>[]> {
             return post
         })
         .sort((a, b) => {
-            return a!.slug > b!.slug ? -1 : 1
+            return a!.id > b!.id ? -1 : 1
         }) as Required<typeof posts>
 
     res = res.map((post, idx) => {

@@ -1,3 +1,9 @@
+shamefullyHoist: true
+shellEmulator: true
+strictPeerDependencies: false
+allowBuilds:
+  esbuild: true
+  sharp: true
 onlyBuiltDependencies:
   - esbuild
   - sharp

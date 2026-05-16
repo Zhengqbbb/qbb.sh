@@ -1,11 +1,12 @@
-import { defineCollection, z } from 'astro:content'
+import { file, glob } from 'astro/loaders'
+import { z } from 'astro/zod'
+import { defineCollection } from 'astro:content'
 
 const blog = defineCollection({
-    type: 'content',
+    loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
     schema: z.object({
         title: z.string(),
         desc: z.string(),
-        // #region [Optional] - gen from data
         /** Specify the use of Open Graph images */
         image: z.string().optional(),
         link: z.string().optional(),
@@ -27,13 +28,12 @@ const blog = defineCollection({
             title: z.string(),
             link: z.string(),
         }).optional(),
-        // #endregion
     }),
 })
 
 const projects = defineCollection({
-    type: 'data',
-    schema: z.record(z.array(
+    loader: file('./src/content/projects/index.yml'),
+    schema: z.record(z.string(), z.array(
         z.object({
             title: z.string(),
             desc: z.string(),
