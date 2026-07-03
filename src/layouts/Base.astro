@@ -2,7 +2,7 @@
 import BaseHead from '~/components/BaseHead.astro'
 import Header from '~/components/Header.astro'
 import SquareLines from '~/components/SquareLines.astro'
-import '~/styles/index.css'
+import stylesUrl from '~/styles/index.css?url'
 
 interface Props {
     title?: string
@@ -20,6 +20,7 @@ const props = Astro.props
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <BaseHead {...props} />
+        <link rel="stylesheet" href={stylesUrl} />
         <script src="/src/minor.ts"></script>
     </head>
 

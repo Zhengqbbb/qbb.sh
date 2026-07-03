@@ -1,25 +1,31 @@
-/**
- * The minor entry point for:
- * - Provide page extra features
- * - Enhance page interaction
- */
-
-import mediumZoom from 'medium-zoom'
+import mediumZoom from 'medium-zoom/dist/pure'
 import { registerSW } from 'virtual:pwa-register'
 import { handleAnchors, injectGiscusEl } from '~/lib/client'
 
-// 仅生产注册 SW，避免 dev 下 SW 缓存/拦截导致白屏或陈旧资源
 if (import.meta.env.PROD)
     registerSW({ immediate: true })
 
-// inject medium-zoom
-const zoom = mediumZoom()
-zoom.attach('.prose :not(a) > img:not(.no-zoom)')
+// function loadZoom() {
+//     const target = '.prose :not(a) > img:not(.no-zoom)'
+//     if (window.__zoom) {
+//         window.__zoom.detach()
+//         window.__zoom.attach(target)
+//         return
+//     }
+//     window.__zoom = mediumZoom(target)
+// }
 
-// inject header anchor handler
-const content = document.querySelector('.prose.post')
-content?.addEventListener('click', handleAnchors, { passive: false })
+function loadPage() {
+    const zoom = mediumZoom()
+    zoom.detach()
+    zoom.attach('.prose :not(a) > img:not(.no-zoom)')
 
-// inject Giscus
-if (document.getElementById('giscus'))
-    injectGiscusEl()
+    const content = document.querySelector('.prose.post')
+    content?.addEventListener('click', handleAnchors, { passive: false })
+
+    if (document.getElementById('giscus'))
+        injectGiscusEl()
+}
+
+loadPage()
+document.addEventListener('astro:after-swap', loadPage)

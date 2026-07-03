@@ -1,8 +1,6 @@
 /**
- * The main entry point inline script handle
- * Astro does not support handle the inline script
- * So the ts file have to handle it manually by integration and esbuild
- * '/src/lib/server/injectAfterHeadEl.ts'
+ * Inline module script injected by injectAfterHeadEl.ts.
+ * Runs once — ClientRouter does not re-execute inline scripts.
  */
 import { navigate, toggleGiscusTheme } from '~/lib/client'
 
@@ -14,23 +12,10 @@ window.toggleTheme = () => {
     window.isDark = isDark
     localStorage.setItem('theme-scheme', isDark ? 'dark' : 'light')
 }
-document
-    ?.getElementById('theme-toggle')
-    ?.addEventListener('click', window.toggleTheme)
-
-function setThemeColorHeadMeta() {
-    document
-        .querySelector('meta[name="theme-color"]')
-        ?.setAttribute('content', window.isDark ? '#0a0a0a' : '#ffffff')
-}
 // #endregion
 
 // #region - Header Sticky
 /* @unocss-include */
-/* astro will bundle and create inline script
- * the unocss not will be include style,
- * need to using `content.filesystem` uno.config.ts
- */
 const stickyClasses = ['fixed', 'h-[calc(var(--c-nav-hight)-24px)]']
 const unstickyClasses = ['absolute', 'h-$c-nav-hight']
 const stickyClassesContainer = [
@@ -58,20 +43,59 @@ function handleHeaderElementScrollCB(el: HTMLElement) {
 }
 // #endregion
 
-document.addEventListener('DOMContentLoaded', async () => {
-    // Add Theme Change Observer
-    const themeChangeObs = new MutationObserver(() => {
-        setThemeColorHeadMeta()
-        if (document.getElementById('giscus'))
-            toggleGiscusTheme(window.isDark)
-    })
+// #region - Page Background & Avatar
+let bgGradientTimer: ReturnType<typeof setInterval> | null = null
 
-    themeChangeObs.observe(
-        document.documentElement,
-        { attributes: true, attributeFilter: ['class'] },
-    )
+function initBgGradient() {
+    if (bgGradientTimer) {
+        clearInterval(bgGradientTimer)
+        bgGradientTimer = null
+    }
+    const bgUnGradient = document.getElementById('bg-un-gradient')
+    if (!bgUnGradient?.style?.cssText)
+        return
 
-    // Handle Header Sticky
+    let op = 0.6
+    let blur = 1
+    const initial = { op, blur }
+    const transitionTime = 500
+    const transitionStep = 10
+    bgGradientTimer = setInterval(() => {
+        if (op >= 1) {
+            clearInterval(bgGradientTimer!)
+            bgGradientTimer = null
+            bgUnGradient.style.cssText
+                = `--bg-un-gradient: hsl(var(--c-bg)) 50%, transparent 90%, transparent 100%; filter: blur(0); z-index: -1;`
+        }
+        else {
+            bgUnGradient.style.cssText
+                = `--bg-un-gradient: hsl(var(--c-bg) / ${op}) 50%, transparent 90%, transparent 100%; filter: blur(${blur}px); z-index: -1;`
+        }
+        op += ((1 - initial.op) * transitionStep) / transitionTime
+        blur += ((0 - initial.blur) * transitionStep) / transitionTime
+    }, transitionStep)
+}
+
+function initAvatar() {
+    const avatarEl = document.getElementById('home-avatar') as HTMLImageElement
+    if (!avatarEl)
+        return
+
+    const avatar = new Image()
+    avatar.src = avatarEl.src
+    avatar.onload = () => avatarEl.classList.add('loaded')
+}
+// #endregion
+
+// #region - Per-navigation init
+function initPerPage() {
+    document
+        .getElementById('theme-toggle')
+        ?.addEventListener('click', window.toggleTheme)
+
+    if (window.headerScrollHandler)
+        window.removeEventListener('scroll', window.headerScrollHandler)
+
     const headerEl = document.getElementById('header')
     if (headerEl) {
         handleHeaderElementScrollCB(headerEl)
@@ -79,38 +103,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         window.addEventListener('scroll', window.headerScrollHandler)
     }
 
-    // Handle Page Enter with Hash
     if (window.location.hash)
         setTimeout(navigate)
 
-    // Page Background
-    const bgUnGradient = document.getElementById('bg-un-gradient')
-    if (bgUnGradient && bgUnGradient?.style?.cssText) {
-        let op = 0.6
-        let blur = 1
-        const initial = { op, blur }
-        const transitionTime = 500
-        const transitionStep = 10
-        const bgUnGradientTimer = setInterval(() => {
-            if (op >= 1) {
-                clearInterval(bgUnGradientTimer)
-                bgUnGradient.style.cssText
-                    = `--bg-un-gradient: hsl(var(--c-bg)) 50%, transparent 90%, transparent 100%; filter: blur(0); z-index: -1;`
-            }
-            else {
-                bgUnGradient.style.cssText
-                    = `--bg-un-gradient: hsl(var(--c-bg) / ${op}) 50%, transparent 90%, transparent 100%; filter: blur(${blur}px); z-index: -1;`
-            }
-            op += ((1 - initial.op) * transitionStep) / transitionTime
-            blur += ((0 - initial.blur) * transitionStep) / transitionTime
-        }, transitionStep)
-    }
+    initBgGradient()
+    initAvatar()
+}
+// #endregion
 
-    // Home Page Preload
-    const avatarEl = document.getElementById('home-avatar') as HTMLImageElement
-    if (avatarEl) {
-        const avatar = new Image()
-        avatar.src = avatarEl.src
-        avatar.onload = () => avatarEl.classList.add('loaded')
-    }
+// Created once, persists across navigations
+const themeChangeObs = new MutationObserver(() => {
+    const meta = document.querySelector('meta[name="theme-color"]')
+    if (meta)
+        meta.setAttribute('content', window.isDark ? '#0a0a0a' : '#ffffff')
+    if (document.getElementById('giscus'))
+        toggleGiscusTheme(window.isDark)
 })
+themeChangeObs.observe(
+    document.documentElement,
+    { attributes: true, attributeFilter: ['class'] },
+)
+
+initPerPage()
+document.addEventListener('astro:after-swap', initPerPage)

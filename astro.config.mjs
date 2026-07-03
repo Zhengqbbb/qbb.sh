@@ -1,3 +1,4 @@
+import { unified } from '@astrojs/markdown-remark'
 import Sitemap from '@astrojs/sitemap'
 import AstroPWA from '@vite-pwa/astro'
 import { defineConfig } from 'astro/config'
@@ -21,7 +22,7 @@ export default defineConfig({
         format: 'preserve',
     },
     integrations: [
-        UnoCSS({ injectReset: true }),
+        UnoCSS(),
         AstroPWA(vitePWAOptions),
         Sitemap(),
         injectBeforeHeadEl(),
@@ -48,7 +49,9 @@ export default defineConfig({
             theme: 'vitesse-dark',
             wrap: true,
         },
-        remarkPlugins,
-        rehypePlugins,
+        processor: unified({
+            remarkPlugins,
+            rehypePlugins,
+        }),
     },
 })

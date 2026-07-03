@@ -4,6 +4,17 @@
 import type { AttributifyAttributes } from '@unocss/preset-attributify'
 import type mediumZoom from 'medium-zoom'
 
+declare module 'unist' {
+    interface Data {
+        /** @see https://github.com/syntax-tree/mdast-util-to-hast#hname */
+        hName?: string
+        /** @see https://github.com/syntax-tree/mdast-util-to-hast#hproperties */
+        hProperties?: Record<string, unknown>
+        /** @see https://github.com/remarkjs/remark-directive */
+        directiveLabel?: boolean
+    }
+}
+
 declare global {
     interface Window {
         isDark: boolean

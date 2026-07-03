@@ -8,17 +8,26 @@
  * Will using 'src/lib/server/injectBeforeHeadEl.ts' Integration to inject the script
  */
 
-(() => {
-    var prefersDark = window?.matchMedia('(prefers-color-scheme: dark)').matches
-    var preference = localStorage.getItem('theme-scheme') || 'auto'
-    if (preference === 'dark' || (preference !== 'light' && prefersDark)) {
-        document.documentElement.classList.add('dark')
-        window.isDark = true
+;(() => {
+    function applyTheme() {
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        var preference = localStorage.getItem('theme-scheme') || 'auto'
+        if (preference === 'dark' || (preference !== 'light' && prefersDark)) {
+            document.documentElement.classList.add('dark')
+            window.isDark = true
+        }
+        else {
+            document.documentElement.classList.remove('dark')
+            window.isDark = false
+            // pre set theme-color for PWA phone application. Prevent blinking
+            document
+                .querySelector('meta[name="theme-color"]')
+                ?.setAttribute('content', '#ffffff')
+        }
     }
-    else {
-        // pre set theme-color for PWA phone application. Prevent blinking
-        document
-            .querySelector('meta[name="theme-color"]')
-            ?.setAttribute('content', '#ffffff')
-    }
+
+    applyTheme()
+
+    // ClientRouter: inline scripts don't re-execute, re-apply theme after swap
+    document.addEventListener('astro:after-swap', applyTheme)
 })()
