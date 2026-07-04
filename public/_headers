@@ -2,7 +2,7 @@
 /feed.xml
 /sw.js
 /workbox-*
-  Cache-Control: public, max-age=0, must-revalidate
+	Cache-Control: public, max-age=0, must-revalidate
 
 /_astro/*
 /fonts/*
@@ -15,10 +15,11 @@
 /*.jpeg
 /*.webp
 /*.svg
-  Cache-Control: public, max-age=31536000, immutable
+  	Cache-Control: public, max-age=31536000, immutable
+
 /manifest.webmanifest
-  Content-Type: application/manifest+json; charset=utf-8
-  Cache-Control: public, max-age=31536000, immutable
+  	Content-Type: application/manifest+json; charset=utf-8
+  	Cache-Control: public, max-age=31536000, immutable
 
 /*
-  Cache-Control: public, max-age=300
+  	Cache-Control: public, max-age=300
