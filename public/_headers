@@ -1,7 +1,6 @@
 /sitemap*.xml
-  Cache-Control: public, max-age=0, must-revalidate
-
 /feed.xml
+/workbox-*
   Cache-Control: public, max-age=0, must-revalidate
 
 /manifest.webmanifest
@@ -9,7 +8,6 @@
   Cache-Control: public, max-age=31536000, immutable
 
 /_astro/*
-/workbox-*
 /fonts/*
 /*.woff
 /*.woff2
