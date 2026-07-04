@@ -7,6 +7,7 @@ import ViteRestart from 'vite-plugin-restart'
 import { rehypePlugins, remarkPlugins } from './src/lib/markdown'
 import injectAfterHeadEl from './src/lib/server/injectAfterHeadEl'
 import injectBeforeHeadEl from './src/lib/server/injectBeforeHeadEl'
+import { mergeCSSAssets } from './src/lib/server/mergeCSS'
 import vitePWAOptions from './src/lib/server/pwa'
 import Meta from './src/meta'
 
@@ -27,17 +28,19 @@ export default defineConfig({
         Sitemap(),
         injectBeforeHeadEl(),
         injectAfterHeadEl(),
+        mergeCSSAssets(),
     ],
     vite: {
-        build: { cssCodeSplit: false },
-        plugins: [ViteRestart({
-            reload: [],
-            restart: [
-                './src/main.ts',
-                './src/lib/markdown/**/*.ts',
-                './src/lib/client/head/**/*.ts',
-            ],
-        })],
+        plugins: [
+            ViteRestart({
+                reload: [],
+                restart: [
+                    './src/main.ts',
+                    './src/lib/markdown/**/*.ts',
+                    './src/lib/client/head/**/*.ts',
+                ],
+            }),
+        ],
         optimizeDeps: { exclude: ['@resvg/resvg-js'] },
     },
     prefetch: {

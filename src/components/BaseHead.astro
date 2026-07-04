@@ -42,4 +42,4 @@ const ogImg = image ? getImageUrl(image) : Meta.ogImg
 { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
 <Fragment set:html={import.meta.env.INJECT_AFTRE_HEAD_INLINE_SCRIPT} />
 <Fragment set:html={import.meta.env.HEAD_INJECT} />
-<ClientRouter />
+<ClientRouter fallback="swap" />
