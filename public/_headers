@@ -6,6 +6,8 @@
 
 /_astro/*
 /fonts/*
+/image/*
+/og/*
 /*.woff
 /*.woff2
 /*.ttf
@@ -19,7 +21,7 @@
 
 /manifest.webmanifest
   	Content-Type: application/manifest+json; charset=utf-8
-  	Cache-Control: public, max-age=31536000, immutable
+  	Cache-Control: public, max-age=0, must-revalidate
 
 /*
   	Cache-Control: public, max-age=300
