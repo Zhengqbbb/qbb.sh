@@ -1,7 +1,8 @@
-/_astro/*
-  cache-control: max-age=31536000
-  cache-control: immutable
-  cache-control: public
-
 /manifest.webmanifest
-  Content-Type: application/manifest+json
+  Content-Type: application/manifest+json; charset=utf-8
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*
+  Cache-Control: public, max-age=300
