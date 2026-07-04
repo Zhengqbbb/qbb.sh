@@ -1,5 +1,7 @@
 ---
 import Meta from '~/meta'
+
+const pathname = Astro.url.pathname
 ---
 
 <div class="pointer-events-none h-$c-nav-hight w-full opacity-0"></div>
@@ -14,6 +16,7 @@ import Meta from '~/meta'
     >
         <a
             href="/"
+            aria-current={pathname === '/' ? 'page' : undefined}
             class="mx-7 h-full outline-none transition-opacity active:op-80 hover:op-80"
             flex="~ items-center"
         >
@@ -36,11 +39,19 @@ import Meta from '~/meta'
         </a>
 
         <nav class="px-6 py-5 space-x-3" flex="~ items-center">
-            <a href="/posts" title="Blog">
+            <a
+                href="/posts"
+                title="Blog"
+                aria-current={pathname.startsWith('/posts') ? 'page' : undefined}
+            >
                 <i i-majesticons:paper-fold-text-line class="md:hidden"></i>
                 <span class="text-sm lt-md:hidden">Blog</span>
             </a>
-            <a href="/projects" title="Projects">
+            <a
+                href="/projects"
+                title="Projects"
+                aria-current={pathname.startsWith('/projects') ? 'page' : undefined}
+            >
                 <i i-uil:apps class="md:hidden"></i>
                 <span class="text-sm lt-md:hidden">Projects</span>
             </a>
@@ -86,6 +97,11 @@ import Meta from '~/meta'
         color: hsl(var(--c-fg-2));
         transition: color 0.2s ease;
         outline: none;
+    }
+
+    header nav a[aria-current="page"],
+    header a[aria-current="page"] {
+        cursor: default;
     }
 
     header nav a:hover,

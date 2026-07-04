@@ -5,7 +5,7 @@ import SquareLine from './SquareLine.astro'
 <div
     id="bg-un-gradient"
     style="--bg-un-gradient: hsl(var(--c-bg) / 0.5) 50%, transparent 90%, transparent 100%; filter: blur(1px); z-index: -1;"
-    class="absolute h-auto w-full"
+    class="absolute left-1/2 h-auto max-w-[1920px] w-full -translate-x-1/2"
 >
     <div
         class="absolute left-0 top-0 h-auto w-1/2 bg-neutral-100 dark:bg-neutral-800"
@@ -38,12 +38,12 @@ import SquareLine from './SquareLine.astro'
         <div
             class="h-full w-full flex flex-col border-l border-t border-neutral-300 border-dashed divide-y divide-neutral-300 divide-dashed dark:border-neutral-900 dark:divide-neutral-700"
         >
-            <SquareLine />
-            <SquareLine />
-            <SquareLine />
-            <SquareLine />
-            <SquareLine />
-            <SquareLine />
+            <SquareLine class:list="justify-end" />
+            <SquareLine class:list="justify-end" />
+            <SquareLine class:list="justify-end" />
+            <SquareLine class:list="justify-end" />
+            <SquareLine class:list="justify-end" />
+            <SquareLine class:list="justify-end" />
         </div>
     </div>
 </div>

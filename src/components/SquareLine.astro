@@ -1,9 +1,12 @@
 ---
 import Square from './Square.astro'
+
+const { class: className } = Astro.props;
 ---
 
 <div
-    class="sq-row relative w-full flex shrink-0 items-stretch divide-x divide-c-border divide-dashed"
+    class:list={className}
+    class="relative h-[30px] w-full flex shrink-0 items-stretch bg-c-bg md:h-[60px] sm:h-[45px] xl:h-[88px] divide-x divide-c-border divide-dashed"
 >
     <Square />
     <Square />
@@ -14,24 +17,3 @@ import Square from './Square.astro'
     <Square />
     <Square />
 </div>
-
-<style>
-    .sq-row {
-        height: 30px;
-    }
-    @media (min-width: 640px) {
-        .sq-row {
-            height: 45px;
-        }
-    }
-    @media (min-width: 768px) {
-        .sq-row {
-            height: 60px;
-        }
-    }
-    @media (min-width: 1280px) {
-        .sq-row {
-            height: 88px;
-        }
-    }
-</style>
