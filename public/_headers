@@ -1,10 +1,10 @@
 /sitemap*.xml
 /feed.xml
 /sw.js
+/workbox-*
   Cache-Control: public, max-age=0, must-revalidate
 
 /_astro/*
-/workbox-*
 /fonts/*
 /*.woff
 /*.woff2
