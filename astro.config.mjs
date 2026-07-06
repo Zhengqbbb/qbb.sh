@@ -14,21 +14,15 @@ import Meta from './src/meta'
 export default defineConfig({
     site: Meta.site,
     build: {
-        /**
-         * I turn on:
-         *   - netlify `pretty_urls`
-         *   - vercel  `cleanUrls`
-         * If not. Plz using default and move file src/pages/posts.astro - src/pages/posts/index.astro
-         */
         format: 'preserve',
     },
     integrations: [
         UnoCSS(),
+        mergeCSSAssets(),
         AstroPWA(vitePWAOptions),
-        Sitemap(),
         injectBeforeHeadEl(),
         injectAfterHeadEl(),
-        mergeCSSAssets(),
+        Sitemap(),
     ],
     vite: {
         plugins: [
